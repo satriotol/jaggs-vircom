@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin','AdminController@index')->name('admin.index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('/admin','AdminController@index')->name('admin.index');
+
+    });
+});
