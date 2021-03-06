@@ -92,7 +92,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-running"></i>
+                                <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Kategori
                                     <i class="right fas fa-angle-left"></i>
