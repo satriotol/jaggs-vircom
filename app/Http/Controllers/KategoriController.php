@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateKategoriRequest;
+use App\Kategori;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
@@ -13,7 +15,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        $kategoris = Kategori::all();
+        return view('admin.kategori.index')->with('kategoris',$kategoris);
     }
 
     /**
@@ -32,9 +35,13 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateKategoriRequest $request)
     {
-        //
+        Kategori::create([
+            'name' => $request->name,
+        ]);
+        session()->flash('success','Category Create Successfully');
+        return redirect(route('kategori.index'));
     }
 
     /**

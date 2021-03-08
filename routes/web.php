@@ -25,6 +25,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['role:admin']], function () {
         Route::get('/admin','AdminController@index')->name('admin.index');
         Route::resource('/admin/kategori', 'KategoriController');
-
     });
 });

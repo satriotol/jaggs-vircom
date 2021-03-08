@@ -13,7 +13,7 @@ class CreateLombaTable extends Migration
      */
     public function up()
     {
-        Schema::create('lomba', function (Blueprint $table) {
+        Schema::create('lombas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('id_kategori');

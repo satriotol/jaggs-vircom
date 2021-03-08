@@ -28,11 +28,12 @@
                         <div class="card-header">
                             <h3 class="card-title">Kategori Form</h3>
                         </div>
-                        <form role="form">
+                        <form role="form" action="{{route('kategori.store')}}" method="POST">
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="Kategori">Nama Kategori</label>
-                                    <input type="text" class="form-control" id="Kategori"
+                                    <input type="text" name="name" class="form-control" id="Kategori"
                                         placeholder="Masukkan Kategori...">
                                 </div>
                             </div>

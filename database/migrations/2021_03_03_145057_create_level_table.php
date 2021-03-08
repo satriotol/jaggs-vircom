@@ -13,7 +13,7 @@ class CreateLevelTable extends Migration
      */
     public function up()
     {
-        Schema::create('jenjang', function (Blueprint $table) {
+        Schema::create('jenjangs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();

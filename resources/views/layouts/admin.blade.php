@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    @yield('css')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -51,7 +52,7 @@
                         <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{Auth::user()->name}}</a>
                     </div>
                 </div>
 
@@ -90,8 +91,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item has-treeview {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'menu-open' : ''}}">
+                            <a href="#" class="nav-link {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Kategori
@@ -100,13 +101,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.index')}}" class="nav-link">
+                                    <a href="{{route('kategori.index')}}" class="nav-link {{Request::routeIs('kategori.index') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Kategori</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('kategori.create')}}" class="nav-link">
+                                    <a href="{{route('kategori.create')}}" class="nav-link {{Request::routeIs('kategori.create','kategori.edit') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tambah Kategori</p>
                                     </a>
@@ -201,6 +202,7 @@
     <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
+    @yield('script')
 </body>
 
 </html>
