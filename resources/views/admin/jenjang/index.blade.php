@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Data Kategori</h1>
+                    <h1>Data Jenjang</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Data Kategori</li>
+                        <li class="breadcrumb-item active">Data Jenjang</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     @include('admin.partials.success')
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Kategori</h3>
+                            <h3 class="card-title">Jenjang</h3>
                         </div>
                         <div class="card-body">
                             <table id="table" class="table">
@@ -37,12 +37,12 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                @foreach ($kategoris as $kategori)
+                                @foreach ($jenjangs as $jenjang)
                                 <tbody>
-                                    <td>{{$kategori->name}}</td>
-                                    <td><a href="{{route('kategori.edit',$kategori->id)}}"
+                                    <td>{{$jenjang->name}}</td>
+                                    <td><a href="{{route('jenjang.edit',$jenjang->id)}}"
                                             class="btn btn-warning btn-sm">Edit</a>
-                                        <form class="btn" action="{{route('kategori.destroy', $kategori->id)}}" method="POST">
+                                        <form class="btn" action="{{route('jenjang.destroy', $jenjang->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm"

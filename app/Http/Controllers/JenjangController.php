@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateKategoriRequest;
-use App\Kategori;
+use App\Http\Requests\CreateJenjangRequest;
+use App\Jenjang;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class JenjangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategoris = Kategori::all();
-        return view('admin.kategori.index')->with('kategoris',$kategoris);
+        $jenjangs = Jenjang::all();
+        return view('admin.jenjang.index')->with('jenjangs',$jenjangs);
     }
 
     /**
@@ -26,7 +26,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('admin.kategori.create');
+        return view('admin.jenjang.create');
     }
 
     /**
@@ -35,13 +35,13 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateKategoriRequest $request)
+    public function store(CreateJenjangRequest $request)
     {
-        Kategori::create([
+        Jenjang::create([
             'name' => $request->name,
         ]);
         session()->flash('success','Category Create Successfully');
-        return redirect(route('kategori.index'));
+        return redirect(route('jenjang.index'));
     }
 
     /**
@@ -61,9 +61,9 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit(Jenjang $jenjang)
     {
-        return view('admin.kategori.create')->with('kategori',$kategori);
+        return view('admin.jenjang.create')->with('jenjang',$jenjang);
     }
 
     /**
@@ -73,13 +73,13 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateKategoriRequest $request, Kategori $kategori)
+    public function update(CreateJenjangRequest $request, Jenjang $jenjang)
     {
-        $kategori->update([
+        $jenjang->update([
             'name' => $request->name
         ]);
-        session()->flash('success','Kategori Update Successfully');
-        return redirect(route('kategori.index'));
+        session()->flash('success','Jenjang Update Successfully');
+        return redirect(route('jenjang.index'));
     }
 
     /**
@@ -88,10 +88,10 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy(Jenjang $jenjang)
     {
-        $kategori->delete();
-        session()->flash('success','Kategori Deleted Successfully');
-        return redirect(route('kategori.index'));
+        $jenjang->delete();
+        session()->flash('success','Jenjang Deleted Successfully');
+        return redirect(route('jenjang.index'));
     }
 }
