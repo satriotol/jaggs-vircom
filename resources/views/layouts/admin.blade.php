@@ -114,21 +114,28 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                        <li class="nav-item has-treeview {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'menu-open' : ''}}">
+                            <a href="#" class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'active' : ''}}">
+                                <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
-                                    Widgets
-                                    <span class="right badge badge-danger">New</span>
+                                    Jenjang
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-                        </li>
-                        <li class="nav-header">MISCELLANEOUS</li>
-                        <li class="nav-item">
-                            <a href="https://adminlte.io/docs/3.0" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>Documentation</p>
-                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('jenjang.index')}}" class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Jenjang</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('jenjang.create')}}" class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit') ? 'active' : ''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Tambah Jenjang</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-header">KELUAR</li>
                         <li class="nav-item">

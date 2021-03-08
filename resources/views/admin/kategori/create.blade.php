@@ -28,13 +28,17 @@
                         <div class="card-header">
                             <h3 class="card-title">Kategori Form</h3>
                         </div>
-                        <form role="form" action="{{route('kategori.store')}}" method="POST">
+                        @include('admin.partials.error')
+                        <form role="form" action="@isset($kategori) {{route('kategori.update',$kategori->id)}} @endisset @empty($kategori) {{route('kategori.store')}} @endempty" method="POST">
                             @csrf
+                            @if (isset($kategori))
+                            @method('PUT')
+                            @endif
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="Kategori">Nama Kategori</label>
                                     <input type="text" name="name" class="form-control" id="Kategori"
-                                        placeholder="Masukkan Kategori...">
+                                        placeholder="Masukkan Kategori..." value="{{isset($kategori) ? $kategori->name : ''}}">
                                 </div>
                             </div>
                             <div class="card-footer">
