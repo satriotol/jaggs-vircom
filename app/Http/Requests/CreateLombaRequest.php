@@ -25,7 +25,7 @@ class CreateLombaRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'id_kategori'=>'required',
+            'kategori_id'=>'required',
             'id_jenjang'=>'required',
             'description'=>'required',
             'image'=>'nullable|image',

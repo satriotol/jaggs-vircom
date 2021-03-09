@@ -68,8 +68,8 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item has-treeview {{Request::routeIs('lomba.create','lomba.edit','lomba.index') ? 'menu-open' : ''}}">
+                            <a href="#" class="nav-link {{Request::routeIs('lomba.create','lomba.edit','lomba.index') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-running"></i>
                                 <p>
                                     Lomba
@@ -78,13 +78,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('lomba.index')}}" class="nav-link">
+                                    <a href="{{route('lomba.index')}}" class="nav-link {{Request::routeIs('lomba.index') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Lomba</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('lomba.create')}}" class="nav-link">
+                                    <a href="{{route('lomba.create')}}" class="nav-link {{Request::routeIs('lomba.create','lomba.edit') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tambah Lomba</p>
                                     </a>

@@ -16,8 +16,7 @@ class CreateLombaTable extends Migration
         Schema::create('lombas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('id_kategori');
-            // $table->integer('id_jenjang');
+            $table->integer('kategori_id');
             $table->text('description');
             $table->string('image')->nullable();
             $table->string('video')->nullable();

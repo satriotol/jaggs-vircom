@@ -7,6 +7,7 @@ use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LombaController extends Controller
 {
@@ -41,14 +42,22 @@ class LombaController extends Controller
      */
     public function store(CreateLombaRequest $request)
     {
-        // $image = $request->image->store('image');
-        // $video = $request->video->store('video');
+        if($request->image){
+            $image = $request->image->store('image');
+        }else{
+            $image =null;
+        }
+        if ($request->video) {
+            $video = $request->video->store('video');
+        }else{
+            $video=null;
+        }
         $lomba = Lomba::create([
             'name' => $request->name,
             'description' => $request->description,
-            'id_kategori'=> $request->id_kategori,
-            'image'=> $request->image->store('image'),
-            'video' => $request->video->store('video'),
+            'kategori_id'=> $request->kategori_id,
+            'image'=> $image,
+            'video' => $video,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
             'link' => $request->link
@@ -56,14 +65,8 @@ class LombaController extends Controller
         if ($request->id_jenjang) {
             $lomba->jenjang()->attach($request->id_jenjang);
         }
-        // if ($request->image) {
-        //     $lomba->$request->image->store('image');
-        // }
-        // if ($request->video) {
-        //     $lomba->$request->video->store('video');
-        // }
-        session()->flash('success','Post Create Successfully');
-        return redirect(route('kategori.index'));
+        session()->flash('success','Lomba Create Successfully');
+        return redirect(route('lomba.index'));
     }
 
     /**
@@ -106,8 +109,11 @@ class LombaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Lomba $lomba)
     {
-        //
+        Storage::delete($lomba->image,$lomba->video);
+        $lomba->delete();
+        session()->flash('success','Lomba Deleted Successfully');
+        return redirect(route('lomba.index'));
     }
 }
