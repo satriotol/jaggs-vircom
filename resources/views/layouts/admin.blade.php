@@ -78,13 +78,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.index')}}" class="nav-link">
+                                    <a href="{{route('lomba.index')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Lomba</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.index')}}" class="nav-link">
+                                    <a href="{{route('lomba.create')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tambah Lomba</p>
                                     </a>

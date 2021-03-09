@@ -26,5 +26,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin','AdminController@index')->name('admin.index');
         Route::resource('/admin/kategori', 'KategoriController');
         Route::resource('/admin/jenjang', 'JenjangController');
+        Route::resource('/admin/lomba','LombaController');
     });
 });
