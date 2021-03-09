@@ -34,12 +34,21 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Action</th>
+                                        <th>Kategori</th>
+                                        <th>Jenjang</th>
+                                        <th>action</th>
                                     </tr>
                                 </thead>
                                 @foreach ($lombas as $lomba)
                                 <tbody>
                                     <td>{{$lomba->name}}</td>
+                                    <td>{{$lomba->id_kategori}}</td>
+                                    <td>
+                                        @foreach ($lomba->jenjang as $j)
+                                        {{$j->name}},
+                                        @endforeach
+                                    </td>
+                                    <td><img src="{{asset('storage/'.$lomba->image)}}" alt=""></td>
                                     <td><a href="{{route('lomba.edit',$lomba->id)}}"
                                             class="btn btn-warning btn-sm">Edit</a>
                                         <form class="btn" action="{{route('lomba.destroy', $lomba->id)}}" method="POST">

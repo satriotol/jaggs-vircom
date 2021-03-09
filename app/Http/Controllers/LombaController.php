@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateLombaRequest;
+use App\Jenjang;
+use App\Kategori;
+use App\Lomba;
 use Illuminate\Http\Request;
 
 class LombaController extends Controller
@@ -13,7 +17,8 @@ class LombaController extends Controller
      */
     public function index()
     {
-        return view('admin.lomba.index');
+        $lombas=Lomba::all();
+        return view('admin.lomba.index')->with('lombas',$lombas);
     }
 
     /**
@@ -23,7 +28,9 @@ class LombaController extends Controller
      */
     public function create()
     {
-        return view('admin.lomba.create');
+        $kategoris = Kategori::all();
+        $jenjangs = Jenjang::all();
+        return view('admin.lomba.create')->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);
     }
 
     /**
@@ -32,9 +39,31 @@ class LombaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateLombaRequest $request)
     {
-        //
+        // $image = $request->image->store('image');
+        // $video = $request->video->store('video');
+        $lomba = Lomba::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'id_kategori'=> $request->id_kategori,
+            'image'=> $request->image->store('image'),
+            'video' => $request->video->store('video'),
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'link' => $request->link
+        ]);
+        if ($request->id_jenjang) {
+            $lomba->jenjang()->attach($request->id_jenjang);
+        }
+        // if ($request->image) {
+        //     $lomba->$request->image->store('image');
+        // }
+        // if ($request->video) {
+        //     $lomba->$request->video->store('video');
+        // }
+        session()->flash('success','Post Create Successfully');
+        return redirect(route('kategori.index'));
     }
 
     /**

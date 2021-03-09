@@ -9,4 +9,8 @@ class Jenjang extends Model
     protected $fillable = [
         'name'
     ];
+    public function lomba()
+    {
+        return $this->belongsToMany(Lomba::class);
+    }
 }
