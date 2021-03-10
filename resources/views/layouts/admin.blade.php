@@ -93,7 +93,7 @@
                         </li>
                         <li class="nav-item has-treeview {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'menu-open' : ''}}">
                             <a href="#" class="nav-link {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'active' : ''}}">
-                                <i class="nav-icon fas fa-list-alt"></i>
+                                <i class="nav-icon fa fa-server"></i>
                                 <p>
                                     Kategori
                                     <i class="right fas fa-angle-left"></i>
