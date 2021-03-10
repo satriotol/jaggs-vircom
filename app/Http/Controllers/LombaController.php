@@ -100,9 +100,25 @@ class LombaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateLombaRequest $request, Lomba $lomba)
     {
-        //
+        $data =$request->only(['name','kategori_id','description','link','start_date','end_date']);
+        if($request->hasFile('image')){
+            $image = $request->image->store('image');
+            $lomba->deleteImage();
+            $data['image'] = $image;
+        }
+        if($request->hasFile('video')){
+            $video = $request->video->store('video');
+            $lomba->deleteImage();
+            $data['video'] = $video;
+        }
+        if($request->id_jenjang){
+            $lomba->jenjang()->sync($request->id_jenjang);
+        }
+        $lomba->update($data);
+        session()->flash('success','Lomba Updated Successfully');
+        return redirect(route('lomba.index'));
     }
 
     /**

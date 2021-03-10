@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Lomba extends Model
 {
@@ -20,5 +21,9 @@ class Lomba extends Model
     public function kategori()
     {
         return $this->belongsTo(Kategori::class);
+    }
+    public function deleteImage()
+    {
+        Storage::delete([$this->image],[$this->video]);
     }
 }
