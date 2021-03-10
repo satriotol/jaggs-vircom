@@ -25,6 +25,7 @@
             <div class="row">
                 <div class="col-md-12">
                     @include('admin.partials.success')
+                    @include('admin.partials.error')
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Jenjang</h3>

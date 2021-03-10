@@ -90,6 +90,10 @@ class KategoriController extends Controller
      */
     public function destroy(Kategori $kategori)
     {
+        if ($kategori->lomba->count() >0) {
+            session()->flash('error','Kategori cannot be deleted because it has some lomba.');
+            return redirect()->back();
+        }
         $kategori->delete();
         session()->flash('success','Kategori Deleted Successfully');
         return redirect(route('kategori.index'));

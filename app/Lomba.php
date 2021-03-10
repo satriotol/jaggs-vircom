@@ -13,6 +13,10 @@ class Lomba extends Model
     {
         return $this->belongsToMany(Jenjang::class);
     }
+    public function hasJenjang($jenjangid)
+    {
+        return in_array($jenjangid,$this->jenjang->pluck('id')->toArray());
+    }
     public function kategori()
     {
         return $this->belongsTo(Kategori::class);

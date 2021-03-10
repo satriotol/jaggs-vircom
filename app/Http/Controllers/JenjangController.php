@@ -90,6 +90,10 @@ class JenjangController extends Controller
      */
     public function destroy(Jenjang $jenjang)
     {
+        if ($jenjang->lomba->count() >0) {
+            session()->flash('error','Jenjang cannot be deleted because it has some lomba.');
+            return redirect()->back();
+        }
         $jenjang->delete();
         session()->flash('success','Jenjang Deleted Successfully');
         return redirect(route('jenjang.index'));
