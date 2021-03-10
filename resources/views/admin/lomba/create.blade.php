@@ -52,7 +52,10 @@
                                     <select class="form-control select2bs4" name="kategori_id" style="width: 100%;">
                                         <option selected="selected">Pilih Salah Satu</option>
                                         @foreach ($kategoris as $kategori)
-                                        <option value="{{$kategori->id}}">{{$kategori->name}}</option>
+                                        <option value="{{$kategori->id}}" @if (isset($lomba)) @if ($kategori->id === $lomba->kategori_id)
+                                            selected @endif @endif>
+                                            {{$kategori->name}}
+                                        </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -68,7 +71,7 @@
                                 <div class="form-group">
                                     <label>Deskripsi Lomba</label>
                                     <textarea class="form-control" rows="3" placeholder="Masukkan deskripsi lomba ..."
-                                        name="description"></textarea>
+                                        name="description">{{isset($lomba) ? $lomba->description:''}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="customFile">Image</label>
@@ -88,7 +91,7 @@
                                     <label for="Lomba">Link Lomba</label>
                                     <input type="text" name="link" class="form-control" id="Lomba"
                                         placeholder="Masukkan Link Lomba..."
-                                        value="{{isset($lomba) ? $lomba->name : ''}}">
+                                        value="{{isset($lomba) ? $lomba->link : ''}}">
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -101,7 +104,7 @@
                                                         class="form-control datetimepicker-input"
                                                         placeholder="Masukan Tanggal Akhir ..."
                                                         data-target="#datetimepicker7" data-toggle="datetimepicker"
-                                                        autocomplete="off" />
+                                                        value="{{isset($lomba) ? $lomba->start_date : ''}}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -115,7 +118,7 @@
                                                     <input type="text" placeholder="Masukan Tanggal Akhir ..."
                                                         name="end_date" class="form-control datetimepicker-input"
                                                         data-target="#datetimepicker8" data-toggle="datetimepicker"
-                                                        autocomplete="off" />
+                                                        value="{{isset($lomba) ? $lomba->end_date : ''}}"/>
                                                 </div>
                                             </div>
                                         </div>

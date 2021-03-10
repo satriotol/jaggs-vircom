@@ -86,9 +86,11 @@ class LombaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Lomba $lomba)
     {
-        //
+        $kategoris = Kategori::all();
+        $jenjangs = Jenjang::all();
+        return view('admin.lomba.create')->with('lomba',$lomba)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);
     }
 
     /**
