@@ -44,8 +44,8 @@ class LombaController extends Controller
     public function store(CreateLombaRequest $request)
     {
         if($request->image){
-            $image = Storage::disk('public')->put('image',$request->image);
-            // $image = $request->image->store('image');
+            // $image = Storage::disk('public')->put('image',$request->image);
+            $image = $request->image->store('image');
         }else{
             $image =null;
         }
@@ -106,8 +106,8 @@ class LombaController extends Controller
     {
         $data =$request->only(['name','kategori_id','description','link','start_date','end_date']);
         if($request->hasFile('image')){
-            $image = Storage::disk('public')->put('image',$request->image);
-            // $image = $request->image->store('image');
+            // $image = Storage::disk('public')->put('image',$request->image);
+            $image = $request->image->store('image');
             $lomba->deleteImage();
             $data['image'] = $image;
         }
