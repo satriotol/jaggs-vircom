@@ -56,15 +56,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Jenjang</label>
-                                    {{-- <select class="select2bs4" name="id_jenjang[]" multiple="multiple"
+                                    <select class="select2bs4" name="id_jenjang[]" multiple="multiple"
                                         data-placeholder="Pilih Jenjang" style="width: 100%;">
-                                        @foreach ($jenjangs as $jenjang)
-                                        <option value="{{$jenjang->id}}" @if (isset($lomba)) @if ($lomba->hasJenjang($jenjang->id))
+                                        {{-- @foreach ($jenjangs as $jenjang) --}}
+                                        {{-- <option value="{{$lomba->hasJenjang($jenjang->id)}}" @if (isset($lomba)) @if ($lomba->hasJenjang($jenjang->id))
                                             selected
                                         @endif
-                                        @endif>{{$jenjang->name}}</option>
-                                        @endforeach
-                                    </select> --}}
+                                        @endif>{{$lomba->hasJenjang($jenjang->name)}}</option> --}}
+                                        {{-- @endforeach --}}
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Lomba</label>
