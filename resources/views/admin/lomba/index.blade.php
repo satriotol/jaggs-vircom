@@ -54,13 +54,14 @@
                                     @else
                                     <td>Image Not Found</td>
                                     @endif
-                                    <td><a href="{{route('lomba.edit',$lomba->id)}}"
+                                    <td>
+                                        <a href="{{route('lomba.show',$lomba->id)}}" class="btn btn-primary btn-sm">Detail</a>
+                                        <a href="{{route('lomba.edit',$lomba->id)}}"
                                             class="btn btn-warning btn-sm">Edit</a>
-                                        <form class="btn" action="{{route('lomba.destroy', $lomba->id)}}" method="POST">
+                                        <form action="{{route('lomba.destroy', $lomba->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure?')">Delete</button>
+                                            <input class="btn btn-danger btn-sm"  type="submit" value="Delete" onclick="return confirm('Are you sure?')">
                                         </form>
                                     </td>
                                 </tbody>
