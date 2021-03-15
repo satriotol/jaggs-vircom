@@ -79,7 +79,8 @@ class LombaController extends Controller
      */
     public function show(Lomba $lomba)
     {
-        return view('admin.lomba.show')->with('lomba',$lomba);
+        $jenjangs = Jenjang::all();
+        return view('admin.lomba.show')->with('lomba',$lomba)->with('jenjangs', $jenjangs);
     }
 
     /**
