@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lomba;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('page.home');
+        $lombas = Lomba::all();
+        return view('page.home')->with('lombas',$lombas);
     }
 }

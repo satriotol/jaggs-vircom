@@ -35,67 +35,22 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-
+            @foreach ($lombas as $lomba)
             <div class="row mt-4 mb-4">
-
                 <div class="col-lg-6">
-                    <h3> <a href="detail_lomba.html">Nama Lomba</a></h3>
+                    <h3> <a href="detail_lomba.html">{{$lomba->name}}</a></h3>
                     <p class="font-italic">
-                        Detail lomba
+                        {{$lomba->kategori->name}}
                     </p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum corrupti, sequi esse
-                    culpa
-                    nesciunt necessitatibus sint suscipit quos omnis explicabo, eligendi distinctio neque magnam
-                    error quasi
-                    incidunt dolor cupiditate! Impedit quam nesciunt earum vitae voluptatibus doloribus iste,
-                    repellendus quod
-                    consectetur nihil quisquam quo. In soluta iste vel illum! Illum impedit,
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in
-                        voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                    <p>{{$lomba->description}}</p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img">
                         <img src="assets/img/about.jpg" alt="">
                     </div>
-
                 </div>
             </div>
-            <div class="row">
-
-                <div class="col-lg-6">
-                    <h3>Nama Lomba</h3>
-                    <p class="font-italic">
-                        Detail lomba
-                    </p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum corrupti, sequi esse
-                    culpa
-                    nesciunt necessitatibus sint suscipit quos omnis explicabo, eligendi distinctio neque magnam
-                    error quasi
-                    incidunt dolor cupiditate! Impedit quam nesciunt earum vitae voluptatibus doloribus iste,
-                    repellendus quod
-                    consectetur nihil quisquam quo. In soluta iste vel illum! Illum impedit,
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in
-                        voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="about-img">
-                        <img src="assets/img/about.jpg" alt="">
-                    </div>
-
-                </div>
-            </div>
+            @endforeach
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-4">
