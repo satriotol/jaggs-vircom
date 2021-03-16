@@ -27,10 +27,10 @@
         <div class="row">
             <div class="col-lg-4 offset-2 text-center">
                 <h1 style="color: #aaaaaa;; ">999</h1>
-                <H1 style="color: #aaaaaa;;">lOMBA</H1>
+                <H1 style="color: #aaaaaa;;">Lomba</H1>
             </div>
             <div class="col-lg-4 col-6 text-center">
-                <H1 style="color: #aaaaaa;;">9999</H1>
+                <H1 style="color: #aaaaaa;;">999</H1>
                 <H1 style="color: #aaaaaa;;">Lomba Selesai</H1>
             </div>
         </div>
