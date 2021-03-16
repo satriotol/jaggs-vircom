@@ -1,7 +1,8 @@
 @extends('layouts.main')
 @section('content')
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center" style="background:url({{asset('app/img/karate.jpg')}})  top center;">
+<section id="hero" class="d-flex align-items-center"
+    style="background:url({{asset('app/img/karate.jpg')}}) top center; background-size: cover;">
     <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
         <div class="row">
             <div class="col-lg-12">
@@ -33,7 +34,7 @@
 
 <main id="main">
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about" style="background:url({{asset('app/img/bg.jpeg')}}) center center;">
         <div class="container" data-aos="fade-up">
             @foreach ($lombas as $lomba)
             <div class="row mt-4 mb-4">
@@ -63,6 +64,7 @@
                         </ul>
                     </div>
                 </div>
+            </div>
     </section><!-- End About Section -->
 </main><!-- End #main -->
 @endsection
