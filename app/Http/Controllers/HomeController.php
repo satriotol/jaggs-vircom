@@ -37,7 +37,8 @@ class HomeController extends Controller
     }
     public function tentang()
     {
-        return view('page.tentang');
+        $lomba = Lomba::all()->count();
+        return view('page.tentang')->with('lomba',$lomba);
     }
     public function kontak()
     {

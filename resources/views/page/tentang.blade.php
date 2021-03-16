@@ -26,7 +26,7 @@
         <div class="owl-carousel testimonials-carousel" data-aos="zoom-in" data-aos-delay="100"></div>
         <div class="row">
             <div class="col-md-3 offset-md-3 text-center">
-                <h1 style="color: #aaaaaa;; ">999</h1>
+                <h1 style="color: #aaaaaa;; ">{{$lomba}}</h1>
                 <H1 style="color: #aaaaaa;;">Lomba</H1>
             </div>
             <div class="col-md-3 text-center">

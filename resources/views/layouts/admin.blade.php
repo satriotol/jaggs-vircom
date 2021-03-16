@@ -68,8 +68,8 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview {{Request::routeIs('lomba.create','lomba.edit','lomba.index') ? 'menu-open' : ''}}">
-                            <a href="#" class="nav-link {{Request::routeIs('lomba.create','lomba.edit','lomba.index') ? 'active' : ''}}">
+                        <li class="nav-item has-treeview {{Request::routeIs('lomba.create','lomba.edit','lomba.index','lomba.show') ? 'menu-open' : ''}}">
+                            <a href="#" class="nav-link {{Request::routeIs('lomba.create','lomba.edit','lomba.index','lomba.show') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-running"></i>
                                 <p>
                                     Lomba
