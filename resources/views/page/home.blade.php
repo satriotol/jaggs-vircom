@@ -46,7 +46,7 @@
                     <p class="font-italic">
                         {{$lomba->kategori->name}}
                     </p>
-                    <p>{{$lomba->description}}</p>
+                    <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img">

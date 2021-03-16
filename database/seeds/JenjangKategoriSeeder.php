@@ -15,16 +15,20 @@ class JenjangKategoriSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('id_ID');
-        for($i = 1; $i <= 10; $i++){
-            Jenjang::create([
-                'name' => $faker->city,
-                ]);
-            }
-        for($i = 1; $i <= 10; $i++){
-            Kategori::create([
-                'name' => $faker->address,
-                ]);
-            }
-        }
+        Jenjang::create([
+            'name' => 'PELAJAR',
+        ]);
+        Jenjang::create([
+            'name' => 'MAHASISWA',
+        ]);
+        Jenjang::create([
+            'name' => 'UMUM',
+        ]);
+        Kategori::create([
+            'name' => 'SENI'
+        ]);
+        Kategori::create([
+            'name' => 'OLAHRAGA'
+        ]);
     }
+}

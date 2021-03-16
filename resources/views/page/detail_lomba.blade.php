@@ -7,7 +7,9 @@
         <div class="container" data-aos="fade-up">
             <div class="row mt-4 mb-4">
                 <div class="col-lg-6">
-                    <h3>{{$lomba->name}} - Kategori - Jenjang</h3>
+                    <h3>{{$lomba->name}} - {{$lomba->kategori->name}} - @foreach ($lomba->jenjang as $j)
+                        {{$j->name}}
+                    @endforeach</h3>
                     <p class="font-italic">
                         Detail lomba
                     </p>
@@ -17,15 +19,15 @@
                 </div>
                 <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img">
-                        <img src="assets/img/about.jpg" alt="">
+                        <img src="{{asset('storage/'.$lomba->image)}}" alt="">
                     </div>
                 </div>
                 <div class="container-fluid mt-3">
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="button"
+                            <a href="{{$lomba->link}}"
                                 style=" border-radius: 30px; padding: 20px; background-color: #cda45e;"
-                                class="btn btn-secondary">Lamar Lomba</button>
+                                class="btn btn-secondary" target="_blank">Ikuti Lomba</a>
                         </div>
                         <div class="col-md-6">
                             <p class="font-italic">
