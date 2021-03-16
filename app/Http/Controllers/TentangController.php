@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Lomba;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class TentangController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,11 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $lombas = Lomba::all();
-        return view('page.home')->with('lombas',$lombas);
-    }
-    public function detail()
-    {
-        return view('page.detail_lomba');
+        return view('page.tentang');
     }
 }
