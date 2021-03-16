@@ -24,12 +24,13 @@
                         <select class="form-control" id="exampleFormControlSelect1">
                             <option value="">Pilih Salah Satu</option>
                             @foreach ($kategoris as $kategori)
-                                <option value="{{$kategori->id}}">{{$kategori->name}}</option>
+                            <option value="{{$kategori->id}}">{{$kategori->name}}</option>
                             @endforeach
                         </select>
                     </div>
             </div>
-            <button type="button text-center" style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
+            <button type="button text-center"
+                style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
                 class="btn btn-secondary">Input data</button>
             </form>
         </div>
@@ -46,6 +47,12 @@
                     <p class="font-italic">
                         {{$lomba->kategori->name}}
                     </p>
+                    @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
+                        Lomba Masih Dibuka
+                        @else
+                        Lomba Sudah Ditutup
+                        @endif
+                    @endif
                     <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
