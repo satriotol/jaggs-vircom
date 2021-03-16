@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img">
-                        <img src="{{asset('storage/'.$lomba->image)}}" alt="">
+                        <img src="{{asset('storage/'.$lomba->image)}}" >
                     </div>
                 </div>
                 <div class="container-fluid mt-3">
