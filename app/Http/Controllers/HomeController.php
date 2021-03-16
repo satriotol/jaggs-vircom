@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jenjang;
+use App\Kategori;
 use App\Lomba;
 use Illuminate\Http\Request;
 
@@ -25,18 +27,21 @@ class HomeController extends Controller
     public function index()
     {
         $lombas = Lomba::all();
-        return view('page.home')->with('lombas',$lombas);
+        $jenjangs = Jenjang::all();
+        $kategoris = Kategori::all();
+        return view('page.home')->with('lombas',$lombas)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);
     }
-<<<<<<< HEAD
     public function detail()
     {
         return view('page.detail_lomba');
     }
-=======
     public function tentang()
     {
         return view('page.tentang');
     }
+    public function kontak()
+    {
+        return view('page.kontak');
+    }
 
->>>>>>> 8c7b68e29fc72669c686a521a314838c15515370
 }

@@ -22,13 +22,9 @@ Route::get('/', function () {
 
 Auth::routes(['register'=>false]);
 Route::get('/', 'HomeController@index')->name('home');
-<<<<<<< HEAD
 Route::get('/detail', 'HomeController@detail')->name('detail');
-Route::get('/tentang', 'TentangController@index')->name('tentang');
-Route::get('/kontak', 'KontakController@index')->name('kontak');
-=======
-Route::get('/tentang','HomeController@tentang')->name('tentang');
->>>>>>> 8c7b68e29fc72669c686a521a314838c15515370
+Route::get('/tentang', 'HomeController@tentang')->name('tentang');
+Route::get('/kontak', 'HomeController@kontak')->name('kontak');
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['role:admin']], function () {
         Route::get('/admin','AdminController@index')->name('admin.index');

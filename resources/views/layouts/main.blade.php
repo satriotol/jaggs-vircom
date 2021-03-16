@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>lomba</title>
+    <title>VIRCOM</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -37,21 +37,15 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo mr-auto"><a href="index.html">Vircom.id</a></h1>
+            <h1 class="logo mr-auto"><a href="{{route('home')}}">Vircom.id</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav class="nav-menu d-none d-lg-block" style="font-weight: bold;">
                 <ul>
-<<<<<<< HEAD
-                    <li ><a href="{{route('home')}}">Beranda</a></li>
-                    <li><a href="{{route('tentang')}}">Tentang</a></li>
-                    <li><a href="{{route('kontak')}}">Kontak</a></li>
-=======
-                    <li class="active"><a href="{{route('home')}}">Beranda</a></li>
-                    <li><a href="{{route('tentang')}}">Tentang</a></li>
-                    <li><a href="kontak.html">Kontak</a></li>
->>>>>>> 8c7b68e29fc72669c686a521a314838c15515370
+                    <li class="{{Request::routeIs('home') ? 'active' : ''}}"><a href="{{route('home')}}">Beranda</a></li>
+                    <li class="{{Request::routeIs('tentang') ? 'active' : ''}}"><a href="{{route('tentang')}}">Tentang</a></li>
+                    <li class="{{Request::routeIs('kontak') ? 'active' : ''}}"><a href="{{route('kontak')}}">Kontak</a></li>
                 </ul>
             </nav><!-- .nav-menu -->
 

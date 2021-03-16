@@ -13,20 +13,23 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Jenjang</label>
                         <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Umum</option>
-                            <option>Pelajar</option>
-                            <option>Mahasiswa</option>
+                            <option value="">Pilih Salah Satu</option>
+                            @foreach ($jenjangs as $jenjang)
+                            <option value="{{$jenjang->id}}">{{$jenjang->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Kategori</label>
                         <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Seni</option>
-                            <option>Olahraga</option>
+                            <option value="">Pilih Salah Satu</option>
+                            @foreach ($kategoris as $kategori)
+                                <option value="{{$kategori->id}}">{{$kategori->name}}</option>
+                            @endforeach
                         </select>
                     </div>
             </div>
-            <button type="button" style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
+            <button type="button text-center" style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
                 class="btn btn-secondary">Input data</button>
             </form>
         </div>
@@ -47,7 +50,7 @@
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img">
-                        <img src="assets/img/about.jpg" alt="">
+                        <img src="{{asset('storage/'.$lomba->image)}}" alt="">
                     </div>
                 </div>
             </div>
