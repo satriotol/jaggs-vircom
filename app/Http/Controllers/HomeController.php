@@ -27,8 +27,16 @@ class HomeController extends Controller
         $lombas = Lomba::all();
         return view('page.home')->with('lombas',$lombas);
     }
+<<<<<<< HEAD
     public function detail()
     {
         return view('page.detail_lomba');
     }
+=======
+    public function tentang()
+    {
+        return view('page.tentang');
+    }
+
+>>>>>>> 8c7b68e29fc72669c686a521a314838c15515370
 }

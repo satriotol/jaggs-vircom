@@ -43,9 +43,15 @@
 
             <nav class="nav-menu d-none d-lg-block" style="font-weight: bold;">
                 <ul>
+<<<<<<< HEAD
                     <li ><a href="{{route('home')}}">Beranda</a></li>
                     <li><a href="{{route('tentang')}}">Tentang</a></li>
                     <li><a href="{{route('kontak')}}">Kontak</a></li>
+=======
+                    <li class="active"><a href="{{route('home')}}">Beranda</a></li>
+                    <li><a href="{{route('tentang')}}">Tentang</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+>>>>>>> 8c7b68e29fc72669c686a521a314838c15515370
                 </ul>
             </nav><!-- .nav-menu -->
 
