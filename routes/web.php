@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes(['register'=>false]);
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/detail', 'HomeController@detail')->name('detail');
+Route::get('/detail/{lomba}', 'HomeController@detail')->name('detail');
 Route::get('/tentang', 'HomeController@tentang')->name('tentang');
 Route::get('/kontak', 'HomeController@kontak')->name('kontak');
 Route::group(['middleware' => 'auth'], function () {

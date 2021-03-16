@@ -42,7 +42,7 @@
             @foreach ($lombas as $lomba)
             <div class="row mt-4 mb-4">
                 <div class="col-lg-6">
-                    <h3> <a href="detail_lomba.html">{{$lomba->name}}</a></h3>
+                    <h3> <a href="{{route('detail',$lomba->id)}}">{{$lomba->name}}</a></h3>
                     <p class="font-italic">
                         {{$lomba->kategori->name}}
                     </p>

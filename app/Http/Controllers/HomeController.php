@@ -31,9 +31,9 @@ class HomeController extends Controller
         $kategoris = Kategori::all();
         return view('page.home')->with('lombas',$lombas)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);
     }
-    public function detail()
+    public function detail(Lomba $lomba)
     {
-        return view('page.detail_lomba');
+        return view('page.detail_lomba')->with('lomba',$lomba);
     }
     public function tentang()
     {
