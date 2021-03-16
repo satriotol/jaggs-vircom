@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center" src="assets/img/about.jpg">
+<section id="hero" class="d-flex align-items-center" style="background:url({{asset('app/img/karate.jpg')}})  top center;">
     <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
         <div class="row">
             <div class="col-lg-12">
