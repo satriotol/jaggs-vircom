@@ -46,9 +46,9 @@
                     </p>
                         <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
                         @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
-                        <span class="ket-lomba" style=" background-color:#cda45e; color:white;">Lomba Masih Dibuka</span>
+                        <span class="ket-lomba" style=" background-color:#cda45e; color:white;">Open</span>
                         @else
-                        <span class="ket-lomba" style=" background-color:white; color:#cda45e;">Lomba Sudah Ditutup</span>
+                        <span class="ket-lomba" style=" background-color:white; color:#cda45e;">Closed</span>
                         @endif
                         @endif
                 </div>
