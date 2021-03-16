@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="col-md-6 ">
-                    <img src="media.jpg" alt="" width="500px" height="300px">
+                    <img src="{{asset('app/img/about.jpg')}}" alt="" width="500px" height="300px">
                 </div>
                 <div class="col-md-6">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quibusdam, praesentium aperiam,
@@ -81,11 +81,12 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <img src="assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('app/img/chefs/chefs-1.jpg')}}" width="300px" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Walter White</h4>
-                                    <span>Master Chef</span>
+                                    <h4 style="font-weight:bold;">Walter White</h4>
+                                    <span style="color:  #cda45e; font-weight:bold;">Master Chef</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, tenetur? Sunt, obcaecati. Hic labore velit distinctio maxime nobis sunt, commodi voluptatum. Fugit non atque tempore adipisci saepe iste, debitis veniam qui eum eos quia sed illo ea magni culpa modi? Qui doloremque quia in dolore molestiae eveniet alias beatae quam?</p>
                                 </div>
                                 <div class="social">
                                     <a href=""><i class="icofont-twitter"></i></a>
@@ -99,11 +100,12 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <img src="assets/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('app/img/chefs/chefs-1.jpg')}}" width="300px"class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Sarah Jhonson</h4>
-                                    <span>Patissier</span>
+                                    <h4 style="font-weight:bold;">Sarah Jhonson</h4>
+                                    <span style="color:  #cda45e;  font-weight:bold;">Patissier</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui molestias sunt libero at. Dolore enim repellendus, ipsam ullam rerum repudiandae et ratione ad perspiciatis esse eveniet veniam quibusdam sequi doloremque voluptatum? Accusamus obcaecati quidem facilis nostrum in explicabo, numquam molestiae eum labore quo unde doloremque ipsum nulla delectus corporis fuga?</p>
                                 </div>
                                 <div class="social">
                                     <a href=""><i class="icofont-twitter"></i></a>
@@ -117,11 +119,12 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                            <img src="assets/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
+                            <img  src="{{asset('app/img/chefs/chefs-3.jpg')}}" width="300px" class="img-fluid mklbItem" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>William Anderson</h4>
-                                    <span>Cook</span>
+                                    <h4 style=" font-weight:bold;">William Anderson</h4>
+                                    <span style="color:  #cda45e;  font-weight:bold;">Cook</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia perferendis optio nisi, quisquam atque quaerat eius. Fuga pariatur amet ducimus error nobis doloremque, aut, excepturi quod blanditiis beatae ullam aperiam facilis iusto quaerat vero. Repudiandae nobis animi aliquam, dignissimos obcaecati eaque, aut commodi quam nam sequi ut quis vero culpa?</p>
                                 </div>
                                 <div class="social">
                                     <a href=""><i class="icofont-twitter"></i></a>

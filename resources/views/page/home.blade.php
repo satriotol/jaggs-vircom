@@ -5,37 +5,32 @@
     <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
         <div class="row">
             <div class="col-lg-12">
-                <form action="">
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nama Lomba">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="">Pilih Jenjang</option>
-                            @foreach ($jenjangs as $jenjang)
-                            <option value="{{$jenjang->id}}">{{$jenjang->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="">Pilih Kategori</option>
-                            @foreach ($kategoris as $kategori)
-                            <option value="{{$kategori->id}}">{{$kategori->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nama Lomba">
+                </div>
+                <div class="form-group">
+                    <select class="form-control select2bs4" id="exampleFormControlSelect1" >
+                        <option value="">Pilih Jenjang</option>
+                        @foreach ($jenjangs as $jenjang)
+                        <option value="{{$jenjang->id}}">{{$jenjang->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option value="">Pilih Kategori</option>
+                        @foreach ($kategoris as $kategori)
+                        <option value="{{$kategori->id}}">{{$kategori->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
-            <button type="button text-center"
-                style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
-                class="btn btn-secondary">Input data</button>
-            </form>
         </div>
         <div class="row">
-                <button type="button text-center" style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
-                    class="btn btn-secondary ml-auto mr-3">Input data</button>
+            <button type="button text-center"
+                style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
+                class="btn btn-secondary ml-auto mr-3">Input data</button>
         </div>
-        </form>
     </div>
 </section>
 <main id="main">
@@ -49,13 +44,13 @@
                     <p class="font-italic">
                         {{$lomba->kategori->name}}
                     </p>
-                    @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
-                        Lomba Masih Dibuka
+                        <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
+                        @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
+                        <span class="ket-lomba" style=" background-color:#cda45e; color:white;">Lomba Masih Dibuka</span>
                         @else
-                        Lomba Sudah Ditutup
+                        <span class="ket-lomba" style=" background-color:white; color:#cda45e;">Lomba Sudah Ditutup</span>
                         @endif
-                    @endif
-                    <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
+                        @endif
                 </div>
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img img-fluid">

@@ -799,12 +799,17 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
 .about {
 
     position: relative;
     padding: 80px 0;
 }
 
+.about .ket-lomba {
+    padding: 5px;
+    border-radius: 20px;
+}
 .about:before {
     content: "";
     background: rgba(0, 0, 0, 0.8);
