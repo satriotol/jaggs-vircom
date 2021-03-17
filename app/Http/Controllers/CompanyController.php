@@ -72,6 +72,11 @@ class CompanyController extends Controller
     public function update(UpdateCompanyRequest $request, Companys $company)
     {
         $data = $request->only(['name','email','address','phone_number','description','vision','mission']);
+        if ($request->hasFile('image_desc')) {
+            $image_desc = $request->image_desc->store('image_desc');
+            $company->deleteAsset();
+            $data['image_desc'] = $image_desc;
+        }
         $company->update($data);
         session()->flash('success','Company Updated Successfully');
         return redirect(route('company.edit',1));

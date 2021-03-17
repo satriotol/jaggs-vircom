@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="col-md-6 ">
-                    <img src="{{asset('app/img/about.jpg')}}" alt="" width="500px" height="300px">
+                    <img src="{{asset('storage/'.$company->image_desc)}}" alt="" width="500px" height="300px">
                 </div>
                 <div class="col-md-6">
                     {{$company->description}}
