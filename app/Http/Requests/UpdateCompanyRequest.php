@@ -26,6 +26,7 @@ class UpdateCompanyRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'address' => 'required',
             'email' => 'required',Rule::unique('companys')->ignore($this->id,'email'),
             'phone_number' => 'required|numeric',
             'description' => 'required',

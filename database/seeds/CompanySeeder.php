@@ -16,6 +16,7 @@ class CompanySeeder extends Seeder
             'name' => 'VIRCOM',
             'email' => 'vircom@gmail.com',
             'phone_number' => '089620755330',
+            'address'=>'Pandean Lamper',
             'description' => 'ini deskripsi',
             'vision' => 'ini visi',
             'mission' => 'ini misi',

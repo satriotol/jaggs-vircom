@@ -43,6 +43,11 @@
                                     <input type="text" name="name" class="form-control" id="name"
                                         placeholder="Masukkan nama perusahaan..." value="{{$company->name}}" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="Lomba">Alamat Perusahaan</label>
+                                    <input type="text" name="address" class="form-control" id="address"
+                                        placeholder="Masukkan nama alamat..." value="{{$company->address}}" required>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -63,17 +68,17 @@
                                 <div class="form-group">
                                     <label>Deskripsi Perusahaan</label>
                                     <textarea class="textarea" name="description" placeholder="Masukkan deskrpsi perusahaan..."
-                                        style="width: 100%;height:500px;" required>{{$company->description}}</textarea>
+                                        style="width: 100%;height:500px;">{{$company->description}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Visi Perusahaan</label>
                                     <textarea class="textarea" name="vision" placeholder="Masukkan visi perusahaan..."
-                                        style="width: 100%;height:500px;" required>{{$company->vision}}</textarea>
+                                        style="width: 100%;height:500px;">{{$company->vision}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Misi Perusahaan</label>
                                     <textarea class="textarea" name="mission" placeholder="Masukkan misi perusahaan..."
-                                        style="width: 100%;height:500px;" required>{{$company->mission}}</textarea>
+                                        style="width: 100%;height:500px;">{{$company->mission}}</textarea>
                                 </div>
                                 {{-- <div class="form-group">
                                     <label for="customFile">Image</label>

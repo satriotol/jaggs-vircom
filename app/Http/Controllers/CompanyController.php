@@ -71,7 +71,7 @@ class CompanyController extends Controller
      */
     public function update(UpdateCompanyRequest $request, Companys $company)
     {
-        $data = $request->only(['name','email','phone_number','description','vision','missiong']);
+        $data = $request->only(['name','email','address','phone_number','description','vision','mission']);
         $company->update($data);
         session()->flash('success','Company Updated Successfully');
         return redirect(route('company.edit',1));

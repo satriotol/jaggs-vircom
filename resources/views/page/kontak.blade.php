@@ -14,7 +14,7 @@
                         <div class="address">
                             <i class="icofont-google-map"></i>
                             <h4>Nama Company :</h4>
-                            <p>{{$company->name}}</p>
+                            <p>{{$company->address}}</p>
                         </div>
                         <div class="email">
                             <i class="icofont-envelope"></i>
