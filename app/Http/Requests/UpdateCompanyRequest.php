@@ -32,6 +32,8 @@ class UpdateCompanyRequest extends FormRequest
             'description' => 'required',
             'vision' => 'required',
             'mission' => 'required',
+            'instagram'=>'url|nullable',
+            'youtube'=>'url|nullable',
         ];
     }
 }

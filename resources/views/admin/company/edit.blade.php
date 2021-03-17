@@ -32,10 +32,10 @@
                             <h3 class="card-title">Company</h3>
                         </div>
                         <form role="form" autocomplete="off" action="{{route('company.update',1)}}" method="POST"
-                        enctype="multipart/form-data">
-                        @method('PUT')
-                        @csrf
-                        <div class="card-body">
+                            enctype="multipart/form-data">
+                            @method('PUT')
+                            @csrf
+                            <div class="card-body">
                                 @include('admin.partials.error')
                                 @include('admin.partials.success')
                                 <div class="form-group">
@@ -53,7 +53,8 @@
                                         <div class="form-group">
                                             <label for="Lomba">Email Perusahaan</label>
                                             <input type="text" name="email" class="form-control" id="email"
-                                                placeholder="Masukkan email perusahaan..." value="{{$company->email}}" required>
+                                                placeholder="Masukkan email perusahaan..." value="{{$company->email}}"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -67,7 +68,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Perusahaan</label>
-                                    <textarea class="textarea" name="description" placeholder="Masukkan deskrpsi perusahaan..."
+                                    <textarea class="textarea" name="description"
+                                        placeholder="Masukkan deskrpsi perusahaan..."
                                         style="width: 100%;height:500px;">{{$company->description}}</textarea>
                                 </div>
                                 <div class="form-group">
@@ -87,19 +89,16 @@
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                     </div>
                                 </div>
-                                {{-- <div class="form-group">
-                                    <label for="customFile">Video</label>
-                                    <div class="custom-file">
-                                        <input name="video" type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="">Link Instagram</label>
+                                    <input type="text" name="instagram" class="form-control" id="instagram"
+                                        placeholder="Masukkan link instagram..." value="{{$company->instagram}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="Lomba">Link Lomba</label>
-                                    <input type="text" name="link" class="form-control" id="Lomba"
-                                        placeholder="Masukkan Link Lomba..."
-                                        value="{{isset($lomba) ? $lomba->link : ''}}">
-                                </div> --}}
+                                    <label for="">Link Youtube</label>
+                                    <input type="text" name="youtube" class="form-control" id="youtube"
+                                        placeholder="Masukkan link youtube..." value="{{$company->youtube}}">
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -118,10 +117,12 @@
     $(function () {
         $('.textarea').summernote()
     })
+
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
         bsCustomFileInput.init();
     });
+
 </script>
 @endsection

@@ -71,7 +71,7 @@ class CompanyController extends Controller
      */
     public function update(UpdateCompanyRequest $request, Companys $company)
     {
-        $data = $request->only(['name','email','address','phone_number','description','vision','mission']);
+        $data = $request->only(['name','email','address','phone_number','description','vision','mission','instagram','youtube']);
         if ($request->hasFile('image_desc')) {
             $image_desc = $request->image_desc->store('image_desc');
             $company->deleteAsset();
