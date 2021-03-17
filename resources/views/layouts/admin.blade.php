@@ -39,8 +39,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{route('admin.index')}}" class="brand-link">
-                <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+                <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">JAGGS Admin</span>
             </a>
 
@@ -49,7 +49,8 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{Auth::user()->name}}</a>
@@ -61,15 +62,18 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="{{route('admin.index')}}" class="nav-link {{ Request::routeIs('admin.index') ? 'active' : '' }}">
+                            <a href="{{route('admin.index')}}"
+                                class="nav-link {{ Request::routeIs('admin.index') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview {{Request::routeIs('lomba.create','lomba.edit','lomba.index','lomba.show') ? 'menu-open' : ''}}">
-                            <a href="#" class="nav-link {{Request::routeIs('lomba.create','lomba.edit','lomba.index','lomba.show') ? 'active' : ''}}">
+                        <li
+                            class="nav-item has-treeview {{Request::routeIs('lomba.create','lomba.edit','lomba.index','lomba.show') ? 'menu-open' : ''}}">
+                            <a href="#"
+                                class="nav-link {{Request::routeIs('lomba.create','lomba.edit','lomba.index','lomba.show') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-running"></i>
                                 <p>
                                     Lomba
@@ -78,21 +82,25 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('lomba.index')}}" class="nav-link {{Request::routeIs('lomba.index') ? 'active' : ''}}">
+                                    <a href="{{route('lomba.index')}}"
+                                        class="nav-link {{Request::routeIs('lomba.index') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Lomba</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('lomba.create')}}" class="nav-link {{Request::routeIs('lomba.create','lomba.edit') ? 'active' : ''}}">
+                                    <a href="{{route('lomba.create')}}"
+                                        class="nav-link {{Request::routeIs('lomba.create','lomba.edit') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tambah Lomba</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item has-treeview {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'menu-open' : ''}}">
-                            <a href="#" class="nav-link {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'active' : ''}}">
+                        <li
+                            class="nav-item has-treeview {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'menu-open' : ''}}">
+                            <a href="#"
+                                class="nav-link {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'active' : ''}}">
                                 <i class="nav-icon fa fa-server"></i>
                                 <p>
                                     Kategori
@@ -101,21 +109,25 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('kategori.index')}}" class="nav-link {{Request::routeIs('kategori.index') ? 'active' : ''}}">
+                                    <a href="{{route('kategori.index')}}"
+                                        class="nav-link {{Request::routeIs('kategori.index') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Kategori</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('kategori.create')}}" class="nav-link {{Request::routeIs('kategori.create','kategori.edit') ? 'active' : ''}}">
+                                    <a href="{{route('kategori.create')}}"
+                                        class="nav-link {{Request::routeIs('kategori.create','kategori.edit') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tambah Kategori</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item has-treeview {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'menu-open' : ''}}">
-                            <a href="#" class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'active' : ''}}">
+                        <li
+                            class="nav-item has-treeview {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'menu-open' : ''}}">
+                            <a href="#"
+                                class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Jenjang
@@ -124,18 +136,29 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('jenjang.index')}}" class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
+                                    <a href="{{route('jenjang.index')}}"
+                                        class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Jenjang</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('jenjang.create')}}" class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit') ? 'active' : ''}}">
+                                    <a href="{{route('jenjang.create')}}"
+                                        class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tambah Jenjang</p>
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-header">COMPANY</li>
+                        <li class="nav-item">
+                            <a href="{{ route('company.edit',1) }}" class="nav-link">
+                                <i class="nav-icon fas fa-door-open"></i>
+                                <p>
+                                    Profile
+                                </p>
+                            </a>
                         </li>
                         <li class="nav-header">KELUAR</li>
                         <li class="nav-item">
@@ -150,6 +173,7 @@
                                     Log Out
                                 </p>
                             </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
