@@ -1861,3 +1861,7 @@ section {
     font-size: 13px;
     color: #fff;
 }
+
+.mfp-no-margins .mfp-container {
+	padding: 0;
+}

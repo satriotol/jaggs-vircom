@@ -9,7 +9,7 @@
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nama Lomba">
                 </div>
                 <div class="form-group">
-                    <select class="form-control select2bs4" id="exampleFormControlSelect1" >
+                    <select class="form-control jenjangselect2" id="exampleFormControlSelect1" >
                         <option value="">Pilih Jenjang</option>
                         @foreach ($jenjangs as $jenjang)
                         <option value="{{$jenjang->id}}">{{$jenjang->name}}</option>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img img-fluid">
-                        <a href="{{asset('storage/'.$lomba->image)}}"><img src="{{asset('storage/'.$lomba->image)}}"
+                        <a href="{{asset('storage/'.$lomba->image)}}" data-lightbox="gallery"><img src="{{asset('storage/'.$lomba->image)}}"
                                 class="img-fluid" alt=""></a>
                     </div>
                 </div>
@@ -75,4 +75,7 @@
             </div>
     </section><!-- End About Section -->
 </main><!-- End #main -->
+<script>
+    *
+</script>
 @endsection
