@@ -32,10 +32,10 @@
                             <h3 class="card-title">Company</h3>
                         </div>
                         <form role="form" autocomplete="off" action="{{route('company.update',1)}}" method="POST"
-                        enctype="multipart/form-data">
-                        @method('PUT')
-                        @csrf
-                        <div class="card-body">
+                            enctype="multipart/form-data">
+                            @method('PUT')
+                            @csrf
+                            <div class="card-body">
                                 @include('admin.partials.error')
                                 @include('admin.partials.success')
                                 <div class="form-group">
@@ -53,7 +53,8 @@
                                         <div class="form-group">
                                             <label for="Lomba">Email Perusahaan</label>
                                             <input type="text" name="email" class="form-control" id="email"
-                                                placeholder="Masukkan email perusahaan..." value="{{$company->email}}" required>
+                                                placeholder="Masukkan email perusahaan..." value="{{$company->email}}"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -67,7 +68,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Perusahaan</label>
-                                    <textarea class="textarea" name="description" placeholder="Masukkan deskrpsi perusahaan..."
+                                    <textarea class="textarea" name="description"
+                                        placeholder="Masukkan deskrpsi perusahaan..."
                                         style="width: 100%;height:500px;">{{$company->description}}</textarea>
                                 </div>
                                 <div class="form-group">
@@ -80,57 +82,23 @@
                                     <textarea class="textarea" name="mission" placeholder="Masukkan misi perusahaan..."
                                         style="width: 100%;height:500px;">{{$company->mission}}</textarea>
                                 </div>
-                                {{-- <div class="form-group">
-                                    <label for="customFile">Image</label>
+                                <div class="form-group">
+                                    <label for="customFile">Deskripsi Gambar</label>
                                     <div class="custom-file">
-                                        <input name="image" type="file" class="custom-file-input" id="customFile">
+                                        <input name="image_desc" type="file" class="custom-file-input" id="customFile">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="customFile">Video</label>
-                                    <div class="custom-file">
-                                        <input name="video" type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
+                                    <label for="">Link Instagram</label>
+                                    <input type="text" name="instagram" class="form-control" id="instagram"
+                                        placeholder="Masukkan link instagram..." value="{{$company->instagram}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="Lomba">Link Lomba</label>
-                                    <input type="text" name="link" class="form-control" id="Lomba"
-                                        placeholder="Masukkan Link Lomba..."
-                                        value="{{isset($lomba) ? $lomba->link : ''}}">
+                                    <label for="">Link Youtube</label>
+                                    <input type="text" name="youtube" class="form-control" id="youtube"
+                                        placeholder="Masukkan link youtube..." value="{{$company->youtube}}">
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Tanggal Mulai</label>
-                                            <div class="input-group">
-                                                <div class="input-group date" id="datetimepicker7"
-                                                    data-target-input="nearest">
-                                                    <input type="text" name="start_date"
-                                                        class="form-control datetimepicker-input"
-                                                        placeholder="Masukan Tanggal Akhir ..."
-                                                        data-target="#datetimepicker7" data-toggle="datetimepicker"
-                                                        value="{{isset($lomba) ? $lomba->start_date : ''}}" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Tanggal Akhir</label>
-                                            <div class="input-group">
-                                                <div class="input-group date" id="datetimepicker8"
-                                                    data-target-input="nearest">
-                                                    <input type="text" placeholder="Masukan Tanggal Akhir ..."
-                                                        name="end_date" class="form-control datetimepicker-input"
-                                                        data-target="#datetimepicker8" data-toggle="datetimepicker"
-                                                        value="{{isset($lomba) ? $lomba->end_date : ''}}" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -144,11 +112,17 @@
 @endsection
 @section('script')
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <script>
     $(function () {
-        // Summernote
         $('.textarea').summernote()
     })
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bsCustomFileInput.init();
+    });
 
 </script>
 @endsection

@@ -30,11 +30,13 @@ class HomeController extends Controller
         $lombas = Lomba::all();
         $jenjangs = Jenjang::all();
         $kategoris = Kategori::all();
-        return view('page.home')->with('lombas',$lombas)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);
+        $company = Companys::where('id',1)->first();
+        return view('page.home')->with('lombas',$lombas)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris)->with('company',$company);
     }
     public function detail(Lomba $lomba)
     {
-        return view('page.detail_lomba')->with('lomba',$lomba);
+        $company = Companys::where('id',1)->first();
+        return view('page.detail_lomba')->with('lomba',$lomba)->with('company',$company);
     }
     public function tentang()
     {
