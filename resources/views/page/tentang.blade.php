@@ -52,7 +52,10 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                            <a class="example-image-link" href="{{asset('app/img/chefs/chefs-3.jpg')}}"
+                                data-lightbox="chef-1">
                             <img src="{{asset('app/img/chefs/chefs-1.jpg')}}" width="300px" class="img-fluid" alt="">
+                        </a>
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4 style="font-weight:bold;">Walter White</h4>
@@ -75,8 +78,11 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <img src="{{asset('app/img/chefs/chefs-1.jpg')}}" width="300px" class="img-fluid" alt="">
-                            <div class="member-info">
+                            <a class="example-image-link" href="{{asset('app/img/chefs/chefs-2.jpg')}}"
+                            data-lightbox="chef-2">
+                             <img src="{{asset('app/img/chefs/chefs-2.jpg')}}" width="300px" class="img-fluid" alt="">
+                        </a>
+                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4 style="font-weight:bold;">Sarah Jhonson</h4>
                                     <span style="color:  #cda45e;  font-weight:bold;">Patissier</span>
@@ -98,8 +104,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                            <a class="image-popup-no-margins" href="{{asset('app/img/chefs/chefs-3.jpg')}}"
-                                title="Caption. Can be aligned to any side and contain any HTML.">
+                            <a class="example-image-link" href="{{asset('app/img/chefs/chefs-3.jpg')}}"
+                                data-lightbox="chef-3">
                                 <img src="{{asset('app/img/chefs/chefs-3.jpg')}}" width="300px"
                                     class="img-fluid mklbItem" alt="">
                             </a>
@@ -160,6 +166,7 @@
                     }
                 });
             });
+
         </script>
 </main>
 

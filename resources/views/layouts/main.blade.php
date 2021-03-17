@@ -30,7 +30,7 @@
     <link href="{{asset('app/style.css')}}" rel="stylesheet">
     <link rel="{{asset('app/vendor/mklb/css/mklb.css')}}" href="">
     <link rel="{{asset('app/vendor/select2/select2.min.css')}}" href="">
-    <link rel="{{asset('app/vendor/lightboxmagnific-popup.css')}}" href="">
+    <link rel="{{asset('app/vendor/lightbox/css/lightbox.min.css')}}" href="">
 
 
 
@@ -112,8 +112,7 @@
     <script src="{{asset('app/vendor/aos/aos.js')}}"></script>
    <script src=" {{asset('app/vendor/mklb/js/mklb.js')}}"></script>
    <script src=" {{asset('app/vendor/select2/select2.min.js')}}"></script>
-   <script src=" {{asset('app/vendor/lightbox/jquery.magnific-popup.min.js')}}"></script>
-   <script src=" {{asset('app/vendor/lightbox/jquery.magnific-popup.js')}}"></script>
+   <script src=" {{asset('app/vendor/lightbox/js/lightbox-plus-jquery.min.js')}}"></script>
     <!-- Template Main JS File -->
     <script src="{{asset('app/js/main.js')}}"></script>
 
