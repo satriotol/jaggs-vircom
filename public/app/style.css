@@ -14,6 +14,13 @@ body {
     color: #fff;
 }
 
+.detail p{
+    font-family: "Open Sans", sans-serif;
+    background: #0c0b09;
+    color: white;
+    text-align: justify;
+}
+
 a {
     color: #cda45e;
 }
@@ -30,6 +37,7 @@ h4,
 h5,
 h6 {
     font-family: "Playfair Display", serif;
+    text-decoration: none;
 }
 
 /*--------------------------------------------------------------
