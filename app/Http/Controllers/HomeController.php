@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Companys;
 use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
@@ -38,11 +39,13 @@ class HomeController extends Controller
     public function tentang()
     {
         $lomba = Lomba::all()->count();
-        return view('page.tentang')->with('lomba',$lomba);
+        $company = Companys::where('id',1)->first();
+        return view('page.tentang')->with('lomba',$lomba)->with('company',$company);
     }
     public function kontak()
     {
-        return view('page.kontak');
+        $company = Companys::where('id',1)->first();
+        return view('page.kontak')->with('company',$company);
     }
 
 }

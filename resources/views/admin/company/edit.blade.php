@@ -31,22 +31,24 @@
                         <div class="card-header">
                             <h3 class="card-title">Company</h3>
                         </div>
-                        @include('admin.partials.error')
-                        <form role="form" autocomplete="off" action="{{route('company.update',1)}}" method="PUT"
-                            enctype="multipart/form-data">
-                            @csrf
-                            <div class="card-body">
+                        <form role="form" autocomplete="off" action="{{route('company.update',1)}}" method="POST"
+                        enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <div class="card-body">
+                                @include('admin.partials.error')
+                                @include('admin.partials.success')
                                 <div class="form-group">
                                     <label for="Lomba">Nama Perusahaan</label>
                                     <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Masukkan nama perusahaan..." value="{{$company->name}}">
+                                        placeholder="Masukkan nama perusahaan..." value="{{$company->name}}" required>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="Lomba">Email Perusahaan</label>
                                             <input type="text" name="email" class="form-control" id="email"
-                                                placeholder="Masukkan email perusahaan..." value="{{$company->email}}">
+                                                placeholder="Masukkan email perusahaan..." value="{{$company->email}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -54,16 +56,26 @@
                                             <label for="Lomba">Nomor Perusahaan</label>
                                             <input type="number" name="phone_number" class="form-control"
                                                 id="phone_number" placeholder="Masukkan nomor perusahaan..."
-                                                value="{{$company->phone_number}}">
+                                                value="{{$company->phone_number}}" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Perusahaan</label>
-                                    <textarea class="textarea" placeholder="Masukkan deskrpsi perusahaan..."
-                                        style="width: 100%;height:500px;">{{$company->description}}</textarea>
+                                    <textarea class="textarea" name="description" placeholder="Masukkan deskrpsi perusahaan..."
+                                        style="width: 100%;height:500px;" required>{{$company->description}}</textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label>Visi Perusahaan</label>
+                                    <textarea class="textarea" name="vision" placeholder="Masukkan visi perusahaan..."
+                                        style="width: 100%;height:500px;" required>{{$company->vision}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Misi Perusahaan</label>
+                                    <textarea class="textarea" name="mission" placeholder="Masukkan misi perusahaan..."
+                                        style="width: 100%;height:500px;" required>{{$company->mission}}</textarea>
+                                </div>
+                                {{-- <div class="form-group">
                                     <label for="customFile">Image</label>
                                     <div class="custom-file">
                                         <input name="image" type="file" class="custom-file-input" id="customFile">
@@ -113,7 +125,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>

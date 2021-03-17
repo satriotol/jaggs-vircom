@@ -9,14 +9,7 @@
                     <img src="{{asset('app/img/about.jpg')}}" alt="" width="500px" height="300px">
                 </div>
                 <div class="col-md-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quibusdam, praesentium aperiam,
-                    aliquid, esse molestiae itaque deleniti aspernatur eius omnis non quod nihil sunt. Dolore animi
-                    quaerat itaque numquam praesentium cum minus dolorem amet harum culpa autem, consequuntur cupiditate
-                    illum excepturi expedita ipsa quod cumque commodi. Fuga eum, vel, perspiciatis maiores tempore,
-                    voluptate qui expedita eos officiis dolorum explicabo ad. Architecto sunt amet dolorum, eveniet
-                    molestiae illum pariatur fugit earum fuga voluptas natus quo. Labore reprehenderit, illum
-                    exercitationem officia rerum dolor vitae temporibus distinctio? Reiciendis error, cum dignissimos
-                    temporibus illo cumque vero aperiam, ad quia porro ut. Excepturi, ipsam veritatis.
+                    {{$company->description}}
                 </div>
             </div>
         </div>
@@ -48,25 +41,11 @@
             <div class="row">
                 <div class="col-md-12 ">
                     <h1>Visi</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quas aut qui, praesentium ducimus
-                        fugiat magni asperiores quo repellendus. Molestiae, quaerat? Odio quod repellat eos laudantium
-                        debitis repudiandae aperiam nostrum dolore, tenetur nobis eaque possimus, doloremque inventore
-                        quo ex magnam incidunt, velit magni vitae! Similique, assumenda! Pariatur repudiandae
-                        accusantium atque porro ex dolor cumque, doloremque soluta fugit consectetur ratione provident
-                        vitae eveniet nihil sint, eos alias voluptas. Illum, cum qui autem optio nam sunt itaque quo
-                        illo totam fugit sapiente alias neque debitis eum facere dicta voluptas? Doloremque, sed, ab
-                        asperiores accusantium praesentium mollitia esse sapiente at veritatis natus commodi!</p>
+                    <p>{{$company->vision}}</p>
                 </div>
                 <div class="col-md-12 mt-4">
                     <h1>Misi</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officiis itaque obcaecati, repellat
-                        repellendus nobis eos numquam ea ut dicta odit, dolor provident dolore excepturi dolorum at
-                        neque facere quaerat? Qui similique at quaerat nulla atque animi ab enim debitis distinctio
-                        ipsam pariatur alias, deleniti quasi adipisci dolor, magnam iure culpa corporis molestias odio
-                        quas? Neque molestiae reprehenderit beatae impedit dolores, natus, possimus sequi soluta vero
-                        eligendi eaque. Magnam blanditiis quasi omnis, voluptatibus ad repellat atque beatae maxime
-                        voluptas quisquam dolores nihil eveniet sit distinctio sed aliquam, unde fuga necessitatibus
-                        vero quae in. Amet sed ducimus sit impedit nemo ab?</p>
+                    <p>{{$company->mission}}</p>
                 </div>
             </div>
         </div>

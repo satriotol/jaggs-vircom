@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Companys;
+use App\Http\Requests\UpdateCompanyRequest;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -68,9 +69,12 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCompanyRequest $request, Companys $company)
     {
-        //
+        $data = $request->only(['name','email','phone_number','description','vision','missiong']);
+        $company->update($data);
+        session()->flash('success','Company Updated Successfully');
+        return redirect(route('company.edit',1));
     }
 
     /**
