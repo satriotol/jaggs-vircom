@@ -154,7 +154,7 @@
                         <li class="nav-header">COMPANY</li>
                         <li class="nav-item">
                             <a href="{{ route('company.edit',1) }}" class="nav-link">
-                                <i class="nav-icon fas fa-door-open"></i>
+                                <i class="nav-icon fas fa-industry"></i>
                                 <p>
                                     Profile
                                 </p>
