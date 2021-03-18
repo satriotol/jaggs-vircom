@@ -1,6 +1,5 @@
 @extends('layouts.main')
 @section('content')
-<!-- ======= Tentang Section ======= -->
 <main>
     <section id="tentang" class="tentang mt-5">
         <div class="container">

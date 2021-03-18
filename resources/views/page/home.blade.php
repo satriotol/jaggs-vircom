@@ -76,6 +76,5 @@
     </section><!-- End About Section -->
 </main><!-- End #main -->
 <script>
-    *
 </script>
 @endsection
