@@ -59,23 +59,24 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 ">
-                        <div class="footer-info">
+                    <div class="col-md-4">
+                        <div class="footer-info mr-auto">
                             <h3>Location</h3>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9432501923735!2d110.414591729178!3d-7.035944399682366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDInMDkuNCJTIDExMMKwMjQnNTQuNSJF!5e0!3m2!1sid!2sid!4v1615911880372!5m2!1sid!2sid"
                                 width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-4"></div>
+                    {{-- <div class="col-lg-4">
                         <div class="footer-info">
                             <h3>Video Profile</h3>
                             <video width="100%" height="200" controls>
                                 <source src="" type="video/mp4">
                             </video>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
+                    </div> --}}
+                    <div class="col-md-4">
                         <div class="footer-info">
                             <h3>Find We AT</h3>
                             <div class="social-links mt-3">
@@ -92,7 +93,7 @@
         </div>
 
     </footer><!-- End Footer -->
-    <div class="container-fluid text-center" style="padding: 50px; background-color: black;">
+    <div class="container-fluid text-center" style="padding: 20px; background-color: black;">
         <div class="copyright">
             @ Copyright <strong><span>Jaggs</span></strong>. All Rights Reserved
         </div>

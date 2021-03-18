@@ -2,8 +2,7 @@
 @section('content')
 <!-- ======= Tentang Section ======= -->
 <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about mt-5">
+<section id="about" class="about mt-5">
         <div class="container" data-aos="fade-up">
             <div class="row mt-1 mb-4">
                 <div class="col-lg-12">
@@ -42,7 +41,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- End About Section -->
+</section><!-- End About Section -->
 </main><!-- End #main -->
 
 @endsection
