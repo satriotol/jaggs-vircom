@@ -7,11 +7,11 @@
         <div class="container" data-aos="fade-up">
             <div class="row mt-1 mb-4">
                 <div class="col-lg-12">
-                    <span style="color:#cda45e;">{{$lomba->name}} - {{$lomba->kategori->name}} -
-                        @foreach($lomba->jenjang as $j)
+                    <span style="color:#cda45e;">{{$lomba->name}} - {{$lomba->kategori->name}} - @foreach
+                        ($lomba->jenjang as $j)
                         {{$j->name}}
-                        @endforeach
                     </span>
+                    @endforeach
                 </div>
             </div>
         </div>

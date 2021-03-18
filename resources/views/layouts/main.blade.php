@@ -28,8 +28,8 @@
     <link href="{{asset('app/vendor/venobox/venobox.css')}}" rel="stylesheet">
     <link href="{{asset('app/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('app/style.css')}}" rel="stylesheet">
-    <link rel="{{asset('app/vendor/select2/select2.min.css')}}" href="">
-    <link rel="{{asset('app/vendor/lightbox/css/lightbox.min.css')}}" href="">
+    <link href="{{asset('app/vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('app/vendor/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
 
 
@@ -101,7 +101,6 @@
     </div>
     <div id="preloader"></div>
     <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
-
     <!-- Vendor JS Files -->
     <script src="{{asset('app/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('app/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -111,7 +110,7 @@
     <script src="{{asset('app/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('app/vendor/venobox/venobox.min.js')}}"></script>
     <script src="{{asset('app/vendor/aos/aos.js')}}"></script>
-   <script src=" {{asset('app/vendor/select2/select2.min.js')}}"></script>
+   <script src="{{asset('app/vendor/select2/select2.min.js')}}"></script>
     <!-- Template Main JS File -->
     <script src="{{asset('app/js/main.js')}}"></script>
     @yield('script')
