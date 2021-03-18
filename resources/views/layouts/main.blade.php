@@ -28,9 +28,7 @@
     <link href="{{asset('app/vendor/venobox/venobox.css')}}" rel="stylesheet">
     <link href="{{asset('app/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('app/style.css')}}" rel="stylesheet">
-    <link href="{{asset('app/vendor/mklb/css/mklb.css')}}" href="">
-
-
+    <link href="{{asset('app/vendor/lightbox/css/lightbox.css')}}"  rel="stylesheet">
 </head>
 
 <body>
@@ -44,9 +42,12 @@
 
             <nav class="nav-menu d-none d-lg-block" style="font-weight: bold;">
                 <ul>
-                    <li class="{{Request::routeIs('home') ? 'active' : ''}}"><a href="{{route('home')}}">Beranda</a></li>
-                    <li class="{{Request::routeIs('tentang') ? 'active' : ''}}"><a href="{{route('tentang')}}">Tentang</a></li>
-                    <li class="{{Request::routeIs('kontak') ? 'active' : ''}}"><a href="{{route('kontak')}}">Kontak</a></li>
+                    <li class="{{Request::routeIs('home') ? 'active' : ''}}"><a href="{{route('home')}}">Beranda</a>
+                    </li>
+                    <li class="{{Request::routeIs('tentang') ? 'active' : ''}}"><a
+                            href="{{route('tentang')}}">Tentang</a></li>
+                    <li class="{{Request::routeIs('kontak') ? 'active' : ''}}"><a href="{{route('kontak')}}">Kontak</a>
+                    </li>
                 </ul>
             </nav><!-- .nav-menu -->
 
@@ -62,7 +63,9 @@
                     <div class="col-lg-4 ">
                         <div class="footer-info">
                             <h3>Location</h3>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9432501923735!2d110.414591729178!3d-7.035944399682366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDInMDkuNCJTIDExMMKwMjQnNTQuNSJF!5e0!3m2!1sid!2sid!4v1615911880372!5m2!1sid!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9432501923735!2d110.414591729178!3d-7.035944399682366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDInMDkuNCJTIDExMMKwMjQnNTQuNSJF!5e0!3m2!1sid!2sid!4v1615911880372!5m2!1sid!2sid"
+                                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -70,7 +73,7 @@
                             <h3>Video Profile</h3>
                             <video width="100%" height="200" controls>
                                 <source src="" type="video/mp4">
-                              </video>
+                            </video>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -107,10 +110,10 @@
     <script src="{{asset('app/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('app/vendor/venobox/venobox.min.js')}}"></script>
     <script src="{{asset('app/vendor/aos/aos.js')}}"></script>
-   <script src="{{asset('app/vendor/mklb/js/mklb.js')}}"></script>
+    <script src="{{asset('app/vendor/lightbox/js/lightbox.js')}}"></script>
     <!-- Template Main JS File -->
     <script src="{{asset('app/js/main.js')}}"></script>
-
+    @yield('script')
 </body>
 
 </html>

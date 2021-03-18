@@ -1,3 +1,10 @@
+function lightbox() {
+    document.getElementsByTagName("body")[0].setAttribute("style", "overflow:hidden");
+  }
+
+$(document).on('click', '.lightbox', function() {
+    document.getElementsByTagName("body")[0].setAttribute("style", "overflow:auto");
+});
 !(function($) {
   "use strict";
 
