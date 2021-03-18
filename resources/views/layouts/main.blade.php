@@ -35,13 +35,12 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
-
             <h1 class="logo mr-auto"><a href="{{route('home')}}">Vircom.id</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <nav class="nav-menu d-none d-lg-block" style="font-weight: bold;">
-                <ul>
+            <nav class="nav-menu d-none d-lg-block" style="font-weight: bold; background-color: black:">
+                <ul >
                     <li class="{{Request::routeIs('home') ? 'active' : ''}}"><a href="{{route('home')}}">Beranda</a>
                     </li>
                     <li class="{{Request::routeIs('tentang') ? 'active' : ''}}"><a

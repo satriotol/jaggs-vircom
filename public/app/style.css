@@ -11,10 +11,10 @@
 body {
     font-family: "Open Sans", sans-serif;
     background: #0c0b09;
-    color: #fff;
+    color: black;
 }
 
-.detail p{
+.detail p {
     font-family: "Open Sans", sans-serif;
     background: #0c0b09;
     color: white;
@@ -22,7 +22,7 @@ body {
 }
 
 a {
-    color: #cda45e;
+    color: black;
 }
 
 a:hover {
@@ -181,7 +181,8 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    background: rgba(12, 11, 9, 0.6);
+    background: white;
+    color: black;
     border-bottom: 1px solid rgba(12, 11, 9, 0.6);
     transition: all 0.5s;
     z-index: 997;
@@ -191,7 +192,8 @@ h6 {
 
 #header.header-scrolled {
     top: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: white;
+    color: black;
     border-bottom: 1px solid #37332a;
 }
 
@@ -207,7 +209,15 @@ h6 {
 }
 
 #header .logo a {
-    color: #fff;
+    color: black;
+
+}
+
+#header .logo a:hover {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
 }
 
 #header .logo img {
@@ -224,6 +234,13 @@ h6 {
     list-style: none;
 }
 
+.nav-menu ul li a:hover {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+}
+
 .nav-menu>ul {
     display: flex;
     align-items: center;
@@ -237,8 +254,12 @@ h6 {
 
 .nav-menu a {
     display: block;
+    box-sizing: border-box;
     position: relative;
-    color: white;
+    color: black;
+    margin-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     transition: 0.3s;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
@@ -246,8 +267,35 @@ h6 {
 
 .nav-menu a:hover,
 .nav-menu .active>a,
-.nav-menu li:hover>a {
-    color: #d9ba85;
+.nav-menu li:hover>a {}
+
+.Btncari {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+    line-height: 1;
+    color: white;
+    border: 2px solid #cda45e;
+    background-color: transparent;
+}
+
+.Btncari:hover {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+    line-height: 1;
+    color: white;
+    background-color: #cda45e;
 }
 
 .nav-menu .book-a-table a {
@@ -818,6 +866,7 @@ section {
     padding: 5px;
     border-radius: 20px;
 }
+
 .about:before {
     content: "";
     background: rgba(0, 0, 0, 0.8);
@@ -1862,8 +1911,8 @@ section {
     color: #fff;
 }
 
-  /* Style the Image Used to Trigger the Modal */
-  #myImg {
+/* Style the Image Used to Trigger the Modal */
+#myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;

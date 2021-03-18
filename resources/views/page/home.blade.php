@@ -3,6 +3,15 @@
 <section id="hero" class="d-flex align-items-center"
     style="background:url({{asset('app/img/karate.jpg')}}) top center; background-size: cover;">
     <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row mb-5">
+            <div class="col-md-8">
+                <h1>Young <span>Start</span></h1>
+                <h2>Championship</h2>
+              </div>
+              <div class="col-md-4">
+                <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="venobox play-btn ml-auto" data-vbtype="video" data-autoplay="true"></a>
+              </div>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
@@ -27,9 +36,7 @@
             </div>
         </div>
         <div class="row">
-            <button type="button text-center"
-                style=" border-radius: 20px; margin-left: 10px; background-color: #cda45e;"
-                class="btn btn-secondary ml-auto mr-3">Input data</button>
+            <button class="ml-auto mr-3 Btncari">Cari</button>
         </div>
     </div>
 </section>
