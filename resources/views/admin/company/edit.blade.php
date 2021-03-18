@@ -83,6 +83,13 @@
                                         style="width: 100%;height:500px;">{{$company->mission}}</textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label for="customFile">Logo</label>
+                                    <div class="custom-file">
+                                        <input name="logo" type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="customFile">Deskripsi Gambar</label>
                                     <div class="custom-file">
                                         <input name="image_desc" type="file" class="custom-file-input" id="customFile">

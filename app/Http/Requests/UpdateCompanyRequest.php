@@ -32,6 +32,8 @@ class UpdateCompanyRequest extends FormRequest
             'description' => 'required',
             'vision' => 'required',
             'mission' => 'required',
+            'image_desc' => 'nullable|mimes:png,jpg',
+            'logo' => 'nullable|mimes:png,jpg',
             'instagram'=>'url|nullable',
             'youtube'=>'url|nullable',
         ];
