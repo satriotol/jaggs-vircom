@@ -32,5 +32,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/admin/jenjang', 'JenjangController');
         Route::resource('/admin/lomba','LombaController');
         Route::resource('/admin/company', 'CompanyController');
+        Route::resource('/admin/team', 'TeamController');
     });
 });

@@ -153,13 +153,40 @@
                         </li>
                         <li class="nav-header">COMPANY</li>
                         <li class="nav-item">
-                            <a href="{{ route('company.edit',1) }}" class="nav-link">
+                            <a href="{{ route('company.edit',1) }}" class="nav-link {{Request::routeIs('company.edit') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-industry"></i>
                                 <p>
                                     Profile
                                 </p>
                             </a>
                         </li>
+                        <li
+                        class="nav-item has-treeview {{Request::routeIs('team.create','team.edit','team.index') ? 'menu-open' : ''}}">
+                        <a href="#"
+                            class="nav-link {{Request::routeIs('team.create','team.edit','team.index') ? 'active' : ''}}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Team
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('team.index')}}"
+                                    class="nav-link {{Request::routeIs('team.index') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List Team</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('team.create')}}"
+                                    class="nav-link {{Request::routeIs('team.create','team.edit') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tambah Team</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                         <li class="nav-header">KELUAR</li>
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
