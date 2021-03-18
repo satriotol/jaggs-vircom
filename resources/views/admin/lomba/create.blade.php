@@ -42,14 +42,14 @@
                             @endif
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="Lomba">Nama Lomba</label>
+                                    <label for="Lomba">Nama Lomba <span style="color: red">*</span></label>
                                     <input type="text" name="name" class="form-control" id="Lomba"
                                         placeholder="Masukkan nama lomba..."
-                                        value="{{isset($lomba) ? $lomba->name : ''}}">
+                                        value="{{isset($lomba) ? $lomba->name : ''}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Kategori</label>
-                                    <select class="form-control select2bs4" name="kategori_id" style="width: 100%;">
+                                    <label>Kategori <span style="color: red">*</span></label>
+                                    <select class="form-control select2bs4" name="kategori_id" style="width: 100%;" required>
                                         <option selected="selected">Pilih Salah Satu</option>
                                         @foreach ($kategoris as $kategori)
                                         <option value="{{$kategori->id}}" @if (isset($lomba)) @if ($kategori->id === $lomba->kategori_id)
@@ -60,9 +60,9 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Jenjang</label>
+                                    <label>Jenjang <span style="color: red">*</span></label>
                                     <select class="select2bs4" name="id_jenjang[]" multiple="multiple"
-                                        data-placeholder="Pilih Jenjang" style="width: 100%;">
+                                        data-placeholder="Pilih Jenjang" style="width: 100%;" required>
                                         @foreach ($jenjangs as $jenjang)
                                         <option value="{{$jenjang->id}}" @if (isset($lomba)) @if ($lomba->hasJenjang($jenjang->id))
                                             selected
@@ -72,12 +72,12 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Deskripsi Lomba</label>
+                                    <label>Deskripsi Lomba <span style="color: red">*</span></label>
                                     <textarea class="form-control" rows="3" placeholder="Masukkan deskripsi lomba ..."
                                         name="description">{{isset($lomba) ? $lomba->description:''}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="customFile">Image</label>
+                                    <label for="customFile">Image <span style="color: red">*</span></label>
                                     <div class="custom-file">
                                         <input name="image" type="file" class="custom-file-input" id="customFile">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
@@ -91,15 +91,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="Lomba">Link Lomba</label>
+                                    <label for="Lomba">Link Lomba <span style="color: red">*</span></label>
                                     <input type="text" name="link" class="form-control" id="Lomba"
                                         placeholder="Masukkan Link Lomba..."
-                                        value="{{isset($lomba) ? $lomba->link : ''}}">
+                                        value="{{isset($lomba) ? $lomba->link : ''}}" required>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Tanggal Mulai</label>
+                                            <label>Tanggal Mulai <span style="color: red">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group date" id="datetimepicker7"
                                                     data-target-input="nearest">
@@ -107,21 +107,21 @@
                                                         class="form-control datetimepicker-input"
                                                         placeholder="Masukan Tanggal Akhir ..."
                                                         data-target="#datetimepicker7" data-toggle="datetimepicker"
-                                                        value="{{isset($lomba) ? $lomba->start_date : ''}}" />
+                                                        value="{{isset($lomba) ? $lomba->start_date : ''}}" required />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Tanggal Akhir</label>
+                                            <label>Tanggal Akhir <span style="color: red">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group date" id="datetimepicker8"
                                                     data-target-input="nearest">
                                                     <input type="text" placeholder="Masukan Tanggal Akhir ..."
                                                         name="end_date" class="form-control datetimepicker-input"
                                                         data-target="#datetimepicker8" data-toggle="datetimepicker"
-                                                        value="{{isset($lomba) ? $lomba->end_date : ''}}"/>
+                                                        value="{{isset($lomba) ? $lomba->end_date : ''}}" required/>
                                                 </div>
                                             </div>
                                         </div>
