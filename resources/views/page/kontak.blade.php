@@ -13,7 +13,7 @@
                     <div class="info">
                         <div class="address">
                             <i class="icofont-google-map"></i>
-                            <h4>Nama Company :</h4>
+                            <h4>Address :</h4>
                             <p>{{$company->address}}</p>
                         </div>
                         <div class="email">

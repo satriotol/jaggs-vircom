@@ -18,13 +18,20 @@
         </div>
     </section><!-- End Chefs Section -->
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    {{-- <section id="testimonials" class="testimonials section-bg">
         <div class="container owl-carousel testimonials-carousel" data-aos="zoom-in" data-aos-delay="100">
             <div class="col-md-12 text-center">
                 <h1 style="color: #aaaaaa;; ">{{$lomba}} Aktif</h1>
             </div>
         </div>
+    </section><!-- End Testimonials Section --> --}}
 
+    <section id="" class="section-bg">
+        <div class="container" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-md-12 text-center">
+                <h1 style="color: #aaaaaa;; ">{{$lomba}} Aktif</h1>
+            </div>
+        </div>
     </section><!-- End Testimonials Section -->
     <div class="container-fluid mt-5" style="padding-right: 0px; padding-left: 0px;">
         <div class="row">
