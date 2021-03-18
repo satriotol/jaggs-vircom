@@ -14,6 +14,12 @@ body {
     color: #fff;
 }
 
+.detail p{
+    font-family: "Open Sans", sans-serif;
+    background: #0c0b09;
+    color: white;
+    text-align: justify;
+}
 
 a {
     color: #cda45e;
@@ -37,7 +43,31 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #1a1814;
+}
 
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #1a1814;
+    border-top-color: #cda45e;
+    border-bottom-color: #cda45e;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+}
 
 @-webkit-keyframes animate-preloader {
     0% {
@@ -156,6 +186,7 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     padding: 15px 0;
+    top: 40px;
 }
 
 #header.header-scrolled {

@@ -28,9 +28,7 @@
     <link href="{{asset('app/vendor/venobox/venobox.css')}}" rel="stylesheet">
     <link href="{{asset('app/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('app/style.css')}}" rel="stylesheet">
-    <link href="{{asset('app/vendor/select2/select2.min.css')}}" rel="stylesheet">
-    <link href="{{asset('app/vendor/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-
+    <link href="{{asset('app/vendor/mklb/css/mklb.css')}}" href="">
 
 
 </head>
@@ -81,9 +79,7 @@
                             <div class="social-links mt-3">
                                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                @if ($company->instagram)
-                                <a href="{{$company->instagram}}" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                @endif
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                                 <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                             </div>
@@ -101,6 +97,7 @@
     </div>
     <div id="preloader"></div>
     <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+
     <!-- Vendor JS Files -->
     <script src="{{asset('app/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('app/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -110,10 +107,10 @@
     <script src="{{asset('app/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('app/vendor/venobox/venobox.min.js')}}"></script>
     <script src="{{asset('app/vendor/aos/aos.js')}}"></script>
-   <script src="{{asset('app/vendor/select2/select2.min.js')}}"></script>
+   <script src="{{asset('app/vendor/mklb/js/mklb.js')}}"></script>
     <!-- Template Main JS File -->
     <script src="{{asset('app/js/main.js')}}"></script>
-    @yield('script')
+
 </body>
 
 </html>
