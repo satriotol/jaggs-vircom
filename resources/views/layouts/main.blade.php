@@ -81,7 +81,9 @@
                             <div class="social-links mt-3">
                                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                @if ($company->instagram)
                                 <a href="{{$company->instagram}}" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                @endif
                                 <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                             </div>
