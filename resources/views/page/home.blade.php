@@ -53,9 +53,9 @@
                     </p>
                         <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
                         @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
-                        <span class="ket-lomba" style=" background-color:#cda45e; color:white;">Open</span>
+                        <span class="ket-lomba" style=" color: #fff;background-color:  #28a745; border-color: white;">Open</span>
                         @else
-                        <span class="ket-lomba" style=" background-color:white; color:#cda45e;">Closed</span>
+                        <span class="ket-lomba" style="color: #fff;background-color: #dc3545; border-color: white;">Closed</span>
                         @endif
                         @endif
                 </div>
