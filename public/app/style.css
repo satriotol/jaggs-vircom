@@ -12,6 +12,7 @@ body {
     font-family: "Open Sans", sans-serif;
     background: #0c0b09;
     color: white;
+    overflow-x: hidden;
 }
 
 .judul h3 a p {
@@ -191,7 +192,6 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     padding: 15px 0;
-    top: 40px;
 }
 
 #header.header-scrolled {

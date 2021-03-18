@@ -4,7 +4,6 @@ body.lb-disable-scrolling {
 
 .lightboxOverlay {
   position: absolute;
-  overflow: hidden;
   top: 0;
   left: 0;
   z-index: 9999;
@@ -38,7 +37,6 @@ body.lb-disable-scrolling {
 
 .lightbox a img {
   border: none;
-
 }
 
 .lb-outerContainer {
@@ -176,7 +174,6 @@ body.lb-disable-scrolling {
 }
 
 .lb-data .lb-number {
-    position: static;
   display: block;
   clear: left;
   padding-bottom: 1em;
