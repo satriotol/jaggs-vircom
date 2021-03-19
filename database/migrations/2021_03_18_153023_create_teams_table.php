@@ -20,7 +20,7 @@ class CreateTeamsTable extends Migration
             $table->string('image');
             $table->text('description');
             $table->string('instagram');
-            $table->boolean('preview')->default(1)->change();
+            $table->boolean('preview')->default(1);
             $table->timestamps();
         });
     }

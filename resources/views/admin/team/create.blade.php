@@ -31,7 +31,9 @@
                             <h3 class="card-title">Team Form</h3>
                         </div>
                         @include('admin.partials.error')
-                        <form role="form" action="@isset($team) {{route('team.update',$team->id)}} @endisset @empty($team) {{route('team.store')}} @endempty" method="POST" enctype="multipart/form-data">
+                        <form role="form"
+                            action="@isset($team) {{route('team.update',$team->id)}} @endisset @empty($team) {{route('team.store')}} @endempty"
+                            method="POST" enctype="multipart/form-data">
                             @csrf
                             @if (isset($team))
                             @method('PUT')
@@ -50,16 +52,18 @@
                                 <div class="form-group">
                                     <label for="instagram">Link Instagram</label>
                                     <input type="text" name="instagram" class="form-control" id="name"
-                                        placeholder="Masukkan link instagram..." value="{{isset($team) ? $team->instagram : ''}}">
+                                        placeholder="Masukkan link instagram..."
+                                        value="{{isset($team) ? $team->instagram : ''}}">
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Anggota <span style="color: red">*</span></label>
-                                    <textarea class="textarea" name="description"
-                                        placeholder="Masukkan deskripsi ..."
+                                    <textarea class="textarea" name="description" placeholder="Masukkan deskripsi ..."
                                         style="width: 100%;height:500px;">{{isset($team) ? $team->description : ''}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="customFile">Foto Anggota <span style="color: red">*</span></label>
+                                    <label for="customFile">Foto Anggota @empty($team)
+                                        <span style="color: red">*</span>
+                                        @endempty </label>
                                     <div class="custom-file">
                                         <input name="image" type="file" class="custom-file-input" id="customFile">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
