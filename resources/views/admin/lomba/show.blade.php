@@ -79,7 +79,8 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="customFile">Video</label> <br>
-                                        <img src="{{asset('storage/'.$lomba->video)}}" alt="" class="img-thumbnail">
+                                        <video width="100%" height="auto" src="{{asset('storage/'.$lomba->video)}}" controls></video>
+                                        {{-- <img src="{{asset('storage/'.$lomba->video)}}" alt="" class="img-thumbnail"> --}}
                                     </div>
                                 </div>
                             </div>

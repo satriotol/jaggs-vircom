@@ -24,6 +24,10 @@ class Lomba extends Model
     }
     public function deleteImage()
     {
-        Storage::delete([$this->image],[$this->video]);
+        Storage::delete([$this->image]);
+    }
+    public function deleteVideo()
+    {
+        Storage::delete([$this->video]);
     }
 }

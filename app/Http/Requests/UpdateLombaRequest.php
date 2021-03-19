@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateLombaRequest extends FormRequest
+class UpdateLombaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,7 @@ class CreateLombaRequest extends FormRequest
             'kategori_id'=>'required',
             'id_jenjang'=>'required',
             'description'=>'required',
-            'image'=>'required|image',
+            'image'=>'nullable|image',
             'video'=>'nullable|mimes:mp4,mov,ogg,qt',
             'link'=>'required|url',
             'start_date'=>'required|date',

@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateLombaRequest;
+use App\Http\Requests\UpdateLombaRequest;
 use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use League\CommonMark\Inline\Element\Strong;
 
 class LombaController extends Controller
 {
@@ -103,7 +103,7 @@ class LombaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateLombaRequest $request, Lomba $lomba)
+    public function update(UpdateLombaRequest $request, Lomba $lomba)
     {
         $data =$request->only(['name','kategori_id','description','link','start_date','end_date']);
         if($request->hasFile('image')){
@@ -114,7 +114,7 @@ class LombaController extends Controller
         }
         if($request->hasFile('video')){
             $video = $request->video->store('video');
-            $lomba->deleteImage();
+            $lomba->deleteVideo();
             $data['video'] = $video;
         }
         if($request->id_jenjang){
