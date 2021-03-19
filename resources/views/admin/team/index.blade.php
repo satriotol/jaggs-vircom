@@ -43,7 +43,7 @@
                                 <tbody>
                                     <td>{{$team->name}}</td>
                                     <td>{{$team->title}}</td>
-                                    <td>{{$team->description}}</td>
+                                    <td>{!!$team->description!!}</td>
                                     <td>
                                         <a href="{{route('team.show',$team->id)}}" class="btn btn-primary btn-sm">Detail</a>
                                         <a href="{{route('team.edit',$team->id)}}"

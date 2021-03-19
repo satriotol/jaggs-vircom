@@ -31,7 +31,7 @@
                             <h3 class="card-title">Team Form</h3>
                         </div>
                         @include('admin.partials.error')
-                        <form role="form" action="@isset($team) {{route('team.update',$team->id)}} @endisset @empty($team) {{route('team.store')}} @endempty" method="POST">
+                        <form role="form" action="@isset($team) {{route('team.update',$team->id)}} @endisset @empty($team) {{route('team.store')}} @endempty" method="POST" enctype="multipart/form-data">
                             @csrf
                             @if (isset($team))
                             @method('PUT')

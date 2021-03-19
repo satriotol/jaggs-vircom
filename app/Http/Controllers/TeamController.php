@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateTeamRequest;
 use App\Teams;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,18 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateTeamRequest $request)
     {
-        //
+        $image = $request->image->store('image_team');
+        Teams::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'title' => $request->title,
+            'instagram' => $request->instagram,
+            'image' => $image
+        ]);
+        session()->flash('success','Team Create Successfully');
+        return redirect(route('team.index'));
     }
 
     /**
