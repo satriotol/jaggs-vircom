@@ -21,7 +21,6 @@ body {
 
 .detail p {
     font-family: "Open Sans", sans-serif;
-    background: #0c0b09;
     color: white;
     text-align: justify;
 }
@@ -417,7 +416,7 @@ h6 {
 }
 
 .mobile-nav-toggle i {
-    color: #fff;
+    color: black;
 }
 
 .mobile-nav {
@@ -2004,5 +2003,80 @@ section {
 @media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .detail-lomba img {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 0px;
+    }
+
+    .video-lomba video {
+        width: 300px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 15px;
+    }
+
+}
+
+@media (max-width: 575.98px) {}
+
+@media (max-width: 420.98px) {
+    .detail-lomba img {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 100px;
+    }
+
+    .video-lomba video {
+        width: 300px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 49px;
+    }
+}
+
+@media (max-width: 325px) {
+    .detail-lomba img {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 50px;
+    }
+
+    .video-lomba video {
+        width: 300px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 0px;
+    }
+}
+
+@media (max-width: 376px) {
+    .detail-lomba img {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 70px;
+    }
+
+    .video-lomba video {
+        width: 300px;
+        height: 200px;
+        position: relative;
+        object-fit: cover;
+        left: 15px;
     }
 }
