@@ -18,7 +18,7 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $lombas = Lomba::all();
+        $lombas = Lomba::latest()->get();
         $jenjangs = Jenjang::all();
         $kategoris = Kategori::all();
         return view('page.home')->with('lombas',$lombas)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);

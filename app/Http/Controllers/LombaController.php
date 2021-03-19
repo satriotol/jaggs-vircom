@@ -19,7 +19,7 @@ class LombaController extends Controller
      */
     public function index()
     {
-        $lombas=Lomba::all();
+        $lombas=Lomba::latest()->get();
         return view('admin.lomba.index')->with('lombas',$lombas);
     }
 

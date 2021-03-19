@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateTeamRequest;
+use App\Http\Requests\UpdateTeamRequest;
 use App\Teams;
 use Illuminate\Http\Request;
 
@@ -78,9 +79,17 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTeamRequest $request, Teams $team)
     {
-        //
+        $data = $request->only(['name','title','instagram','description']);
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image_team');
+            $team->deleteImage();
+            $data['image'] = $image;
+        }
+        $team->update($data);
+        session()->flash('success','Team Updated Successfully');
+        return redirect(route('team.index'));
     }
 
     /**

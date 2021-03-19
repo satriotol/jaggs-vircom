@@ -35,7 +35,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Jabatan</th>
-                                        <th>Deskripsi</th>
+                                        <th>Foto</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -43,9 +43,8 @@
                                 <tbody>
                                     <td>{{$team->name}}</td>
                                     <td>{{$team->title}}</td>
-                                    <td>{!!$team->description!!}</td>
+                                    <td><img src="{{asset('storage/'.$team->image)}}" width="100" height="100" style="object-fit: cover" alt=""></td>
                                     <td>
-                                        <a href="{{route('team.show',$team->id)}}" class="btn btn-primary btn-sm">Detail</a>
                                         <a href="{{route('team.edit',$team->id)}}"
                                             class="btn btn-warning btn-sm">Edit</a>
                                         <form action="{{route('team.destroy', $team->id)}}" method="POST">
