@@ -51,7 +51,7 @@
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="8" data-rule="required"
+                            <textarea class="form-control" name="pesan" rows="8"
                                 data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validate"></div>
                         </div>
