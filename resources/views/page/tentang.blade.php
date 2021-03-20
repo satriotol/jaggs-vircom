@@ -9,7 +9,7 @@
                 <div class="col-md-6 ">
                     <a onclick="lightbox()" href="{{asset('app/img/chefs/chefs-1.jpg')}}"
                                 data-lightbox="gallery1">
-                    <img src="{{asset('app/img/about.jpg')}}" alt="" width="500px" height="300px"></a>
+                    <img src="{{asset('storage/'.$company->image_desc)}}" alt="" width="500px" height="300px"></a>
                 </div>
                 <div class="col-md-6">
                     {{$company->description}}
