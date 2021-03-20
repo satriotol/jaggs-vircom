@@ -44,7 +44,7 @@
                 <div class="container aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
                     <div class="col-md-12 text-center">
                         <video width="100%" height="80%" controls>
-                            <source src="" type="video/mp4">
+                            <source src="{{asset('storage/'.$lomba->video)}}" type="video/mp4">
                     </div>
                 </div>
             </section>
