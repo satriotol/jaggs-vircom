@@ -6,7 +6,7 @@
         <div class="container" data-aos="fade-up">
             <div class="row mt-1 mb-4">
                 <div class="col-md-12">
-                    <p style="font-weight:bold; color:black;">{{$lomba->name}} - {{$lomba->kategori->name}} -
+                    <p style="font-weight:bold; color:black; font-size:25px">{{$lomba->name}} - {{$lomba->kategori->name}} -
                         @foreach($lomba->jenjang as $j)
                         {{$j->name}}
                         @endforeach
