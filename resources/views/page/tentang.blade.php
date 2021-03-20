@@ -7,9 +7,8 @@
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="col-md-6 ">
-                    <a onclick="lightbox()" href="{{asset('app/img/chefs/chefs-1.jpg')}}"
-                                data-lightbox="gallery1">
-                    <img src="{{asset('app/img/about.jpg')}}" alt="" width="500px" height="300px"></a>
+                    <a onclick="lightbox()" href="{{asset('app/img/chefs/chefs-1.jpg')}}" data-lightbox="gallery1">
+                        <img src="{{asset('app/img/about.jpg')}}" alt="" width="500px" height="300px"></a>
                 </div>
                 <div class="col-md-6">
                     {{$company->description}}
@@ -22,12 +21,12 @@
         <div class="container owl-carousel testimonials-carousel" data-aos="zoom-in" data-aos-delay="100">
             <div class="col-md-12 text-center">
                 <h1 style="color: #aaaaaa;; ">{{$lomba}} Aktif</h1>
-            </div>
-        </div>
+    </div>
+    </div>
     </section><!-- End Testimonials Section --> --}}
 
-    <section id="" class="section-bg"  data-aos="fade-right" data-aos-delay="100">
-        <div class="container" >
+    <section id="" class="section-bg" data-aos="fade-right" data-aos-delay="100">
+        <div class="container">
             <div class="col-md-12 text-center">
                 <h1 style="color: #ffa500; ">{{$lomba}} Aktif</h1>
             </div>
@@ -64,8 +63,8 @@
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
                             <a onclick="lightbox()" href="{{asset('app/img/chefs/chefs-1.jpg')}}"
                                 data-lightbox="gallery1">
-                            <img src="{{asset('app/img/chefs/chefs-1.jpg')}}" width="300px" data-lightbox="gallery1"
-                                class="img-fluid" alt=""></a>
+                                <img src="{{asset('app/img/chefs/chefs-1.jpg')}}" width="300px" data-lightbox="gallery1"
+                                    class="img-fluid" alt=""></a>
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4 style="font-weight:bold;">Walter White</h4>
@@ -101,7 +100,7 @@
                                         Accusamus obcaecati quidem facilis nostrum in explicabo, numquam molestiae eum
                                         labore quo unde doloremque ipsum nulla delectus corporis fuga?</p>
                                 </div>
-                                <div >
+                                <div>
                                     <a class="socialmedia" href=""><i class="icofont-facebook"></i></a>
                                     <a class="socialmedia" href=""><i class="icofont-instagram"></i></a>
                                 </div>
@@ -111,9 +110,9 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                            <a onclick="lightbox()" href="{{asset('app/img/chefs/chefs-3.jpg')}}"
-                                data-lightbox="gallery3"> <img src="{{asset('app/img/chefs/chefs-3.jpg')}}"
-                                    width="300px" alt="">
+                            <a onclick="lightbox()" data-lightbox="gallery3"
+                                href="{{asset('app/img/chefs/chefs-3.jpg')}}"> <img
+                                    src="{{asset('app/img/chefs/chefs-3.jpg')}}" width="300px" alt="">
                             </a>
                             <div class="member-info">
                                 <div class="member-info-content">
