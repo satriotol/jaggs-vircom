@@ -95,6 +95,13 @@
             @endforeach
             <div class="container">
                 <div class="row">
+                    <div class="mx-auto">
+                        {{ $lombas->links() }}
+                </div>
+                </div>
+            </div>
+            {{-- <div class="container">
+                <div class="row">
                     <div class="col-md-8 offset-md-4">
                         <ul class="pagination pagination-md p-md-5">
                             <li class="page-item disabled">
@@ -105,7 +112,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
     </section><!-- End About Section -->
 </main><!-- End #main -->
 @endsection

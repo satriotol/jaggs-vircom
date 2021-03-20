@@ -1,11 +1,28 @@
 @extends('layouts.main')
 @section('content')
+<style>
+    .tentang-box {
+        margin: 0;
+        font-size: 36px;
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        color: #ffa500;
+    }
+
+</style>
 <!-- ======= Tentang Section ======= -->
 
 <main>
     <section id="tentang" class="tentang mt-5">
         <div class="container">
-            <div class="row mt-5 mb-5">
+            <div class="row">
+                <div class="offset-md-4 col-md-4">
+                    <div class="text-center">
+                        <p class="tentang-box">Profil Perusahaan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 mb-4">
                 @if ($company->image_desc)
                 <div class="col-md-6 ">
                     <a onclick="lightbox()" href="{{asset('storage/'.$company->image_desc)}}" data-lightbox="gallery1">
@@ -13,11 +30,15 @@
                             style="object-fit: cover"></a>
                 </div>
                 <div class="col-md-6">
-                    {{$company->description}}
+                    {!!$company->description!!}
                 </div>
                 @else
                 <div class="col-md-12">
-                    {{$company->description}}
+                    <div class="text-center">
+                        <p>
+                            {!!$company->description!!}
+                        </p>
+                    </div>
                 </div>
                 @endif
             </div>
@@ -50,21 +71,23 @@
             </div>
         </div>
     </section><!-- End Testimonials Section -->
-    <div class="container-fluid mt-5" style="padding-right: 0px; padding-left: 0px;">
+    <div class="container mt-5" style="padding-right: 0px; padding-left: 0px;">
         <div class="row">
-            <div class="col-md-12 text-center">
-                <h1>Visi & Misi</h1>
+            <div class="offset-md-4 col-md-4">
+                <div class="text-center">
+                    <p class="tentang-box">Visi Misi</p>
+                </div>
             </div>
         </div>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-12 ">
                     <h1>Visi</h1>
-                    <p>{{$company->vision}}</p>
+                    <p>{!!$company->vision!!}</p>
                 </div>
                 <div class="col-md-12 mt-4">
                     <h1>Misi</h1>
-                    <p>{{$company->mission}}</p>
+                    <p>{!!$company->mission!!}</p>
                 </div>
             </div>
         </div>
@@ -88,10 +111,12 @@
                                     <span style="color:  #ffa500; font-weight:bold;">{{$team->title}}</span>
                                     <p>{!!$team->description!!}</p>
                                 </div>
+                                @if ($team->instagram)
                                 <div class="text-center">
                                     <a class="socialmedia" href="{{$team->instagram}}" target="_blank"><i
-                                            class="icofont-instagram"></i></a>
-                                </div>
+                                        class="icofont-instagram"></i></a>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

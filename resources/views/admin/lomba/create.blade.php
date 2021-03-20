@@ -87,7 +87,7 @@
                                     <label for="Lomba">Link Video</label>
                                     <input type="text" name="video" class="form-control" id="video"
                                         placeholder="Masukkan Link Video Lomba..."
-                                        value="{{isset($lomba) ? $lomba->video : ''}}" required>
+                                        value="{{isset($lomba) ? $lomba->video : ''}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="Lomba">Link Lomba <span style="color: red">*</span></label>

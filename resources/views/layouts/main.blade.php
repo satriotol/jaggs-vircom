@@ -28,7 +28,7 @@
     <link href="{{asset('app/vendor/venobox/venobox.css')}}" rel="stylesheet">
     <link href="{{asset('app/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('app/style.css')}}" rel="stylesheet">
-    <link href="{{asset('app/vendor/lightbox/css/lightbox.css')}}"  rel="stylesheet">
+    <link href="{{asset('app/vendor/lightbox/css/lightbox.css')}}" rel="stylesheet">
     @yield('css')
 </head>
 
@@ -41,7 +41,7 @@
             <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav class="nav-menu d-none d-lg-block" style="font-weight: bold; background-color: black:">
-                <ul >
+                <ul>
                     <li class="{{Request::routeIs('home') ? 'aktiv' : ''}}"><a href="{{route('home')}}">Beranda</a>
                     </li>
                     <li class="{{Request::routeIs('tentang') ? 'aktiv' : ''}}"><a
@@ -73,8 +73,10 @@
                         <div class="footer-info">
                             <h3>Find We AT</h3>
                             <div class="social-links mt-3">
-                                <a href="{{$company->instagram}}" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
-                                <a href="{{$company->youtube}}" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
+                                <a href="{{$company->instagram}}" class="instagram" target="_blank"><i
+                                        class="bx bxl-instagram"></i></a>
+                                <a href="{{$company->youtube}}" class="youtube" target="_blank"><i
+                                        class="bx bxl-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +85,7 @@
         </div>
 
     </footer><!-- End Footer -->
-    <div class="container-fluid text-center" style="padding: 10px; background-color: #ffa500;border-top: 1px solid black;">
+    <div class="container-fluid text-center" style="padding: 10px;background-color: black;color: #ffa500;">
         <div class="copyright">
             @ Copyright <strong><span>Jaggs</span></strong>. All Rights Reserved
         </div>

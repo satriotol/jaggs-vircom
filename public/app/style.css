@@ -19,8 +19,9 @@ body {
     color: white;
 }
 .judul a:hover{
-    color: white;
-    border-bottom: white solid 2px;
+    transition: 1s;
+    color: #ffa500;
+    /* border-bottom: white solid 2px; */
 }
 
 .judul p{
@@ -1088,7 +1089,7 @@ section {
 .page-link {
     margin-top: 50px;
     color: white;
-    background-color: #d9ba85;
+    background-color: #ffa500;
 }
 
 .menu .menu-content a:hover {
@@ -1827,8 +1828,8 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-    background: #ffa500;
-    color: #fff;
+    background: #fff;
+    color: #28251f;
     text-decoration: none;
 }
 
