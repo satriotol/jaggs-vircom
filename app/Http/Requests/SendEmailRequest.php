@@ -27,7 +27,7 @@ class SendEmailRequest extends FormRequest
             'name' => 'required',
             'email' => 'required',
             'subject' => 'required',
-            'message' => 'required',
+            'pesan' => 'required'
         ];
     }
 }

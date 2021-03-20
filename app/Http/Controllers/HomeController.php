@@ -44,12 +44,12 @@ class HomeController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
-            'message' => $request->message,
+            'pesan' => $request->pesan
         ],
-        function ($message) use ($request) {
-            $message->from($request->email);
-            $message->to('satriotol69@gmail.com');
-            $message->subject($request->message);
+        function ($kirim) use ($request) {
+            $kirim->from($request->email);
+            $kirim->to('satriotol69@gmail.com');
+            $kirim->subject($request->subject);
         });
         return back()->with('success', 'Thanks for contacting me, I will get back to you soon!');
     }
