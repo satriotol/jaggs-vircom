@@ -46,7 +46,7 @@
         style="background:url({{asset('app/img/bg.jpeg')}}) center center;  background-size: cover;">
         <div class="container" data-aos="fade-up"  >
             @foreach ($lombas as $lomba)
-            <div class="row mt-4 mb-3 judul" style=" padding:10px; border-radius:20px; background-color:#00000096;" data-aos="fade-up">
+            <div class="row mt-4 mb-3 judul" style=" padding:20px; border-radius:20px; background-color:#00000096;" data-aos="fade-up">
                 <div class="col-lg-8">
                     <h3> <a style="font-weight: bold;" href="{{route('detail',$lomba->id)}}">{{$lomba->name}}</a></h3>
                     <p style="font-weight: bold;">
