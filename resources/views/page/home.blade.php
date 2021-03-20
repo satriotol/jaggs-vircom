@@ -7,10 +7,11 @@
             <div class="col-md-8">
                 <h1>Young <span>Start</span></h1>
                 <h2>Championship</h2>
-              </div>
-              <div class="col-md-4">
-                <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="venobox play-btn ml-auto" data-vbtype="video" data-autoplay="true"></a>
-              </div>
+            </div>
+            <div class="col-md-4">
+                <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="venobox play-btn ml-auto"
+                    data-vbtype="video" data-autoplay="true"></a>
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -18,7 +19,7 @@
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nama Lomba">
                 </div>
                 <div class="form-group">
-                    <select class="form-control select2bs4" id="exampleFormControlSelect1" >
+                    <select class="form-control select2bs4" id="exampleFormControlSelect1">
                         <option value="">Pilih Jenjang</option>
                         @foreach ($jenjangs as $jenjang)
                         <option value="{{$jenjang->id}}">{{$jenjang->name}}</option>
@@ -45,24 +46,45 @@
         style="background:url({{asset('app/img/bg.jpeg')}}) center center;  background-size: cover;">
         <div class="container" data-aos="fade-up">
             @foreach ($lombas as $lomba)
-            <div class="row mt-4 mb-4 judul">
+            <div class="row mt-4 mb-3 judul" data-aos="fade-up">
                 <div class="col-lg-8">
                     <h3> <a href="{{route('detail',$lomba->id)}}">{{$lomba->name}}</a></h3>
                     <p class="font-italic">
                         {{$lomba->kategori->name}}
                     </p>
-                        <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
-                        @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
-                        <span class="ket-lomba" style=" color: #fff;background-color:  #28a745; border-color: white;">Open</span>
+                    <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
+                    @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
+                        <span class="ket-lomba"
+                            style=" color: #fff;background-color:  #28a745; border-color: white;">Open</span>
                         @else
-                        <span class="ket-lomba" style="color: #fff;background-color: #dc3545; border-color: white;">Closed</span>
+                        <span class="ket-lomba"
+                            style="color: #fff;background-color: #dc3545; border-color: white;">Closed</span>
                         @endif
                         @endif
                 </div>
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img img-fluid">
-                        <a href="{{asset('storage/'.$lomba->image)}}"><img src="{{asset('storage/'.$lomba->image)}}"
-                                class="img-fluid" alt=""></a>
+                        <a onclick="lightbox()" data-lightbox="gallery3" href="{{asset('storage/'.$lomba->image)}}"><img
+                                src="{{asset('storage/'.$lomba->image)}}" class="img-fluid" alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div id="why-use" class="row why-us mt-5" data-aos="fade-up">
+                    <div class="col-md-5 mx-auto mb-3">
+                        <div class="row box" data-aos="zoom-in" data-aos-delay="200">
+                            <h4>Persyaratan</h4>
+                            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
+                                leno para dest</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mx-auto">
+                        <div class="row box" data-aos="zoom-in" data-aos-delay="200">
+                            <h4>Hadiah</h4>
+                            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
+                                leno para dest</p>
+                        </div>
                     </div>
                 </div>
             </div>
