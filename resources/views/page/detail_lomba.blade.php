@@ -109,10 +109,15 @@
                     <p>{{$lomba->description}}
                     </p>
                     <p class="mb-3" style="font-weight:bold; color:black;"> Durasi Lomba <br>
-                        Tanggal Mulai :  {{$lomba->start_date}} <br>
+                        Tanggal Mulai : {{$lomba->start_date}} <br>
                         Tanggal Selesai : {{$lomba->end_date}} <br>
                     </p>
-                    <a href="{{$lomba->link}}" style="color:black;" class="BtnOrange" target="_blank">Ikuti Lomba</a>
+                    <div class="container">
+                        <div class="text-center">
+                            <a href="{{$lomba->link}}" style="color:black;" class="BtnOrange" target="_blank">Ikuti
+                                Lomba</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div id="why-use" class="row why-us mt-5" data-aos="fade-up">
@@ -136,12 +141,14 @@
                 </div>
             </div>
         </div>
+        @if ($lomba->video)
         <div class="container-fluid py-5" style="background-color: black">
             <div class="col-md-12">
                 <a href="{{$lomba->video}}" class="venobox play-btn vbox-item mx-auto" data-vbtype="video"
                     data-autoplay="true"></a>
             </div>
         </div>
+        @endif
     </section><!-- End About Section -->
 </main><!-- End #main -->
 

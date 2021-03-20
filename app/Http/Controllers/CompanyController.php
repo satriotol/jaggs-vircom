@@ -77,11 +77,6 @@ class CompanyController extends Controller
             $company->deleteAsset();
             $data['image_desc'] = $image_desc;
         }
-        if ($request->hasFile('logo')){
-            $logo = $request->logo->store('logo');
-            $company->deleteAsset();
-            $data['logo'] = $logo;
-        }
         $company->update($data);
         session()->flash('success','Company Updated Successfully');
         return redirect(route('company.edit',1));

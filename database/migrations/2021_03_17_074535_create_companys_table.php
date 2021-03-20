@@ -23,7 +23,6 @@ class CreateCompanysTable extends Migration
             $table->text('vision');
             $table->text('mission');
             $table->string('video_profile')->nullable();
-            $table->string('logo')->nullable();
             $table->string('image_desc')->nullable();
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();

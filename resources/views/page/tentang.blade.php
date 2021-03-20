@@ -103,7 +103,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
                             <a onclick="lightbox()" href="{{asset('storage/'.$team->image)}}" data-lightbox="gallery1">
-                                <img src="{{asset('storage/'.$team->image)}}" width="300px" height="300px"
+                                <img src="{{asset('storage/'.$team->image)}}" width="100%" height="300px"
                                     style="object-fit: cover" data-lightbox="gallery1" alt=""></a>
                             <div class="member-info">
                                 <div class="member-info-content">

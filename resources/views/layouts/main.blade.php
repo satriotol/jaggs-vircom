@@ -71,12 +71,16 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <div class="footer-info">
-                            <h3>Find We AT</h3>
+                            <h3>Find We At</h3>
                             <div class="social-links mt-3">
+                                @if ($company->instagram)
                                 <a href="{{$company->instagram}}" class="instagram" target="_blank"><i
                                         class="bx bxl-instagram"></i></a>
+                                @endif
+                                @if ($company->youtube)
                                 <a href="{{$company->youtube}}" class="youtube" target="_blank"><i
                                         class="bx bxl-youtube"></i></a>
+                                @endif
                             </div>
                         </div>
                     </div>
