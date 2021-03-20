@@ -41,11 +41,11 @@
 
             <nav class="nav-menu d-none d-lg-block" style="font-weight: bold; background-color: black:">
                 <ul >
-                    <li class="{{Request::routeIs('home') ? 'active' : ''}}"><a href="{{route('home')}}">Beranda</a>
+                    <li class="{{Request::routeIs('home') ? 'aktiv' : ''}}"><a href="{{route('home')}}">Beranda</a>
                     </li>
-                    <li class="{{Request::routeIs('tentang') ? 'active' : ''}}"><a
+                    <li class="{{Request::routeIs('tentang') ? 'aktiv' : ''}}"><a
                             href="{{route('tentang')}}">Tentang</a></li>
-                    <li class="{{Request::routeIs('kontak') ? 'active' : ''}}"><a href="{{route('kontak')}}">Kontak</a>
+                    <li class="{{Request::routeIs('kontak') ? 'aktiv' : ''}}"><a href="{{route('kontak')}}">Kontak</a>
                     </li>
                 </ul>
             </nav><!-- .nav-menu -->

@@ -238,10 +238,7 @@ h6 {
 }
 
 .nav-menu ul li a:hover {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    box-sizing: border-box;
-    border-bottom: 1px solid black;
+    color:white;
 }
 
 .nav-menu>ul {
@@ -266,6 +263,9 @@ h6 {
     transition: 0.3s;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
+}
+.aktiv a{
+color: white;
 }
 
 .nav-menu a:hover,
