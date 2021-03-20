@@ -9,7 +9,7 @@
                 <h2>Championship</h2>
             </div>
             <div class="col-md-4">
-                <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="venobox play-btn ml-auto"
+                <a href="{{$company->youtube}}" class="venobox play-btn ml-auto"
                     data-vbtype="video" data-autoplay="true"></a>
             </div>
         </div>
@@ -69,8 +69,7 @@
                 </div>
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img img-fluid">
-                        <a onclick="lightbox()" data-lightbox="gallery3" href="{{asset('storage/'.$lomba->image)}}"><img
-                                src="{{asset('storage/'.$lomba->image)}}" class="img-fluid" alt=""></a>
+                        <a href="{{route('detail',$lomba->id)}}"><img src="{{asset('storage/'.$lomba->image)}}" class="img-fluid" alt=""></a>
                     </div>
                 </div>
                 <div class="container">

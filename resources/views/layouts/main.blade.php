@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>VIRCOM</title>
+    <title>{{$company->name}}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -29,13 +29,14 @@
     <link href="{{asset('app/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('app/style.css')}}" rel="stylesheet">
     <link href="{{asset('app/vendor/lightbox/css/lightbox.css')}}"  rel="stylesheet">
+    @yield('css')
 </head>
 
 <body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
-            <h1 class="logo mr-auto"><a href="{{route('home')}}">Vircom.id</a></h1>
+            <h1 class="logo mr-auto"><a href="{{route('home')}}">{{$company->name}}</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -68,20 +69,12 @@
                         </div>
                     </div>
                     <div class="col-md-4"></div>
-                    {{-- <div class="col-lg-4">
-                        <div class="footer-info">
-                            <h3>Video Profile</h3>
-                            <video width="100%" height="200" controls>
-                                <source src="" type="video/mp4">
-                            </video>
-                        </div>
-                    </div> --}}
                     <div class="col-md-4">
                         <div class="footer-info">
                             <h3>Find We AT</h3>
                             <div class="social-links mt-3">
-                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
+                                <a href="{{$company->instagram}}" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+                                <a href="{{$company->youtube}}" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -90,7 +83,7 @@
         </div>
 
     </footer><!-- End Footer -->
-    <div class="container-fluid text-center" style="padding: 10px; background-color: #ffa500;">
+    <div class="container-fluid text-center" style="padding: 10px; background-color: #ffa500;border-top: 1px solid black;">
         <div class="copyright">
             @ Copyright <strong><span>Jaggs</span></strong>. All Rights Reserved
         </div>

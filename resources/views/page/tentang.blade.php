@@ -6,13 +6,20 @@
     <section id="tentang" class="tentang mt-5">
         <div class="container">
             <div class="row mt-5 mb-5">
+                @if ($company->image_desc)
                 <div class="col-md-6 ">
-                    <a onclick="lightbox()" href="{{asset('app/img/about.jpg')}}" data-lightbox="gallery1">
-                        <img src="{{asset('app/img/about.jpg')}}" alt="" width="500px" height="300px"></a>
+                    <a onclick="lightbox()" href="{{asset('storage/'.$company->image_desc)}}" data-lightbox="gallery1">
+                        <img src="{{asset('storage/'.$company->image_desc)}}" alt="" width="100%" height="300px"
+                            style="object-fit: cover"></a>
                 </div>
                 <div class="col-md-6">
                     {{$company->description}}
                 </div>
+                @else
+                <div class="col-md-12">
+                    {{$company->description}}
+                </div>
+                @endif
             </div>
         </div>
     </section><!-- End Chefs Section -->
@@ -27,8 +34,19 @@
 
     <section id="" class="section-bg" data-aos="fade-right" data-aos-delay="100">
         <div class="container">
-            <div class="col-md-12 text-center">
-                <h1 style="color: #ffa500; ">{{$lomba}} Aktif</h1>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h4 style="color: #ffa500;">LOMBA</h4>
+                    <h1 style="color: #ffa500; ">{{$lomba}}</h1>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h4 style="color: #ffa500;">KATEGORI</h4>
+                    <h1 style="color: #ffa500; ">{{$kategori}}</h1>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h4 style="color: #ffa500;">JENJANG</h4>
+                    <h1 style="color: #ffa500; ">{{$jenjang}}</h1>
+                </div>
             </div>
         </div>
     </section><!-- End Testimonials Section -->
@@ -57,80 +75,27 @@
                     <h2>Team Kita</h2>
                     <p>Our Team</p>
                 </div>
-
                 <div class="row">
+                    @foreach ($teams as $team)
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <a onclick="lightbox()" href="{{asset('app/img/chefs/chefs-1.jpg')}}"
-                                data-lightbox="gallery1">
-                                <img src="{{asset('app/img/chefs/chefs-1.jpg')}}" width="300px" data-lightbox="gallery1"
-                                    class="img-fluid" alt=""></a>
+                            <a onclick="lightbox()" href="{{asset('storage/'.$team->image)}}" data-lightbox="gallery1">
+                                <img src="{{asset('storage/'.$team->image)}}" width="300px" height="300px"
+                                    style="object-fit: cover" data-lightbox="gallery1" alt=""></a>
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4 style="font-weight:bold;">Walter White</h4>
-                                    <span style="color:  #ffa500; font-weight:bold;">Master Chef</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, tenetur?
-                                        Sunt, obcaecati. Hic labore velit distinctio maxime nobis sunt, commodi
-                                        voluptatum. Fugit non atque tempore adipisci saepe iste, debitis veniam qui eum
-                                        eos quia sed illo ea magni culpa modi? Qui doloremque quia in dolore molestiae
-                                        eveniet alias beatae quam?</p>
+                                    <h4 style="font-weight:bold;">{{$team->name}}</h4>
+                                    <span style="color:  #ffa500; font-weight:bold;">{{$team->title}}</span>
+                                    <p>{!!$team->description!!}</p>
                                 </div>
-                                <div>
-                                    <a class="socialmedia" href=""><i class="icofont-facebook"></i></a>
-                                    <a class="socialmedia" href=""><i class="icofont-instagram"></i></a>
+                                <div class="text-center">
+                                    <a class="socialmedia" href="{{$team->instagram}}" target="_blank"><i
+                                            class="icofont-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <a onclick="lightbox()" href="{{asset('app/img/chefs/chefs-2.jpg')}}"
-                                data-lightbox="gallery2">
-                                <img src="{{asset('app/img/chefs/chefs-2.jpg')}}" width="300px" data-lightbox="gallery2"
-                                    class="img-fluid" alt="">
-                            </a>
-                            <div class="member-info">
-                                <div class="member-info-content">
-                                    <h4 style="font-weight:bold;">Sarah Jhonson</h4>
-                                    <span style="color:  #ffa500;  font-weight:bold;">Patissier</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui molestias sunt
-                                        libero at. Dolore enim repellendus, ipsam ullam rerum repudiandae et ratione ad
-                                        perspiciatis esse eveniet veniam quibusdam sequi doloremque voluptatum?
-                                        Accusamus obcaecati quidem facilis nostrum in explicabo, numquam molestiae eum
-                                        labore quo unde doloremque ipsum nulla delectus corporis fuga?</p>
-                                </div>
-                                <div>
-                                    <a class="socialmedia" href=""><i class="icofont-facebook"></i></a>
-                                    <a class="socialmedia" href=""><i class="icofont-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                            <a onclick="lightbox()" data-lightbox="gallery3"
-                                href="{{asset('app/img/chefs/chefs-3.jpg')}}"> <img
-                                    src="{{asset('app/img/chefs/chefs-3.jpg')}}" width="300px" alt="">
-                            </a>
-                            <div class="member-info">
-                                <div class="member-info-content">
-                                    <h4 style=" font-weight:bold;">William Anderson</h4>
-                                    <span style="color:  #ffa500;  font-weight:bold;">Cook</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia perferendis
-                                        optio nisi, quisquam atque quaerat eius. Fuga pariatur amet ducimus error nobis
-                                        doloremque, aut, excepturi quod blanditiis beatae ullam aperiam facilis iusto
-                                        quaerat vero. Repudiandae nobis animi aliquam, dignissimos obcaecati eaque, aut
-                                        commodi quam nam sequi ut quis vero culpa?</p>
-                                </div>
-                                <div>
-                                    <a class="socialmedia" href=""><i class="icofont-facebook"></i></a>
-                                    <a class="socialmedia" href=""><i class="icofont-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section><!-- End Chefs Section -->

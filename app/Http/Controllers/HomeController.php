@@ -7,6 +7,7 @@ use App\Http\Requests\SendEmailRequest;
 use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
+use App\Teams;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -31,8 +32,11 @@ class HomeController extends Controller
     }
     public function tentang()
     {
+        $teams = Teams::all();
         $lomba = Lomba::all()->count();
-        return view('page.tentang')->with('lomba',$lomba);
+        $kategori = Kategori::all()->count();
+        $jenjang = Jenjang::all()->count();
+        return view('page.tentang')->with('lomba',$lomba)->with('teams',$teams)->with('kategori',$kategori)->with('jenjang',$jenjang);
     }
     public function kontak()
     {

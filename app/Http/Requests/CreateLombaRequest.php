@@ -29,7 +29,7 @@ class CreateLombaRequest extends FormRequest
             'id_jenjang'=>'required',
             'description'=>'required',
             'image'=>'required|image',
-            'video'=>'nullable|mimes:mp4,mov,ogg,qt',
+            'video'=>'nullable|url',
             'link'=>'required|url',
             'start_date'=>'required|date',
             'end_date'=>'required|date'

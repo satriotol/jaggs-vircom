@@ -6,6 +6,7 @@ use App\Http\Requests\CreateTeamRequest;
 use App\Http\Requests\UpdateTeamRequest;
 use App\Teams;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -98,8 +99,13 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Teams $team)
     {
+        // Storage::delete($lomba->image,$lomba->video);
+        Storage::delete($team->image);
+        $team->delete();
+        session()->flash('success','Team Deleted Successfully');
+        return redirect(route('team.index'));
         //
     }
 }

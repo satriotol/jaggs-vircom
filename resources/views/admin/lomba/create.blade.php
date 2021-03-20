@@ -84,11 +84,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="customFile">Video</label>
-                                    <div class="custom-file">
-                                        <input name="video" type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
+                                    <label for="Lomba">Link Video</label>
+                                    <input type="text" name="video" class="form-control" id="video"
+                                        placeholder="Masukkan Link Video Lomba..."
+                                        value="{{isset($lomba) ? $lomba->video : ''}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Lomba">Link Lomba <span style="color: red">*</span></label>

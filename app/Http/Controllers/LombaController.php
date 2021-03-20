@@ -49,17 +49,12 @@ class LombaController extends Controller
         }else{
             $image =null;
         }
-        if ($request->video) {
-            $video = $request->video->store('video');
-        }else{
-            $video=null;
-        }
         $lomba = Lomba::create([
             'name' => $request->name,
             'description' => $request->description,
             'kategori_id'=> $request->kategori_id,
             'image'=> $image,
-            'video' => $video,
+            'video' => $request->video,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
             'link' => $request->link
@@ -105,17 +100,12 @@ class LombaController extends Controller
      */
     public function update(UpdateLombaRequest $request, Lomba $lomba)
     {
-        $data =$request->only(['name','kategori_id','description','link','start_date','end_date']);
+        $data =$request->only(['name','kategori_id','video','description','link','start_date','end_date']);
         if($request->hasFile('image')){
             // $image = Storage::disk('public')->put('image',$request->image);
             $image = $request->image->store('image');
             $lomba->deleteImage();
             $data['image'] = $image;
-        }
-        if($request->hasFile('video')){
-            $video = $request->video->store('video');
-            $lomba->deleteVideo();
-            $data['video'] = $video;
         }
         if($request->id_jenjang){
             $lomba->jenjang()->sync($request->id_jenjang);
