@@ -25,6 +25,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/detail/{lomba}', 'HomeController@detail')->name('detail');
 Route::get('/tentang', 'HomeController@tentang')->name('tentang');
 Route::get('/kontak', 'HomeController@kontak')->name('kontak');
+Route::post('/kontak', 'HomeController@sendemail')->name('sendemail');
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['role:admin']], function () {
         Route::get('/admin','AdminController@index')->name('admin.index');

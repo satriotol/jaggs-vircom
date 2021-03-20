@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Companys;
+use App\Http\Requests\SendEmailRequest;
 use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -35,6 +37,21 @@ class HomeController extends Controller
     public function kontak()
     {
         return view('page.kontak');
+    }
+    public function sendemail(SendEmailRequest $request)
+    {
+        Mail::send('email',[
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ],
+        function ($message) use ($request) {
+            $message->from($request->email);
+            $message->to('satriotol69@gmail.com');
+            $message->subject($request->message);
+        });
+        return back()->with('success', 'Thanks for contacting me, I will get back to you soon!');
     }
 
 }
