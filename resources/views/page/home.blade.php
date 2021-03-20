@@ -44,15 +44,20 @@
 <main id="main">
     <section id="about" class="about"
         style="background:url({{asset('app/img/bg.jpeg')}}) center center;  background-size: cover;">
-        <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up"  >
             @foreach ($lombas as $lomba)
-            <div class="row mt-4 mb-3 judul" data-aos="fade-up">
+            <div class="row mt-4 mb-3 judul" style=" padding:10px; border-radius:20px; background-color:#00000096;" data-aos="fade-up">
                 <div class="col-lg-8">
-                    <h3> <a href="{{route('detail',$lomba->id)}}">{{$lomba->name}}</a></h3>
-                    <p class="font-italic">
+                    <h3> <a style="font-weight: bold;" href="{{route('detail',$lomba->id)}}">{{$lomba->name}}</a></h3>
+                    <p style="font-weight: bold;">
                         {{$lomba->kategori->name}}
                     </p>
-                    <p>{{ substr(strip_tags($lomba->description),0,200)}}...</p>
+
+                    <p style="font-weight: bold;">
+                        @foreach ($jenjangs as $jenjang) {{$jenjang->name}}    @endforeach
+                    </p>
+
+                    <p style="font-weight: bold;">{{ substr(strip_tags($lomba->description),0,200)}}...</p>
                     @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
                         <span class="ket-lomba"
                             style=" color: #fff;background-color:  #28a745; border-color: white;">Open</span>
@@ -68,26 +73,26 @@
                                 src="{{asset('storage/'.$lomba->image)}}" class="img-fluid" alt=""></a>
                     </div>
                 </div>
-
-            </div>
-            <div class="container">
-                <div id="why-use" class="row why-us mt-5" data-aos="fade-up">
-                    <div class="col-md-5 mx-auto mb-3">
-                        <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                            <h4>Persyaratan</h4>
-                            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
-                                leno para dest</p>
+                <div class="container">
+                    <div id="why-use" class="row why-us mt-5" data-aos="fade-up">
+                        <div class="col-md-5 mx-auto mb-3">
+                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
+                                <h4>Persyaratan</h4>
+                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
+                                    leno para dest</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-5 mx-auto">
-                        <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                            <h4>Hadiah</h4>
-                            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
-                                leno para dest</p>
+                        <div class="col-md-5 mx-auto">
+                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
+                                <h4>Hadiah</h4>
+                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
+                                    leno para dest</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             @endforeach
             <div class="container">
                 <div class="row">

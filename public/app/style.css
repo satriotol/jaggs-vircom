@@ -18,6 +18,14 @@ body {
 .judul h3 a p {
     color: white;
 }
+.judul a:hover{
+    color: white;
+    border-bottom: white solid 2px;
+}
+
+.judul p{
+    color: white !important;
+}
 
 .detail p {
     font-family: "Open Sans", sans-serif;

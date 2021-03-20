@@ -21,7 +21,7 @@
                         <div class="container aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
                             <div class="col-md-12 text-center">
                                 <a onclick="lightbox()" data-lightbox="gallery3" href="{{asset('storage/'.$lomba->image)}}">
-                                <img width="70%" height="70%" style="object-fit: cover;"
+                                <img width="50%" height="50%" style="object-fit: cover;"
                                 src="{{asset('storage/'.$lomba->image)}}"></a>
                             </div>
                         </div>
