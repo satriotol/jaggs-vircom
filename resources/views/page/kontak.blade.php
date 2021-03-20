@@ -9,7 +9,7 @@
         </div>
         <div class="container" data-aos="fade-up">
             <div class="row mt-5">
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     <div class="info">
                         <div class="address">
                             <i class="icofont-google-map"></i>
@@ -21,14 +21,12 @@
                             <h4>Email:</h4>
                             <p>{{$company->email}}</p>
                         </div>
-                        <div class="phone">
+                        <div class="phone mb-5">
                             <i class="icofont-phone"></i>
                             <h4>Call:</h4>
                             <p>{{$company->phone_number}}</p>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="col-lg-8 mt-5 mt-lg-0">

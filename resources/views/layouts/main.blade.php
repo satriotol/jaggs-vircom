@@ -90,7 +90,7 @@
         </div>
 
     </footer><!-- End Footer -->
-    <div class="container-fluid text-center" style="padding: 20px; background-color: black;">
+    <div class="container-fluid text-center" style="padding: 10px; background-color: #ffa500;">
         <div class="copyright">
             @ Copyright <strong><span>Jaggs</span></strong>. All Rights Reserved
         </div>

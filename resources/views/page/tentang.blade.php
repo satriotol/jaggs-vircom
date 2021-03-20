@@ -26,10 +26,10 @@
         </div>
     </section><!-- End Testimonials Section --> --}}
 
-    <section id="" class="section-bg">
-        <div class="container" data-aos="zoom-in" data-aos-delay="100">
+    <section id="" class="section-bg"  data-aos="fade-right" data-aos-delay="100">
+        <div class="container" >
             <div class="col-md-12 text-center">
-                <h1 style="color: #aaaaaa;; ">{{$lomba}} Aktif</h1>
+                <h1 style="color: #ffa500; ">{{$lomba}} Aktif</h1>
             </div>
         </div>
     </section><!-- End Testimonials Section -->
@@ -69,18 +69,16 @@
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4 style="font-weight:bold;">Walter White</h4>
-                                    <span style="color:  #cda45e; font-weight:bold;">Master Chef</span>
+                                    <span style="color:  #ffa500; font-weight:bold;">Master Chef</span>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, tenetur?
                                         Sunt, obcaecati. Hic labore velit distinctio maxime nobis sunt, commodi
                                         voluptatum. Fugit non atque tempore adipisci saepe iste, debitis veniam qui eum
                                         eos quia sed illo ea magni culpa modi? Qui doloremque quia in dolore molestiae
                                         eveniet alias beatae quam?</p>
                                 </div>
-                                <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-instagram"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                <div>
+                                    <a class="socialmedia" href=""><i class="icofont-facebook"></i></a>
+                                    <a class="socialmedia" href=""><i class="icofont-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -96,18 +94,16 @@
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4 style="font-weight:bold;">Sarah Jhonson</h4>
-                                    <span style="color:  #cda45e;  font-weight:bold;">Patissier</span>
+                                    <span style="color:  #ffa500;  font-weight:bold;">Patissier</span>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui molestias sunt
                                         libero at. Dolore enim repellendus, ipsam ullam rerum repudiandae et ratione ad
                                         perspiciatis esse eveniet veniam quibusdam sequi doloremque voluptatum?
                                         Accusamus obcaecati quidem facilis nostrum in explicabo, numquam molestiae eum
                                         labore quo unde doloremque ipsum nulla delectus corporis fuga?</p>
                                 </div>
-                                <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-instagram"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                <div >
+                                    <a class="socialmedia" href=""><i class="icofont-facebook"></i></a>
+                                    <a class="socialmedia" href=""><i class="icofont-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -122,18 +118,16 @@
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4 style=" font-weight:bold;">William Anderson</h4>
-                                    <span style="color:  #cda45e;  font-weight:bold;">Cook</span>
+                                    <span style="color:  #ffa500;  font-weight:bold;">Cook</span>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia perferendis
                                         optio nisi, quisquam atque quaerat eius. Fuga pariatur amet ducimus error nobis
                                         doloremque, aut, excepturi quod blanditiis beatae ullam aperiam facilis iusto
                                         quaerat vero. Repudiandae nobis animi aliquam, dignissimos obcaecati eaque, aut
                                         commodi quam nam sequi ut quis vero culpa?</p>
                                 </div>
-                                <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-instagram"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                <div>
+                                    <a class="socialmedia" href=""><i class="icofont-facebook"></i></a>
+                                    <a class="socialmedia" href=""><i class="icofont-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
