@@ -8,9 +8,9 @@
                 <h1>Young <span>Start</span></h1>
                 <h2>Championship</h2>
             </div>
-            @if ($company->youtube)
+            @if ($company->video_profile)
             <div class="col-md-4">
-                <a href="{{$company->youtube}}" class="venobox play-btn ml-auto" data-vbtype="video"
+                <a href="{{$company->video_profile}}" class="venobox play-btn ml-auto" data-vbtype="video"
                     data-autoplay="true"></a>
             </div>
             @endif
