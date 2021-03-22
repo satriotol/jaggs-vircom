@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateKategoriRequest;
+use App\Http\Requests\CreateSubKategoriRequest;
 use App\Kategori;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class SubKategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategoris = Kategori::whereNull('parent_id')->get();
-        return view('admin.kategori.index')->with('kategoris',$kategoris);
+        $category = Kategori::whereNotNull('parent_id')->get();
+        return view('admin.subkategori.index')->with('kategoris',$category);
     }
 
     /**
@@ -26,7 +26,8 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('admin.kategori.create');
+        $category = Kategori::where('parent_id',null)->get();
+        return view('admin.subkategori.create')->with('kategoris',$category);
     }
 
     /**
@@ -35,10 +36,11 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateKategoriRequest $request)
+    public function store(CreateSubKategoriRequest $request)
     {
         Kategori::create([
             'name' => $request->name,
+            'parent_id' => $request->parent_id
         ]);
         session()->flash('success','Category Create Successfully');
         return redirect(route('kategori.index'));
@@ -61,9 +63,9 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit($id)
     {
-        return view('admin.kategori.create')->with('kategori',$kategori);
+        //
     }
 
     /**
@@ -73,13 +75,9 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateKategoriRequest $request, Kategori $kategori)
+    public function update(Request $request, $id)
     {
-        $kategori->update([
-            'name' => $request->name
-        ]);
-        session()->flash('success','Kategori Update Successfully');
-        return redirect(route('kategori.index'));
+        //
     }
 
     /**
@@ -88,14 +86,8 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy($id)
     {
-        if ($kategori->lomba->count() >0) {
-            session()->flash('error','Kategori cannot be deleted because it has some lomba.');
-            return redirect()->back();
-        }
-        $kategori->delete();
-        session()->flash('success','Kategori Deleted Successfully');
-        return redirect(route('kategori.index'));
+        //
     }
 }

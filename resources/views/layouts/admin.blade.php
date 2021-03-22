@@ -125,6 +125,33 @@
                             </ul>
                         </li>
                         <li
+                        class="nav-item has-treeview {{Request::routeIs('subkategori.create','subkategori.edit','subkategori.index') ? 'menu-open' : ''}}">
+                        <a href="#"
+                            class="nav-link {{Request::routeIs('subkategori.create','subkategori.edit','subkategori.index') ? 'active' : ''}}">
+                            <i class="nav-icon fa fa-server"></i>
+                            <p>
+                                Sub Kategori
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('subkategori.index')}}"
+                                    class="nav-link {{Request::routeIs('subkategori.index') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List Sub Kategori</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('subkategori.create')}}"
+                                    class="nav-link {{Request::routeIs('subkategori.create','subkategori.edit') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tambah Sub Kategori</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                        <li
                             class="nav-item has-treeview {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'menu-open' : ''}}">
                             <a href="#"
                                 class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'active' : ''}}">

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class Lomba extends Model
 {
     protected $fillable = [
-        'name','kategori_id','description','image','video','link','start_date','end_date'
+        'name','kategori_id','description','image','video','link','start_date','end_date','subkategori_id'
     ];
     public function jenjang()
     {

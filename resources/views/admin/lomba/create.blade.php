@@ -49,10 +49,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Kategori <span style="color: red">*</span></label>
-                                    <select class="form-control select2bs4" name="kategori_id" style="width: 100%;" required>
-                                        <option selected="selected">Pilih Salah Satu</option>
+                                    <select class="form-control select2bs4" name="kategori_id" id="kategori_id"
+                                        style="width: 100%;" required>
                                         @foreach ($kategoris as $kategori)
-                                        <option value="{{$kategori->id}}" @if (isset($lomba)) @if ($kategori->id === $lomba->kategori_id)
+                                        <option value="{{$kategori->id}}" @if (isset($lomba)) @if ($kategori->id ===
+                                            $lomba->kategori_id)
                                             selected @endif @endif>
                                             {{$kategori->name}}
                                         </option>
@@ -60,14 +61,29 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label>Sub Kategori <span style="color: red">*</span></label>
+                                    <select class="form-control select2bs4" name="subkategori_id"
+                                        id="subkategori_id" style="width: 100%;" required>
+                                        @foreach ($subkategoris as $subkategori)
+                                        <optgroup label="{{$subkategori->parent->id}}">
+                                            <option value="{{$subkategori->id}}" @if (isset($lomba)) @if ($subkategori->
+                                                id === $lomba->kategori_id)
+                                                selected @endif @endif>
+                                                {{$subkategori->name}}
+                                            </option>
+                                            @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label>Jenjang <span style="color: red">*</span></label>
                                     <select class="select2bs4" name="id_jenjang[]" multiple="multiple"
                                         data-placeholder="Pilih Jenjang" style="width: 100%;" required>
                                         @foreach ($jenjangs as $jenjang)
-                                        <option value="{{$jenjang->id}}" @if (isset($lomba)) @if ($lomba->hasJenjang($jenjang->id))
+                                        <option value="{{$jenjang->id}}" @if (isset($lomba)) @if ($lomba->
+                                            hasJenjang($jenjang->id))
                                             selected
-                                        @endif
-                                        @endif>{{$jenjang->name}}</option>
+                                            @endif
+                                            @endif>{{$jenjang->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -120,7 +136,7 @@
                                                     <input type="text" placeholder="Masukan Tanggal Akhir ..."
                                                         name="end_date" class="form-control datetimepicker-input"
                                                         data-target="#datetimepicker8" data-toggle="datetimepicker"
-                                                        value="{{isset($lomba) ? $lomba->end_date : ''}}" required/>
+                                                        value="{{isset($lomba) ? $lomba->end_date : ''}}" required />
                                                 </div>
                                             </div>
                                         </div>
@@ -169,6 +185,17 @@
 <script type="text/javascript">
     $(document).ready(function () {
         bsCustomFileInput.init();
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        var $optgroups = $('#subkategori_id > optgroup');
+        $("#kategori_id").on("change", function () {
+            var selectedVal = this.value;
+            $('#subkategori_id').prop("disabled", false);
+            $('#subkategori_id').html($optgroups.filter('[label="' + selectedVal + '"]'));
+        });
     });
 </script>
 @endsection

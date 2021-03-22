@@ -17,6 +17,7 @@ class CreateLombaTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('kategori_id');
+            $table->integer('subkategori_id');
             $table->text('description');
             $table->string('image')->nullable();
             $table->string('video')->nullable();

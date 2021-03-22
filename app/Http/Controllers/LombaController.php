@@ -30,9 +30,10 @@ class LombaController extends Controller
      */
     public function create()
     {
-        $kategoris = Kategori::all();
+        $kategoris = Kategori::whereNull('parent_id')->get();
+        $subkategoris = Kategori::whereNotNull('parent_id')->get();
         $jenjangs = Jenjang::all();
-        return view('admin.lomba.create')->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);
+        return view('admin.lomba.create')->with('jenjangs',$jenjangs)->with('kategoris',$kategoris)->with('subkategoris',$subkategoris);
     }
 
     /**
@@ -57,7 +58,8 @@ class LombaController extends Controller
             'video' => $request->video,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'link' => $request->link
+            'link' => $request->link,
+            'subkategori_id' => $request->subkategori_id
         ]);
         if ($request->id_jenjang) {
             $lomba->jenjang()->attach($request->id_jenjang);
