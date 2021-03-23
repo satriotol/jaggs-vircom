@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -18,8 +17,6 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
-    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -29,27 +26,26 @@
                             <h3 class="card-title">Sub Kategori Form</h3>
                         </div>
                         @include('admin.partials.error')
-                        <form role="form" action="@isset($kategori) {{route('subkategori.update',$kategori->id)}} @endisset @empty($kategori) {{route('subkategori.store')}} @endempty" method="POST">
-                            @csrf
-                            @if (isset($subkategori))
+                        <form role="form" action="{{route('subkategori.update',$kategori->id)}}" method="POST">
+                        {{-- <form role="form" action="" method="POST"> --}}
                             @method('PUT')
-                            @endif
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Kategori Utama<span style="color: red">*</span></label>
                                     <select class="form-control select2bs4" name="parent_id" style="width: 100%;" required>
                                         <option selected="selected">Pilih Salah Satu</option>
-                                        @foreach ($subkategoris as $kategori)
-                                        <option value="{{$kategori->id}}" @if (isset($subkategori)) selected @endif>
+                                        @foreach ($kategoris as $kategori)
+                                        <option value="{{$kategori->id}}" @if ($kategori->id === $kategori->kategori_id) selected @endif>
                                             {{$kategori->name}}
                                         </option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="Sub Kategori">Nama Sub Kategori</label>
+                                    <label for="Kategori">Nama Sub Kategori</label>
                                     <input type="text" name="name" class="form-control" id="Kategori"
-                                        placeholder="Masukkan Sub Kategori..." required value="{{isset($subkategori) ? $subkategori->name : ''}}">
+                                        placeholder="Masukkan Kategori..." value="{{$subkategori->name}}">
                                 </div>
                             </div>
                             <div class="card-footer">

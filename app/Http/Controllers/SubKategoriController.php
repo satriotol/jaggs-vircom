@@ -26,8 +26,8 @@ class SubKategoriController extends Controller
      */
     public function create()
     {
-        $category = Kategori::where('parent_id',null)->get();
-        return view('admin.subkategori.create')->with('kategoris',$category);
+        $subkategoris = Kategori::where('parent_id',null)->get();
+        return view('admin.subkategori.create')->with('subkategoris',$subkategoris);
     }
 
     /**
@@ -42,8 +42,8 @@ class SubKategoriController extends Controller
             'name' => $request->name,
             'parent_id' => $request->parent_id
         ]);
-        session()->flash('success','Category Create Successfully');
-        return redirect(route('kategori.index'));
+        session()->flash('success','Subcategory Create Successfully');
+        return redirect(route('subkategori.index'));
     }
 
     /**
@@ -63,9 +63,10 @@ class SubKategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kategori $subkategori)
     {
-        //
+        $subkategoris = Kategori::where('parent_id',null)->get();
+        return view('admin.subkategori.create')->with('subkategori',$subkategori)->with('subkategoris',$subkategoris);
     }
 
     /**
