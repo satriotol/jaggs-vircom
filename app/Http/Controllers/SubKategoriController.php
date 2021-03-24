@@ -76,9 +76,14 @@ class SubKategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateSubKategoriRequest $request, Kategori $subkategori)
     {
-        //
+        $subkategori->update([
+            'name' => $request->name,
+            'parent_id' => $request->parent_id,
+        ]);
+        session()->flash('success','Sub Kategori Update Successfully');
+        return redirect(route('subkategori.index'));
     }
 
     /**

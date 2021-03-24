@@ -29,7 +29,7 @@
                             <h3 class="card-title">Sub Kategori Form</h3>
                         </div>
                         @include('admin.partials.error')
-                        <form role="form" action="@isset($kategori) {{route('subkategori.update',$kategori->id)}} @endisset @empty($kategori) {{route('subkategori.store')}} @endempty" method="POST">
+                        <form role="form" action="@isset($subkategori) {{route('subkategori.update',$subkategori->id)}} @endisset @empty($subkategori) {{route('subkategori.store')}} @endempty" method="POST">
                             @csrf
                             @if (isset($subkategori))
                             @method('PUT')
