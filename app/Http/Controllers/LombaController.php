@@ -105,7 +105,7 @@ class LombaController extends Controller
      */
     public function update(UpdateLombaRequest $request, Lomba $lomba)
     {
-        $data =$request->only(['name','kategori_id','video','description','link','start_date','end_date']);
+        $data =$request->only(['name','kategori_id','video','description','link','start_date','end_date','hadiah','ketentuan']);
         if($request->hasFile('image')){
             // $image = Storage::disk('public')->put('image',$request->image);
             $image = $request->image->store('image');

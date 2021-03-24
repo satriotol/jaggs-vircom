@@ -63,8 +63,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Sub Kategori <span style="color: red">*</span></label>
-                                    <select class="form-control select2bs4" name="subkategori_id"
-                                        id="subkategori_id" style="width: 100%;" required>
+                                    <select class="form-control select2bs4" name="subkategori_id" id="subkategori_id"
+                                        style="width: 100%;" required>
                                         @foreach ($subkategoris as $subkategori)
                                         <optgroup label="{{$subkategori->parent->id}}">
                                             <option value="{{$subkategori->id}}" @if (isset($lomba)) @if ($subkategori->
@@ -96,7 +96,7 @@
                                 <div class="form-group">
                                     <label>Ketentuan <span style="color: red">*</span></label>
                                     <textarea class="textarea" rows="3" placeholder="Masukkan ketentuan lomba ..."
-                                        name="ketentuan">{{isset($lomba) ? $lomba->ketentuang:''}}</textarea>
+                                        name="ketentuan">{{isset($lomba) ? $lomba->ketentuan:''}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Hadiah <span style="color: red">*</span></label>
@@ -208,12 +208,26 @@
             $('#subkategori_id').html($optgroups.filter('[label="' + selectedVal + '"]'));
         });
     });
+
 </script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script>
-    $(function () {
-        $('.textarea').summernote()
-    })
+    $('.textarea').summernote({
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['para', ['ul', 'ol', 'paragraph']],
+        ],
+        callbacks: {
+            onPaste: function (e) {
+                var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData(
+                    'Text');
+                e.preventDefault();
+                document.execCommand('insertText', false, bufferText);
+            }
+        }
+    });
 
 </script>
 @endsection

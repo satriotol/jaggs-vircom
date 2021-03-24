@@ -119,9 +119,22 @@
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <script>
-    $(function () {
-        $('.textarea').summernote()
-    })
+    $('.textarea').summernote({
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['para', ['ul', 'ol', 'paragraph']],
+        ],
+        callbacks: {
+            onPaste: function (e) {
+                var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData(
+                    'Text');
+                e.preventDefault();
+                document.execCommand('insertText', false, bufferText);
+            }
+        }
+    });
 
 </script>
 <script type="text/javascript">

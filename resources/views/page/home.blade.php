@@ -5,7 +5,7 @@
     <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
         <div class="row mb-5">
             <div class="col-md-8">
-                <h1>Young <span>Start</span></h1>
+                <h1>Young <span>Star</span></h1>
                 <h2>Championship</h2>
             </div>
             @if ($company->video_profile)
@@ -76,24 +76,6 @@
                                 class="img-fluid" alt=""></a>
                     </div>
                 </div>
-                <div class="container">
-                    <div id="why-use" class="row why-us mt-5" data-aos="fade-up">
-                        <div class="col-md-5 mx-auto mb-3">
-                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                                <h4>Persyaratan</h4>
-                                <p>{!!$lomba->ketentuan!!}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-5 mx-auto">
-                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                                <h4>Hadiah</h4>
-                                <p>{!!$lomba->hadiah!!}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             @endforeach
             <div class="container">
                 <div class="row">

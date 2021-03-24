@@ -75,31 +75,10 @@
 </style>
 <!-- ======= Tentang Section ======= -->
 <main id="main">
-    <section id="about" class="about mt-5">
-        <div class="container" data-aos="fade-up">
-            <div class="row mt-1 mb-4">
-                <div class="col-md-12">
-
-                </div>
-            </div>
-        </div>
+    <section id="about" class="mt-5">
         <div class="container detail">
-            <div class="row mt-5">
-                <div class="col-md-12 mx-auto">
-                    <div class="detail-lomba">
-                        <div class="container aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="col-md-12 text-center">
-                                <a onclick="lightbox()" data-lightbox="gallery3"
-                                    href="{{asset('storage/'.$lomba->image)}}">
-                                    <img width="50%" height="auto" style="object-fit: cover;"
-                                        src="{{asset('storage/'.$lomba->image)}}"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row mt-5 mb-4">
-                <div class="col-md-8">
+                <div class="col-lg-8 order-lg-1 order-2">
                     <div class="title">
                         <h3 style="font-weight: bold;  text-transform: uppercase;">{{$lomba->name}}</h3>
                         <h5>{{$lomba->kategori->name}} / @foreach ($lomba->jenjang as $j)
@@ -111,26 +90,35 @@
                         Tanggal Mulai : {{$lomba->start_date}} <br>
                         Tanggal Selesai : {{$lomba->end_date}} <br>
                     </p>
-                    <div class="container">
-                        <div class="text-center">
-                            <a href="{{$lomba->link}}" style="color:black;" class="BtnOrange" target="_blank">Ikuti
-                                Lomba</a>
+                </div>
+                <div class="col-lg-4 order-lg-2 order-1">
+                    <div class="text-center">
+                        <a class="venobox" href="{{asset('storage/'.$lomba->image)}}">
+                            <img width="100%" height="auto" style="object-fit: cover;"
+                                src="{{asset('storage/'.$lomba->image)}}"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="text-center">
+                    <a href="{{$lomba->link}}" style="color:black;" class="BtnOrange" target="_blank">Ikuti
+                        Lomba</a>
+                </div>
+            </div>
+            <div class="row mb-5" style="color: white">
+                <div class="col-md-6">
+                    <div id="why-use" class="why-us mt-5" data-aos="fade-up">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                            <h4 class="text-center">Persyaratan</h4>
+                            <p>{!!$lomba->ketentuan!!}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div id="why-use" class="row why-us mt-5" data-aos="fade-up">
-                        <div class="col-md-12 mx-auto mb-3">
-                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                                <h4>Persyaratan</h4>
-                                <p>{!!$lomba->ketentuan!!}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-12 mx-auto">
-                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                                <h4>Hadiah</h4>
-                                <p>{!!$lomba->hadiah!!}</p>
-                            </div>
+                <div class="col-md-6">
+                    <div id="why-use" class="why-us mt-5" data-aos="fade-up">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                            <h4 class="text-center">Hadiah</h4>
+                            <p>{!!$lomba->hadiah!!}</p>
                         </div>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ class UpdateLombaRequest extends FormRequest
             'description'=>'required',
             'hadiah'=>'required',
             'ketentuan' => 'required',
-            'image'=>'required|image|max:1000',
+            'image'=>'nullable|image|max:1000',
             'video'=>'nullable|url',
             'link'=>'required|url',
             'start_date'=>'required|date',
