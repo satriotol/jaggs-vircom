@@ -88,9 +88,10 @@ class LombaController extends Controller
      */
     public function edit(Lomba $lomba)
     {
-        $kategoris = Kategori::all();
+        $kategoris = Kategori::whereNull('parent_id')->get();
+        $subkategoris = Kategori::whereNotNull('parent_id')->get();
         $jenjangs = Jenjang::all();
-        return view('admin.lomba.create')->with('lomba',$lomba)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris);
+        return view('admin.lomba.create')->with('lomba',$lomba)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris)->with('subkategoris',$subkategoris);
     }
 
     /**

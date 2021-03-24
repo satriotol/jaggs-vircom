@@ -40,7 +40,8 @@
                                     <select class="form-control select2bs4" name="parent_id" style="width: 100%;" required>
                                         <option selected="selected">Pilih Salah Satu</option>
                                         @foreach ($subkategoris as $kategori)
-                                        <option value="{{$kategori->id}}" @if (isset($subkategori)) selected @endif>
+                                        <option value="{{$kategori->id}}" @if (isset($subkategori)) @if ($subkategori->parent_id === $kategori->id)
+                                            selected @endif @endif>
                                             {{$kategori->name}}
                                         </option>
                                         @endforeach

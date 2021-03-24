@@ -39,22 +39,24 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                @foreach ($kategoris as $kategori)
                                 <tbody>
-                                    <td>{{$kategori->name}}</td>
-                                    <td>{{$kategori->parent->name}}</td>
-                                    <td><a href="{{route('subkategori.edit',$kategori->id)}}"
-                                            class="btn btn-warning btn-sm">Edit</a>
-                                        <form class="btn" action="{{route('subkategori.destroy',$kategori->id)}}"
-                                            method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure?')">Delete</button>
-                                        </form>
-                                    </td>
+                                    @foreach ($kategoris as $kategori)
+                                    <tr>
+                                        <td>{{$kategori->name}}</td>
+                                        <td>{{$kategori->parent->name}}</td>
+                                        <td><a href="{{route('subkategori.edit',$kategori->id)}}"
+                                                class="btn btn-warning btn-sm">Edit</a>
+                                            <form class="btn" action="{{route('subkategori.destroy',$kategori->id)}}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('Are you sure?')">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
-                                @endforeach
                             </table>
                         </div>
                     </div>
@@ -70,5 +72,6 @@
     $(document).ready(function () {
         $('#table').DataTable();
     });
+
 </script>
 @endsection

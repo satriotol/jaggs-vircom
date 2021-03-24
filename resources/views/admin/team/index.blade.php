@@ -39,22 +39,26 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                @foreach ($teams as $team)
                                 <tbody>
-                                    <td>{{$team->name}}</td>
-                                    <td>{{$team->title}}</td>
-                                    <td><img src="{{asset('storage/'.$team->image)}}" width="100" height="100" style="object-fit: cover" alt=""></td>
-                                    <td>
-                                        <a href="{{route('team.edit',$team->id)}}"
-                                            class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{route('team.destroy', $team->id)}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input class="btn btn-danger btn-sm"  type="submit" value="Delete" onclick="return confirm('Are you sure?')">
-                                        </form>
-                                    </td>
+                                    @foreach ($teams as $team)
+                                    <tr>
+                                        <td>{{$team->name}}</td>
+                                        <td>{{$team->title}}</td>
+                                        <td><img src="{{asset('storage/'.$team->image)}}" width="100" height="100"
+                                                style="object-fit: cover" alt=""></td>
+                                        <td>
+                                            <a href="{{route('team.edit',$team->id)}}"
+                                                class="btn btn-warning btn-sm">Edit</a>
+                                            <form action="{{route('team.destroy', $team->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input class="btn btn-danger btn-sm" type="submit" value="Delete"
+                                                    onclick="return confirm('Are you sure?')">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
-                                @endforeach
                             </table>
                         </div>
                     </div>
@@ -70,5 +74,6 @@
     $(document).ready(function () {
         $('#table').DataTable();
     });
+
 </script>
 @endsection

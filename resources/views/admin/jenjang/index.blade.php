@@ -38,20 +38,23 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                @foreach ($jenjangs as $jenjang)
                                 <tbody>
-                                    <td>{{$jenjang->name}}</td>
-                                    <td><a href="{{route('jenjang.edit',$jenjang->id)}}"
-                                            class="btn btn-warning btn-sm">Edit</a>
-                                        <form class="btn" action="{{route('jenjang.destroy', $jenjang->id)}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure?')">Delete</button>
-                                        </form>
-                                    </td>
+                                    @foreach ($jenjangs as $jenjang)
+                                    <tr>
+                                        <td>{{$jenjang->name}}</td>
+                                        <td><a href="{{route('jenjang.edit',$jenjang->id)}}"
+                                                class="btn btn-warning btn-sm">Edit</a>
+                                            <form class="btn" action="{{route('jenjang.destroy', $jenjang->id)}}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('Are you sure?')">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
-                                @endforeach
                             </table>
                         </div>
                     </div>
@@ -67,5 +70,6 @@
     $(document).ready(function () {
         $('#table').DataTable();
     });
+
 </script>
 @endsection

@@ -37,35 +37,41 @@
                                         <th>Kategori</th>
                                         <th>Jenjang</th>
                                         <th>Foto</th>
-                                        <th>action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                @foreach ($lombas as $lomba)
                                 <tbody>
-                                    <td>{{$lomba->name}}</td>
-                                    <td>{{$lomba->kategori->name}}</td>
-                                    <td>
-                                        @foreach ($lomba->jenjang as $j)
-                                        {{$j->name}},
-                                        @endforeach
-                                    </td>
-                                    @if ($lomba->image)
-                                    <td><a href="{{asset('storage/'.$lomba->image)}}" target="_blank">Click Here!</a></td>
-                                    @else
-                                    <td>Image Not Found</td>
-                                    @endif
-                                    <td>
-                                        <a href="{{route('lomba.show',$lomba->id)}}" class="btn btn-primary btn-sm">Detail</a>
-                                        <a href="{{route('lomba.edit',$lomba->id)}}"
-                                            class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{route('lomba.destroy', $lomba->id)}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input class="btn btn-danger btn-sm"  type="submit" value="Delete" onclick="return confirm('Are you sure?')">
-                                        </form>
-                                    </td>
+                                    @foreach ($lombas as $lomba)
+                                    <tr>
+
+                                        <td>{{$lomba->name}}</td>
+                                        <td>{{$lomba->kategori->name}}</td>
+                                        <td>
+                                            @foreach ($lomba->jenjang as $j)
+                                            {{$j->name}},
+                                            @endforeach
+                                        </td>
+                                        @if ($lomba->image)
+                                        <td><a href="{{asset('storage/'.$lomba->image)}}" target="_blank">Click
+                                                Here!</a></td>
+                                        @else
+                                        <td>Image Not Found</td>
+                                        @endif
+                                        <td>
+                                            <a href="{{route('lomba.show',$lomba->id)}}"
+                                                class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{route('lomba.edit',$lomba->id)}}"
+                                                class="btn btn-warning btn-sm">Edit</a>
+                                            <form action="{{route('lomba.destroy', $lomba->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input class="btn btn-danger btn-sm" type="submit" value="Delete"
+                                                    onclick="return confirm('Are you sure?')">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
-                                @endforeach
                             </table>
                         </div>
                     </div>
@@ -81,5 +87,6 @@
     $(document).ready(function () {
         $('#table').DataTable();
     });
+
 </script>
 @endsection
