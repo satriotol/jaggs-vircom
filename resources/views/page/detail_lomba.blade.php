@@ -106,8 +106,7 @@
                             {{$j->name}},
                             @endforeach</h5>
                     </div>
-                    <p>{{$lomba->description}}
-                    </p>
+                    <p>{!!$lomba->description!!}</p>
                     <p class="mb-3" style="font-weight:bold; color:black;"> Durasi Lomba <br>
                         Tanggal Mulai : {{$lomba->start_date}} <br>
                         Tanggal Selesai : {{$lomba->end_date}} <br>
@@ -124,17 +123,13 @@
                         <div class="col-md-12 mx-auto mb-3">
                             <div class="row box" data-aos="zoom-in" data-aos-delay="200">
                                 <h4>Persyaratan</h4>
-                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel
-                                    dire
-                                    leno para dest</p>
+                                <p>{!!$lomba->ketentuan!!}</p>
                             </div>
                         </div>
                         <div class="col-md-12 mx-auto">
                             <div class="row box" data-aos="zoom-in" data-aos-delay="200">
                                 <h4>Hadiah</h4>
-                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel
-                                    dire
-                                    leno para dest</p>
+                                <p>{!!$lomba->hadiah!!}</p>
                             </div>
                         </div>
                     </div>

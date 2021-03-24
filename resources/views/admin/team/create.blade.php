@@ -82,8 +82,8 @@
 </div>
 @endsection
 @section('script')
-<script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script>
     $(function () {
         $('.textarea').summernote()

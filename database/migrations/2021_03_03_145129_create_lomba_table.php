@@ -19,6 +19,8 @@ class CreateLombaTable extends Migration
             $table->integer('kategori_id');
             $table->integer('subkategori_id');
             $table->text('description');
+            $table->text('ketentuan');
+            $table->text('hadiah');
             $table->string('image')->nullable();
             $table->string('video')->nullable();
             $table->string('link')->nullable();

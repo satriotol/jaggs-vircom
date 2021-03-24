@@ -2,6 +2,7 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('/plugins/select2/css/select2.min.css')}}">
 <link rel="stylesheet" href="{{asset('/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
 @endsection
 @section('content')
 
@@ -89,8 +90,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Lomba <span style="color: red">*</span></label>
-                                    <textarea class="form-control" rows="3" placeholder="Masukkan deskripsi lomba ..."
+                                    <textarea class="textarea" rows="3" placeholder="Masukkan deskripsi lomba ..."
                                         name="description">{{isset($lomba) ? $lomba->description:''}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ketentuan <span style="color: red">*</span></label>
+                                    <textarea class="textarea" rows="3" placeholder="Masukkan ketentuan lomba ..."
+                                        name="ketentuan">{{isset($lomba) ? $lomba->ketentuang:''}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Hadiah <span style="color: red">*</span></label>
+                                    <textarea class="textarea" rows="3" placeholder="Masukkan hadiah lomba ..."
+                                        name="hadiah">{{isset($lomba) ? $lomba->hadiah:''}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="customFile">Image <span style="color: red">*</span></label>
@@ -197,5 +208,12 @@
             $('#subkategori_id').html($optgroups.filter('[label="' + selectedVal + '"]'));
         });
     });
+</script>
+<script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script>
+    $(function () {
+        $('.textarea').summernote()
+    })
+
 </script>
 @endsection

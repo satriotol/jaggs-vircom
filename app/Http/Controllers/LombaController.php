@@ -55,6 +55,8 @@ class LombaController extends Controller
             'description' => $request->description,
             'kategori_id'=> $request->kategori_id,
             'image'=> $image,
+            'hadiah' => $request->hadiah,
+            'ketentuan' => $request->ketentuan,
             'video' => $request->video,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,

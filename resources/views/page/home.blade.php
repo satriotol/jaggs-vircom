@@ -60,7 +60,7 @@
                         @foreach ($jenjangs as $jenjang) {{$jenjang->name}} @endforeach
                     </p>
 
-                    <p style="font-weight: bold;">{{ substr(strip_tags($lomba->description),0,200)}}...</p>
+                    <p style="font-weight: bold;">{!! substr(strip_tags($lomba->description),0,200)!!}...</p>
                     @if ($lomba->start_date <= now()) @if ($lomba->end_date >= now())
                         <span class="ket-lomba"
                             style=" color: #fff;background-color:  #28a745; border-color: white;">Open</span>
@@ -81,17 +81,13 @@
                         <div class="col-md-5 mx-auto mb-3">
                             <div class="row box" data-aos="zoom-in" data-aos-delay="200">
                                 <h4>Persyaratan</h4>
-                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel
-                                    dire
-                                    leno para dest</p>
+                                <p>{!!$lomba->ketentuan!!}</p>
                             </div>
                         </div>
                         <div class="col-md-5 mx-auto">
                             <div class="row box" data-aos="zoom-in" data-aos-delay="200">
                                 <h4>Hadiah</h4>
-                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel
-                                    dire
-                                    leno para dest</p>
+                                <p>{!!$lomba->hadiah!!}</p>
                             </div>
                         </div>
                     </div>
