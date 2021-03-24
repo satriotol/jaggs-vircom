@@ -75,7 +75,7 @@
 </style>
 <!-- ======= Tentang Section ======= -->
 <main id="main">
-    <section id="about" class="mt-5">
+    <section id="about">
         <div class="container detail">
             <div class="row mt-5 mb-4">
                 <div class="col-lg-8 order-lg-1 order-2">
