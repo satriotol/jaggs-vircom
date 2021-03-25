@@ -30,5 +30,9 @@ class JenjangKategoriSeeder extends Seeder
         Kategori::create([
             'name' => 'OLAHRAGA'
         ]);
+        Kategori::create([
+            'name' => 'FUTSAL',
+            'parent_id' => 2
+        ]);
     }
 }
