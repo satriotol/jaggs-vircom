@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('kategori','ApiController@get_all_kategori');
+Route::resource('kategori', 'KategoriApiController',['except' => ['create','edit']])->names('api.kategori');
+// Route::get('kategori/{kategori}','KategoriApiController@search')->name('api.kategori.search');
