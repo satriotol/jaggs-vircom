@@ -5,13 +5,14 @@
     <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
         <div class="row mb-5">
             <div class="col-md-8">
-                <h1>Young <span>Start</span></h1>
+                <h1>Young <span>Star</span></h1>
                 <h2>Championship</h2>
             </div>
+            @if ($company->video_profile)
             <div class="col-md-4">
-                <a href="{{$company->youtube}}" class="venobox play-btn ml-auto" data-vbtype="video"
-                    data-autoplay="true"></a>
+                <a href="{{$company->video_profile}}" class="venobox play-btn ml-auto" data-vbtype="video">
             </div>
+            @endif
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -58,8 +59,8 @@
                         @foreach ($jenjangs as $jenjang) {{$jenjang->name}} @endforeach
                     </p>
 
-                    <p style="font-weight: bold;">{{ substr(strip_tags($lomba->description),0,200)}}...</p>
-                    @if ($lomba->start_date < now()) @if ($lomba->end_date > now())
+                    <p style="font-weight: bold;">{!! substr(strip_tags($lomba->description),0,200)!!}...</p>
+                    @if ($lomba->start_date <= now()) @if ($lomba->end_date >= now())
                         <span class="ket-lomba"
                             style=" color: #fff;background-color:  #28a745; border-color: white;">Open</span>
                         @else
@@ -74,28 +75,7 @@
                                 class="img-fluid" alt=""></a>
                     </div>
                 </div>
-                <div class="container">
-                    <div id="why-use" class="row why-us mt-5" data-aos="fade-up">
-                        <div class="col-md-5 mx-auto mb-3">
-                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                                <h4>Persyaratan</h4>
-                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel
-                                    dire
-                                    leno para dest</p>
-                            </div>
-                        </div>
-                        <div class="col-md-5 mx-auto">
-                            <div class="row box" data-aos="zoom-in" data-aos-delay="200">
-                                <h4>Hadiah</h4>
-                                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel
-                                    dire
-                                    leno para dest</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
             @endforeach
             <div class="container">
                 <div class="row">
@@ -123,23 +103,23 @@
 @endsection
 @section('script')
 <script type="text/javascript">
- $('#Search').on('click', function () {
-    var showData = $('#kategori').val();
-    var expression = new RegExp(showData, "i");
-    var e = document.getElementById("kategori");
-     var showDataName = e.options[e.selectedIndex].text;
+    $('#Search').on('click', function () {
+        var showData = $('#kategori').val();
+        var expression = new RegExp(showData, "i");
+        var e = document.getElementById("kategori");
+        var showDataName = e.options[e.selectedIndex].text;
 
-    $.getJSON("http://127.0.0.1:8000/api/kategori", function(data){
-        $.each(data, function(key, value){
-            if((value.name = showDataName) && (value.id = showData)){
-                if(value.name.search(expression != -1)){
-                    $("#data").html("<h3 style='color:white;'>" + value.id + "</h3><h3 style='color:white;'>" + value.name + "</h3>");
+        $.getJSON("http://127.0.0.1:8000/api/kategori", function (data) {
+            $.each(data, function (key, value) {
+                if ((value.name = showDataName) && (value.id = showData)) {
+                    if (value.name.search(expression != -1)) {
+                        $("#data").html("<h3 style='color:white;'>" + value.id +
+                            "</h3><h3 style='color:white;'>" + value.name + "</h3>");
+                    }
                 }
-            }
+            });
         });
     });
-});
 
 </script>
 @endsection
-
