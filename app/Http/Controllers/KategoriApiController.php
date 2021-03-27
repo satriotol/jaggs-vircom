@@ -12,19 +12,22 @@ class KategoriApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // public function index()
+    // {
+    //     $kategoris = Kategori::all();
+    //     return response()->json($kategoris,200);
+    // }
+    public function index(Request $request,Kategori $kategori)
     {
-        $kategoris = Kategori::all();
-        return response()->json($kategoris,200);
-    }
-    public function search(Request $request,Kategori $kategori)
-    {
+
         if ($request->has('id')) {
             return $kategori->where('id', $request->input('id'))->get();
         }
         if ($request->has('name')) {
             return $kategori->where('name', $request->input('name'))->get();
         }
+        $kategoris = Kategori::all();
+        return response()->json($kategoris,200);
     }
 
     /**
