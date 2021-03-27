@@ -19,12 +19,12 @@ class KategoriApiController extends Controller
     // }
     public function index(Request $request,Kategori $kategori)
     {
-
         if ($request->has('id')) {
             return $kategori->where('id', $request->input('id'))->get();
         }
         if ($request->has('name')) {
-            return $kategori->where('name', $request->input('name'))->get();
+            $data = Kategori::where('name', 'like', '%'.$request->input('name').'%')->get();
+            return response()->json($data,200);
         }
         $kategoris = Kategori::all();
         return response()->json($kategoris,200);
