@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\KategoriCollection;
 use App\Kategori;
 use Illuminate\Http\Request;
 
@@ -19,15 +20,15 @@ class KategoriApiController extends Controller
     // }
     public function index(Request $request,Kategori $kategori)
     {
+        $kategoris = Kategori::all();
         if ($request->has('id')) {
             return $kategori->where('id', $request->input('id'))->get();
         }
         if ($request->has('name')) {
             $data = Kategori::where('name', 'like', '%'.$request->input('name').'%')->get();
-            return response()->json($data,200);
+            return new KategoriCollection($data);
         }
-        $kategoris = Kategori::all();
-        return response()->json($kategoris,200);
+        return new KategoriCollection($kategoris);
     }
 
     /**
