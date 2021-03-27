@@ -29,9 +29,9 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control" id="kategori">
-                        <option value="">Pilih Kategori</option>
+                        <option value="kosong">Pilih Kategori</option>
                         @foreach ($kategoris as $kategori)
-                        <option value="{{$kategori->id}}">{{$kategori->name}}</option>
+                        <option value="{{$kategori->name}}">{{$kategori->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -104,20 +104,43 @@
 @section('script')
 <script type="text/javascript">
     $('#Search').on('click', function () {
-        var showData = $('#kategori').val();
-        var expression = new RegExp(showData, "i");
-        var e = document.getElementById("kategori");
-        var showDataName = e.options[e.selectedIndex].text;
+        $value = $(document.getElementById('kategori')).val();
 
-        $.getJSON("http://127.0.0.1:8000/api/kategori", function (data) {
-            $.each(data, function (key, value) {
-                if ((value.name = showDataName) && (value.id = showData)) {
-                    if (value.name.search(expression != -1)) {
-                        $("#data").html("<h3 style='color:white;'>" + value.id +
-                            "</h3><h3 style='color:white;'>" + value.name + "</h3>");
-                    }
+        $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/kategori',
+            data: {
+                'name': $value
+            },
+            success: function (result) {
+
+                let sukses = result.meta.total_post;
+                if (sukses > 0) {
+                    let hasil = result.data;
+                    $.each(hasil, function (key, value) {
+                        $('#data').html(value.name);
+                    });
+                } else {
+                    $.ajax({
+                        type: 'get',
+                        url: 'http://127.0.0.1:8000/api/kategori',
+                        data: {
+                            'name': ''
+                        },
+                        success: function (result) {
+                            let sukses = result.meta.total_post;
+                            let hasil = result.data;
+                            var text = "";
+                            var i;
+                            for (i = 0; i < sukses; i++) {
+                                text += hasil[i].name + "<br>";
+                            }
+                            document.getElementById("data").innerHTML = text;
+                        }
+                    });
                 }
-            });
+
+            }
         });
     });
 
