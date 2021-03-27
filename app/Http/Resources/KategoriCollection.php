@@ -15,6 +15,7 @@ class KategoriCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
+            'status' => 'Sukses',
             'data' => KategoriResource::collection($this->collection),
             'meta' => [
                 'total_post' => $this->collection->count()
