@@ -17,6 +17,15 @@ class KategoriApiController extends Controller
         $kategoris = Kategori::all();
         return response()->json($kategoris,200);
     }
+    public function search(Request $request,Kategori $kategori)
+    {
+        if ($request->has('id')) {
+            return $kategori->where('id', $request->input('id'))->get();
+        }
+        if ($request->has('name')) {
+            return $kategori->where('name', $request->input('name'))->get();
+        }
+    }
 
     /**
      * Show the form for creating a new resource.
