@@ -16,7 +16,7 @@ class KategoriResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'subkategori' => $this->children
+            'subkategori' => $this->children->pluck('name')
         ];
     }
 }

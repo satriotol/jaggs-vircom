@@ -19,7 +19,8 @@ class LombaResource extends JsonResource
         return [
             'name' => $this->name,
             'kategori' => new KategoriResource($this->kategori),
-            'jenjang' => $this->jenjang,
+            'jenjang' => $this->jenjang->pluck('name'),
+            'gambar' => $this->image
         ];
     }
 }

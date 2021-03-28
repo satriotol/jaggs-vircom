@@ -46,7 +46,7 @@ class KategoriApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

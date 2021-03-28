@@ -14,12 +14,19 @@ class LombaCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return [
-            'status' => 'sukses',
-            'data' => LombaResource::collection($this->collection),
-            'meta' => [
-                'total_post' => $this->collection->count()
-            ]
-        ];
+        if ($this->collection->count() > 0) {
+            return [
+                'status' => 'Sukses',
+                'data' => LombaResource::collection($this->collection),
+                'meta' => [
+                    'total_post' => $this->collection->count()
+                ]
+            ];
+        }else{
+            return[
+                'status' => 'Data Tidak Ditemukan',
+                'data' => 'Angga Jembut'
+            ];
+        }
     }
 }

@@ -20,4 +20,8 @@ class Kategori extends Model
     {
         return $this->hasMany(Kategori::class,'parent_id');
     }
+    public function childrenname()
+    {
+        return $this->children->pluck('name');
+    }
 }
