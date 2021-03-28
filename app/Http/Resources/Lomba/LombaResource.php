@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Lomba;
 
+use App\Http\Resources\KategoriResource;
+use App\Http\Resources\SubKategori\SubKategoriResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class KategoriResource extends JsonResource
+class LombaResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,7 +18,8 @@ class KategoriResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'subkategori' => $this->children
+            'kategori' => new KategoriResource($this->kategori),
+            'jenjang' => $this->jenjang,
         ];
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\SubKategori;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class KategoriResource extends JsonResource
+class SubKategoriResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,8 +15,7 @@ class KategoriResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' => $this->name,
-            'subkategori' => $this->children
+            'name' => $this->name
         ];
     }
 }
