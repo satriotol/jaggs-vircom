@@ -44,6 +44,8 @@
                 <ul>
                     <li class="{{Request::routeIs('home') ? 'aktiv' : ''}}"><a href="{{route('home')}}">Beranda</a>
                     </li>
+                    <li class=""><a href="">Info Lomba</a>
+                    </li>
                     <li class="{{Request::routeIs('tentang') ? 'aktiv' : ''}}"><a
                             href="{{route('tentang')}}">Tentang</a></li>
                     <li class="{{Request::routeIs('kontak') ? 'aktiv' : ''}}"><a href="{{route('kontak')}}">Kontak</a>
@@ -57,7 +59,7 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer" style="padding-bottom: 0px;">
-        <div class="footer-top">
+        <div class="footer-top" style="background:url({{asset('app/img/bg-video.png')}}); background-size: contain; ">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -89,7 +91,7 @@
         </div>
 
     </footer><!-- End Footer -->
-    <div class="container-fluid text-center" style="padding: 10px;background-color: black;color: #ffa500;">
+    <div class="container-fluid text-center footer-bot" >
         <div class="copyright">
             @ Copyright <strong><span>Jaggs</span></strong>. All Rights Reserved
         </div>

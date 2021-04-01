@@ -194,17 +194,17 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    background:#ffa500;
-    color: black;
+    background: #C3F5FF;
+    color: white;
     transition: all 0.5s;
     z-index: 997;
     padding: 15px 0;
+
 }
 
 #header.header-scrolled {
-    top: 0;
-    background: #ffa500;
-    color: black;
+    box-shadow: 0px 4px 8px black;
+    transition: 0.2s;
     border-bottom: 1px solid #37332a;
 }
 
@@ -264,21 +264,27 @@ h6 {
     display: block;
     box-sizing: border-box;
     position: relative;
-    color: black;
-    margin-left: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    color: white;
+    opacity: 0.5;
+    background-color: #6084B5;
     transition: 0.3s;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
+    border-radius: 50px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 .aktiv a{
-color: white;
+    opacity: 1;
 }
 
 .nav-menu a:hover,
 .nav-menu .active>a,
-.nav-menu li:hover>a {}
+.nav-menu li:hover>a {
+    opacity: 1;
+}
 
 .BtnOrange {
     font-weight: 600;
@@ -412,6 +418,7 @@ color: white;
     position: absolute;
     right: 15px;
     top: 15px;
+    color:#6084B6;
     z-index: 9998;
     border: 0;
     background: none;
@@ -424,7 +431,7 @@ color: white;
 }
 
 .mobile-nav-toggle i {
-    color: black;
+    color:#6084B6;
 }
 
 .mobile-nav {
@@ -435,7 +442,7 @@ color: white;
     left: 15px;
     z-index: 9999;
     overflow-y: auto;
-    background: #1a1814;
+    background: #6084B6;
     border: 2px solid rgba(255, 255, 255, 0.1);
     transition: ease-in-out 0.2s;
     opacity: 0;
@@ -1778,20 +1785,24 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #ffa500;
-    padding: 0 0 30px 0;
-    color: #fff;
+
     font-size: 14px;
 }
 
 #footer .footer-top {
-    /* background: white; */
-    color: black;
+
+    color: #6084B6;
     padding: 60px 0 30px 0;
 }
 
 #footer .footer-top .footer-info {
     margin-bottom: 30px;
+}
+
+.footer-bot {
+    padding: 10px;
+    background-color: #6084B6;
+    color: #C3F5FF;
 }
 
 #footer .footer-top .footer-info h3 {
