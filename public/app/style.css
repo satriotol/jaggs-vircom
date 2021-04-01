@@ -10,8 +10,6 @@
 --------------------------------------------------------------*/
 body {
     font-family: "Open Sans", sans-serif;
-    background: white;
-    color: black;
     overflow-x: hidden;
 }
 
@@ -53,6 +51,19 @@ h6 {
     text-decoration: none;
 }
 
+.btn-master{
+    background: #ffa500;
+    border: 0;
+    padding: 10px 35px;
+    color: #C3F5FF;
+    background-color: #6084B6;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.btn-master:hover{
+    background-color: #354863;
+}
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -140,55 +151,8 @@ h6 {
     }
 }
 
-/*--------------------------------------------------------------
-# Top Bar
---------------------------------------------------------------*/
-#topbar {
-    height: 40px;
-    font-size: 14px;
-    transition: all 0.5s;
-}
 
-#topbar.topbar-scrolled {
-    top: -40px;
-}
 
-#topbar .contact-info {
-    color: white;
-}
-
-#topbar .contact-info i {
-    color:  #ffa500;
-    padding-right: 4px;
-}
-
-#topbar .contact-info i+i {
-    margin-left: 15px;
-}
-
-#topbar .languages ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: #ffa500;
-}
-
-#topbar .languages ul a {
-    color: white;
-}
-
-#topbar .languages ul li+li {
-    padding-left: 10px;
-}
-
-#topbar .languages ul li+li::before {
-    display: inline-block;
-    padding-right: 10px;
-    color: rgba(255, 255, 255, 0.5);
-    content: "/";
-}
 
 /*--------------------------------------------------------------
 # Header
@@ -199,12 +163,12 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     padding: 15px 0;
-
+    font-weight: bold;
 }
 
 #header.header-scrolled {
     box-shadow: 0px 4px 8px black;
-    transition: 0.2s;
+    transition: all 0.5s;
     border-bottom: 1px solid #37332a;
 }
 
@@ -281,7 +245,6 @@ h6 {
 }
 
 .nav-menu a:hover,
-.nav-menu .active>a,
 .nav-menu li:hover>a {
     opacity: 1;
 }
@@ -442,6 +405,7 @@ h6 {
     left: 15px;
     z-index: 9999;
     overflow-y: auto;
+    font-weight: bold;
     background: #6084B6;
     border: 2px solid rgba(255, 255, 255, 0.1);
     transition: ease-in-out 0.2s;
@@ -1286,126 +1250,7 @@ section {
     }
 }
 
-/*--------------------------------------------------------------
-# Book A Table
---------------------------------------------------------------*/
-.book-a-table .php-email-form {
-    width: 100%;
-}
 
-.book-a-table .php-email-form .form-group {
-    padding-bottom: 8px;
-}
-
-.book-a-table .php-email-form .validate {
-    display: none;
-    color: red;
-    margin: 0 0 15px 0;
-    font-weight: 400;
-    font-size: 13px;
-}
-
-.book-a-table .php-email-form .error-message {
-    display: none;
-    color: #fff;
-    background: #ed3c0d;
-    text-align: left;
-    padding: 15px;
-    font-weight: 600;
-}
-
-.book-a-table .php-email-form .error-message br+br {
-    margin-top: 25px;
-}
-
-.book-a-table .php-email-form .sent-message {
-    display: none;
-    color: #fff;
-    background: #18d26e;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-}
-
-.book-a-table .php-email-form .loading {
-    display: none;
-    text-align: center;
-    padding: 15px;
-}
-
-.book-a-table .php-email-form .loading:before {
-    content: "";
-    display: inline-block;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin: 0 10px -6px 0;
-    border: 3px solid #ffa500;
-    border-top-color: #1a1814;
-    -webkit-animation: animate-loading 1s linear infinite;
-    animation: animate-loading 1s linear infinite;
-}
-
-.book-a-table .php-email-form input,
-.book-a-table .php-email-form textarea {
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 14px;
-    background: #0c0b09;
-    border-color: #625b4b;
-    color: white;
-}
-
-.book-a-table .php-email-form input::-webkit-input-placeholder,
-.book-a-table .php-email-form textarea::-webkit-input-placeholder {
-    color: #a49b89;
-}
-
-.book-a-table .php-email-form input::-moz-placeholder,
-.book-a-table .php-email-form textarea::-moz-placeholder {
-    color: #a49b89;
-}
-
-.book-a-table .php-email-form input:-ms-input-placeholder,
-.book-a-table .php-email-form textarea:-ms-input-placeholder {
-    color: #a49b89;
-}
-
-.book-a-table .php-email-form input::-ms-input-placeholder,
-.book-a-table .php-email-form textarea::-ms-input-placeholder {
-    color: #a49b89;
-}
-
-.book-a-table .php-email-form input::placeholder,
-.book-a-table .php-email-form textarea::placeholder {
-    color: #a49b89;
-}
-
-.book-a-table .php-email-form input:focus,
-.book-a-table .php-email-form textarea:focus {
-    border-color: #ffa500;
-}
-
-.book-a-table .php-email-form input {
-    height: 44px;
-}
-
-.book-a-table .php-email-form textarea {
-    padding: 10px 12px;
-}
-
-.book-a-table .php-email-form button[type="submit"] {
-    background: #ffa500;
-    border: 0;
-    padding: 10px 35px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 50px;
-}
-
-.book-a-table .php-email-form button[type="submit"]:hover {
-    background: #d3af71;
-}
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -1607,16 +1452,14 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact .info {
-    width: 100%;
-}
+
 
 .contact .info i {
     font-size: 20px;
     float: left;
     width: 44px;
     height: 44px;
-    background: #ffa500;
+    background:  #6084B6;
     display: flex;
     color: white;
     justify-content: center;
@@ -1629,6 +1472,7 @@ section {
     padding: 0 0 0 60px;
     font-size: 18px;
     font-weight: 500;
+    color:  #6084B6;
     margin-bottom: 5px;
     font-family: "Poppins", sans-serif;
 }
@@ -1637,7 +1481,7 @@ section {
     padding: 0 0 0 60px;
     margin-bottom: 0;
     font-size: 14px;
-    color: #ffa500;
+    color: #999999;
 }
 
 .contact .info .open-hours,
@@ -1655,9 +1499,8 @@ section {
 }
 
 .contact .php-email-form .validate {
-    display: none;
     color: red;
-    margin: 0 0 15px 0;
+   margin-left:10px;
     font-weight: 400;
     font-size: 13px;
 }
@@ -1705,40 +1548,16 @@ section {
     box-shadow: none;
     font-size: 14px;
     background: white;
-    border-color: #ffa500;
-    color: black;
+    border-color: #6084B6;
+    color: #6084B6;
     border-radius: 20px;
-}
-
-.contact .php-email-form input::-webkit-input-placeholder,
-.contact .php-email-form textarea::-webkit-input-placeholder {
-    color: #a49b89;
-}
-
-.contact .php-email-form input::-moz-placeholder,
-.contact .php-email-form textarea::-moz-placeholder {
-    color: #ffa500;
-}
-
-.contact .php-email-form input:-ms-input-placeholder,
-.contact .php-email-form textarea:-ms-input-placeholder {
-    color: #ffa500;
-}
-
-.contact .php-email-form input::-ms-input-placeholder,
-.contact .php-email-form textarea::-ms-input-placeholder {
-    color: #ffa500;
 }
 
 .contact .php-email-form input::placeholder,
 .contact .php-email-form textarea::placeholder {
-    color: #ffa500;
+    color:  #9999;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
-    border-color: black;
-}
 
 .contact .php-email-form input {
     height: 44px;
@@ -1748,18 +1567,6 @@ section {
     padding: 10px 12px;
 }
 
-.contact .php-email-form button[type="submit"] {
-    background: #ffa500;
-    border: 0;
-    padding: 10px 35px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 50px;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-    background: #d3af71;
-}
 
 @-webkit-keyframes animate-loading {
     0% {

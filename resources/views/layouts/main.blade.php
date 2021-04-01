@@ -32,7 +32,7 @@
     @yield('css')
 </head>
 
-<body>
+<body  style="background:url({{asset('app/img/bg-html.png')}}); background-size: 600px; ">
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
@@ -40,7 +40,7 @@
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <nav class="nav-menu d-none d-lg-block" style="font-weight: bold; background-color: black:">
+            <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="{{Request::routeIs('home') ? 'aktiv' : ''}}"><a href="{{route('home')}}">Beranda</a>
                     </li>
@@ -59,7 +59,7 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer" style="padding-bottom: 0px;">
-        <div class="footer-top" style="background:url({{asset('app/img/bg-video.png')}}); background-size: contain; ">
+        <div class="footer-top" style="background:url({{asset('app/img/bg-video.png')}}); background-size: 600px; ">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -98,7 +98,7 @@
     </div>
     <div id="preloader"></div>
     <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
-
+    <div class="mobile-nav" style="background:url({{asset('app/img/bg-video.png')}}); background-size: contain; "></div>
     <!-- Vendor JS Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="{{asset('app/vendor/jquery/jquery.min.js')}}"></script>

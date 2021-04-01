@@ -2,7 +2,7 @@
 @section('content')
 <!-- ======= Tentang Section ======= -->
 <main>
-    <section id="contact" class="contact mt-5">
+    <section id="contact" class="contact mt-5 mb-5">
         <div class="container" data-aos="fade-up">
         </div>
         <div data-aos="fade-up">
@@ -60,7 +60,7 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="text-center"><button class="btn-master" type="submit">Send Message</button></div>
                     </form>
 
                 </div>
