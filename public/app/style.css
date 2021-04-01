@@ -75,7 +75,7 @@ h6 {
     bottom: 0;
     z-index: 9999;
     overflow: hidden;
-    background: #1a1814;
+    background: #C3F5FF;
 }
 
 #preloader:before {
@@ -83,9 +83,9 @@ h6 {
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
-    border: 6px solid #1a1814;
-    border-top-color: #ffa500;
-    border-bottom-color: #ffa500;
+    border: 6px solid white;
+    border-top-color: #354863;
+    border-bottom-color: #354863;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -526,6 +526,38 @@ h6 {
     color: #fff;
 }
 
+.home .welcome{
+    position: relative;
+    top: 45%;
+    margin-bottom: 80px;
+}
+
+.home .welcome h1{
+    font-weight: bold;
+    color: #6084B6;
+    font-size: 64px;
+    line-height: 56px;
+}
+.home .welcome span{
+    color: white;
+    -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #6084B6 ;
+
+}
+.home .welcome h2{
+    margin-top: 10px;
+    color:#6084B6 ;
+    margin-right: 145px;
+    font-size: 30px;
+}
+
+.HomeVid h1{
+
+    color:#6084B6 ;
+    font-weight: bold;
+    font-size: 34px;
+
+}
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -706,6 +738,16 @@ h6 {
 
     #hero h2 {
         font-size: 18px;
+        line-height: 24px;
+    }
+    .home .welcome h1 {
+        font-size: 40px;
+        line-height: 36px;
+    }
+
+    .home .welcome h2 {
+        margin-right: 60px;
+        font-size: 24px;
         line-height: 24px;
     }
 }
