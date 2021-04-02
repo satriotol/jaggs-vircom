@@ -54,11 +54,12 @@ h6 {
 .btn-master{
     background: #ffa500;
     border: 0;
+    font-weight: bold;
     padding: 10px 35px;
-    color: #C3F5FF;
+    color: white;
     background-color: #6084B6;
     transition: 0.4s;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 
 .btn-master:hover{
@@ -528,7 +529,7 @@ h6 {
 
 .home .welcome{
     position: relative;
-    top: 45%;
+    top: 32%;
     margin-bottom: 80px;
 }
 
@@ -536,7 +537,6 @@ h6 {
     font-weight: bold;
     color: #6084B6;
     font-size: 64px;
-    line-height: 56px;
 }
 .home .welcome span{
     color: white;
@@ -551,12 +551,27 @@ h6 {
     font-size: 30px;
 }
 
-.HomeVid h1{
-
+.home .judul{
     color:#6084B6 ;
     font-weight: bold;
-    font-size: 34px;
+    font-size:34px;
+}
 
+.home .subjudul{
+    color: #A7A7A7;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.home .bubble{
+    background-color:#C3F5FF ;
+    border-radius: 20px;
+    color:#6084B6 ;
+}
+.home .bubble h1{
+    font-weight: bold;
+    font-size: 40px;
+    margin: 15px;
 }
 /*--------------------------------------------------------------
 # Hero Section
@@ -749,6 +764,13 @@ h6 {
         margin-right: 60px;
         font-size: 24px;
         line-height: 24px;
+    }
+    .home .welcome {
+        top: 20%;
+    }
+    iframe{
+        height: 200px;
+        width :300px;
     }
 }
 
