@@ -4,10 +4,6 @@
 <main>
     <section id="contact" class="contact mt-5 mb-5">
         <div class="container" data-aos="fade-up">
-        </div>
-        <div data-aos="fade-up">
-        </div>
-        <div class="container" data-aos="fade-up">
             <div class="row mt-5">
                 <div class="col-md-4">
                     <div class="info">
