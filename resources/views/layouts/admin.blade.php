@@ -180,9 +180,9 @@
                         </li>
                         <li class="nav-header">COMPANY</li>
                         <li
-                            class="nav-item has-treeview {{Request::routeIs('company.menu','company.beranda') ? 'menu-open' : ''}}">
+                            class="nav-item has-treeview {{Request::routeIs('company.menu','company.beranda','company.tentang','company.sosialmedia') ? 'menu-open' : ''}}">
                             <a href="#"
-                                class="nav-link {{Request::routeIs('company.menu','company.beranda') ? 'active' : ''}}">
+                                class="nav-link {{Request::routeIs('company.menu','company.beranda','company.tentang','company.sosialmedia') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-industry"></i>
                                 <p>
                                     Company
@@ -205,15 +205,15 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('jenjang.index')}}"
-                                        class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
+                                    <a href="{{route('company.tentang',1)}}"
+                                        class="nav-link {{Request::routeIs('company.tentang') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tentang</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('jenjang.index')}}"
-                                        class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
+                                    <a href="{{route('company.sosialmedia',1)}}"
+                                        class="nav-link {{Request::routeIs('company.sosialmedia') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Sosial Media</p>
                                     </a>

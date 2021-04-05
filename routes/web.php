@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/company/beranda/{company}', 'CompanyController@editberanda')->name('company.beranda');
         Route::put('/admin/company/beranda/{company}', 'CompanyController@updateberanda')->name('company.updateberanda');
         Route::get('/admin/company/tentang/{company}', 'CompanyController@edittentang')->name('company.tentang');
+        Route::put('/admin/company/tentang/{company}', 'CompanyController@updatetentang')->name('company.updatetentang');
         Route::get('/admin/company/sosialmedia/{company}', 'CompanyController@editsosialmedia')->name('company.sosialmedia');
+        Route::put('/admin/company/sosialmedia/{company}', 'CompanyController@updatesosialmedia')->name('company.updatesosialmedia');
     });
 });

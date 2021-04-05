@@ -33,4 +33,26 @@ class CompanyController extends Controller
         session()->flash('success','Company Updated Successfully');
         return redirect(route('company.beranda',1));
     }
+    public function edittentang(Companys $company)
+    {
+        return view('admin.company.menu_tentang')->with('company',$company);
+    }
+    public function updatetentang(UpdateCompanyBerandaRequest $request, Companys $company)
+    {
+        $data = $request->only(['description_singkat','video_profile']);
+        $company->update($data);
+        session()->flash('success','Company Updated Successfully');
+        return redirect(route('company.beranda',1));
+    }
+    public function editsosialmedia(Companys $company)
+    {
+        return view('admin.company.menu_sosialmedia')->with('company',$company);
+    }
+    public function updatesosialmedia(UpdateCompanyBerandaRequest $request, Companys $company)
+    {
+        $data = $request->only(['description_singkat','video_profile']);
+        $company->update($data);
+        session()->flash('success','Company Updated Successfully');
+        return redirect(route('company.beranda',1));
+    }
 }
