@@ -19,13 +19,21 @@ class CreateCompanysTable extends Migration
             $table->string('email')->unique();
             $table->string('address');
             $table->string('phone_number');
+            // beranda
+            $table->text('description_beranda');
+            $table->string('video_profile')->nullable();
+
+            // tentang
             $table->text('description');
+            $table->text('apa_kata_mereka');
             $table->text('vision');
             $table->text('mission');
-            $table->string('video_profile')->nullable();
-            $table->string('image_desc')->nullable();
+
+            // sosial media
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
+
+            $table->string('image_desc')->nullable();
             $table->timestamps();
         });
     }
