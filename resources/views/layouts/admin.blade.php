@@ -180,9 +180,9 @@
                         </li>
                         <li class="nav-header">COMPANY</li>
                         <li
-                            class="nav-item has-treeview {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'menu-open' : ''}}">
+                            class="nav-item has-treeview {{Request::routeIs('company.menu','company.beranda') ? 'menu-open' : ''}}">
                             <a href="#"
-                                class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'active' : ''}}">
+                                class="nav-link {{Request::routeIs('company.menu','company.beranda') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-industry"></i>
                                 <p>
                                     Company
@@ -191,15 +191,15 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('jenjang.index')}}"
-                                        class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
+                                    <a href="{{route('company.menu',1)}}"
+                                        class="nav-link {{Request::routeIs('company.menu') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Menu Utama</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('jenjang.index')}}"
-                                        class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
+                                    <a href="{{route('company.beranda',1)}}"
+                                        class="nav-link {{Request::routeIs('company.beranda') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Beranda</p>
                                     </a>
@@ -215,19 +215,10 @@
                                     <a href="{{route('jenjang.index')}}"
                                         class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Sosial MEdia</p>
+                                        <p>Sosial Media</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('company.edit',1) }}"
-                                class="nav-link {{Request::routeIs('company.edit') ? 'active' : ''}}">
-                                <i class="nav-icon fas fa-industry"></i>
-                                <p>
-                                    Profile
-                                </p>
-                            </a>
                         </li>
                         <li
                             class="nav-item has-treeview {{Request::routeIs('team.create','team.edit','team.index') ? 'menu-open' : ''}}">

@@ -33,7 +33,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/admin/subkategori', 'SubKategoriController');
         Route::resource('/admin/jenjang', 'JenjangController');
         Route::resource('/admin/lomba','LombaController');
-        Route::resource('/admin/company', 'CompanyController');
         Route::resource('/admin/team', 'TeamController');
+        Route::get('/admin/company/menu/{company}', 'CompanyController@editmenu')->name('company.menu');
+        Route::put('/admin/company/menu/{company}', 'CompanyController@updatemenu')->name('company.updatemenu');
+        Route::get('/admin/company/beranda/{company}', 'CompanyController@editberanda')->name('company.beranda');
+        Route::put('/admin/company/beranda/{company}', 'CompanyController@updateberanda')->name('company.updateberanda');
+        Route::get('/admin/company/tentang/{company}', 'CompanyController@edittentang')->name('company.tentang');
+        Route::get('/admin/company/sosialmedia/{company}', 'CompanyController@editsosialmedia')->name('company.sosialmedia');
     });
 });

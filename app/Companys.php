@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class Companys extends Model
 {
     protected $fillable =[
-        'name','email','address','phone_number','description','vision','mission','video_profile','logo','image_desc','instagram','youtube'
+        'name','email','address','phone_number','description','vision','mission','video_profile','logo','image_desc','instagram','youtube','description_beranda'
     ];
     public function deleteAsset()
     {
