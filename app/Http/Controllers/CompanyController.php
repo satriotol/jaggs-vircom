@@ -6,6 +6,7 @@ use App\Companys;
 use App\Http\Requests\UpdateCompanyBerandaRequest;
 use App\Http\Requests\UpdateCompanyMenuRequest;
 use App\Http\Requests\UpdateCompanyRequest;
+use App\Http\Requests\UpdateCompanyTentangRequest;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -37,12 +38,12 @@ class CompanyController extends Controller
     {
         return view('admin.company.menu_tentang')->with('company',$company);
     }
-    public function updatetentang(UpdateCompanyBerandaRequest $request, Companys $company)
+    public function updatetentang(UpdateCompanyTentangRequest $request, Companys $company)
     {
-        $data = $request->only(['description_singkat','video_profile']);
+        $data = $request->only(['description','apa_kata_mereka','vision','mission']);
         $company->update($data);
         session()->flash('success','Company Updated Successfully');
-        return redirect(route('company.beranda',1));
+        return redirect(route('company.tentang',1));
     }
     public function editsosialmedia(Companys $company)
     {
@@ -53,6 +54,6 @@ class CompanyController extends Controller
         $data = $request->only(['description_singkat','video_profile']);
         $company->update($data);
         session()->flash('success','Company Updated Successfully');
-        return redirect(route('company.beranda',1));
+        return redirect(route('company.sosialmedia',1));
     }
 }

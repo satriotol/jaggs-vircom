@@ -39,34 +39,6 @@
                                 @include('admin.partials.error')
                                 @include('admin.partials.success')
                                 <div class="form-group">
-                                    <label for="Lomba">Nama Perusahaan <span style="color: red">*</span></label>
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Masukkan nama perusahaan..." value="{{$company->name}}" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Lomba">Alamat Perusahaan <span style="color: red">*</span></label>
-                                    <input type="text" name="address" class="form-control" id="address"
-                                        placeholder="Masukkan nama alamat..." value="{{$company->address}}" required>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="Lomba">Email Perusahaan <span style="color: red">*</span></label>
-                                            <input type="text" name="email" class="form-control" id="email"
-                                                placeholder="Masukkan email perusahaan..." value="{{$company->email}}"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="Lomba">Nomor Perusahaan <span style="color: red">*</span></label>
-                                            <input type="number" name="phone_number" class="form-control"
-                                                id="phone_number" placeholder="Masukkan nomor perusahaan..."
-                                                value="{{$company->phone_number}}" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label>Deskripsi Perusahaan <span style="color: red">*</span></label>
                                     <textarea class="textarea" name="description"
                                         placeholder="Masukkan deskrpsi perusahaan..."
@@ -83,26 +55,9 @@
                                         style="width: 100%;height:500px;">{{$company->mission}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="customFile">Gambar Deskripsi</label>
-                                    <div class="custom-file">
-                                        <input name="image_desc" type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Link Video Teaser</label>
-                                    <input type="text" name="video_profile" class="form-control" id="video_profile"
-                                        placeholder="Masukkan link video teaser..." value="{{$company->video_profile}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Link Instagram</label>
-                                    <input type="text" name="instagram" class="form-control" id="instagram"
-                                        placeholder="Masukkan link instagram..." value="{{$company->instagram}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Link Youtube</label>
-                                    <input type="text" name="youtube" class="form-control" id="youtube"
-                                        placeholder="Masukkan link youtube..." value="{{$company->youtube}}">
+                                    <label>Apa Kata Mereka <span style="color: red">*</span></label>
+                                    <textarea class="textarea" name="apa_kata_mereka" placeholder="Masukkan Apa Kata Mereka..."
+                                        style="width: 100%;height:500px;">{{$company->apa_kata_mereka}}</textarea>
                                 </div>
                             </div>
                             <div class="card-footer">
