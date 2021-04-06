@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Companys;
+use App\Http\Requests\Company\UpdateCompanySosialMediaRequest;
 use App\Http\Requests\UpdateCompanyBerandaRequest;
 use App\Http\Requests\UpdateCompanyMenuRequest;
-use App\Http\Requests\UpdateCompanyRequest;
 use App\Http\Requests\UpdateCompanyTentangRequest;
 use Illuminate\Http\Request;
 
@@ -49,9 +49,9 @@ class CompanyController extends Controller
     {
         return view('admin.company.menu_sosialmedia')->with('company', $company);
     }
-    public function updatesosialmedia(UpdateCompanyBerandaRequest $request, Companys $company)
+    public function updatesosialmedia(UpdateCompanySosialMediaRequest $request, Companys $company)
     {
-        $data = $request->only(['description_singkat', 'video_profile']);
+        $data = $request->only(['instagram', 'youtube']);
         $company->update($data);
         session()->flash('success', 'Company Updated Successfully');
         return redirect(route('company.sosialmedia', 1));
