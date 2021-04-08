@@ -72,14 +72,14 @@
         <div class="section-title">
             <h1 class="txt-dark-blue">Team Kita</h1>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-lg-4 col-md-6">
                 <div data-aos="fade-right" data-aos-duration="1000">
+                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
+                    data-lightbox="example-2"><img src="./asset/logo-yt.png" alt="" class="foto-anggota "
+                        width="50%" height="auto"></a>
                     <h3 class="txt-dark-blue font-weight-bold">Name</h3>
                     <h4 class="txt-grey">Title</h4>
-                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
-                        data-lightbox="example-2"><img src="./asset/logo-yt.png" alt="" class="foto-anggota "
-                            width="50%" height="auto"></a>
                     </a>
                     <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                         Culpa, voluptas
@@ -97,12 +97,11 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
-                    <h4 class="txt-grey">Title</h4>
                     <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
                         data-lightbox="example-2"><img src="./asset/poster/1.jpg" alt="" class="foto-anggota">
                     </a>
-                    </a>
+                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
+                    <h4 class="txt-grey">Title</h4>
                     <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                         Culpa, voluptas
                         excepturi. Illo totam
@@ -119,12 +118,11 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div data-aos="fade-right" data-aos-duration="1000">
+                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
+                    data-lightbox="example-2"><img src="./asset/logo.png" alt="" class="foto-anggota" width="50%"
+                        height="auto"></a>
                     <h3 class="txt-dark-blue font-weight-bold">Name</h3>
                     <h4 class="txt-grey">Title</h4>
-                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
-                        data-lightbox="example-2"><img src="./asset/logo.png" alt="" class="foto-anggota" width="50%"
-                            height="auto"></a>
-                    </a>
                     <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                         Culpa, voluptas
                         excepturi. Illo totam
