@@ -19,21 +19,17 @@
                 <div class="form-group">
                     <select class="form-control br-10" id="exampleFormControlSelect1">
                         <option value="">Pilih Jenjang</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        @foreach ($jenjangs as $jenjang)
+                        <option value="{{$jenjang->id}}">{{$jenjang->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <select class="form-control br-10" id="exampleFormControlSelect1">
                         <option value="">Pilih Kategori</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="text-right">
@@ -75,57 +71,30 @@
                 <span class="border-blue">Lomba</span>
             </h1>
             <div data-aos="fade-right" data-aos-duration="1000">
+                @foreach ($lombas as $lomba)
                 <div class="row mb-3">
                     <div class="col-md-3">
                         <a onclick="lightbox()"
-                            href="https://ichef.bbci.co.uk/news/640/cpsprodpb/BF0D/production/_106090984_2e39b218-c369-452e-b5be-d2476f9d8728.jpg"
-                            data-lightbox="gallery1">
-                            <img src="https://ichef.bbci.co.uk/news/640/cpsprodpb/BF0D/production/_106090984_2e39b218-c369-452e-b5be-d2476f9d8728.jpg"
+                            href="{{route('detail',$lomba->id)}}">
+                            <img src="{{asset('storage/'.$lomba->image)}}"
                                 alt="" class="img-thumbnail img-lomba img-lomba" /></a>
                     </div>
                     <div class="col md-9 txt-dark-blue">
-                        <a href="detaillomba.html">
-                            <h3 class="txt-dark-blue judul-lomba">Title</h3>
+                        <a href="{{route('detail',$lomba->id)}}">
+                            <h3 class="txt-dark-blue judul-lomba">{{$lomba->name}}</h3>
                         </a>
-                        <p class="text-uppercase">category (subkategori) | Jenjang</p>
+                        <p class="text-uppercase">{{$lomba->kategori->name}} (@foreach ($lomba->kategori->children as $kc)
+                            {{$kc->name}}
+                        @endforeach) | Jenjang</p>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Architecto tenetur perspiciatis commodi dolor consequuntur.
-                            Impedit fugit, enim, ut quisquam, quibusdam explicabo
-                            consectetur consequatur hic odit placeat maxime facilis
-                            voluptates harum.
+                            {!!$lomba->description!!}
                         </p>
                         <div class="status">
                             <button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-md-3">
-                        <a onclick="lightbox()"
-                            href="https://cdn-2.tstatic.net/manado/foto/bank/images/tonny-stark-yang-berperan-sebagai-iron-man-di-avengers.jpg"
-                            data-lightbox="gallery1">
-                            <img src="https://cdn-2.tstatic.net/manado/foto/bank/images/tonny-stark-yang-berperan-sebagai-iron-man-di-avengers.jpg"
-                                alt="" class="img-thumbnail img-lomba" /></a>
-                    </div>
-                    <div class="col md-9 txt-dark-blue">
-                        <a href="detaillomba.html">
-                            <h3 class="txt-dark-blue judul-lomba">Title</h3>
-                        </a>
-                        <p class="text-uppercase">category (subkategori) | Jenjang</p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Architecto tenetur perspiciatis commodi dolor consequuntur.
-                            Impedit fugit, enim, ut quisquam, quibusdam explicabo
-                            consectetur consequatur hic odit placeat maxime facilis
-                            voluptates harum.
-                        </p>
-                        <!-- <a href="" class="btn btn-custom">OPEN</a> -->
-                        <div class="status">
-                            <button class="btn btn-close btn-sm text-uppercase" disabled>CLOSE</button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <div class="col-md-12  text-center">
                     <div class="center-img">
                         <a class="icon " href=""><i class="fas fa-arrow-left"></i></a>

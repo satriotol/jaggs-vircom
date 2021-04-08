@@ -28,8 +28,10 @@ class HomeController extends Controller
     }
     public function infolomba()
     {
+        $lombas = Lomba::latest()->get();
+        $jenjangs = Jenjang::all();
         $categories = Kategori::whereNull('parent_id')->get();
-        return view('page.infolomba')->with('categories', $categories);
+        return view('page.infolomba')->with('categories', $categories)->with('jenjangs',$jenjangs)->with('lombas',$lombas);
     }
     public function kategori(Kategori $category)
     {
