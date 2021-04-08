@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Companys;
-use App\Http\Requests\UpdateCompanySosialMediaRequest;
+use App\Http\Requests\Company\UpdateCompanySosialMediaRequest;
 use App\Http\Requests\UpdateCompanyBerandaRequest;
 use App\Http\Requests\UpdateCompanyMenuRequest;
 use App\Http\Requests\UpdateCompanyTentangRequest;
