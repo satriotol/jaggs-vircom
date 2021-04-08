@@ -1,147 +1,123 @@
 @extends('layouts.main')
 @section('content')
-<style>
-    .play-btn {
-        width: 94px;
-        height: 94px;
-        background: radial-gradient(#ffa500 50%, rgba(205, 164, 94, 0.4) 52%);
-        border-radius: 50%;
-        display: block;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .play-btn::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-40%) translateY(-50%);
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid #fff;
-        z-index: 100;
-        transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-
-    .play-btn::before {
-        content: '';
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        -webkit-animation-delay: 0s;
-        animation-delay: 0s;
-        -webkit-animation: pulsate-btn 2s;
-        animation: pulsate-btn 2s;
-        -webkit-animation-direction: forwards;
-        animation-direction: forwards;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-timing-function: steps;
-        animation-timing-function: steps;
-        opacity: 1;
-        border-radius: 50%;
-        border: 5px solid rgba(205, 164, 94, 0.7);
-        top: -15%;
-        left: -15%;
-        background: rgba(198, 16, 0, 0);
-    }
-
-    .play-btn:hover::after {
-        border-left: 15px solid #ffa500;
-        transform: scale(20);
-    }
-
-    .play-btn:hover::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-40%) translateY(-50%);
-        width: 0;
-        height: 0;
-        border: none;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid #fff;
-        z-index: 200;
-        -webkit-animation: none;
-        animation: none;
-        border-radius: 0;
-    }
-
-</style>
-<!-- ======= Tentang Section ======= -->
-<main id="main">
-    <section id="about">
-        <div class="container detail">
-            <div class="row mt-5 mb-4">
-                <div class="col-lg-8 order-lg-1 order-2">
-                    <div class="title">
-                        <h3 style="font-weight: bold;  text-transform: uppercase;">{{$lomba->name}}</h3>
-                        <h5>{{$lomba->kategori->name}} / @foreach ($lomba->jenjang as $j)
-                            {{$j->name}},
-                            @endforeach</h5>
+<section class="bg-utama margin-nav">
+    <div class="container pt-5">
+        <section class="lomba-detail pb-5">
+            <div class="row">
+                <div class="col-lg-4 side-detail-lomba mb-2 order-2 order-lg-1">
+                    <div class="menu mb-3" data-aos="fade-right">
+                        <div class="menu-empty p-3"></div>
+                        <button class="btn dropdown-custom menu-title p-3 mt-2 " id="1" onclick="Dropdown(this.id)">
+                            <h2 class="txt-dark-blue">E-Sport</h2>
+                        </button>
+                        <ul class="list-group dropdown-custom-menu " id="menu-1">
+                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                        </ul>
+                        <button class="btn dropdown-custom menu-title p-3 mt-2" id="2" onclick="Dropdown(this.id)">
+                            <h2 class="txt-dark-blue">Olahraga</h2>
+                        </button>
+                        <ul class="list-group dropdown-custom-menu" id="menu-2">
+                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                        </ul>
+                        <button class="btn dropdown-custom menu-title p-3 mt-2" id="3" onclick="Dropdown(this.id)">
+                            <h2 class="txt-dark-blue">Seni</h2>
+                        </button>
+                        <ul class="list-group dropdown-custom-menu" id="menu-3">
+                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                        </ul>
+                        <button class="btn dropdown-custom menu-title p-3 mt-2" id="4" onclick="Dropdown(this.id)">
+                            <h2 class="txt-dark-blue">Tilawah Al-quran</h2>
+                        </button>
+                        <ul class="list-group dropdown-custom-menu" id="menu-4">
+                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                        </ul>
+                        <div class="menu-empty p-3 mt-2 mt-2"></div>
                     </div>
-                    <p>{!!$lomba->description!!}</p>
-                    <p class="mb-3" style="font-weight:bold; color:black;"> Durasi Lomba <br>
-                        Tanggal Mulai : {{$lomba->start_date}} <br>
-                        Tanggal Selesai : {{$lomba->end_date}} <br>
-                    </p>
-                </div>
-                <div class="col-lg-4 order-lg-2 order-1">
-                    <div class="text-center">
-                        <a class="venobox" href="{{asset('storage/'.$lomba->image)}}">
-                            <img width="100%" height="auto" style="object-fit: cover;"
-                                src="{{asset('storage/'.$lomba->image)}}"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="text-center">
-                    <a href="{{$lomba->link}}" style="color:black;" class="BtnOrange" target="_blank">Ikuti
-                        Lomba</a>
-                </div>
-            </div>
-            <div class="row mb-5" style="color: white">
-                <div class="col-md-6">
-                    <div id="why-use" class="why-us mt-5" data-aos="fade-up">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                            <h4 class="text-center">Persyaratan</h4>
-                            <p>{!!$lomba->ketentuan!!}</p>
+                    <div class="related-lomba mt-2" data-aos="fade-right">
+                        <div class="related-lomba-title txt-dark-blue">
+                            <h2><span class="border-blue">LOMBA LAINNYA</span></h2>
                         </div>
+                        @foreach ($lombaOthers as $l)
+                        <div class="related-lomba-content mt-4">
+                            <div class="related-lomba-image">
+                                <a href="{{route('detail',$l->id)}}"><img class="img-thumbnail" src="{{asset('storage/'.$l->image)}}" alt=""></a>
+                                <div class="related-lomba-image-kategori">
+                                    <p>{{$l->kategori->name}}</p>
+                                </div>
+                            </div>
+                            <div class="mt-2 related-lomba-image-title">
+                                <a href="" class="txt-dark-blue"><h2>{{$l->name}}</h2></a>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div id="why-use" class="why-us mt-5" data-aos="fade-up">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                            <h4 class="text-center">Hadiah</h4>
-                            <p>{!!$lomba->hadiah!!}</p>
+                <div class="col-lg-8 order-1 order-lg-2 mb-3">
+                    <div class="detail-lomba p-3" data-aos="fade-left">
+                        <div class="detail-lomba-image text-center">
+                            <a onclick="lightbox()" href="{{asset('storage/'.$lomba->image)}}" data-lightbox="gallery1">
+                                <img src="{{asset('storage/'.$lomba->image)}}" class="img-thumbnail" alt="" /></a>
+                        </div>
+                        <div class="detail-lomba-isi mt-5">
+                            <h3 class="txt-dark-blue">{{$lomba->name}}</h3>
+                            <p class="txt-grey text-capitalize">Deskripsi Lomba</p>
+                            <div class="txt-dark-blue">
+                                {!! $lomba->description !!}
+                            </div>
+                        </div>
+                        <div class="detail-lomba-syarat mt-5">
+                            <h3 class="txt-dark-blue">Syarat Dan Ketentuan</h3>
+                            <div class="txt-dark-blue">
+                                {!! $lomba->ketentuan !!}
+                            </div>
+                        </div>
+                        <div class="detail-lomba-hadiah mt-5">
+                            <h3 class="txt-dark-blue">Hadiah</h3>
+                            <div class="txt-dark-blue">
+                                {!! $lomba->hadiah !!}
+                            </div>
+                        </div>
+                        <div class="detail-lomba-deadline mt-5">
+                            <h3 class="txt-red">Deadline Lomba</h3>
+                            <p class="txt-red">{{$lomba->start_date}} sampai {{$lomba->end_date}}</p>
+                        </div>
+                        <div class="detail-lomba-daftar mt-5 text-center">
+                            <a href="{{$lomba->link}}" target="_blank" class="btn btn-active-blue">Daftar Lomba</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        @if ($lomba->video)
-        <div class="container-fluid py-5" style="background-color: black">
-            <div class="col-md-12">
-                <a href="{{$lomba->video}}" class="venobox play-btn vbox-item mx-auto" data-vbtype="video"
-                    data-autoplay="true"></a>
+        </section>
+    </div>
+    <div class="container-fluid bg-dua mb-5">
+        <div class="text-center py-5">
+            <div class="embed-responsive embed-responsive-16by9 mx-auto">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                    allowfullscreen></iframe>
             </div>
         </div>
-        @endif
-    </section><!-- End About Section -->
-</main><!-- End #main -->
-
+    </div>
+</section>
 @endsection
-@section('script')
-<script type="text/javascript" src="{{asset('app/vendor/venobox/venobox.min.js')}}"></script>
+@section('js')
 <script>
-    $(document).ready(function () {
-        $('.venobox').venobox();
-    });
+    function Dropdown(clicked_id) {
+        console.log(clicked_id);
+        var x = document.getElementById("menu-" + clicked_id);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
 
 </script>
 @endsection

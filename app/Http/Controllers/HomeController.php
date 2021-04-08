@@ -41,7 +41,8 @@ class HomeController extends Controller
     }
     public function detail(Lomba $lomba)
     {
-        return view('page.detail_lomba')->with('lomba', $lomba);
+        $lombaOthers = Lomba::where('kategori_id',$lomba->kategori_id)->whereNotIn('id', [$lomba->id])->get();
+        return view('page.detail_lomba')->with('lomba', $lomba)->with('lombaOthers',$lombaOthers);
     }
     public function tentang()
     {

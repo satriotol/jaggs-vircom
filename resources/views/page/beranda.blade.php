@@ -37,21 +37,11 @@
                 <h1 class="txt-dark-blue judul" data-aos="fade-down" data-aos-duration="1000">APA ITU <span
                         class="border-blue">YOUNG STAR CHAMPIONSHIP</span> </h1>
                 <h4 class="txt-grey " data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat Vircom</h4>
-                <p class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000">Lorem, ipsum
-                    dolor sit amet consectetur adipisicing elit. Placeat ipsum esse possimus
-                    delectus ullam
-                    temporibus atque omnis iste? Voluptas ullam, delectus illum non nam assumenda quis eius odio qui
-                    distinctio aspernatur id laboriosam, nobis esse quia? Nulla labore quibusdam sint. Facere animi
-                    porro tempore impedit repellendus mollitia, provident consectetur fugiat exercitationem
-                    voluptatem?
-                    Iure numquam quia id sapiente, labore nihil dolor incidunt inventore doloremque maxime explicabo
-                    esse atque accusamus rem iusto cum corporis voluptatem! Tenetur quasi enim blanditiis debitis,
-                    repudiandae aliquid exercitationem dolore sunt, ut totam ipsa. Quae optio officiis voluptates?
-                    Voluptatum sint perspiciatis tenetur? Iure asperiores consectetur maxime doloremque perferendis?
-                </p>
+                <div class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000">{!!$company->description_beranda!!}
+                </div>
 
-                <a href="tentang.html" data-aos="fade-up" data-aos-duration="1000"><button class="btn-master mt-2"
-                        type="submit">Pelajari Lebih Lanjut</button></a>
+                <a href="{{route('tentang')}}" data-aos="fade-up" data-aos-duration="1000"><button
+                        class="btn-master mt-2">Pelajari Lebih Lanjut</button></a>
             </div>
         </div>
     </div>

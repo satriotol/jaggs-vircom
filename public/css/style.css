@@ -110,7 +110,13 @@ h2 {
 
 /* color */
 .txt-dark-blue {
+    transition: 1s;
     color: #6084b6
+}
+
+a.txt-dark-blue:hover {
+    transition: 1s;
+    color: #2b3c55;
 }
 
 .txt-grey {
@@ -187,7 +193,8 @@ h2 {
     position: relative;
     top: 15%;
 }
-.footer-text{
+
+.footer-text {
     color: #C3F5FF !important;
 }
 
@@ -262,6 +269,7 @@ h2 {
         line-height: 1.5;
         font-size: 29px;
     }
+
     .welcome {
         height: 800px;
     }
@@ -276,11 +284,12 @@ h2 {
     align-items: center;
 }
 
-.center-img .icon:hover{
+.center-img .icon:hover {
     background-color: #C3F5FF;
     color: #6084B6;
 }
-.foto-anggota{
+
+.foto-anggota {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -363,8 +372,8 @@ h2 {
 /* card kategori */
 .card-kategori {
     height: 400px;
-    background-size: cover!important;
-    background-position: center!important;
+    background-size: cover !important;
+    background-position: center !important;
     transition: 1s;
     border: 0;
 }
@@ -388,14 +397,15 @@ h2 {
     font-weight: 700
 }
 
-.pagination-arrow .fas{
+.pagination-arrow .fas {
     color: white;
     background: #6084b6;
     border-radius: 10px;
     transition: 1s;
     padding: 0.3rem;
 }
-.pagination-arrow .fas:hover{
+
+.pagination-arrow .fas:hover {
     color: #6084b6;
     background: white;
     transition: 1s;
@@ -405,9 +415,10 @@ h2 {
 /* end of card kategori */
 /* lomba */
 
-.judul-lomba:hover{
+.judul-lomba:hover {
     color: #2b3c55;
 }
+
 .img-lomba {
     width: 100%;
     object-fit: cover;
@@ -550,11 +561,12 @@ h2 {
     display: flex;
 }
 
-.dropdown-menu .dropdown-menu-custom .show{
-    position: relative!important;
-     will-change: transform;
-      top: 0px; left: 0px;
-       transform: translate3d(0px, 0px, 0px)!important;
+.dropdown-menu .dropdown-menu-custom .show {
+    position: relative !important;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
+    transform: translate3d(0px, 0px, 0px) !important;
 }
 
 .dropdown-custom {
@@ -654,7 +666,8 @@ h2 {
     .margin-nav {
         margin-top: 65px;
     }
-    .cp{
+
+    .cp {
         padding: 8px;
         font-size: 12px;
     }

@@ -36,7 +36,7 @@
                     <li class="nav-item {{Request::routeIs('home') ? 'active' : ''}}">
                         <a class="nav-link" href="{{route('home')}}">Beranda</a>
                     </li>
-                    <li class="nav-item {{Request::routeIs('infolomba') ? 'active' : ''}}">
+                    <li class="nav-item {{Request::routeIs('infolomba','detail','infolomba') ? 'active' : ''}}">
                         <a class="nav-link" href="{{route('infolomba')}}">Info Lomba</a>
                     </li>
                     <li class="nav-item {{Request::routeIs('tentang') ? 'active' : ''}}">
@@ -111,6 +111,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{asset('asset/lightbox/js/lightbox-plus-jquery.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+    @yield('js')
 </body>
 
 </html>

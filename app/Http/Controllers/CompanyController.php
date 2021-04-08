@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Companys;
-use App\Http\Requests\Company\UpdateCompanySosialMediaRequest;
+use App\Http\Requests\UpdateCompanySosialMediaRequest;
 use App\Http\Requests\UpdateCompanyBerandaRequest;
 use App\Http\Requests\UpdateCompanyMenuRequest;
 use App\Http\Requests\UpdateCompanyTentangRequest;
@@ -29,7 +29,7 @@ class CompanyController extends Controller
     }
     public function updateberanda(UpdateCompanyBerandaRequest $request, Companys $company)
     {
-        $data = $request->only(['description_singkat', 'video_profile']);
+        $data = $request->only(['description_beranda', 'video_profile']);
         $company->update($data);
         session()->flash('success', 'Company Updated Successfully');
         return redirect(route('company.beranda', 1));
