@@ -22,8 +22,11 @@ Route::get('/', function () {
 
 Auth::routes(['register'=>false]);
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/infolomba', 'HomeController@infolomba')->name('infolomba');
+Route::get('/kategori/{category}', 'HomeController@kategori')->name('kategori');
 Route::get('/detail/{lomba}', 'HomeController@detail')->name('detail');
 Route::get('/tentang', 'HomeController@tentang')->name('tentang');
+Route::get('/faq', 'HomeController@faq')->name('faq');
 Route::get('/kontak', 'HomeController@kontak')->name('kontak');
 Route::post('/kontak', 'HomeController@sendemail')->name('sendemail');
 Route::group(['middleware' => 'auth'], function () {

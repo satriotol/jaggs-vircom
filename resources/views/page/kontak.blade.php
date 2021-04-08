@@ -1,71 +1,64 @@
 @extends('layouts.main')
 @section('content')
-<!-- ======= Tentang Section ======= -->
-<main>
-    <section id="contact" class="contact mt-5 mb-5">
-        <div class="container" data-aos="fade-up">
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <div class="info">
-                        <div class="address">
-                            <i class="icofont-google-map"></i>
-                            <h4>Address :</h4>
-                            <p>{{$company->address}}</p>
-                        </div>
-                        <div class="email">
-                            <i class="icofont-envelope"></i>
-                            <h4>Email:</h4>
-                            <p>{{$company->email}}</p>
-                        </div>
-                        <div class="phone mb-5">
-                            <i class="icofont-phone"></i>
-                            <h4>Call:</h4>
-                            <p>{{$company->phone_number}}</p>
-                        </div>
+<section id="contact" class="contact mt-5 mb-5">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="row ">
+            <div class="col-md-4 mt-5">
+                <div class="info">
+                    <div class="address ">
+                        <i class="fas fa-map-marker-alt icon"></i>
+                        <h4 class="txt-dark-blue">Alamat :</h4>
+                        <p class="txt-grey jarak">wewe</p>
+                    </div>
+                    <div class="email mt-5">
+                        <i class="fas fa-envelope icon"></i>
+                        <h4 class="txt-dark-blue">E-mail:</h4>
+                        <p class="txt-grey jarak">wewe</p>
+                    </div>
+                    <div class="phone mt-5">
+                        <i class="fas fa-phone-alt icon"></i>
+                        <h4 class="txt-dark-blue">Telepon:</h4>
+                        <span class="txt-grey jarak">wewe</p>
                     </div>
                 </div>
-
-                <div class="col-lg-8 mt-5 mt-lg-0">
-
-                    <form action="{{route('sendemail')}}" method="post" role="form" class="php-email-form">
-                        @csrf
-                        <div class="form-row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                <div class="validate"></div>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                                <div class="validate"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                                data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                            <div class="validate"></div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="pesan" rows="8"
-                                data-msg="Please write something for us" placeholder="Message"></textarea>
-                            <div class="validate"></div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button class="btn-master" type="submit">Send Message</button></div>
-                    </form>
-
-                </div>
-
             </div>
 
+            <div class="col-md-8 mt-5">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <input type="text" class="form-control kontak" id="exampleFormControlInput1"
+                                    placeholder="Nama" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <input type="email" class="form-control kontak" id="exampleFormControlInput1"
+                                    placeholder="E-mail" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <input type="text" class="form-control kontak" id="exampleFormControlInput1"
+                                    placeholder="Subjek" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <textarea class="form-control kontak" id="exampleFormControlTextarea1"
+                                    placeholder="Pesan" rows="3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center"><button class="btn-master" type="submit">Kirim Pesan</button></div>
+                </form>
+            </div>
         </div>
-    </section><!-- End Contact Section -->
-
-</main><!-- End #main -->
-
+    </div>
+</section>
 @endsection

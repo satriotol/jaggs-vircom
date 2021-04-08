@@ -1,133 +1,146 @@
 @extends('layouts.main')
 @section('content')
-<style>
-    .tentang-box {
-        margin: 0;
-        font-size: 36px;
-        font-weight: 700;
-        font-family: "Playfair Display", serif;
-        color: #ffa500;
-    }
-
-</style>
-<!-- ======= Tentang Section ======= -->
-
-<main>
-    <section id="tentang" class="tentang mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="offset-md-4 col-md-4">
-                    <div class="text-center">
-                        <p class="tentang-box">Profil Perusahaan</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-2 mb-4">
-                @if ($company->image_desc)
-                <div class="col-md-6 ">
-                    <a onclick="lightbox()" href="{{asset('storage/'.$company->image_desc)}}" data-lightbox="gallery1">
-                        <img src="{{asset('storage/'.$company->image_desc)}}" alt="" width="100%" height="300px"
-                            style="object-fit: cover"></a>
-                </div>
-                <div class="col-md-6">
-                    {!!$company->description!!}
-                </div>
-                @else
-                <div class="col-md-12">
-                    <div class="text-center">
-                        <p>
-                            {!!$company->description!!}
-                        </p>
-                    </div>
-                </div>
-                @endif
-            </div>
-        </div>
-    </section><!-- End Chefs Section -->
-    <!-- ======= Testimonials Section ======= -->
-    {{-- <section id="testimonials" class="testimonials section-bg">
-        <div class="container owl-carousel testimonials-carousel" data-aos="zoom-in" data-aos-delay="100">
-            <div class="col-md-12 text-center">
-                <h1 style="color: #aaaaaa;; ">{{$lomba}} Aktif</h1>
-    </div>
-    </div>
-    </section><!-- End Testimonials Section --> --}}
-
-    <section id="" class="section-bg" data-aos="fade-right" data-aos-delay="100">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <h4 style="color: #ffa500;">LOMBA</h4>
-                    <h1 style="color: #ffa500; ">{{$lomba}}</h1>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h4 style="color: #ffa500;">KATEGORI</h4>
-                    <h1 style="color: #ffa500; ">{{$kategori}}</h1>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h4 style="color: #ffa500;">JENJANG</h4>
-                    <h1 style="color: #ffa500; ">{{$jenjang}}</h1>
-                </div>
-            </div>
-        </div>
-    </section><!-- End Testimonials Section -->
-    <div class="container mt-5" style="padding-right: 0px; padding-left: 0px;">
+<section class="bg-utama margin-nav">
+    <div class="container text-center">
         <div class="row">
-            <div class="offset-md-4 col-md-4">
+            <div class="col-md-12 mt-5 mb-5 ">
+                <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
+                    data-lightbox="example-2"><img src="./asset/logo.png" alt="" class="img-fluid " width="50%"
+                        height="auto">
+                </a>
+                <h1 class="txt-dark-blue mt-5" data-aos="fade-left" data-aos-duration="1000">APA ITU YOUNG STAR
+                    CHAMPIONSHIP</h1>
+                <P class="deskripsi txt-dark-blue mt-4 " data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
+                    is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and
+                    scrambled it to make a type specimen book.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into
+                    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the release of
+                    Letraset sheets containing Lorem Ipsum passages
+                </P>
+                <h1 class="txt-dark-blue mt-4" data-aos="fade-left" data-aos-duration="1000">Untuk Siapa ?</h1>
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
+                    is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and
+                    scrambled it to make a type specimen book.
+                </P>
+                <h1 class="txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Visi & Misi</h1>
+                <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000">Visi</h1>
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
+                    is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and
+                    scrambled it to make a type specimen book.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into
+                    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the release of
+                    Letraset sheets containing Lorem Ipsum passages
+                </P>
+                <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000">Misi</h1>
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
+                    is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and
+                    scrambled it to make a type specimen book.
+                    <ul class="deskripsi txt-dark-blue" data-aos="fade-right" data-aos-duration="1000">
+                        <li>wewe</li>
+                        <li>wewe</li>
+                        <li>wewe</li>
+                    </ul>
+                </P>
+            </div>
+        </div>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="section-title">
+            <h1 class="txt-dark-blue">Team Kita</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
+                    <h4 class="txt-grey">Title</h4>
+                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
+                        data-lightbox="example-2"><img src="./asset/logo-yt.png" alt="" class="foto-anggota "
+                            width="50%" height="auto"></a>
+                    </a>
+                    <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Culpa, voluptas
+                        excepturi. Illo totam
+                        architecto velit officia accusamus tenetur, nihil libero natus sunt numquam, est unde illum
+                        vero
+                        voluptates! Harum repellendus unde nam enim architecto, ea deleniti ex adipisci explicabo
+                        aperiam quae
+                        velit magni quod, inventore corrupti nostrum iusto libero officia dicta excepturi, obcaecati
+                    </p>
+                </div>
                 <div class="text-center">
-                    <p class="tentang-box">Visi Misi</p>
+                    <a class="socialmedia" href="" target="_blank"><i class="icofont-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
+                    <h4 class="txt-grey">Title</h4>
+                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
+                        data-lightbox="example-2"><img src="./asset/poster/1.jpg" alt="" class="foto-anggota">
+                    </a>
+                    </a>
+                    <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Culpa, voluptas
+                        excepturi. Illo totam
+                        architecto velit officia accusamus tenetur, nihil libero natus sunt numquam, est unde illum
+                        vero
+                        voluptates! Harum repellendus unde nam enim architecto, ea deleniti ex adipisci explicabo
+                        aperiam quae
+                        velit magni quod, inventore corrupti nostrum iusto libero officia dicta excepturi, obcaecati
+                    </p>
+                </div>
+                <div class="text-center">
+                    <a class="socialmedia" href="" target="_blank"><i class="icofont-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
+                    <h4 class="txt-grey">Title</h4>
+                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
+                        data-lightbox="example-2"><img src="./asset/logo.png" alt="" class="foto-anggota" width="50%"
+                            height="auto"></a>
+                    </a>
+                    <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Culpa, voluptas
+                        excepturi. Illo totam
+                        architecto velit officia accusamus tenetur, nihil libero natus sunt numquam, est unde illum
+                        vero
+                        voluptates! Harum repellendus unde nam enim architecto, ea deleniti ex adipisci explicabo
+                        aperiam quae
+                        velit magni quod, inventore corrupti nostrum iusto libero officia dicta excepturi, obcaecati
+                    </p>
+                </div>
+                <div class="text-center">
+                    <a class="socialmedia" href="" target="_blank"><i class="icofont-instagram"></i></a>
                 </div>
             </div>
         </div>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-12 ">
-                    <h1>Visi</h1>
-                    <p>{!!$company->vision!!}</p>
-                </div>
-                <div class="col-md-12 mt-4">
-                    <h1>Misi</h1>
-                    <p>{!!$company->mission!!}</p>
-                </div>
-            </div>
-        </div>
-        <!-- ======= Chefs Section ======= -->
-        <section id="tentang" class="tentang">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Team Kita</h2>
-                    <p>Our Team</p>
-                </div>
-                <div class="row">
-                    @foreach ($teams as $team)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <a onclick="lightbox()" href="{{asset('storage/'.$team->image)}}" data-lightbox="gallery1">
-                                <img src="{{asset('storage/'.$team->image)}}" width="100%" height="300px"
-                                    style="object-fit: cover" data-lightbox="gallery1" alt=""></a>
-                            <div class="member-info">
-                                <div class="member-info-content">
-                                    <h4 style="font-weight:bold;">{{$team->name}}</h4>
-                                    <span style="color:  #ffa500; font-weight:bold;">{{$team->title}}</span>
-                                    <p>{!!$team->description!!}</p>
-                                </div>
-                                @if ($team->instagram)
-                                <div class="text-center">
-                                    <a class="socialmedia" href="{{$team->instagram}}" target="_blank"><i
-                                        class="icofont-instagram"></i></a>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </section><!-- End Chefs Section -->
+    </div>
 
-</main>
-
-<!-- End #main -->
-@endsection
-@section('script')
+</section>
 @endsection
