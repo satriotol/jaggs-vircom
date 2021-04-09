@@ -128,8 +128,14 @@
             success: function (result) {
                 let status = result.status;
                 var text = "";
+                var date = d.getDate()
                 console.log(result.data);
                 console.log(result.data[0].start_date);
+                if (date < 10) {
+                    var date = "0" + d.getDate()
+                }
+                console.log(date);
+                // console.log(tgl());
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
@@ -151,10 +157,32 @@
                     document.getElementById("data").innerHTML =
                         '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue"Lomba Tidak Tersedia</span></h1>';
                 }
-
             }
         });
 
+        // function tgl(start, end) {
+        //     var start = "2021 - 04 - 10";
+        //     var startbaru = start.toString().replace(/ - /g, '');
+        //     var Deadline = parseInt(startbaru)
+        //     var Today = 20210409
+        //     value = Today - Deadline
+
+        //     var text = ""
+        //     if (value == 0) {
+        //         text = "buka"
+        //     } else if (value < 0) {
+        //         text = "buka"
+        //     } else {
+        //         text = "tutup"
+        //     }
+        //     // if (startangka < end ){
+        //     //     text="tutup"
+        //     // }else{
+        //     //     text="buka"
+        //     // }
+        //     console.log(date)
+        //     return text;
+        // }
     });
 
 </script>
