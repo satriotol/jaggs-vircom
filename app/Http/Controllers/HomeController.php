@@ -8,6 +8,7 @@ use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
 use App\Teams;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -31,7 +32,7 @@ class HomeController extends Controller
         $lombas = Lomba::latest()->get();
         $jenjangs = Jenjang::all();
         $categories = Kategori::whereNull('parent_id')->get();
-        return view('page.infolomba')->with('categories', $categories)->with('jenjangs',$jenjangs)->with('lombas',$lombas);
+        return view('page.infolomba')->with('categories', $categories)->with('jenjangs', $jenjangs)->with('lombas', $lombas);
     }
     public function kategori(Kategori $category)
     {
@@ -39,12 +40,15 @@ class HomeController extends Controller
         $subcategories = Kategori::where('parent_id', $category->id)->get();
         $lombas = Lomba::where('kategori_id', $category->id)->get();
         return view('page.kategori')->with('category', $category)->with('categories', $categories)
-            ->with('subcategories', $subcategories)->with('lombas',$lombas);
+            ->with('subcategories', $subcategories)->with('lombas', $lombas);
     }
     public function detail(Lomba $lomba)
     {
-        $lombaOthers = Lomba::where('kategori_id',$lomba->kategori_id)->whereNotIn('id', [$lomba->id])->get();
-        return view('page.detail_lomba')->with('lomba', $lomba)->with('lombaOthers',$lombaOthers);
+        $lombaOthers = Lomba::where('kategori_id', $lomba->kategori_id)
+            ->where('start_date', '<=', Carbon::now())
+            ->where('end_date', '>=', Carbon::now())
+            ->whereNotIn('id', [$lomba->id])->latest()->paginate(3);
+        return view('page.detail_lomba')->with('lomba', $lomba)->with('lombaOthers', $lombaOthers);
     }
     public function tentang()
     {

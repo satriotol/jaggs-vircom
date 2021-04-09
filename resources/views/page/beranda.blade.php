@@ -11,7 +11,7 @@
                 <div class="text-welcome mb-5" data-aos="fade-left" data-aos-duration="1000">
                     <h1 class="diplay-1">Young <span>Star</span></h1>
                     <h1 class="diplay-3">Championship</h1>
-                    <a href="infolomba.html"><button class="btn-master mt-2 mb-2">Info Lomba</button></a>
+                    <a href="{{route('infolomba')}}"><button class="btn-master mt-2 mb-2">Info Lomba</button></a>
                     <button class="btn-master">Registrasi</button>
                 </div>
             </div>
