@@ -37,7 +37,7 @@
                 <h1 class="txt-dark-blue judul" data-aos="fade-down" data-aos-duration="1000">APA ITU <span
                         class="border-blue">YOUNG STAR CHAMPIONSHIP</span> </h1>
                 <h4 class="txt-grey " data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat Vircom</h4>
-                <div class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000">{!!$company->description_beranda!!}
+                <div class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000"><p class="text-center"> {!!$company->description_beranda!!}</p>
                 </div>
 
                 <a href="{{route('tentang')}}" data-aos="fade-up" data-aos-duration="1000"><button
