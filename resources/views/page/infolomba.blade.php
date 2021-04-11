@@ -14,7 +14,7 @@
             </div>
             <div class="form-cari">
                 <div class="form-group">
-                    <input type="text" class="form-control br-10" placeholder="Nama Lomba">
+                    <input type="text" class="form-control br-10" id="Search_name" placeholder="Nama Lomba">
                 </div>
                 <div class="form-group">
                     <select class="form-control br-10" id="exampleFormControlSelect1">
@@ -33,7 +33,7 @@
                     </select>
                 </div>
                 <div class="text-right">
-                    <a href="#lomba" class="btn-master ">Cari</a>
+                    <a href="#lomba" class="btn-master" id="cari">Cari</a>
                 </div>
             </div>
         </div>
@@ -70,22 +70,22 @@
             <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">
                 <span class="border-blue">Lomba</span>
             </h1>
-            <div data-aos="fade-right" data-aos-duration="1000">
+            <div data-aos="fade-right"  id="data" data-aos-duration="1000">
                 @foreach ($lombas as $lomba)
                 <div class="row mb-3">
                     <div class="col-md-3">
-                        <a onclick="lightbox()"
-                            href="{{route('detail',$lomba->id)}}">
-                            <img src="{{asset('storage/'.$lomba->image)}}"
-                                alt="" class="img-thumbnail img-lomba img-lomba" /></a>
+                        <a onclick="lightbox()" href="{{route('detail',$lomba->id)}}">
+                            <img src="{{asset('storage/'.$lomba->image)}}" alt=""
+                                class="img-thumbnail img-lomba img-lomba" /></a>
                     </div>
                     <div class="col md-9 txt-dark-blue">
                         <a href="{{route('detail',$lomba->id)}}">
                             <h3 class="txt-dark-blue judul-lomba">{{$lomba->name}}</h3>
                         </a>
-                        <p class="text-uppercase">{{$lomba->kategori->name}} (@foreach ($lomba->kategori->children as $kc)
+                        <p class="text-uppercase">{{$lomba->kategori->name}} (@foreach ($lomba->kategori->children as
+                            $kc)
                             {{$kc->name}}
-                        @endforeach) | Jenjang</p>
+                            @endforeach) | Jenjang</p>
                         <p>
                             {!!$lomba->description!!}
                         </p>
@@ -97,6 +97,7 @@
                 @endforeach
                 <div class="col-md-12  text-center">
                     <div class="center-img">
+                        <h1></h1>
                         <a class="icon " href=""><i class="fas fa-arrow-left"></i></a>
                         <a class="icon" href=""><i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -105,4 +106,64 @@
         </section>
     </div>
 </section>
+@endsection
+@section('js')
+<script type="text/javascript">
+    $('#cari').on('click', function () {
+        $value = $(document.getElementById('Search_name')).val();
+
+        $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/lomba',
+            data: {
+                'name': $value
+            },
+            success: function (result) {
+                let status = result.status;
+                var text = "";
+                console.log(result.data);
+                if (status === "Sukses") {
+                    for (i = 0; i <result.meta.total_post; i++) {
+                        text +='<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/'+ result.data[i].gambar +'"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">'+ result.data[i].name +'</h3></a><p class="text-uppercase">'+ result.data[i].kategori.name +' | '+ result.data[i].jenjang[0] + '</p> <p>deskripsi belum ada di api</p><div class="status"><button class="btn btn-close btn-sm text-uppercase" disabled>belum ada di api</button></div></div></div>'
+
+          // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
+
+                    }
+                    document.getElementById("data").innerHTML = text;
+                    // let hasil = result.data;
+                    // $.each(hasil, function (key, value) {
+                    //         let hasil = result.data;
+                    //         console.log(value.name);
+                    //         console.log(value.kategori.name);
+                    //         console.log(value.jenjang[0]);
+
+                    //         $('#data').html(value.name);
+                    //         $('#data').html(value.name);
+                    // });
+                } else {
+                    document.getElementById("data").innerHTML = '<h3 class="txt-dark-blue judul-lomba"> Lomba Tidak tersedia</h3>';
+                    // $.ajax({
+                    //     type: 'get',
+                    //     url: 'http://127.0.0.1:8000/api/kategori',
+                    //     data: {
+                    //         'name': ''
+                    //     },
+                    //     success: function (result) {
+                    //         let sukses = result.meta.total_post;
+                    //         let hasil = result.data;
+                    //         var text = "";
+                    //         var i;
+                    //         for (i = 0; i < sukses; i++) {
+                    //             text += hasil[i].name + "<br>";
+                    //         }
+                    //         document.getElementById("data").innerHTML = text;
+                    //     }
+                    // });
+                }
+
+            }
+        });
+    });
+
+</script>
 @endsection

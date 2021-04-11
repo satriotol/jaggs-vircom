@@ -68,8 +68,8 @@
                 <div class="col-md-4 offset-md-4 txt-dark-blue">
                     <h3>Find We At</h3>
                     <a href="https://www.youtube.com/channel/UCoIiiHof6BJ85PLuLkuxuhw" target="_blank"> <img
-                            src="./asset/logo-yt.png" class="footer-yt" alt="Responsive image"></a>
-                    <a href="https://www.instagram.com/anggabaeee/ " target="_blank"><img src="./asset/logo-ig.png"
+                            src="{{asset('asset/logo-yt.png')}}" class="footer-yt" alt="Responsive image"></a>
+                    <a href="https://www.instagram.com/anggabaeee/ " target="_blank"><img src="{{asset('asset/logo-ig.png')}}"
                             class="footer-ig" alt="Responsive image"></a>
                 </div>
             </div>
@@ -86,13 +86,13 @@
                 <div class="col-sm-4">
                     <div class="footer-center mb-2">
                         <a href="https://www.youtube.com/channel/UCoIiiHof6BJ85PLuLkuxuhw" target="_blank"> <img
-                                src="./asset/logo-yt.png" class="footer-yt" alt="Responsive image">
+                                src="{{asset('asset/logo-yt.png')}}" class="footer-yt" alt="Responsive image">
                             <span class="footer-text">YOUNG STAR CHAMPIONSHIP</span></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="footer-center mb-2">
-                        <a href="https://www.instagram.com/anggabaeee/" target="_blank"><img src="./asset/logo-ig.png"
+                        <a href="https://www.instagram.com/anggabaeee/" target="_blank"><img src="{{asset('asset/logo-ig.png')}}"
                                 class="footer-ig" alt="Responsive image">
                             <span class="footer-text">YOUNG STAR CHAMPIONSHIP</span></a>
                     </div>
@@ -111,6 +111,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{asset('asset/lightbox/js/lightbox-plus-jquery.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('asset/jquery/jquery.min.js')}}"></script>
     @yield('js')
 </body>
 
