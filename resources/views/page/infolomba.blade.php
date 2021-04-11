@@ -66,11 +66,12 @@
                 @endforeach
             </div>
         </section>
-        <section id="lomba" class="lomba pb-5">
-            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">
+        <section id="lomba" class="lomba pb-5" >
+            <div  id="data">
+            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left"  data-aos-duration="1000">
                 <span class="border-blue">Lomba</span>
             </h1>
-            <div data-aos="fade-right"  id="data" data-aos-duration="1000">
+            <div data-aos="fade-right" data-aos-duration="1000">
                 @foreach ($lombas as $lomba)
                 <div class="row mb-3">
                     <div class="col-md-3">
@@ -103,6 +104,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </section>
     </div>
 </section>
@@ -110,13 +112,17 @@
 @section('js')
 <script type="text/javascript">
     $('#cari').on('click', function () {
-        $value = $(document.getElementById('Search_name')).val();
+        $name = $(document.getElementById('Search_name')).val();
+        $jenjang = $(document.getElementById('Search_jenjang')).val();
+        $kategori = $(document.getElementById('Search_kategori')).val();
 
         $.ajax({
             type: 'get',
             url: 'http://127.0.0.1:8000/api/lomba',
             data: {
-                'name': $value
+                'name': $name,
+                'jenjang': $jenjang,
+                'kategori': $kategori
             },
             success: function (result) {
                 let status = result.status;
@@ -129,7 +135,7 @@
           // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
 
                     }
-                    document.getElementById("data").innerHTML = text;
+                    document.getElementById("data").innerHTML ='<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' + text;
                     // let hasil = result.data;
                     // $.each(hasil, function (key, value) {
                     //         let hasil = result.data;
@@ -141,7 +147,7 @@
                     //         $('#data').html(value.name);
                     // });
                 } else {
-                    document.getElementById("data").innerHTML = '<h3 class="txt-dark-blue judul-lomba"> Lomba Tidak tersedia</h3>';
+                    document.getElementById("data").innerHTML ='<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue"Lomba Tidak Tersedia</span></h1>';
                     // $.ajax({
                     //     type: 'get',
                     //     url: 'http://127.0.0.1:8000/api/kategori',
