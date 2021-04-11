@@ -23,6 +23,26 @@ class ApiLombaController extends Controller
             }
             return new LombaCollection($data);
         }
+        if ($request->has('jenjang')) {
+            $cari = $request->input('jenjang');
+            $data = Lomba::whereHas('jenjang', function($query) use($cari){
+                return $query->where('name', '=', $cari);
+            })->get();
+            if (is_null($request->input('kategori'))) {
+                return new LombaCollection($data);
+            }
+            return new LombaCollection($data);
+        }
+        if ($request->has('kategori')) {
+            $cari = $request->input('kategori');
+            $data = Lomba::whereHas('kategori', function($query) use($cari){
+                return $query->where('name', '=', $cari);
+            })->get();
+            if (is_null($request->input('kategori'))) {
+                return new LombaCollection($data);
+            }
+            return new LombaCollection($data);
+        }
         return new LombaCollection($data);
     }
     /**

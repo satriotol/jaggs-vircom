@@ -17,10 +17,13 @@ class LombaResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'name' => $this->name,
             'kategori' => new KategoriResource($this->kategori),
             'jenjang' => $this->jenjang->pluck('name'),
-            'gambar' => $this->image
+            'gambar' => $this->image,
+            'start_date' => $this->start_date,
+            'end_date' => $this->end_date
         ];
     }
 }
