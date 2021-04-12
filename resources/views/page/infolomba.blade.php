@@ -83,11 +83,9 @@
                             <a href="{{route('detail',$lomba->id)}}">
                                 <h3 class="txt-dark-blue judul-lomba">{{$lomba->name}}</h3>
                             </a>
-                            <p class="text-uppercase">{{$lomba->kategori->name}} (@foreach ($lomba->kategori->children
-                                as
-                                $kc)
-                                {{$kc->name}}
-                                @endforeach) | Jenjang</p>
+                            <p class="text-uppercase">{{$lomba->kategori->name}} ({{$lomba->subkategori->name}}) | @foreach ($lomba->jenjang as $lj)
+                            {{$lj->name}},
+                            @endforeach</p>
                             <p>
                                 {!!$lomba->description!!}
                             </p>

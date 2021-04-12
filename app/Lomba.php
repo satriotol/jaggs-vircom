@@ -22,6 +22,10 @@ class Lomba extends Model
     {
         return $this->belongsTo(Kategori::class);
     }
+    public function subkategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
     public function deleteImage()
     {
         Storage::delete([$this->image]);
