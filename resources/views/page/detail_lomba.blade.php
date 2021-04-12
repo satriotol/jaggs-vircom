@@ -7,38 +7,16 @@
                 <div class="col-lg-4 side-detail-lomba mb-2 order-2 order-lg-1">
                     <div class="menu mb-3" data-aos="fade-right">
                         <div class="menu-empty p-3"></div>
-                        <button class="btn dropdown-custom menu-title p-3 mt-2 " id="1" onclick="Dropdown(this.id)">
-                            <h2 class="txt-dark-blue">E-Sport</h2>
+                        @foreach ($categories as $category)
+                        <button class="btn dropdown-custom menu-title p-3 mt-2 " id="{{$category->id}}" onclick="Dropdown(this.id)">
+                            <h2 class="txt-dark-blue">{{$category->name}}</h2>
                         </button>
-                        <ul class="list-group dropdown-custom-menu " id="menu-1">
-                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
+                        <ul class="list-group dropdown-custom-menu " id="menu-{{$category->id}}">
+                            @foreach ($category->children as $cc)
+                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a>
+                            @endforeach
                         </ul>
-                        <button class="btn dropdown-custom menu-title p-3 mt-2" id="2" onclick="Dropdown(this.id)">
-                            <h2 class="txt-dark-blue">Olahraga</h2>
-                        </button>
-                        <ul class="list-group dropdown-custom-menu" id="menu-2">
-                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
-                        </ul>
-                        <button class="btn dropdown-custom menu-title p-3 mt-2" id="3" onclick="Dropdown(this.id)">
-                            <h2 class="txt-dark-blue">Seni</h2>
-                        </button>
-                        <ul class="list-group dropdown-custom-menu" id="menu-3">
-                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
-                        </ul>
-                        <button class="btn dropdown-custom menu-title p-3 mt-2" id="4" onclick="Dropdown(this.id)">
-                            <h2 class="txt-dark-blue">Tilawah Al-quran</h2>
-                        </button>
-                        <ul class="list-group dropdown-custom-menu" id="menu-4">
-                            <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="#">lorem</a>
-                        </ul>
+                        @endforeach
                         <div class="menu-empty p-3 mt-2 mt-2"></div>
                     </div>
                     <div class="related-lomba mt-2" data-aos="fade-right">

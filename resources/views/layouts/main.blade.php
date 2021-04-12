@@ -36,7 +36,7 @@
                     <li class="nav-item {{Request::routeIs('home') ? 'active' : ''}}">
                         <a class="nav-link" href="{{route('home')}}">Beranda</a>
                     </li>
-                    <li class="nav-item {{Request::routeIs('infolomba','detail','infolomba') ? 'active' : ''}}">
+                    <li class="nav-item {{Request::routeIs('infolomba','detail','infolomba','kategori') ? 'active' : ''}}">
                         <a class="nav-link" href="{{route('infolomba')}}">Info Lomba</a>
                     </li>
                     <li class="nav-item {{Request::routeIs('tentang') ? 'active' : ''}}">

@@ -44,11 +44,12 @@ class HomeController extends Controller
     }
     public function detail(Lomba $lomba)
     {
+        $categories = Kategori::whereNull('parent_id')->get();
         $lombaOthers = Lomba::where('kategori_id', $lomba->kategori_id)
             ->where('start_date', '<=', Carbon::now())
             ->where('end_date', '>=', Carbon::now())
             ->whereNotIn('id', [$lomba->id])->latest()->paginate(3);
-        return view('page.detail_lomba')->with('lomba', $lomba)->with('lombaOthers', $lombaOthers);
+        return view('page.detail_lomba')->with('lomba', $lomba)->with('lombaOthers', $lombaOthers)->with('categories',$categories);
     }
     public function tentang()
     {
