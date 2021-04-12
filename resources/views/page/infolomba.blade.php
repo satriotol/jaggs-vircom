@@ -145,7 +145,7 @@
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
-                            '</p><div class="status">' + tgl() + '</div></div></div>'
+                            '</p><div class="status">' + tgl(result.data[0].end_date) + '</div></div></div>'
 
                         // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
 
@@ -160,8 +160,8 @@
             }
         });
 
-        function tgl(start, end) {
-            var start = "2021 - 04 - 10";
+        function tgl(end) {
+            var end = end.toString()
             var startbaru = start.toString().replace(/ - /g, '');
             var Deadline = parseInt(startbaru)
             var d = new Date();
