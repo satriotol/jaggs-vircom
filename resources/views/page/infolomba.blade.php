@@ -91,6 +91,7 @@
                             </p>
                             <div class="status">
                                 <button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>
+                                <button class="btn btn-close btn-sm text-uppercase" disabled>Close</button>
                             </div>
                         </div>
                     </div>
@@ -126,14 +127,10 @@
             success: function (result) {
                 let status = result.status;
                 var text = "";
-                var date = d.getDate()
                 console.log(result.data);
-                console.log(result.data[0].start_date);
-                if (date < 10) {
-                    var date = "0" + d.getDate()
-                }
-                console.log(date);
-                // console.log(tgl());
+                console.log(result.data[0].end_date);
+
+                console.log(tgl());
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
@@ -143,7 +140,7 @@
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
-                            '</p><div class="status"><button class="btn btn-close btn-sm text-uppercase" disabled>belum ada di api</button></div></div></div>'
+                            '</p><div class="status">'+ tgl() +'</div></div></div>'
 
                         // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
 
@@ -158,29 +155,39 @@
             }
         });
 
-        // function tgl(start, end) {
-        //     var start = "2021 - 04 - 10";
-        //     var startbaru = start.toString().replace(/ - /g, '');
-        //     var Deadline = parseInt(startbaru)
-        //     var Today = 20210409
-        //     value = Today - Deadline
-
-        //     var text = ""
-        //     if (value == 0) {
-        //         text = "buka"
-        //     } else if (value < 0) {
-        //         text = "buka"
-        //     } else {
-        //         text = "tutup"
-        //     }
-        //     // if (startangka < end ){
-        //     //     text="tutup"
-        //     // }else{
-        //     //     text="buka"
-        //     // }
-        //     console.log(date)
-        //     return text;
-        // }
+        function tgl(start, end) {
+            var start = "2021 - 04 - 10";
+            var startbaru = start.toString().replace(/ - /g, '');
+            var Deadline = parseInt(startbaru)
+            var d = new Date();
+            var date = d.getDate()
+            var month = d.getMonth() + 1
+            var year = d.getFullYear();
+            if (date < 10) {
+                var date = "0" + d.getDate()
+            }
+            if (month < 10) {
+                var month = d.getMonth() + 1
+                var month = "0" + month
+            }
+            var date = date.toString()
+            var month = month.toString()
+            var year = year.toString()
+            var todaystr = year + month + date
+            var today = parseInt(todaystr)
+            value = today - Deadline
+            var text = ""
+            if (value == 0) {
+                text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
+            } else if (value < 0) {
+                text ='<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
+            } else {
+                text = '<button class="btn btn-close btn-sm text-uppercase" disabled>Close</button>'
+            }
+            console.log(Deadline)
+            console.log(today)
+            return text;
+        }
     });
 
 </script>
