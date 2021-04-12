@@ -50,8 +50,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Kategori <span style="color: red">*</span></label>
-                                    <select class="form-control select2bs4" name="kategori_id" id="kategori_id"
+                                    <select class="form-control" name="kategori_id" id="kategori_id"
                                         style="width: 100%;" required>
+                                        <option value="">Pilih Salah Satu</option>
                                         @foreach ($kategoris as $kategori)
                                         <option value="{{$kategori->id}}" @if (isset($lomba)) @if ($kategori->id ===
                                             $lomba->kategori_id)
@@ -63,8 +64,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Sub Kategori <span style="color: red">*</span></label>
-                                    <select class="form-control select2bs4" name="subkategori_id" id="subkategori_id"
-                                        style="width: 100%;" required>
+                                    <select class="form-control" name="subkategori_id" class="subkategori_class"
+                                        id="subkategori_id" style="width: 100%;" required>
+                                        <option value="none">Pilih Salah Satu</option>
                                         @foreach ($subkategoris as $subkategori)
                                         <optgroup label="{{$subkategori->parent->id}}">
                                             <option value="{{$subkategori->id}}" @if (isset($lomba)) @if ($subkategori->
@@ -199,17 +201,44 @@
     });
 
 </script>
+
+@if (isset($lomba))
 <script>
     $(document).ready(function () {
         var $optgroups = $('#subkategori_id > optgroup');
-        $("#kategori_id").on("change", function () {
+        $('#subkategori_id').prop("disabled", false);
+        $("#kategori_id").on('change', function () {
             var selectedVal = this.value;
-            $('#subkategori_id').prop("disabled", false);
-            $('#subkategori_id').html($optgroups.filter('[label="' + selectedVal + '"]'));
+            if (!$('#kategori_id').val()) {
+                $('#subkategori_id').prop("disabled", false);
+                $('#subkategori_id').val('');
+            } else {
+                $('#subkategori_id').prop("disabled", false);
+                $('#subkategori_id').html($optgroups.filter('[label="' + selectedVal + '"]'));
+            }
         });
     });
 
 </script>
+@else
+<script>
+    $(document).ready(function () {
+        var $optgroups = $('#subkategori_id > optgroup');
+        $('#subkategori_id').prop("disabled", true);
+        $("#kategori_id").on('change', function () {
+            var selectedVal = this.value;
+            if (!$('#kategori_id').val()) {
+                $('#subkategori_id').prop("disabled", true);
+                $('#subkategori_id').val('');
+            } else {
+                $('#subkategori_id').prop("disabled", false);
+                $('#subkategori_id').html($optgroups.filter('[label="' + selectedVal + '"]'));
+            }
+        });
+    });
+
+</script>
+@endif
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script>
     $('.textarea').summernote({
