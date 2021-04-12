@@ -20,7 +20,7 @@
                     <select class="form-control br-10" id="exampleFormControlSelect1">
                         <option value="">Pilih Jenjang</option>
                         @foreach ($jenjangs as $jenjang)
-                        <option value="{{$jenjang->id}}">{{$jenjang->name}}</option>
+                        <option value="{{$jenjang->name}}">{{$jenjang->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -28,7 +28,7 @@
                     <select class="form-control br-10" id="exampleFormControlSelect1">
                         <option value="">Pilih Kategori</option>
                         @foreach ($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->name}}">{{$category->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -66,45 +66,46 @@
                 @endforeach
             </div>
         </section>
-        <section id="lomba" class="lomba pb-5" >
-            <div  id="data">
-            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left"  data-aos-duration="1000">
-                <span class="border-blue">Lomba</span>
-            </h1>
-            <div data-aos="fade-right" data-aos-duration="1000">
-                @foreach ($lombas as $lomba)
-                <div class="row mb-3">
-                    <div class="col-md-3">
-                        <a onclick="lightbox()" href="{{route('detail',$lomba->id)}}">
-                            <img src="{{asset('storage/'.$lomba->image)}}" alt=""
-                                class="img-thumbnail img-lomba img-lomba" /></a>
+        <section id="lomba" class="lomba pb-5">
+            <div id="data">
+                <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">
+                    <span class="border-blue">Lomba</span>
+                </h1>
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    @foreach ($lombas as $lomba)
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <a onclick="lightbox()" href="{{route('detail',$lomba->id)}}">
+                                <img src="{{asset('storage/'.$lomba->image)}}" alt=""
+                                    class="img-thumbnail img-lomba img-lomba" /></a>
+                        </div>
+                        <div class="col md-9 txt-dark-blue">
+                            <a href="{{route('detail',$lomba->id)}}">
+                                <h3 class="txt-dark-blue judul-lomba">{{$lomba->name}}</h3>
+                            </a>
+                            <p class="text-uppercase">{{$lomba->kategori->name}} (@foreach ($lomba->kategori->children
+                                as
+                                $kc)
+                                {{$kc->name}}
+                                @endforeach) | Jenjang</p>
+                            <p>
+                                {!!$lomba->description!!}
+                            </p>
+                            <div class="status">
+                                <button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col md-9 txt-dark-blue">
-                        <a href="{{route('detail',$lomba->id)}}">
-                            <h3 class="txt-dark-blue judul-lomba">{{$lomba->name}}</h3>
-                        </a>
-                        <p class="text-uppercase">{{$lomba->kategori->name}} (@foreach ($lomba->kategori->children as
-                            $kc)
-                            {{$kc->name}}
-                            @endforeach) | Jenjang</p>
-                        <p>
-                            {!!$lomba->description!!}
-                        </p>
-                        <div class="status">
-                            <button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>
+                    @endforeach
+                    <div class="col-md-12  text-center">
+                        <div class="center-img">
+                            <h1></h1>
+                            <a class="icon " href=""><i class="fas fa-arrow-left"></i></a>
+                            <a class="icon" href=""><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                @endforeach
-                <div class="col-md-12  text-center">
-                    <div class="center-img">
-                        <h1></h1>
-                        <a class="icon " href=""><i class="fas fa-arrow-left"></i></a>
-                        <a class="icon" href=""><i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
             </div>
-        </div>
         </section>
     </div>
 </section>
@@ -128,47 +129,32 @@
                 let status = result.status;
                 var text = "";
                 console.log(result.data);
+                console.log(result.data[0].start_date);
                 if (status === "Sukses") {
-                    for (i = 0; i <result.meta.total_post; i++) {
-                        text +='<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/'+ result.data[i].gambar +'"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">'+ result.data[i].name +'</h3></a><p class="text-uppercase">'+ result.data[i].kategori.name +' | '+ result.data[i].jenjang[0] + '</p> <p>deskripsi belum ada di api</p><div class="status"><button class="btn btn-close btn-sm text-uppercase" disabled>belum ada di api</button></div></div></div>'
+                    for (i = 0; i < result.meta.total_post; i++) {
+                        text +=
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            result.data[i].gambar +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            result.data[i].name + '</h3></a><p class="text-uppercase">' + result
+                            .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
+                            '</p> <p>' + result.data[i].deskripsi +
+                            '</p><div class="status"><button class="btn btn-close btn-sm text-uppercase" disabled>belum ada di api</button></div></div></div>'
 
-          // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
+                        // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
 
                     }
-                    document.getElementById("data").innerHTML ='<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' + text;
-                    // let hasil = result.data;
-                    // $.each(hasil, function (key, value) {
-                    //         let hasil = result.data;
-                    //         console.log(value.name);
-                    //         console.log(value.kategori.name);
-                    //         console.log(value.jenjang[0]);
-
-                    //         $('#data').html(value.name);
-                    //         $('#data').html(value.name);
-                    // });
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' +
+                        text;
                 } else {
-                    document.getElementById("data").innerHTML ='<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue"Lomba Tidak Tersedia</span></h1>';
-                    // $.ajax({
-                    //     type: 'get',
-                    //     url: 'http://127.0.0.1:8000/api/kategori',
-                    //     data: {
-                    //         'name': ''
-                    //     },
-                    //     success: function (result) {
-                    //         let sukses = result.meta.total_post;
-                    //         let hasil = result.data;
-                    //         var text = "";
-                    //         var i;
-                    //         for (i = 0; i < sukses; i++) {
-                    //             text += hasil[i].name + "<br>";
-                    //         }
-                    //         document.getElementById("data").innerHTML = text;
-                    //     }
-                    // });
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue"Lomba Tidak Tersedia</span></h1>';
                 }
 
             }
         });
+
     });
 
 </script>
