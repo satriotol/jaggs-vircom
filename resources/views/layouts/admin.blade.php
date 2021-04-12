@@ -247,6 +247,33 @@
                                 </li>
                             </ul>
                         </li>
+                        <li
+                            class="nav-item has-treeview {{Request::routeIs('faq.create','faq.edit','faq.index') ? 'menu-open' : ''}}">
+                            <a href="#"
+                                class="nav-link {{Request::routeIs('faq.create','faq.edit','faq.index') ? 'active' : ''}}">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    FAQ
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('faq.index')}}"
+                                        class="nav-link {{Request::routeIs('faq.index') ? 'active' : ''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List FAQ</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('faq.create')}}"
+                                        class="nav-link {{Request::routeIs('faq.create','faq.edit') ? 'active' : ''}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Tambah FAQ</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-header">KELUAR</li>
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
