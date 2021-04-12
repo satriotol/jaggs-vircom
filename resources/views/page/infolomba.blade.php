@@ -83,15 +83,20 @@
                             <a href="{{route('detail',$lomba->id)}}">
                                 <h3 class="txt-dark-blue judul-lomba">{{$lomba->name}}</h3>
                             </a>
-                            <p class="text-uppercase">{{$lomba->kategori->name}} ({{$lomba->subkategori->name}}) | @foreach ($lomba->jenjang as $lj)
-                            {{$lj->name}},
-                            @endforeach</p>
+                            <p class="text-uppercase">{{$lomba->kategori->name}} ({{$lomba->subkategori->name}}) |
+                                @foreach ($lomba->jenjang as $lj)
+                                {{$lj->name}},
+                                @endforeach</p>
                             <p>
                                 {!!$lomba->description!!}
                             </p>
                             <div class="status">
-                                <button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>
-                                <button class="btn btn-close btn-sm text-uppercase" disabled>Close</button>
+                                @if ($lomba->start_date <= now()) @if ( $lomba->end_date >= now())
+                                    <button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>
+                                    @else
+                                    <button class="btn btn-close btn-sm text-uppercase" disabled>CLOSE</button>
+                                    @endif
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -99,7 +104,7 @@
                     <div class="col-md-12  text-center">
                         <div class="center-img">
                             <h1></h1>
-                            <a class="icon " href=""><i class="fas fa-arrow-left"></i></a>
+                            <a class="icon" href=""><i class="fas fa-arrow-left"></i></a>
                             <a class="icon" href=""><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -140,7 +145,7 @@
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
-                            '</p><div class="status">'+ tgl() +'</div></div></div>'
+                            '</p><div class="status">' + tgl() + '</div></div></div>'
 
                         // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
 
@@ -180,7 +185,7 @@
             if (value == 0) {
                 text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
             } else if (value < 0) {
-                text ='<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
+                text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
             } else {
                 text = '<button class="btn btn-close btn-sm text-uppercase" disabled>Close</button>'
             }
