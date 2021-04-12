@@ -53,7 +53,6 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
-
     }
 
     /**
@@ -62,9 +61,9 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        //
+        return view('admin.faq.create')->with('faq',$faq);
     }
 
     /**
@@ -74,9 +73,14 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateFaqRequest $request, Faq $faq)
     {
-        //
+        $faq->update([
+            'pertanyaan' => $request->pertanyaan,
+            'jawaban' => $request->jawaban
+        ]);
+        session()->flash('success','Faq Update Successfully');
+        return redirect(route('faq.index'));
     }
 
     /**
@@ -85,8 +89,10 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Faq $faq)
     {
-        //
+        $faq->delete();
+        session()->flash('success','Faq Deleted Successfully');
+        return redirect(route('faq.index'));
     }
 }
