@@ -126,10 +126,117 @@
         console.log($kategori);
         if ($name === "" && $jenjang === "null" && $kategori !== "null" ){
             console.log("kategori isi name jenjang kosong ")
-        }else if ($name === "" && $kategori === "null" && $jenjang !== "null" ){
+
+        $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/lomba',
+            data: {
+                'kategori': $kategori
+            },
+            success: function (result) {
+                let status = result.status;
+                var text = "";
+                console.log(result.status);
+                if (status === "Sukses") {
+                    for (i = 0; i < result.meta.total_post; i++) {
+                        text +=
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            result.data[i].gambar +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            result.data[i].name + '</h3></a><p class="text-uppercase">' + result
+                            .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
+                            '</p> <p>' + result.data[i].deskripsi +
+                            '</p><div class="status">' +tgl(result.data[i].end_date) +'</div></div></div>'
+                        console.log("tgl" + result.data[i].end_date)
+                        console.log(tgl(result.data[i].end_date))
+
+                        // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
+
+                    }
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' +
+                        text;
+                } else {
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Lomba Tidak Tersedia</h1>';
+                }
+            }
+        });
+        }
+        else if ($name === "" && $kategori === "null" && $jenjang !== "null" ){
             console.log("jenjang isi name kategori kosong ")
+            $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/lomba',
+            data: {
+                'jenjang': $jenjang
+            },
+            success: function (result) {
+                let status = result.status;
+                var text = "";
+                console.log(result.status);
+                if (status === "Sukses") {
+                    for (i = 0; i < result.meta.total_post; i++) {
+                        text +=
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            result.data[i].gambar +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            result.data[i].name + '</h3></a><p class="text-uppercase">' + result
+                            .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
+                            '</p> <p>' + result.data[i].deskripsi +
+                            '</p><div class="status">' +tgl(result.data[i].end_date) +'</div></div></div>'
+                        console.log("tgl" + result.data[i].end_date)
+                        console.log(tgl(result.data[i].end_date))
+
+                        // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
+
+                    }
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' +
+                        text;
+                } else {
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Lomba Tidak Tersedia</h1>';
+                }
+            }
+        });
         }else if ($name !== "" && $kategori === "null" && $jenjang === "null" ){
             console.log("name isi jenjang kategori kosong ")
+            $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/lomba',
+            data: {
+                'name': $name
+            },
+            success: function (result) {
+                let status = result.status;
+                var text = "";
+                console.log(result.status);
+                if (status === "Sukses") {
+                    for (i = 0; i < result.meta.total_post; i++) {
+                        text +=
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            result.data[i].gambar +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            result.data[i].name + '</h3></a><p class="text-uppercase">' + result
+                            .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
+                            '</p> <p>' + result.data[i].deskripsi +
+                            '</p><div class="status">' +tgl(result.data[i].end_date) +'</div></div></div>'
+                        console.log("tgl" + result.data[i].end_date)
+                        console.log(tgl(result.data[i].end_date))
+
+                        // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
+
+                    }
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' +
+                        text;
+                } else {
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Lomba Tidak Tersedia</h1>';
+                }
+            }
+        });
         }else if ($name !== "" && $kategori === "null" && $jenjang !== "null" ){
             console.log("Name jenjang isi kategori kosong ")
         }else if ($name !== "" && $kategori !== "null" && $jenjang === "null" ){
@@ -140,83 +247,74 @@
             console.log("Semua isi")
         }else {
             console.log("semua kosong")
+            $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/lomba',
+            data: {
+                'name': ""
+            },
+            success: function (result) {
+                let status = result.status;
+                var text = "";
+                console.log(result.status);
+                if (status === "Sukses") {
+                    for (i = 0; i < result.meta.total_post; i++) {
+                        text +=
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            result.data[i].gambar +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            result.data[i].name + '</h3></a><p class="text-uppercase">' + result
+                            .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
+                            '</p> <p>' + result.data[i].deskripsi +
+                            '</p><div class="status">' +tgl(result.data[i].end_date) +'</div></div></div>'
+                        console.log("tgl" + result.data[i].end_date)
+                        console.log(tgl(result.data[i].end_date))
+
+                        // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
+
+                    }
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' +
+                        text;
+                } else {
+                    document.getElementById("data").innerHTML =
+                        '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Lomba Tidak Tersedia</h1>';
+                }
+            }
+        });
         }
-        // else if($kategori === "null"){
-        //     console.log("kategori kosong")
-        // }else if($jenjang === "null"){
-        //     console.log("jenjang kosong")
-        // }else if(){
-        //     console.log("semua kosong")
-        // }
 
-        // $.ajax({
-        //     type: 'get',
-        //     url: 'http://127.0.0.1:8000/api/lomba',
-        //     data: {
-        //         'name': $name,
-        //         'jenjang': $jenjang,
-        //         'kategori': $kategori
-        //     },
-        //     success: function (result) {
-        //         let status = result.status;
-        //         var text = "";
-        //         console.log(result.status);
-        //         if (status === "Sukses") {
-        //             for (i = 0; i < result.meta.total_post; i++) {
-        //                 text +=
-        //                     '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
-        //                     result.data[i].gambar +
-        //                     '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
-        //                     result.data[i].name + '</h3></a><p class="text-uppercase">' + result
-        //                     .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
-        //                     '</p> <p>' + result.data[i].deskripsi +
-        //                     '</p><div class="status">' +tgl(result.data[i].end_date) +'</div></div></div>'
-        //                 console.log("tgl" + result.data[i].end_date)
-        //                 console.log(tgl(result.data[i].end_date))
 
-        //                 // result.data[i].name +'<br class= "wewe">' + result.data[i].gambar + '<br>'+ result.data[i].jenjang[0] + '<br>'+ result.data[i].kategori.name + '<br>';
-
-        //             }
-        //             document.getElementById("data").innerHTML =
-        //                 '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"><span class="border-blue">Hasil Cari</span></h1>' +
-        //                 text;
-        //         } else {
-        //             document.getElementById("data").innerHTML =
-        //                 '<h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Lomba Tidak Tersedia</h1>';
-        //         }
-        //     }
-        // });
-
-        // function tgl(end) {
-        //     var startbaru = end.toString().replace(/-/g, '');
-        //     var Deadline = parseInt(startbaru)
-        //     var d = new Date();
-        //     var date = d.getDate()
-        //     var month = d.getMonth() + 1
-        //     var year = d.getFullYear();
-        //     if (date < 10) {
-        //         var date = "0" + d.getDate()
-        //     }
-        //     if (month < 10) {
-        //         var month = d.getMonth() + 1
-        //         var month = "0" + month
-        //     }
-        //     var date = date.toString()
-        //     var month = month.toString()
-        //     var year = year.toString()
-        //     var todaystr = year + month + date
-        //     var today = parseInt(todaystr)
-        //     value = today - Deadline
-        //     var text = ""
-        //     if (value == 0) {
-        //         text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
-        //     } else if (value < 0) {
-        //         text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
-        //     } else {
-        //         text = '<button class="btn btn-close btn-sm text-uppercase" disabled>Close</button>'
-        //     }
-        //     return text
-        // }
+        function tgl(end) {
+            var startbaru = end.toString().replace(/-/g, '');
+            var Deadline = parseInt(startbaru)
+            var d = new Date();
+            var date = d.getDate()
+            var month = d.getMonth() + 1
+            var year = d.getFullYear();
+            if (date < 10) {
+                var date = "0" + d.getDate()
+            }
+            if (month < 10) {
+                var month = d.getMonth() + 1
+                var month = "0" + month
+            }
+            var date = date.toString()
+            var month = month.toString()
+            var year = year.toString()
+            var todaystr = year + month + date
+            var today = parseInt(todaystr)
+            value = today - Deadline
+            var text = ""
+            if (value == 0) {
+                text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
+            } else if (value < 0) {
+                text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
+            } else {
+                text = '<button class="btn btn-close btn-sm text-uppercase" disabled>Close</button>'
+            }
+            return text
+        }
     });
 
 </script>
