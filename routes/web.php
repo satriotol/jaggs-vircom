@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/admin/jenjang', 'JenjangController');
         Route::resource('/admin/lomba','LombaController');
         Route::resource('/admin/team', 'TeamController');
+        Route::resource('/admin/faq', 'FaqController');
         Route::get('/admin/company/menu/{company}', 'CompanyController@editmenu')->name('company.menu');
         Route::put('/admin/company/menu/{company}', 'CompanyController@updatemenu')->name('company.updatemenu');
         Route::get('/admin/company/beranda/{company}', 'CompanyController@editberanda')->name('company.beranda');
