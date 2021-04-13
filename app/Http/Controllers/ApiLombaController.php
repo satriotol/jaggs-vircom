@@ -15,34 +15,20 @@ class ApiLombaController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Lomba::all();
-        if ($request->has('name')) {
-            $data = Lomba::where('name', 'like' , '%'.$request->input('name').'%')->get();
-            if (is_null($request->input('name'))) {
-                return new LombaCollection($data);
+        $name = $request->input('name');
+        $kategori = $request->input('kategori');
+        $jenjang = $request->input('jenjang');
+
+        $data = Lomba::whereHas('jenjang', function ($query) use ($jenjang) {
+            if ($jenjang) {
+                return $query->where('name', '=', $jenjang);
             }
-            return new LombaCollection($data);
-        }
-        if ($request->has('jenjang')) {
-            $cari = $request->input('jenjang');
-            $data = Lomba::whereHas('jenjang', function($query) use($cari){
-                return $query->where('name', '=', $cari);
-            })->get();
-            if (is_null($request->input('kategori'))) {
-                return new LombaCollection($data);
+        })->whereHas('kategori', function ($query) use ($kategori) {
+            if ($kategori) {
+                return $query->where('name', '=', $kategori);
             }
-            return new LombaCollection($data);
-        }
-        if ($request->has('kategori')) {
-            $cari = $request->input('kategori');
-            $data = Lomba::whereHas('kategori', function($query) use($cari){
-                return $query->where('name', '=', $cari);
-            })->get();
-            if (is_null($request->input('kategori'))) {
-                return new LombaCollection($data);
-            }
-            return new LombaCollection($data);
-        }
+        })->where('name', 'like', '%' . $name . '%')
+            ->get();
         return new LombaCollection($data);
     }
     /**
