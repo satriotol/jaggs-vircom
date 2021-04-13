@@ -251,7 +251,7 @@
                             class="nav-item has-treeview {{Request::routeIs('faq.create','faq.edit','faq.index') ? 'menu-open' : ''}}">
                             <a href="#"
                                 class="nav-link {{Request::routeIs('faq.create','faq.edit','faq.index') ? 'active' : ''}}">
-                                <i class="nav-icon fas fa-users"></i>
+                                <i class="nav-icon fas fa-question-circle"></i>
                                 <p>
                                     FAQ
                                     <i class="right fas fa-angle-left"></i>
@@ -274,6 +274,33 @@
                                 </li>
                             </ul>
                         </li>
+                        <li
+                        class="nav-item has-treeview {{Request::routeIs('tatacara.create','tatacara.edit','tatacara.index') ? 'menu-open' : ''}}">
+                        <a href="#"
+                            class="nav-link {{Request::routeIs('tatacara.create','tatacara.edit','tatacara.index') ? 'active' : ''}}">
+                            <i class="nav-icon fas fa-question-circle"></i>
+                            <p>
+                                Tata Cara
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('tatacara.index')}}"
+                                    class="nav-link {{Request::routeIs('tatacara.index') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List Tata Cara</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('tatacara.create')}}"
+                                    class="nav-link {{Request::routeIs('tatacara.create','tatacara.edit') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tambah Tata Cara</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                         <li class="nav-header">KELUAR</li>
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();

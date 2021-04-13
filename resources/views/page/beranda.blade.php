@@ -48,7 +48,7 @@
     <div class="container mt-5">
         <div class="text-center" data-aos="fade-down" data-aos-duration="1000">
             <h1 class="txt-dark-blue judul"><span class="border-blue">CARA MENGIKUTI LOMBA</span> </h1>
-            <h4 class="txt-grey ">Ikuti Tata Cara Beriku</h4>
+            <h4 class="txt-grey ">Ikuti Tata Cara Berikut</h4>
         </div>
         <div class="row ">
             <div class="col-md-6">
