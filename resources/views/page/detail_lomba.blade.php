@@ -14,7 +14,9 @@
                         <ul class="list-group dropdown-custom-menu " id="menu-{{$category->id}}">
                             @foreach ($category->children as $cc)
                             {{-- <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a> --}}
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a>
+                            <a class="dropdown-item dropdown-item-custom txt-dark-blue @if ($cc->id === $lomba->subkategori->id)
+                                active
+                            @endif" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a>
                             @endforeach
                         </ul>
                         @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Companys;
+use App\Faq;
 use App\Http\Requests\SendEmailRequest;
 use App\Jenjang;
 use App\Kategori;
@@ -65,7 +66,8 @@ class HomeController extends Controller
     }
     public function faq()
     {
-        return view('page.faq');
+        $faqs = Faq::all();
+        return view('page.faq')->with('faqs', $faqs);
     }
     public function sendemail(SendEmailRequest $request)
     {
