@@ -20,7 +20,7 @@
                     <select class="form-control br-10" id="Search_jenjang">
                         <option value="null">Pilih Jenjang</option>
                         @foreach ($jenjangs as $jenjang)
-                        <option name="jenjang" value="{{$jenjang->name}}">{{$jenjang->name}}</option>
+                        <option name="jenjang" value="{{$jenjang->id}}">{{$jenjang->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -28,7 +28,7 @@
                     <select class="form-control br-10" id="Search_kategori">
                         <option value="null">Pilih Kategori</option>
                         @foreach ($categories as $category)
-                        <option name="kategori" value="{{$category->name}}">{{$category->name}}</option>
+                        <option name="kategori" value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                     </select>
                 </div>
