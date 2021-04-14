@@ -20,7 +20,7 @@
                     <select class="form-control br-10" id="Search_jenjang">
                         <option value="null">Pilih Jenjang</option>
                         @foreach ($jenjangs as $jenjang)
-                        <option name="jenjang" value="{{$jenjang->id}}">{{$jenjang->name}}</option>
+                        <option name="jenjang" value="{{$jenjang->name}}">{{$jenjang->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -28,7 +28,7 @@
                     <select class="form-control br-10" id="Search_kategori">
                         <option value="null">Pilih Kategori</option>
                         @foreach ($categories as $category)
-                        <option name="kategori" value="{{$category->id}}">{{$category->name}}</option>
+                        <option name="kategori" value="{{$category->name}}">{{$category->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -178,9 +178,9 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'" > <img src="http://127.0.0.1:8000/storage/' +
                             result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
@@ -215,9 +215,9 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'" > <img src="http://127.0.0.1:8000/storage/' +
                             result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
@@ -253,9 +253,9 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'" > <img src="http://127.0.0.1:8000/storage/' +
                             result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
@@ -291,9 +291,9 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'" > <img src="http://127.0.0.1:8000/storage/' +
                             result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
@@ -329,9 +329,9 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'" > <img src="http://127.0.0.1:8000/storage/' +
                             result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
@@ -368,9 +368,9 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'" > <img src="http://127.0.0.1:8000/storage/' +
                             result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
@@ -405,9 +405,9 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="" > <img src="http://127.0.0.1:8000/storage/' +
+                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'" > <img src="http://127.0.0.1:8000/storage/' +
                             result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href=""> <h3 class="txt-dark-blue judul-lomba">' +
+                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/'+ result.data[i].id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                             result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang[0] +
                             '</p> <p>' + result.data[i].deskripsi +
