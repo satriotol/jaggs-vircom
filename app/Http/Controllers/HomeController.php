@@ -8,6 +8,7 @@ use App\Http\Requests\SendEmailRequest;
 use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
+use App\tata_cara;
 use App\Teams;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -23,10 +24,8 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $lombas = Lomba::latest()->simplePaginate(1);
-        $jenjangs = Jenjang::all();
-        $kategoris = Kategori::all();
-        return view('page.beranda')->with('lombas', $lombas)->with('jenjangs', $jenjangs)->with('kategoris', $kategoris);
+        $tatacaras = tata_cara::all();
+        return view('page.beranda')->with('tatacaras', $tatacaras);
     }
     public function infolomba()
     {
@@ -50,15 +49,14 @@ class HomeController extends Controller
             ->where('start_date', '<=', Carbon::now())
             ->where('end_date', '>=', Carbon::now())
             ->whereNotIn('id', [$lomba->id])->latest()->paginate(3);
-        return view('page.detail_lomba')->with('lomba', $lomba)->with('lombaOthers', $lombaOthers)->with('categories',$categories);
+        return view('page.detail_lomba')->with('lomba', $lomba)->with('lombaOthers', $lombaOthers)->with('categories', $categories);
     }
     public function tentang()
     {
         $teams = Teams::all();
-        $lomba = Lomba::all()->count();
         $kategori = Kategori::all()->count();
         $jenjang = Jenjang::all()->count();
-        return view('page.tentang')->with('lomba', $lomba)->with('teams', $teams)->with('kategori', $kategori)->with('jenjang', $jenjang);
+        return view('page.tentang')->with('teams', $teams)->with('kategori', $kategori)->with('jenjang', $jenjang);
     }
     public function kontak()
     {

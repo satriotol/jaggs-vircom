@@ -23,7 +23,7 @@ class TataCaraController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tatacara.create');
     }
 
     /**

@@ -10,60 +10,19 @@
                 </a>
                 <h1 class="txt-dark-blue mt-5" data-aos="fade-left" data-aos-duration="1000">APA ITU YOUNG STAR
                     CHAMPIONSHIP</h1>
-                <P class="deskripsi txt-dark-blue mt-4 " data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
-                    is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and
-                    scrambled it to make a type specimen book.
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into
-                    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                    the release of
-                    Letraset sheets containing Lorem Ipsum passages
+                <P class="deskripsi txt-dark-blue mt-4 " data-aos="fade-right" data-aos-duration="1000">{{$company->description}}
+
                 </P>
                 <h1 class="txt-dark-blue mt-4" data-aos="fade-left" data-aos-duration="1000">Untuk Siapa ?</h1>
-                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
-                    is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and
-                    scrambled it to make a type specimen book.
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">{{$company->apa_kata_mereka}}
                 </P>
                 <h1 class="txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Visi & Misi</h1>
                 <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000">Visi</h1>
-                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
-                    is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and
-                    scrambled it to make a type specimen book.
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into
-                    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                    the release of
-                    Letraset sheets containing Lorem Ipsum passages
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">{!!$company->vision!!}
                 </P>
                 <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000">Misi</h1>
-                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">Lorem Ipsum
-                    is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and
-                    scrambled it to make a type specimen book.
-                    <ul class="deskripsi txt-dark-blue" data-aos="fade-right" data-aos-duration="1000">
-                        <li>wewe</li>
-                        <li>wewe</li>
-                        <li>wewe</li>
-                    </ul>
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">
+                    {!!$company->mission!!}
                 </P>
             </div>
         </div>

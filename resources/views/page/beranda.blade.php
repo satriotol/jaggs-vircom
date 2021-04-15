@@ -56,36 +56,16 @@
                     class="img-fluid img-welcome mb-5" alt="Responsive image">
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+                @foreach ($tatacaras as $tatacara)
                 <div class="row bubble mt-2 mr-2 ml-2 mt-2">
                     <div class="col-sm-2">
-                        <h1 class="text-center">1</h1>
+                        <h1 class="text-center">{{$tatacara->nomor}}</h1>
                     </div>
                     <div class="col-sm-10">
-                        <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Placeat quo
-                            accusantium veritatis sint modi quam tenetur ullam! Suscipit ut facilis debitis, ratione
-                            animi</p>
+                        <p class="txt-dark-blue deskripsi">{{$tatacara->description}}</p>
                     </div>
                 </div>
-                <div class="row bubble mt-2 mr-2 ml-2 mt-2">
-                    <div class="col-sm-2">
-                        <h1 class="text-center">2</h1>
-                    </div>
-                    <div class="col-sm-10">
-                        <p class="txt-dark-blue deskripsi">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Placeat ipsum esse
-                            possimus
-                            delectus ullam
-                            temporibus atque omnis iste? Voluptas ullam, delectus illum non nam assumenda quis eius
-                            odio qui
-                            distinctio aspernatur id laboriosam, nobis esse quia? Nulla labore quibusdam sint.
-                            Facere animi
-                            porro tempore impedit repellendus mollitia, provident consectetur fugiat exercitationem
-                            voluptatem?
-                            Iure numquam quia id sapiente, labore nihil dolor incidunt inventore doloremque maxime
-                            explicabo</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
