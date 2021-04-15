@@ -36,21 +36,21 @@
                         @include('admin.partials.error')
                         <form role="form" autocomplete="off"
                             action="@isset($lomba) {{route('tatacara.update',$lomba->id)}} @endisset @empty($lomba) {{route('tatacara.store')}} @endempty"
-                            method="POST" enctype="multipart/form-data">
+                            method="POST">
                             @csrf
                             @if (isset($lomba))
                             @method('PUT')
                             @endif
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="Lomba">Nomor <span style="color: red">*</span></label>
-                                    <input type="text" name="name" class="form-control" id="Lomba"
-                                        placeholder="Masukkan nama lomba..."
+                                    <label for="Nomor">Nomor <span style="color: red">*</span></label>
+                                    <input type="text" name="nomor" class="form-control" id="Lomba"
+                                        placeholder="Masukkan Nomor..."
                                         value="{{isset($lomba) ? $lomba->name : ''}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Tata Cara <span style="color: red">*</span></label>
-                                    <textarea class="textarea" rows="3" placeholder="Masukkan deskripsi lomba ..."
+                                    <textarea class="textarea form-control" rows="3" placeholder="Masukkan deskripsi lomba ..."
                                         name="description">{{isset($lomba) ? $lomba->description:''}}</textarea>
                                 </div>
                             </div>
@@ -65,24 +65,4 @@
 </div>
 @endsection
 @section('script')
-<script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
-<script>
-    $('.textarea').summernote({
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['para', ['ul', 'ol', 'paragraph']],
-        ],
-        callbacks: {
-            onPaste: function (e) {
-                var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData(
-                    'Text');
-                e.preventDefault();
-                document.execCommand('insertText', false, bufferText);
-            }
-        }
-    });
-
-</script>
 @endsection

@@ -46,7 +46,7 @@
                                         <td>{{$kategori->parent->name}}</td>
                                         <td><a href="{{route('subkategori.edit',$kategori->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <form class="btn" action="{{route('subkategori.destroy',$kategori->id)}}"
+                                            <form class="d-inline" action="{{route('subkategori.destroy',$kategori->id)}}"
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')

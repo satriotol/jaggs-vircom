@@ -62,7 +62,7 @@
                                                 class="btn btn-primary btn-sm">Detail</a>
                                             <a href="{{route('lomba.edit',$lomba->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <form action="{{route('lomba.destroy', $lomba->id)}}" method="POST">
+                                            <form class="d-inline" action="{{route('lomba.destroy', $lomba->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <input class="btn btn-danger btn-sm" type="submit" value="Delete"

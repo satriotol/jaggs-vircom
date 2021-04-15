@@ -45,11 +45,9 @@
                                         <td>{{$faq->pertanyaan}}</td>
                                         <td>{{$faq->jawaban}}</td>
                                         <td>
-                                            <a href="{{route('faq.show',$faq->id)}}"
-                                                class="btn btn-primary btn-sm">Detail</a>
                                             <a href="{{route('faq.edit',$faq->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <form action="{{route('faq.destroy', $faq->id)}}" method="POST">
+                                            <form class="d-inline" action="{{route('faq.destroy', $faq->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <input class="btn btn-danger btn-sm" type="submit" value="Delete"

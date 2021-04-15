@@ -49,7 +49,7 @@
                                         <td>
                                             <a href="{{route('team.edit',$team->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <form action="{{route('team.destroy', $team->id)}}" method="POST">
+                                            <form class="d-inline" action="{{route('team.destroy', $team->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <input class="btn btn-danger btn-sm" type="submit" value="Delete"

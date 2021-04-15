@@ -44,7 +44,7 @@
                                         <td>{{$jenjang->name}}</td>
                                         <td><a href="{{route('jenjang.edit',$jenjang->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <form class="btn" action="{{route('jenjang.destroy', $jenjang->id)}}"
+                                            <form class="d-inline" action="{{route('jenjang.destroy', $jenjang->id)}}"
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')

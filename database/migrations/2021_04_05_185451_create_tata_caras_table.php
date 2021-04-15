@@ -15,7 +15,7 @@ class CreateTataCarasTable extends Migration
     {
         Schema::create('tata_caras', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('nomor');
+            $table->integer('nomor')->unique();
             $table->text('description');
             $table->timestamps();
         });

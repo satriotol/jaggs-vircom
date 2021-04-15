@@ -41,12 +41,12 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Pertanyaan <span style="color: red">*</span></label>
-                                    <textarea name="pertanyaan" placeholder="Masukkan pertanyaan ..."
+                                    <textarea name="pertanyaan" class="form-control" placeholder="Masukkan pertanyaan ..."
                                         style="width: 100%; height:200px">{{isset($faq) ? $faq->pertanyaan : ''}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Jawaban <span style="color: red">*</span></label>
-                                    <textarea name="jawaban" placeholder="Masukkan jawaban ..."
+                                    <textarea name="jawaban" class="form-control" placeholder="Masukkan jawaban ..."
                                         style="width: 100%; height:200px">{{isset($faq) ? $faq->jawaban : ''}}</textarea>
                                 </div>
                             </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Tatacara\CreateTataCaraRequest;
+use App\tata_cara;
 use Illuminate\Http\Request;
 
 class TataCaraController extends Controller
@@ -32,9 +34,14 @@ class TataCaraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateTataCaraRequest $request)
     {
-        //
+        tata_cara::create([
+            'nomor' => $request->nomor,
+            'description' => $request->description
+        ]);
+        session()->flash('success','Tata Cara Create Successfully');
+        return redirect(route('lomba.index'));
     }
 
     /**
