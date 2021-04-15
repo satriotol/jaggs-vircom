@@ -36,7 +36,8 @@
                     <li class="nav-item {{Request::routeIs('home') ? 'active' : ''}}">
                         <a class="nav-link" href="{{route('home')}}">Beranda</a>
                     </li>
-                    <li class="nav-item {{Request::routeIs('infolomba','detail','infolomba','kategori') ? 'active' : ''}}">
+                    <li
+                        class="nav-item {{Request::routeIs('infolomba','detail','infolomba','kategori') ? 'active' : ''}}">
                         <a class="nav-link" href="{{route('infolomba')}}">Info Lomba</a>
                     </li>
                     <li class="nav-item {{Request::routeIs('tentang') ? 'active' : ''}}">
@@ -69,8 +70,8 @@
                     <h3>Find We At</h3>
                     <a href="https://www.youtube.com/channel/UCoIiiHof6BJ85PLuLkuxuhw" target="_blank"> <img
                             src="{{asset('asset/yt.png')}}" class="footer-yt" alt="Responsive image"></a>
-                    <a href="https://www.instagram.com/anggabaeee/ " target="_blank"><img src="{{asset('asset/ig.png')}}"
-                            class="footer-ig" alt="Responsive image"></a>
+                    <a href="https://www.instagram.com/anggabaeee/ " target="_blank"><img
+                            src="{{asset('asset/ig.png')}}" class="footer-ig" alt="Responsive image"></a>
                 </div>
             </div>
         </div>
@@ -92,8 +93,8 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="footer-center mb-2">
-                        <a href="https://www.instagram.com/anggabaeee/" target="_blank"><img src="{{asset('asset/ig.png')}}"
-                                class="footer-ig" alt="Responsive image">
+                        <a href="https://www.instagram.com/anggabaeee/" target="_blank"><img
+                                src="{{asset('asset/ig.png')}}" class="footer-ig" alt="Responsive image">
                             <span class="footer-text">YOUNG STAR CHAMPIONSHIP</span></a>
                     </div>
                 </div>
@@ -112,6 +113,8 @@
     <script src="{{asset('asset/lightbox/js/lightbox-plus-jquery.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('asset/jquery/jquery.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
     @yield('js')
 </body>
 
