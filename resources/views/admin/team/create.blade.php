@@ -71,7 +71,9 @@
                                 </div>
                             </div>
                             <div class="card-footer">
+                                @if ($teams->count() < 3)
                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                @endif
                             </div>
                         </form>
                     </div>
@@ -84,12 +86,6 @@
 @section('script')
 <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
-<script>
-    $(function () {
-        $('.textarea').summernote()
-    })
-
-</script>
 <script type="text/javascript">
     $(document).ready(function () {
         bsCustomFileInput.init();

@@ -28,7 +28,8 @@ class TeamController extends Controller
      */
     public function create()
     {
-        return view('admin.team.create');
+        $teams = Teams::all();
+        return view('admin.team.create')->with('teams',$teams);
     }
 
     /**

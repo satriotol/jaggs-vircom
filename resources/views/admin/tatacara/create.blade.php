@@ -35,10 +35,10 @@
                         </div>
                         @include('admin.partials.error')
                         <form role="form" autocomplete="off"
-                            action="@isset($lomba) {{route('tatacara.update',$lomba->id)}} @endisset @empty($lomba) {{route('tatacara.store')}} @endempty"
+                            action="@isset($tatacara) {{route('tatacara.update',$tatacara->id)}} @endisset @empty($tatacara) {{route('tatacara.store')}} @endempty"
                             method="POST">
                             @csrf
-                            @if (isset($lomba))
+                            @if (isset($tatacara))
                             @method('PUT')
                             @endif
                             <div class="card-body">
@@ -46,12 +46,13 @@
                                     <label for="Nomor">Nomor <span style="color: red">*</span></label>
                                     <input type="text" name="nomor" class="form-control" id="Lomba"
                                         placeholder="Masukkan Nomor..."
-                                        value="{{isset($lomba) ? $lomba->name : ''}}" required>
+                                        value="{{isset($tatacara) ? $tatacara->nomor : ''}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi Tata Cara <span style="color: red">*</span></label>
-                                    <textarea class="textarea form-control" rows="3" placeholder="Masukkan deskripsi lomba ..."
-                                        name="description">{{isset($lomba) ? $lomba->description:''}}</textarea>
+                                    <textarea class="textarea form-control" rows="3"
+                                        placeholder="Masukkan deskripsi lomba ..."
+                                        name="description">{{isset($tatacara) ? $tatacara->description:''}}</textarea>
                                 </div>
                             </div>
                             <div class="card-footer">

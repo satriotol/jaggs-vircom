@@ -27,77 +27,32 @@
             </div>
         </div>
     </div>
+    @if (!$teams->isEmpty())
     <div class="container" data-aos="fade-up" data-aos-duration="1000">
         <div class="section-title">
             <h1 class="txt-dark-blue">Team Kita</h1>
         </div>
         <div class="row mt-4">
+            @foreach ($teams as $team)
             <div class="col-lg-4 col-md-6">
                 <div data-aos="fade-right" data-aos-duration="1000">
                     <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
-                    data-lightbox="example-2"><img src="./asset/logo-yt.png" alt="" class="foto-anggota "
+                    data-lightbox="example-2"><img src="{{asset('storage/'.$team->image)}}" alt="" class="foto-anggota "
                         width="50%" height="auto"></a>
-                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
-                    <h4 class="txt-grey">Title</h4>
+                    <h3 class="txt-dark-blue font-weight-bold">{{$team->name}}</h3>
+                    <h4 class="txt-grey">{{$team->title}}</h4>
                     </a>
-                    <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Culpa, voluptas
-                        excepturi. Illo totam
-                        architecto velit officia accusamus tenetur, nihil libero natus sunt numquam, est unde illum
-                        vero
-                        voluptates! Harum repellendus unde nam enim architecto, ea deleniti ex adipisci explicabo
-                        aperiam quae
-                        velit magni quod, inventore corrupti nostrum iusto libero officia dicta excepturi, obcaecati
+                    <p class="txt-dark-blue deskripsi">{{$team->description}}
                     </p>
                 </div>
                 <div class="text-center">
                     <a class="socialmedia" href="" target="_blank"><i class="icofont-instagram"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
-                        data-lightbox="example-2"><img src="./asset/poster/1.jpg" alt="" class="foto-anggota">
-                    </a>
-                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
-                    <h4 class="txt-grey">Title</h4>
-                    <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Culpa, voluptas
-                        excepturi. Illo totam
-                        architecto velit officia accusamus tenetur, nihil libero natus sunt numquam, est unde illum
-                        vero
-                        voluptates! Harum repellendus unde nam enim architecto, ea deleniti ex adipisci explicabo
-                        aperiam quae
-                        velit magni quod, inventore corrupti nostrum iusto libero officia dicta excepturi, obcaecati
-                    </p>
-                </div>
-                <div class="text-center">
-                    <a class="socialmedia" href="" target="_blank"><i class="icofont-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
-                    data-lightbox="example-2"><img src="./asset/logo.png" alt="" class="foto-anggota" width="50%"
-                        height="auto"></a>
-                    <h3 class="txt-dark-blue font-weight-bold">Name</h3>
-                    <h4 class="txt-grey">Title</h4>
-                    <p class="txt-dark-blue deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Culpa, voluptas
-                        excepturi. Illo totam
-                        architecto velit officia accusamus tenetur, nihil libero natus sunt numquam, est unde illum
-                        vero
-                        voluptates! Harum repellendus unde nam enim architecto, ea deleniti ex adipisci explicabo
-                        aperiam quae
-                        velit magni quod, inventore corrupti nostrum iusto libero officia dicta excepturi, obcaecati
-                    </p>
-                </div>
-                <div class="text-center">
-                    <a class="socialmedia" href="" target="_blank"><i class="icofont-instagram"></i></a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
+    @endif
 
 </section>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Tatacara\CreateTataCaraRequest;
+use App\Http\Requests\Tatacara\UpdateTataCaraRequest;
 use App\tata_cara;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class TataCaraController extends Controller
      */
     public function index()
     {
-        //
+        $tatacaras = tata_cara::all();
+        return view('admin.tatacara.index')->with('tatacaras', $tatacaras);
     }
 
     /**
@@ -41,7 +43,7 @@ class TataCaraController extends Controller
             'description' => $request->description
         ]);
         session()->flash('success','Tata Cara Create Successfully');
-        return redirect(route('lomba.index'));
+        return redirect(route('tatacara.index'));
     }
 
     /**
@@ -61,9 +63,9 @@ class TataCaraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(tata_cara $tatacara)
     {
-        //
+        return view('admin.tatacara.create')->with('tatacara',$tatacara);
     }
 
     /**
@@ -73,9 +75,14 @@ class TataCaraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTataCaraRequest $request, tata_cara $tatacara)
     {
-        //
+        $data = $request->only(['nomor','description']);
+        $tatacara->update($data);
+        session()->flash('success','Tata Cara Updated Successfully');
+        return redirect(route('tatacara.index'));
+
+
     }
 
     /**
