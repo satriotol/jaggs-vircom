@@ -28,7 +28,7 @@ class ApiLombaController extends Controller
                 return $query->where('name', '=', $kategori);
             }
         })->where('name', 'like', '%' . $name . '%')
-            ->paginate(1);
+            ->get();
         return new LombaCollection($data);
     }
     /**
