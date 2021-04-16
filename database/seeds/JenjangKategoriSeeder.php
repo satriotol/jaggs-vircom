@@ -25,10 +25,24 @@ class JenjangKategoriSeeder extends Seeder
             'name' => 'UMUM',
         ]);
         Kategori::create([
-            'name' => 'SENI'
+            'name' => 'E-SPORT',
+            'image' => '/asset/kategori/e-sport.jpg',
+            'description'=> 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
         ]);
         Kategori::create([
-            'name' => 'OLAHRAGA'
+            'name' => 'OLAHRAGA',
+            'image' => '/asset/kategori/sport.jpg',
+            'description'=> 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        ]);
+        Kategori::create([
+            'name' => 'SENI',
+            'image' => '/asset/kategori/art.jpg',
+            'description'=> 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        ]);
+        Kategori::create([
+            'name' => 'TILAWAH AL-QURAN',
+            'image' => '/asset/kategori/mengaji.jpg',
+            'description'=> 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
         ]);
         Kategori::create([
             'name' => 'FUTSAL',

@@ -54,13 +54,12 @@
                 @foreach ($categories as $category)
                 <div class="col-md-3">
                     <div class="card card-kategori mb-3"
-                        style="background: linear-gradient(0deg, rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url(./asset/kategori/sport.jpg);">
+                        style="background: linear-gradient(0deg, rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{$category->image}});">
                         <div class="card-body card-kategori-text">
                             <div class="text mb-3">
                                 <h3 class="card-title">{{$category->name}}</h3>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and
-                                    make up the bulk of the card's content.
+                                    {{$category->description}}
                                 </p>
                             </div>
                         </div>

@@ -1,7 +1,9 @@
 @extends('layouts.main')
 @section('content')
 <section class="banner">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" style="background-image: linear-gradient(
+        0deg
+        , rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{$category->image}});">
     </div>
 </section>
 <section class="bg-utama">
@@ -10,7 +12,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h2 class="mb-4 txt-dark-blue text-uppercase">
-                        <span class="border-blue">Lomba</span> {{$category->name}}
+                        {{$category->name}}
                     </h2>
                     <p class="txt-grey">Beberapa Jenis Lomba Yang Tersedia</p>
                     <div class="border-blue">
@@ -65,24 +67,23 @@
             </div>
         </section>
         <section class="kategori pb-5">
-            <h1 class="mb-4 txt-dark-blue">
+            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">
                 <span class="border-blue">Kategori</span> Lomba
             </h1>
             <div class="row" data-aos="fade-right" data-aos-duration="1000">
-                @foreach ($categories as $c)
+                @foreach ($categories as $category)
                 <div class="col-md-3">
                     <div class="card card-kategori mb-3"
-                        style="background: linear-gradient(0deg, rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url(./asset/kategori/sport.jpg);">
+                        style="background: linear-gradient(0deg, rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{$category->image}});">
                         <div class="card-body card-kategori-text">
                             <div class="text mb-3">
-                                <h3 class="card-title">{{$c->name}}</h3>
+                                <h3 class="card-title">{{$category->name}}</h3>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and
-                                    make up the bulk of the card's content.
+                                    {{$category->description}}
                                 </p>
                             </div>
                         </div>
-                        <a href="{{route('kategori',$c->id)}}">
+                        <a href="{{route('kategori',$category->id)}}">
                             <div class="card-footer text-right">Lebih Lanjut ></div>
                         </a>
                     </div>
