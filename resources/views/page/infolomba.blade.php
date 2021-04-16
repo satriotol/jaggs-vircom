@@ -6,9 +6,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
 <style>
-    .J-paginationjs-nav {
-        visibility: hidden;
-    }
+
 
 </style>
 <section class="banner">
