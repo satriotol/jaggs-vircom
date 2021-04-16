@@ -36,13 +36,17 @@
                         @foreach ($lombas as $lomba)
                         <div class="col-md-5 mb-3">
                             <a href="{{route('detail',$lomba->id)}}">
-                            <img src="{{asset('storage/'.$lomba->image)}}" class="foto-rincian-lomba img-thumbnail" alt=""></a>
+                                <img src="{{asset('storage/'.$lomba->image)}}" class="foto-rincian-lomba img-thumbnail"
+                                    alt=""></a>
                         </div>
                         <div class="col-md-7 content isi-rincian-lomba">
-                            <a class="txt-dark-blue" href="{{route('detail',$lomba->id)}}"><h3>{{$lomba->name}}</h3></a>
-                            @foreach ($lomba->kategori->children as $child)
-                            <p class="text-uppercase txt-grey">{{$lomba->kategori->name}} ({{$child->name}}) | JENJANG</p>
-                            @endforeach
+                            <a class="txt-dark-blue" href="{{route('detail',$lomba->id)}}">
+                                <h3>{{$lomba->name}}</h3>
+                            </a>
+                            <p class="text-uppercase txt-grey">{{$lomba->kategori->name}}
+                                ({{$lomba->subkategori->name}}) | @foreach ($lomba->jenjang as $lj)
+                                {{$lj->name}},
+                                @endforeach</p>
                             <p>{!! $lomba->description !!}
                             </p>
                         </div>
