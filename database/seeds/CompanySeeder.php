@@ -21,7 +21,7 @@ class CompanySeeder extends Seeder
 
             // beranda
             'description_beranda' => 'ini deksripsi beranda',
-            'video_profile' => 'https://youtu.be/MiKuVyTQ9wc',
+            'video_profile' => 'https://www.youtube.com/embed/AWggPLXeOkU',
 
             // tentang
             'description' => 'ini deskripsi',

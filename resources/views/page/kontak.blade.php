@@ -8,17 +8,17 @@
                     <div class="address ">
                         <i class="fas fa-map-marker-alt icon"></i>
                         <h4 class="txt-dark-blue">Alamat :</h4>
-                        <p class="txt-grey jarak">wewe</p>
+                        <p class="txt-grey jarak">{{$company->address}}</p>
                     </div>
                     <div class="email mt-5">
                         <i class="fas fa-envelope icon"></i>
                         <h4 class="txt-dark-blue">E-mail:</h4>
-                        <p class="txt-grey jarak">wewe</p>
+                        <p class="txt-grey jarak">{{$company->email}}</p>
                     </div>
                     <div class="phone mt-5">
                         <i class="fas fa-phone-alt icon"></i>
                         <h4 class="txt-dark-blue">Telepon:</h4>
-                        <span class="txt-grey jarak">wewe</p>
+                        <span class="txt-grey jarak">{{$company->phone_number}}</p>
                     </div>
                 </div>
             </div>
