@@ -10,15 +10,18 @@
                 </a>
                 <h1 class="txt-dark-blue mt-5" data-aos="fade-left" data-aos-duration="1000">APA ITU YOUNG STAR
                     CHAMPIONSHIP</h1>
-                <P class="deskripsi txt-dark-blue mt-4 " data-aos="fade-right" data-aos-duration="1000">{{$company->description}}
+                <P class="deskripsi txt-dark-blue mt-4 " data-aos="fade-right" data-aos-duration="1000">
+                    {{$company->description}}
 
                 </P>
                 <h1 class="txt-dark-blue mt-4" data-aos="fade-left" data-aos-duration="1000">Untuk Siapa ?</h1>
-                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">{{$company->apa_kata_mereka}}
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">
+                    {{$company->apa_kata_mereka}}
                 </P>
                 <h1 class="txt-dark-blue" data-aos="fade-left" data-aos-duration="1000">Visi & Misi</h1>
                 <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000">Visi</h1>
-                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">{!!$company->vision!!}
+                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">
+                    {!!$company->vision!!}
                 </P>
                 <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000">Misi</h1>
                 <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000">
@@ -36,9 +39,8 @@
             @foreach ($teams as $team)
             <div class="col-lg-4 col-md-6">
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <a onclick="lightbox()" class="example-image-link" href="./asset/logo.png"
-                    data-lightbox="example-2"><img src="{{asset('storage/'.$team->image)}}" alt="" class="foto-anggota "
-                        width="50%" height="auto"></a>
+                    <a class="example-image-link" href="./asset/logo.png"><img src="{{asset('storage/'.$team->image)}}"
+                            alt="" class="foto-anggota " width="50%" height="auto"></a>
                     <h3 class="txt-dark-blue font-weight-bold">{{$team->name}}</h3>
                     <h4 class="txt-grey">{{$team->title}}</h4>
                     </a>

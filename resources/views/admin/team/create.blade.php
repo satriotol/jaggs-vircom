@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                @if ($teams->count() < 3)
+                                @if ($team->count() < 3)
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 @endif
                             </div>
