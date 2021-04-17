@@ -81,7 +81,7 @@
     <div class="container-fluid bg-dua mb-5">
         <div class="text-center py-5">
             <div class="embed-responsive embed-responsive-16by9 mx-auto">
-                <iframe class="embed-responsive-item" src="{{$lomba->video_link}}"
+                <iframe class="embed-responsive-item" src="{{$lomba->video}}"
                     allowfullscreen></iframe>
             </div>
         </div>
