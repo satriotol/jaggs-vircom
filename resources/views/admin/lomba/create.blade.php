@@ -70,7 +70,7 @@
                                         @foreach ($subkategoris as $subkategori)
                                         <optgroup label="{{$subkategori->parent->id}}">
                                             <option value="{{$subkategori->id}}" @if (isset($lomba)) @if ($subkategori->
-                                                id === $lomba->kategori_id)
+                                                id === $lomba->subkategori_id)
                                                 selected @endif @endif>
                                                 {{$subkategori->name}}
                                             </option>
@@ -194,21 +194,16 @@
     });
 
 </script>
-<script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        bsCustomFileInput.init();
-    });
 
-</script>
 
 @if (isset($lomba))
 <script>
     $(document).ready(function () {
         var $optgroups = $('#subkategori_id > optgroup');
-        $('#subkategori_id').prop("disabled", false);
+        $('#subkategori_id').prop("disabled", true);
         $("#kategori_id").on('change', function () {
             var selectedVal = this.value;
+            // $('#subkategori_id').prop("disabled", false);
             if (!$('#kategori_id').val()) {
                 $('#subkategori_id').prop("disabled", false);
                 $('#subkategori_id').val('');

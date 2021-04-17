@@ -20,13 +20,13 @@
     <link href="{{asset('asset/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
     {{-- css --}}
     @yield('css')
-    <title>Hello, world!</title>
+    <title>{{$company->name}}</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">{{$company->name}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

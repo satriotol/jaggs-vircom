@@ -30,7 +30,7 @@ class LombaController extends Controller
      */
     public function create()
     {
-        $kategoris = Kategori::whereNull('parent_id')->get();
+        $kategoris = Kategori::whereNull('parent_id')->has('children')->get();
         $subkategoris = Kategori::whereNotNull('parent_id')->get();
         $jenjangs = Jenjang::all();
         return view('admin.lomba.create')->with('jenjangs',$jenjangs)->with('kategoris',$kategoris)->with('subkategoris',$subkategoris);
@@ -45,7 +45,6 @@ class LombaController extends Controller
     public function store(CreateLombaRequest $request)
     {
         if($request->image){
-            // $image = Storage::disk('public')->put('image',$request->image);
             $image = $request->image->store('image');
         }else{
             $image =null;
@@ -90,7 +89,7 @@ class LombaController extends Controller
      */
     public function edit(Lomba $lomba)
     {
-        $kategoris = Kategori::whereNull('parent_id')->get();
+        $kategoris = Kategori::whereNull('parent_id')->has('children')->get();
         $subkategoris = Kategori::whereNotNull('parent_id')->get();
         $jenjangs = Jenjang::all();
         return view('admin.lomba.create')->with('lomba',$lomba)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris)->with('subkategoris',$subkategoris);
