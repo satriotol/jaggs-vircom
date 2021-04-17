@@ -39,7 +39,6 @@ class TataCaraController extends Controller
     public function store(CreateTataCaraRequest $request)
     {
         tata_cara::create([
-            'nomor' => $request->nomor,
             'description' => $request->description
         ]);
         session()->flash('success','Tata Cara Create Successfully');
@@ -77,7 +76,7 @@ class TataCaraController extends Controller
      */
     public function update(UpdateTataCaraRequest $request, tata_cara $tatacara)
     {
-        $data = $request->only(['nomor','description']);
+        $data = $request->only(['description']);
         $tatacara->update($data);
         session()->flash('success','Tata Cara Updated Successfully');
         return redirect(route('tatacara.index'));
@@ -91,8 +90,10 @@ class TataCaraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(tata_cara $tatacara)
     {
-        //
+        $tatacara->delete();
+        session()->flash('success','Tata Cara Deleted Successfully');
+        return redirect(route('tatacara.index'));
     }
 }

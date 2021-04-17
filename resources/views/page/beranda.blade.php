@@ -25,7 +25,7 @@
 
                 <div data-aos="fade-left" data-aos-duration="1000"
                     class="mt-5 embed-responsive embed-responsive-16by9 mx-auto">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AWggPLXeOkU"
+                    <iframe class="embed-responsive-item" src="{{$company->video_profile}}"
                         allowfullscreen></iframe>
                 </div>
             </div>
@@ -56,10 +56,13 @@
                     class="img-fluid img-welcome mb-5" alt="Responsive image">
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+                @php
+                    $i = 1;
+                @endphp
                 @foreach ($tatacaras as $tatacara)
                 <div class="row bubble mt-2 mr-2 ml-2 mt-2">
                     <div class="col-sm-2">
-                        <h1 class="text-center">{{$tatacara->nomor}}</h1>
+                        <h1 class="text-center">{{$i++}}</h1>
                     </div>
                     <div class="col-sm-10">
                         <p class="txt-dark-blue deskripsi">{{$tatacara->description}}</p>

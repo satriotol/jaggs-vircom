@@ -24,7 +24,7 @@ class UpdateTataCaraRequest extends FormRequest
     public function rules()
     {
         return [
-            'nomor' => 'required|numeric|unique:tata_caras,nomor,'.$this->id,
+            // 'nomor' => 'required|numeric|unique:tata_caras,nomor,'.$this->nomor,
             'description' => 'required'
         ];
     }
