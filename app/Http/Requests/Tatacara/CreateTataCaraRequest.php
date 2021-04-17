@@ -24,7 +24,6 @@ class CreateTataCaraRequest extends FormRequest
     public function rules()
     {
         return [
-            'nomor' => 'required|numeric|unique:tata_caras,nomor,'.$this->id,
             'description' => 'required'
         ];
     }
