@@ -39,6 +39,7 @@ class KategoriController extends Controller
     {
         Kategori::create([
             'name' => $request->name,
+            'description' => $request->description,
         ]);
         session()->flash('success','Category Create Successfully');
         return redirect(route('kategori.index'));
@@ -75,9 +76,12 @@ class KategoriController extends Controller
      */
     public function update(CreateKategoriRequest $request, Kategori $kategori)
     {
-        $kategori->update([
-            'name' => $request->name
-        ]);
+        $data = $request->only(['name','description']);
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image');
+            $data['image'] = $image;
+        }
+        $kategori->update($data);
         session()->flash('success','Kategori Update Successfully');
         return redirect(route('kategori.index'));
     }

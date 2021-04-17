@@ -18,7 +18,7 @@ class CreateCategoryTable extends Migration
             $table->integer('parent_id')->unsigned()->nullable();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string('description',75)->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

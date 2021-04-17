@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Kategori extends Model
 {
     protected $fillable = [
-        'name','parent_id'
+        'name','parent_id','description','image'
     ];
     public function lomba()
     {

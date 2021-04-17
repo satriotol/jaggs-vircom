@@ -25,6 +25,8 @@ class CreateKategoriRequest extends FormRequest
     {
         return [
             'name'=>'required',
+            'description'=>'required|max:75',
+            'image' => 'required|image|max:1000'
         ];
     }
 }
