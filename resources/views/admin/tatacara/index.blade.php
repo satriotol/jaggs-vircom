@@ -34,7 +34,6 @@
                             <table id="table" class="table">
                                 <thead>
                                     <tr>
-                                        <th>Nomor</th>
                                         <th>Deskripsi</th>
                                         <th>Action</th>
                                     </tr>
@@ -42,7 +41,6 @@
                                 <tbody>
                                     @foreach ($tatacaras as $tatacara)
                                     <tr>
-                                        <td>{{$tatacara->nomor}}</td>
                                         <td>{{$tatacara->description}}</td>
                                         <td><a href="{{route('tatacara.edit',$tatacara->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
@@ -70,7 +68,9 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function () {
-        $('#table').DataTable();
+        $('#table').DataTable({
+            "ordering": false
+        });
     });
 
 </script>

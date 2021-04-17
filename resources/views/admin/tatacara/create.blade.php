@@ -43,12 +43,6 @@
                             @endif
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="Nomor">Nomor <span style="color: red">*</span></label>
-                                    <input type="text" name="nomor" class="form-control" id="Lomba"
-                                        placeholder="Masukkan Nomor..."
-                                        value="{{isset($tatacara) ? $tatacara->nomor : ''}}" required>
-                                </div>
-                                <div class="form-group">
                                     <label>Deskripsi Tata Cara <span style="color: red">*</span></label>
                                     <textarea class="textarea form-control" rows="3"
                                         placeholder="Masukkan deskripsi lomba ..."
