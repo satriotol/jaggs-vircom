@@ -66,14 +66,16 @@
                                         @endempty </label>
                                     <div class="custom-file">
                                         <input name="image" type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                        <label class="custom-file-label" for="customFile">{{isset($team) ? $team->image : 'Choose File'}}</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                @if ($team->count() < 3)
+                                @empty($team)
+                                @if ($teams->count() < 3)
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 @endif
+                                @endempty
                             </div>
                         </form>
                     </div>
