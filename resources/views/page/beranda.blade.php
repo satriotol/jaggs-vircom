@@ -1,14 +1,14 @@
 @extends('layouts.main')
 @section('content')
-<section class="bg-utama margin-nav">
+<section class="bg-utama margin-nav" >
     <div class="container mt-4 ">
         <div class="row welcome">
             <div class="col-md-6">
-                <img src="./asset/home.png " data-aos="fade-right" data-aos-duration="1000"
+                <img src="./asset/home.png " data-aos="fade-right" data-aos-once="true" data-aos-duration="1000"
                     class="img-fluid img-welcome" alt="Responsive image">
             </div>
             <div class="col-md-5 offset-md-1">
-                <div class="text-welcome mb-5" data-aos="fade-left" data-aos-duration="1000">
+                <div class="text-welcome mb-5" data-aos="fade-left"  data-aos-once="true" data-aos-duration="1000">
                     <h1 class="diplay-1">Young <span>Star</span></h1>
                     <h1 class="diplay-3">Championship</h1>
                     <a href="{{route('infolomba')}}"><button class="btn-master mt-2 mb-2">Info Lomba</button></a>
@@ -20,10 +20,10 @@
     <div class="container-fluid text-center bg-dua">
         <div class="row">
             <div class="col-md-12 mt-5 mb-5 ">
-                <h1 data-aos="fade-right" data-aos-duration="1000" class="txt-dark-blue judul">VIDEO PROFIL <span
+                <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="txt-dark-blue judul">VIDEO PROFIL <span
                         class="border-blue">YOUNG STAR CHAMPIONSHIP</span></h1>
 
-                <div data-aos="fade-left" data-aos-duration="1000"
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
                     class="mt-5 embed-responsive embed-responsive-16by9 mx-auto">
                     <iframe class="embed-responsive-item" src="{{$company->video_profile}}"
                         allowfullscreen></iframe>
@@ -34,28 +34,28 @@
     <div class="container text-center mt-5 ">
         <div class="row">
             <div class="col-md-12 ">
-                <h1 class="txt-dark-blue judul" data-aos="fade-down" data-aos-duration="1000">APA ITU <span
+                <h1 class="txt-dark-blue judul" data-aos="fade-down" data-aos-once="true" data-aos-duration="1000">APA ITU <span
                         class="border-blue">YOUNG STAR CHAMPIONSHIP</span> </h1>
                 <h4 class="txt-grey " data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat Vircom</h4>
                 <div class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000"><p class="text-center"> {!!$company->description_beranda!!}</p>
                 </div>
 
-                <a href="{{route('tentang')}}" data-aos="fade-up" data-aos-duration="1000"><button
+                <a href="{{route('tentang')}}" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"><button
                         class="btn-master mt-2">Pelajari Lebih Lanjut</button></a>
             </div>
         </div>
     </div>
     <div class="container mt-5">
-        <div class="text-center" data-aos="fade-down" data-aos-duration="1000">
+        <div class="text-center" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
             <h1 class="txt-dark-blue judul"><span class="border-blue">CARA MENGIKUTI LOMBA</span> </h1>
             <h4 class="txt-grey ">Ikuti Tata Cara Berikut</h4>
         </div>
         <div class="row ">
             <div class="col-md-6">
-                <img src="./asset/tatacara.png" data-aos="fade-right" data-aos-duration="1000"
+                <img src="./asset/tatacara.png" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"
                     class="img-fluid img-welcome mb-5" alt="Responsive image">
             </div>
-            <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+            <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
                 @php
                     $i = 1;
                 @endphp

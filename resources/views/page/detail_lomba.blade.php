@@ -5,7 +5,7 @@
         <section class="lomba-detail pb-5">
             <div class="row">
                 <div class="col-lg-4 side-detail-lomba mb-2 order-2 order-lg-1">
-                    <div class="menu mb-3" data-aos="fade-right">
+                    <div class="menu mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                         <div class="menu-empty p-3"></div>
                         @foreach ($categories as $category)
                         <button class="btn dropdown-custom menu-title p-3 mt-2 " id="{{$category->id}}" onclick="Dropdown(this.id)">
@@ -22,7 +22,7 @@
                         @endforeach
                         <div class="menu-empty p-3 mt-2 mt-2"></div>
                     </div>
-                    <div class="related-lomba mt-2" data-aos="fade-right">
+                    <div class="related-lomba mt-2" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                         <div class="related-lomba-title txt-dark-blue">
                             <h2><span class="border-blue">LOMBA LAINNYA</span></h2>
                         </div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 order-1 order-lg-2 mb-3">
-                    <div class="detail-lomba p-3" data-aos="fade-left">
+                    <div class="detail-lomba p-3" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
                         <div class="detail-lomba-image text-center">
                             <a onclick="lightbox()" href="{{asset('storage/'.$lomba->image)}}" data-lightbox="gallery1">
                                 <img src="{{asset('storage/'.$lomba->image)}}" class="img-thumbnail" alt="" /></a>

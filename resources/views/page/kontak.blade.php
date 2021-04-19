@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <section id="contact" class="contact mt-5 mb-5">
-    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000"  data-aos-once="true">
         <div class="row ">
             <div class="col-md-4 mt-5">
                 <div class="info">

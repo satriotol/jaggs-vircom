@@ -471,6 +471,10 @@ a.txt-dark-blue:hover {
 /* end of lomba */
 /* responsive halaman lomba */
 @media (max-width:767.98px) {
+    .navbar-light .navbar-nav .active>.nav-link {
+        color: #6084b6;
+        opacity: 1;
+    }
     .title-jumbotron {
         text-align: center;
     }
