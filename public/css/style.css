@@ -10,9 +10,6 @@ a:hover {
     text-decoration: none
 }
 
-section{
-    overflow-x: hidden;
-}
 h1,
 h2 {
     font-weight: bold;
@@ -118,7 +115,7 @@ h2 {
 
 .paginationjs .paginationjs-pages li>a {
     font-size: 20px !important;
-    float: left ;
+    float: left;
     width: 44px;
     height: 44px !important;
     background: #6084B6 !important;
@@ -128,15 +125,18 @@ h2 {
     border-radius: 50px !important;
     color: #C3F5FF !important;
 }
-.paginationjs .paginationjs-pages li>a:hover{
-    background:#C3F5FF !important;
-    color:  #6084B6 !important;
+
+.paginationjs .paginationjs-pages li>a:hover {
+    background: #C3F5FF !important;
+    color: #6084B6 !important;
 }
-.paginationjs li{
+
+.paginationjs li {
     border-radius: 50px !important;
-    margin-right:10px;
+    margin-right: 10px;
     border: solid 0px !important;
 }
+
 /* color */
 .txt-dark-blue {
     transition: 1s;
@@ -493,6 +493,10 @@ a.txt-dark-blue:hover {
 
     .lomba .status {
         text-align: center !important
+    }
+
+    section {
+        overflow-x: hidden;
     }
 }
 
