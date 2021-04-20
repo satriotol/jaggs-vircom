@@ -13,7 +13,7 @@ class AdminController extends Controller
     {
         $lombas = Lomba::all()->count();
         $jenjangs = Jenjang::all()->count();
-        $kategoris = Kategori::all()->count();
+        $kategoris = Kategori::all()->where('parent_id', null)->count();
         return view('admin.index')->with('kategoris',$kategoris)->with('lombas',$lombas)->with('jenjangs',$jenjangs);
     }
 }

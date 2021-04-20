@@ -42,9 +42,10 @@
                                     @foreach ($kategoris as $kategori)
                                     <tr>
                                         <td>{{$kategori->name}}</td>
-                                        <td><a href="{{route('kategori.edit',$kategori->id)}}"
+                                        <td> <a href="" class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{route('kategori.edit',$kategori->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <form class="d-inline"action="{{route('kategori.destroy', $kategori->id)}}"
+                                            <form class="d-inline" action="{{route('kategori.destroy', $kategori->id)}}"
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')
