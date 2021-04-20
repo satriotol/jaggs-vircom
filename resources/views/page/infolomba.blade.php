@@ -82,7 +82,7 @@
                 <section>
                     <div class="col-md-12  text-center">
                         <div class="center-img">
-                            <div class="mx-auto" id="pagination"></div>
+                            <div class="mx-auto " id="pagination"></div>
                             {{-- <a class="icon" href=""><i class="fas fa-arrow-left"></i></a>
                             <a class="icon" href=""><i class="fas fa-arrow-right"></i></a> --}}
                         </div>
@@ -108,7 +108,6 @@
                 console.log(result.data)
                 $(function () {
                     let container = $('#pagination');
-
                     container.pagination({
                         dataSource: result.data,
                         pageSize: 1,
@@ -116,7 +115,6 @@
                         showNavigator: true,
                         callback: function (data, pagination) {
                             var dataHtml = '';
-
                             $.each(data, function (index, item) {
                                 dataHtml +=
                                     '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/' +
@@ -195,8 +193,6 @@
                     console.log(result.status);
                     if (status === "Sukses") {
                         for (i = 0; i < result.meta.total_post; i++) {
-
-                            // var link_detail = "{{route('detail',"  result.data[i].id.toString()")}}"
                             console.log(result)
                             var id = result.data[i].id
                             text +=

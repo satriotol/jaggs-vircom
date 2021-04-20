@@ -14,7 +14,7 @@
                     <h2 class="mb-4 txt-dark-blue text-uppercase">
                         {{$category->name}}
                     </h2>
-                    <input type="text" name="" id="kategori" value="{{$category->id}}"  hidden>
+                    <input type="text" name="" id="kategori" value="{{$category->name}}" hidden>
                     <p class="txt-grey">Beberapa Jenis Lomba Yang Tersedia</p>
                     <div class="border-blue">
                         <div class="row">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-md-12  text-center">
-                            <div class="center-img">
+                            <div class="center-img kategori">
                                 <div id="pagination"></div>
                             </div>
                         </div>
@@ -48,7 +48,8 @@
             </div>
         </section>
         <section class="kategori pb-5">
-            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"><span class="border-blue">Kategori</span> Lomba
+            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"><span
+                    class="border-blue">Kategori</span> Lomba
             </h1>
             <div class="row" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                 @foreach ($categories as $category)
@@ -76,31 +77,118 @@
 @endsection
 @section('js')
 <script>
-
-            var kategori = {!! json_encode($category->toArray()) !!};
-            $name = $(document.getElementById('kategori')).val();
-            console.log($name);
     // $(document).ready(function () {
-    //     $(function () {
-    //         let container = $('#pagination');
-    //         var lombas = {!! json_encode($lombas->toArray()) !!};
-    //         console.log(lombas);
-    //         container.pagination({
-    //             dataSource: lombas,
-    //             pageSize: 1,
-    //             showPageNumbers: false,
-    //             showNavigator: true,
-    //             callback: function (data, pagination) {
-    //                 var dataHtml = '';
-    //                 $.each(data, function (index, item) {
-    //                     dataHtml +=
-    //                         '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +item.id + '"><img src="http://127.0.0.1:8000/storage/' + item.image +'" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +item.id+'"><h3>'+item.name+'</h3></a><p class="text-uppercase txt-grey">'+item.kategori+'('+item.subkategori+')</p><p>'+item.description+'</p></div>';
+    //     $kategori = $(document.getElementById('kategori')).val();
+    //     console.log($kategori);
+    //     $.ajax({
+    //         type: 'get',
+    //         url: 'http://127.0.0.1:8000/api/lomba',
+    //         data: {
+    //             'kategori': $kategori
+    //         },
+    //         success: function (result) {
+    //             console.log(result);
+    //             $(function () {
+    //                 let container = $('#pagination');
+    //                 container.pagination({
+    //                     dataSource: result.data,
+    //                     pageSize: 1,
+    //                     showPageNumbers: false,
+    //                     showNavigator: true,
+    //                     callback: function (data, pagination) {
+    //                                    var dataHtml = '';
 
-    //                 });
-    //                 $("#data-container").html(dataHtml);
-    //             }
-    //         })
+    //                         $.each(data, function (index, item) {
+    //                             console.log(item.name);
+    //                         });
+    //                         // $("#data-container").html(dataHtml);
+    //                     }
+    //                 })
+    //             })
+    //         }
+    //     });
+    // });
+    $(document).ready(function () {
+
+        $kategori = $(document.getElementById('kategori')).val();
+        console.log($kategori);
+        $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/lomba',
+            data: {
+                'kategori': $kategori
+            },
+            success: function (result) {
+                console.log(result.data)
+                $(function () {
+                    let container = $('#pagination');
+                    container.pagination({
+                        dataSource: result.data,
+                        pageSize: 1,
+                        showPageNumbers: false,
+                        showNavigator: true,
+                        callback: function (data, pagination) {
+
+                            var dataHtml = '';
+                            $.each(data, function (index, item) {
+                                console.log(item);
+                               dataHtml += '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +item.id + '"><img src="http://127.0.0.1:8000/storage/' + item.gambar +'" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +item.id+'"><h3>'+item.name+'</h3></a><p class="text-uppercase txt-grey">'+item.kategori.name+'('+item.kategori.subkategori.name+') | '+item.jenjang[0]+'</p><p>'+item.deskripsi+'</p></div>';
+                            });
+                            $("#data-container").html(dataHtml);
+                        }
+                    })
+                })
+            }
+        });
+
+        // function tgl(end) {
+        //     var startbaru = end.toString().replace(/-/g, '');
+        //     var Deadline = parseInt(startbaru)
+        //     var d = new Date();
+        //     var date = d.getDate()
+        //     var month = d.getMonth() + 1
+        //     var year = d.getFullYear();
+        //     if (date < 10) {
+        //         var date = "0" + d.getDate()
+        //     }
+        //     if (month < 10) {
+        //         var month = d.getMonth() + 1
+        //         var month = "0" + month
+        //     }
+        //     var date = date.toString()
+        //     var month = month.toString()
+        //     var year = year.toString()
+        //     var todaystr = year + month + date
+        //     var today = parseInt(todaystr)
+        //     value = today - Deadline
+        //     var text = ""
+        //     if (value == 0) {
+        //         text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
+        //     } else if (value < 0) {
+        //         text = '<button class="btn btn-open btn-sm text-uppercase" disabled>OPEN</button>'
+        //     } else {
+        //         text = '<button class="btn btn-close btn-sm text-uppercase" disabled>Close</button>'
+        //     }
+        //     return text
+        // }
+    });
+    // $(document).ready(function () {
+    // $(function () {
+    //     let container = $('#pagination');
+    //     var lombas = {!! json_encode($lombas->toArray()) !!};
+    //     console.log(lombas);
+    //     container.pagination({
+    //         callback: function (data, pagination) {
+    //             var dataHtml = '';
+    //             $.each(data, function (index, item) {
+                    // dataHtml +=
+                    //     '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +item.id + '"><img src="http://127.0.0.1:8000/storage/' + item.image +'" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +item.id+'"><h3>'+item.name+'</h3></a><p class="text-uppercase txt-grey">'+item.kategori+'('+item.subkategori+')</p><p>'+item.description+'</p></div>';
+
+    //             });
+    //             $("#data-container").html(dataHtml);
+    //         }
     //     })
+    // })
 
     // });
 
