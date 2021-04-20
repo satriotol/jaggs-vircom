@@ -44,8 +44,8 @@
                                         value="{{isset($kategori) ? $kategori->name : ''}}">
                                 </div>
                                 <div class="form-group">
-                                    <label>Deskripsi Kateogri <span style="color: red">*</span></label>
-                                    <textarea class="form-control" name="description"
+                                    <label>Deskripsi Kategori <span style="color: red">*</span></label>
+                                    <textarea class="form-control" maxlength="75" name="description"
                                         placeholder="Masukkan deskripsi ..."
                                         style="width: 100%; height:200px">{{isset($kategori) ? $kategori->description : ''}}</textarea>
                                 </div>
