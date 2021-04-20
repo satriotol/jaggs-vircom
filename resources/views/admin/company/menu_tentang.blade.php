@@ -55,8 +55,8 @@
                                         style="width: 100%;height:500px;">{{$company->mission}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Apa Kata Mereka <span style="color: red">*</span></label>
-                                    <textarea class="textarea" name="apa_kata_mereka" placeholder="Masukkan Apa Kata Mereka..."
+                                    <label>Untuk Siapa <span style="color: red">*</span></label>
+                                    <textarea class="textarea" name="apa_kata_mereka" placeholder="Masukkan Untuk Siapa..."
                                         style="width: 100%;height:500px;">{{$company->apa_kata_mereka}}</textarea>
                                 </div>
                             </div>
