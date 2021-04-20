@@ -17,6 +17,7 @@ class ApiLombaController extends Controller
     {
         $name = $request->input('name');
         $kategori = $request->input('kategori');
+        $subkategori = $request->input('subkategori');
         $jenjang = $request->input('jenjang');
 
         $data = Lomba::whereHas('jenjang', function ($query) use ($jenjang) {
@@ -26,6 +27,10 @@ class ApiLombaController extends Controller
         })->whereHas('kategori', function ($query) use ($kategori) {
             if ($kategori) {
                 return $query->where('name', '=', $kategori);
+            }
+        })->whereHas('subkategori', function($query) use ($subkategori) {
+            if ($subkategori) {
+                return $query->where('name','=',$subkategori);
             }
         })->where('name', 'like', '%' . $name . '%')
             ->get();
