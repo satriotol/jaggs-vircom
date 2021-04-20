@@ -14,6 +14,7 @@
                     <h2 class="mb-4 txt-dark-blue text-uppercase">
                         {{$category->name}}
                     </h2>
+                    <input type="text" name="" id="kategori" value="{{$category->id}}"  hidden>
                     <p class="txt-grey">Beberapa Jenis Lomba Yang Tersedia</p>
                     <div class="border-blue">
                         <div class="row">
@@ -75,29 +76,33 @@
 @endsection
 @section('js')
 <script>
-    $(document).ready(function () {
-        $(function () {
-            let container = $('#pagination');
-            var lombas = {!! json_encode($lombas->toArray()) !!};
-            console.log(lombas);
-            container.pagination({
-                dataSource: lombas,
-                pageSize: 1,
-                showPageNumbers: false,
-                showNavigator: true,
-                callback: function (data, pagination) {
-                    var dataHtml = '';
-                    $.each(data, function (index, item) {
-                        dataHtml +=
-                            '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +item.id + '"><img src="http://127.0.0.1:8000/storage/' + item.image +'" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +item.id+'"><h3>'+item.name+'</h3></a><p class="text-uppercase txt-grey">'+item.kategori+'('+item.subkategori+')</p><p>'+item.description+'</p></div>';
 
-                    });
-                    $("#data-container").html(dataHtml);
-                }
-            })
-        })
+            var kategori = {!! json_encode($category->toArray()) !!};
+            $name = $(document.getElementById('kategori')).val();
+            console.log($name);
+    // $(document).ready(function () {
+    //     $(function () {
+    //         let container = $('#pagination');
+    //         var lombas = {!! json_encode($lombas->toArray()) !!};
+    //         console.log(lombas);
+    //         container.pagination({
+    //             dataSource: lombas,
+    //             pageSize: 1,
+    //             showPageNumbers: false,
+    //             showNavigator: true,
+    //             callback: function (data, pagination) {
+    //                 var dataHtml = '';
+    //                 $.each(data, function (index, item) {
+    //                     dataHtml +=
+    //                         '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +item.id + '"><img src="http://127.0.0.1:8000/storage/' + item.image +'" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +item.id+'"><h3>'+item.name+'</h3></a><p class="text-uppercase txt-grey">'+item.kategori+'('+item.subkategori+')</p><p>'+item.description+'</p></div>';
 
-    });
+    //                 });
+    //                 $("#data-container").html(dataHtml);
+    //             }
+    //         })
+    //     })
+
+    // });
 
 </script>
 @endsection
