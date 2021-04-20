@@ -8,13 +8,13 @@
                     <div class="menu mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                         <div class="menu-empty p-3"></div>
                         @foreach ($categories as $category)
-                        <button class="btn dropdown-custom menu-title p-3 mt-2 " id="{{$category->id}}" onclick="Dropdown(this.id)">
-                            <h2 class="txt-dark-blue">{{$category->name}}</h2>
+                        <button class="btn dropdown-custom menu-title p-3 mt-2 text-left " id="{{$category->id}}" onclick="Dropdown(this.id)">
+                            <h3 class="txt-dark-blue font-weight-bold">{{$category->name}}</h3>
                         </button>
                         <ul class="list-group dropdown-custom-menu " id="menu-{{$category->id}}">
                             @foreach ($category->children as $cc)
                             {{-- <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a> --}}
-                            <a class="dropdown-item dropdown-item-custom txt-dark-blue @if ($cc->id === $lomba->subkategori->id)
+                            <a class="text-uppercase dropdown-item dropdown-item-custom txt-dark-blue @if ($cc->id === $lomba->subkategori->id)
                                 active
                             @endif" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a>
                             @endforeach
@@ -78,6 +78,7 @@
             </div>
         </section>
     </div>
+    @if ($lomba->video)
     <div class="container-fluid bg-dua mb-5">
         <div class="text-center py-5">
             <div class="embed-responsive embed-responsive-16by9 mx-auto">
@@ -86,6 +87,7 @@
             </div>
         </div>
     </div>
+    @endif
 </section>
 @endsection
 @section('js')

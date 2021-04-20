@@ -44,7 +44,7 @@ class HomeController extends Controller
     }
     public function detail(Lomba $lomba)
     {
-        $categories = Kategori::whereNull('parent_id')->get();
+        $categories = Kategori::whereNull('parent_id')->whereHas('children')->get();
         $lombaOthers = Lomba::where('kategori_id', $lomba->kategori_id)
             ->where('start_date', '<=', Carbon::now())
             ->where('end_date', '>=', Carbon::now())
