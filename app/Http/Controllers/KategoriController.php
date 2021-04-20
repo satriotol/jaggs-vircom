@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateKategoriRequest;
+use App\Http\Requests\Kategori\UpdateKategoriRequest;
 use App\Kategori;
 use Illuminate\Http\Request;
 
@@ -74,7 +75,7 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateKategoriRequest $request, Kategori $kategori)
+    public function update(UpdateKategoriRequest $request, Kategori $kategori)
     {
         $data = $request->only(['name','description']);
         if ($request->hasFile('image')) {
