@@ -9,7 +9,7 @@
 
 
 </style>
-<section class="banner">
+<section class="banner overflow-hidden">
     <div class="jumbotron jumbotron-lomba bg-dua d-flex align-items-center">
         <div class="container position-relative">
             <div class="title-jumbotron">

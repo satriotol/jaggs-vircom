@@ -6,7 +6,7 @@
         , rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{$category->image}});">
     </div>
 </section>
-<section class="bg-utama">
+<section class="bg-utama overflow-hidden">
     <div class="container">
         <section class="lomba pb-5">
             <div class="row">

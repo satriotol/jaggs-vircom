@@ -2,7 +2,7 @@
 @section('content')
 <section class="bg-utama margin-nav">
     <div class="container pt-5">
-        <section class="lomba-detail pb-5">
+        <section class="lomba-detail pb-5 overflow-hidden">
             <div class="row">
                 <div class="col-lg-4 side-detail-lomba mb-2 order-2 order-lg-1">
                     <div class="menu mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">

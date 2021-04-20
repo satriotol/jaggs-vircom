@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<section class="bg-utama margin-nav">
+<section class="bg-utama margin-nav overflow-hidden">
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12 mt-5 mb-5 ">
