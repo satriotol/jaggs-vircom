@@ -122,10 +122,15 @@ h2 {
     display: flex !important;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
     border-radius: 50px !important;
     color: #C3F5FF !important;
-}
 
+}
+.paginationjs li {
+    display: inline;
+    list-style-type: none;
+}
 .paginationjs .paginationjs-pages li>a:hover {
     background: #C3F5FF !important;
     color: #6084B6 !important;
