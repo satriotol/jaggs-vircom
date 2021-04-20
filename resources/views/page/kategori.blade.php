@@ -34,32 +34,12 @@
                     </div>
                 </div>
                 <div class="col-md-8 rincian-lomba">
-                    <div class="row">
-                        @foreach ($lombas as $lomba)
-                        <div class="col-md-5 mb-3">
-                            <a href="{{route('detail',$lomba->id)}}">
-                                <img src="{{asset('storage/'.$lomba->image)}}" class="foto-rincian-lomba img-thumbnail"
-                                    alt=""></a>
-                        </div>
-                        <div class="col-md-7 content isi-rincian-lomba">
-                            <a class="txt-dark-blue" href="{{route('detail',$lomba->id)}}">
-                                <h3>{{$lomba->name}}</h3>
-                            </a>
-                            <p class="text-uppercase txt-grey">{{$lomba->kategori->name}}
-                                ({{$lomba->subkategori->name}}) | @foreach ($lomba->jenjang as $lj)
-                                {{$lj->name}},
-                                @endforeach</p>
-                            <p>{!! $lomba->description !!}
-                            </p>
-                        </div>
-                        @endforeach
+                    <div class="row" id="data-container">
                     </div>
                     <div class="row ">
-
                         <div class="col-md-12  text-center">
                             <div class="center-img">
-                                <a class="icon " href=""><i class="fas fa-arrow-left"></i></a>
-                                <a class="icon" href=""><i class="fas fa-arrow-right"></i></a>
+                                <div id="pagination"></div>
                             </div>
                         </div>
                     </div>
@@ -67,10 +47,9 @@
             </div>
         </section>
         <section class="kategori pb-5">
-            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000"  data-aos-once="true">
-                <span class="border-blue">Kategori</span> Lomba
+            <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"><span class="border-blue">Kategori</span> Lomba
             </h1>
-            <div class="row" data-aos="fade-right" data-aos-duration="1000"  data-aos-once="true">
+            <div class="row" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                 @foreach ($categories as $category)
                 <div class="col-md-3">
                     <div class="card card-kategori mb-3"
@@ -93,4 +72,32 @@
         </section>
     </div>
 </section>
+@endsection
+@section('js')
+<script>
+    $(document).ready(function () {
+        $(function () {
+            let container = $('#pagination');
+            var lombas = {!! json_encode($lombas->toArray()) !!};
+            console.log(lombas);
+            container.pagination({
+                dataSource: lombas,
+                pageSize: 1,
+                showPageNumbers: false,
+                showNavigator: true,
+                callback: function (data, pagination) {
+                    var dataHtml = '';
+                    $.each(data, function (index, item) {
+                        dataHtml +=
+                            '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +item.id + '"><img src="http://127.0.0.1:8000/storage/' + item.image +'" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +item.id+'"><h3>'+item.name+'</h3></a><p class="text-uppercase txt-grey">'+item.kategori+'('+item.subkategori+')</p><p>'+item.description+'</p></div>';
+
+                    });
+                    $("#data-container").html(dataHtml);
+                }
+            })
+        })
+
+    });
+
+</script>
 @endsection
