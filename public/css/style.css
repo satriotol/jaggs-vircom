@@ -733,3 +733,9 @@ a.txt-dark-blue:hover {
         color: #6084B6;
     }
 }
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+   .welcome{
+    height: 100%;
+       margin-bottom: 10vw;
+   }
+  }
