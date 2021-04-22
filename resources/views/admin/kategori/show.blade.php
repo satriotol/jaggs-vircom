@@ -28,6 +28,16 @@
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
+                            <div class="card-title">Kategori</div>
+                        </div>
+                        <div class="card-body">
+                            <p>Name : {{$kategori->name}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
                             <h3 class="card-title">Subkategori</h3>
                         </div>
                         <div class="card-body">
@@ -59,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Lomba</h3>
@@ -76,7 +86,8 @@
                                     @foreach ($kategori->lomba as $lomba)
                                     <tr>
                                         <td>{{$lomba->name}}</td>
-                                        <td><a href="{{route('lomba.show',$lomba->id)}}" class="btn btn-primary btn-sm">Detail</a>
+                                        <td><a href="{{route('lomba.show',$lomba->id)}}"
+                                                class="btn btn-primary btn-sm">Detail</a>
                                             <a href="{{route('lomba.edit',$lomba->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
                                             <form class="d-inline" action="{{route('lomba.destroy', $lomba->id)}}"
