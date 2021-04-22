@@ -22,9 +22,9 @@
     </section>
     <section class="content">
         <div class="container-fluid">
+            @include('admin.partials.success')
+            @include('admin.partials.error')
             <div class="row">
-                @include('admin.partials.success')
-                @include('admin.partials.error')
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
