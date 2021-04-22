@@ -82,10 +82,7 @@
                 <section>
                     <div class="col-md-4 offset-md-4 text-center">
                             <div class="center-img" id="pagination"></div>
-                            {{-- <a class="icon" href=""><i class="fas fa-arrow-left"></i></a>
-                            <a class="icon" href=""><i class="fas fa-arrow-right"></i></a> --}}
                     </div>
-
                 </section>
             </div>
         </section>
@@ -108,19 +105,16 @@
                     let container = $('#pagination');
                     container.pagination({
                         dataSource: result.data,
-                        pageSize: 1,
+                        pageSize: 3,
                         showPageNumbers: false,
                         showNavigator: true,
                         callback: function (data, pagination) {
                             var dataHtml = '';
                             $.each(data, function (index, item) {
+                                link = '"http://127.0.0.1:8000/detail/' +item.id +'" ';
+                                gambar = '"http://127.0.0.1:8000/storage/' +item.gambar +'" ';
                                 dataHtml +=
-                                    '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/' +
-                                    item.id +
-                                    '" > <img src="http://127.0.0.1:8000/storage/' +
-                                    item.gambar +
-                                    '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/' +
-                                    item.id +'"> <h3 class="txt-dark-blue judul-lomba">' +
+                                    '<div class="row mb-3"> <div class="col-md-3"><a href='+link+'> <img src='+gambar+'alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href='+link+'> <h3 class="txt-dark-blue judul-lomba">' +
                                     item.name +
                                     '</h3></a><p class="text-uppercase">' +
                                     item.kategori.name + ' | ' + item
@@ -193,14 +187,11 @@
                 if (status === "Sukses") {
                     for (i = 0; i < result.meta.total_post; i++) {
                         console.log(result)
-                        var id = result.data[i].id
+                        link = '"http://127.0.0.1:8000/detail/' +result.data[i].id +'" ';
+                        gambar = '"http://127.0.0.1:8000/storage/' +result.data[i].gambar  +'" ';
+                        d = result.data[i].deskripsi;
                         text +=
-                            '<div class="row mb-3"> <div class="col-md-3"><a href="http://127.0.0.1:8000/detail/' +
-                            id + '" > <img src="http://127.0.0.1:8000/storage/' +
-                            result.data[i].gambar +
-                            '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/' +
-                            id + '"> <h3 class="txt-dark-blue judul-lomba">' +
-                            result.data[i].name + '</h3></a><p class="text-uppercase">' + result
+                            '<div class="row mb-3"> <div class="col-md-3"><a href='+link+' > <img src='+gambar+'alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href='+link+'> <h3 class="txt-dark-blue judul-lomba">' + result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang+
                             '</p> <p>' + result.data[i].deskripsi +
                             '</p><div class="status">' + tgl(result.data[i].end_date) +
