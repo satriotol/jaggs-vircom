@@ -98,9 +98,9 @@
                             </ul>
                         </li>
                         <li
-                            class="nav-item has-treeview {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'menu-open' : ''}}">
+                            class="nav-item has-treeview {{Request::routeIs('kategori.create','kategori.show','kategori.edit','kategori.index') ? 'menu-open' : ''}}">
                             <a href="#"
-                                class="nav-link {{Request::routeIs('kategori.create','kategori.edit','kategori.index') ? 'active' : ''}}">
+                                class="nav-link {{Request::routeIs('kategori.create','kategori.show','kategori.edit','kategori.index') ? 'active' : ''}}">
                                 <i class="nav-icon fa fa-server"></i>
                                 <p>
                                     Kategori
@@ -110,7 +110,7 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('kategori.index')}}"
-                                        class="nav-link {{Request::routeIs('kategori.index') ? 'active' : ''}}">
+                                        class="nav-link {{Request::routeIs('kategori.index','kategori.show') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Kategori</p>
                                     </a>
