@@ -79,6 +79,9 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Jenjang</th>
+                                        <th>Subkategori</th>
+                                        <th>Tanggal</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -86,6 +89,20 @@
                                     @foreach ($kategori->lomba as $lomba)
                                     <tr>
                                         <td>{{$lomba->name}}</td>
+                                        <td>@foreach ($lomba->jenjang as $lj)
+                                            {{$lj->name}},
+                                            @endforeach</td>
+                                        <td>{{$lomba->subkategori->name}}</td>
+
+                                        <td
+                                        @if ($lomba->start_date <= now())
+                                        @if ($lomba->end_date >= now())
+                                        class="bg-success"
+                                        @else
+                                        class="bg-danger"
+                                        @endif
+                                        @endif>
+                                                {{$lomba->start_date}} - {{$lomba->end_date}}</td>
                                         <td><a href="{{route('lomba.show',$lomba->id)}}"
                                                 class="btn btn-primary btn-sm">Detail</a>
                                             <a href="{{route('lomba.edit',$lomba->id)}}"
