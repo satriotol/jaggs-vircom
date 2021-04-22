@@ -80,12 +80,10 @@
 
                 </div>
                 <section>
-                    <div class="col-md-12  text-center">
-                        <div class="center-img">
-                            <div class="mx-auto " id="pagination"></div>
+                    <div class="col-md-4 offset-md-4 text-center">
+                            <div class="center-img" id="pagination"></div>
                             {{-- <a class="icon" href=""><i class="fas fa-arrow-left"></i></a>
                             <a class="icon" href=""><i class="fas fa-arrow-right"></i></a> --}}
-                        </div>
                     </div>
 
                 </section>

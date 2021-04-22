@@ -20,7 +20,9 @@
                         <div class="row">
                             @foreach ($subcategories as $subcategory)
                             <div class="col-md-6 mb-3">
-                                <button class="btn btn-active-blue w-100">{{$subcategory->name}}</button>
+                                <button class="btn btn-active-blue w-100" id="{{$subcategory->name}}" onclick="subkategori(this.id)">
+                                    {{$subcategory->name}}
+                                </button>
                             </div>
                             @endforeach
                         </div>
@@ -39,9 +41,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-md-12  text-center">
-                            <div class="center-img kategori">
-                                <div id="pagination"></div>
-                            </div>
+                            <div class="center-img kategori" id="pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -77,40 +77,49 @@
 @endsection
 @section('js')
 <script>
-    // $(document).ready(function () {
-    //     $kategori = $(document.getElementById('kategori')).val();
-    //     console.log($kategori);
-    //     $.ajax({
-    //         type: 'get',
-    //         url: 'http://127.0.0.1:8000/api/lomba',
-    //         data: {
-    //             'kategori': $kategori
-    //         },
-    //         success: function (result) {
-    //             console.log(result);
-    //             $(function () {
-    //                 let container = $('#pagination');
-    //                 container.pagination({
-    //                     dataSource: result.data,
-    //                     pageSize: 1,
-    //                     showPageNumbers: false,
-    //                     showNavigator: true,
-    //                     callback: function (data, pagination) {
-    //                                    var dataHtml = '';
+   function subkategori(sub_name) {
+    $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:8000/api/lomba',
+            data: {
+                'subkategori': sub_name
+            },
+            success: function (result) {
+                console.log(result.data)
+                $(function () {
+                    let container = $('#pagination');
+                    container.pagination({
+                        dataSource: result.data,
+                        pageSize: 1,
+                        showPageNumbers: false,
+                        showNavigator: true,
+                        callback: function (data, pagination) {
 
-    //                         $.each(data, function (index, item) {
-    //                             console.log(item.name);
-    //                         });
-    //                         // $("#data-container").html(dataHtml);
-    //                     }
-    //                 })
-    //             })
-    //         }
-    //     });
-    // });
+                            var dataHtml = '';
+                            $.each(data, function (index, item) {
+                                console.log(item);
+                                dataHtml +=
+                                    '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +
+                                    item.id +
+                                    '"><img src="http://127.0.0.1:8000/storage/' +
+                                    item.gambar +
+                                    '" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +
+                                    item.id + '"><h3>' + item.name +
+                                    '</h3></a><p class="text-uppercase txt-grey">' +
+                                    item.kategori.name + '(' + item
+                                    .kategori.subkategori.name +
+                                    ') | ' + item.jenjang[0] +
+                                    '</p><p>' + item.deskripsi +
+                                    '</p></div>';
+                            });
+                            $("#data-container").html(dataHtml);
+                        }
+                    })
+                })
+            }
+        });
+    }
     $(document).ready(function () {
-        var sub = {!! json_encode($subcategories) !!};
-        console.log(sub);
         $kategori = $(document.getElementById('kategori')).val();
         console.log($kategori);
         $.ajax({
@@ -133,7 +142,19 @@
                             var dataHtml = '';
                             $.each(data, function (index, item) {
                                 console.log(item);
-                               dataHtml += '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +item.id + '"><img src="http://127.0.0.1:8000/storage/' + item.gambar +'" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +item.id+'"><h3>'+item.name+'</h3></a><p class="text-uppercase txt-grey">'+item.kategori.name+'('+item.kategori.subkategori.name+') | '+item.jenjang[0]+'</p><p>'+item.deskripsi+'</p></div>';
+                                dataHtml +=
+                                    '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +
+                                    item.id +
+                                    '"><img src="http://127.0.0.1:8000/storage/' +
+                                    item.gambar +
+                                    '" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +
+                                    item.id + '"><h3>' + item.name +
+                                    '</h3></a><p class="text-uppercase txt-grey">' +
+                                    item.kategori.name + '(' + item
+                                    .kategori.subkategori.name +
+                                    ') | ' + item.jenjang[0] +
+                                    '</p><p>' + item.deskripsi +
+                                    '</p></div>';
                             });
                             $("#data-container").html(dataHtml);
                         }
@@ -173,5 +194,6 @@
         //     return text
         // }
     });
+
 </script>
 @endsection

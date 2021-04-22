@@ -132,7 +132,9 @@ h2 {
     color:  #6084B6 !important;
 
 }
-
+.paginationjs .paginationjs-pages {
+    float: none!important;
+}
 
 .paginationjs li {
     display: inline;
