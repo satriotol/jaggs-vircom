@@ -45,7 +45,7 @@
                                     <tr>
 
                                         <td>{{$lomba->name}}</td>
-                                        <td>{{$lomba->kategori->name}}</td>
+                                        <td><a href="{{route('kategori.show',$lomba->kategori->id)}}">{{$lomba->kategori->name}}</a></td>
                                         <td>
                                             @foreach ($lomba->jenjang as $j)
                                             {{$j->name}},

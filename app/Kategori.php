@@ -13,6 +13,10 @@ class Kategori extends Model
     {
         return $this->hasMany(Lomba::class);
     }
+    public function lombasubkategori()
+    {
+        return $this->hasMany(Lomba::class,'subkategori_id');
+    }
     public function parent(){
         return $this->belongsTo(Kategori::class,'parent_id');
     }

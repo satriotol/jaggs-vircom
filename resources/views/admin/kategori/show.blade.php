@@ -23,12 +23,12 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    @include('admin.partials.success')
-                    @include('admin.partials.error')
+                @include('admin.partials.success')
+                @include('admin.partials.error')
+                <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Kategori</h3>
+                            <h3 class="card-title">Subkategori</h3>
                         </div>
                         <div class="card-body">
                             <table id="table" class="table">
@@ -39,13 +39,47 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kategoris as $kategori)
+                                    @foreach ($kategori->children as $kc)
                                     <tr>
-                                        <td>{{$kategori->name}}</td>
-                                        <td> <a href="{{route('kategori.show',$kategori->id)}}" class="btn btn-primary btn-sm">Detail</a>
-                                            <a href="{{route('kategori.edit',$kategori->id)}}"
+                                        <td>{{$kc->name}}</td>
+                                        <td><a href="{{route('subkategori.edit',$kc->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <form class="d-inline" action="{{route('kategori.destroy', $kategori->id)}}"
+                                            <form class="d-inline" action="{{route('subkategori.destroy', $kc->id)}}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('Are you sure?')">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Lomba</h3>
+                        </div>
+                        <div class="card-body">
+                            <table id="table2" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($kategori->lomba as $lomba)
+                                    <tr>
+                                        <td>{{$lomba->name}}</td>
+                                        <td><a href="{{route('lomba.show',$lomba->id)}}" class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{route('lomba.edit',$lomba->id)}}"
+                                                class="btn btn-warning btn-sm">Edit</a>
+                                            <form class="d-inline" action="{{route('lomba.destroy', $lomba->id)}}"
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -70,6 +104,7 @@
 <script>
     $(document).ready(function () {
         $('#table').DataTable();
+        $('#table2').DataTable();
     });
 
 </script>

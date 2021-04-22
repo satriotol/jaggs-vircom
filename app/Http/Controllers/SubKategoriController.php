@@ -92,8 +92,14 @@ class SubKategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Kategori $subkategori)
     {
-        //
+        if ($subkategori->lombasubkategori->count() >0) {
+            session()->flash('error','Kategori cannot be deleted because it has some lomba.');
+            return redirect()->back();
+        }
+        $subkategori->delete();
+        session()->flash('success','Kategori Deleted Successfully');
+        return redirect(route('subkategori.index'));
     }
 }
