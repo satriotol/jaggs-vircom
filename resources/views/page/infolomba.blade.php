@@ -122,7 +122,7 @@
                                     '" > <img src="http://127.0.0.1:8000/storage/' +
                                     item.gambar +
                                     '"alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href="http://127.0.0.1:8000/detail/' +
-                            id + '"> <h3 class="txt-dark-blue judul-lomba">' +
+                                    item.id +'"> <h3 class="txt-dark-blue judul-lomba">' +
                                     item.name +
                                     '</h3></a><p class="text-uppercase">' +
                                     item.kategori.name + ' | ' + item
