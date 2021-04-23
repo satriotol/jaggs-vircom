@@ -146,7 +146,10 @@
                 'kategori': $kategori
             },
             success: function (result) {
-                $(function () {
+                let status = result.status;
+                // result.data[0].kategori.subkategori.name;
+                if(status === "Sukses"){
+                    $(function () {
                     let container = $('#pagination');
                     container.pagination({
                         dataSource: result.data,
@@ -175,6 +178,13 @@
                         }
                     })
                 })
+                }
+                else{
+                    var dataHtml='<h1 class="mb-4 mx-auto txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">Lomba Tidak Tersedia</h1>';
+                    $("#data-container").html(dataHtml);
+
+                }
+
             }
         });
 
