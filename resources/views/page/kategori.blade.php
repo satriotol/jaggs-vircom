@@ -20,7 +20,8 @@
                         <div class="row">
                             @foreach ($subcategories as $subcategory)
                             <div class="col-md-6 mb-3">
-                                <button class="btn btn-active-blue w-100" id="{{$subcategory->name}}" onclick="subkategori(this.id)">
+                                <button class="btn btn-active-blue w-100" id="{{$subcategory->name}}"
+                                    onclick="subkategori(this.id)">
                                     {{$subcategory->name}}
                                 </button>
                             </div>
@@ -77,16 +78,19 @@
 @endsection
 @section('js')
 <script>
-   function subkategori(sub_name) {
-    $.ajax({
+    function subkategori(sub_name) {
+        $.ajax({
             type: 'get',
             url: 'http://127.0.0.1:8000/api/lomba',
             data: {
                 'subkategori': sub_name
             },
             success: function (result) {
-                console.log(result.data)
-                $(function () {
+                console.log(result);
+                let status = result.status;
+                // result.data[0].kategori.subkategori.name;
+                if(status === "Sukses"){
+                    $(function () {
                     let container = $('#pagination');
                     container.pagination({
                         dataSource: result.data,
@@ -94,16 +98,14 @@
                         showPageNumbers: false,
                         showNavigator: true,
                         callback: function (data, pagination) {
-
                             var dataHtml = '';
                             $.each(data, function (index, item) {
-                                console.log(item);
                                 dataHtml +=
                                     '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +
                                     item.id +
                                     '"><img src="http://127.0.0.1:8000/storage/' +
                                     item.gambar +
-                                    '" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +
+                                    '" class="foto-rincian-lomba img-thumbnail" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba" data-aos="fade-left" data-aos-duration="1000"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +
                                     item.id + '"><h3>' + item.name +
                                     '</h3></a><p class="text-uppercase txt-grey">' +
                                     item.kategori.name + '(' + item
@@ -116,6 +118,21 @@
                         }
                     })
                 })
+                }
+                else{
+                    var dataHtml='<h1 class="mb-4 mx-auto txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">Lomba Tidak Tersedia</h1>';
+                    $("#data-container").html(dataHtml);
+
+                }
+
+                // if (sub_name === result.data[0].kategori.subkategori.name) {
+                //     $("#" + sub_name).removeClass('btn-active-blue');
+                //     $("#" + sub_name).addClass('btn-active-white');
+                //     console.log(result.data[0].kategori.subkategori.name);
+                // }else{
+                //     $("#" + sub_name).removeClass('btn-active-white');
+                //     $("#" + sub_name).addClass('btn-active-blue');
+                // }
             }
         });
     }
@@ -129,7 +146,6 @@
                 'kategori': $kategori
             },
             success: function (result) {
-                console.log(result.data)
                 $(function () {
                     let container = $('#pagination');
                     container.pagination({
@@ -141,13 +157,12 @@
 
                             var dataHtml = '';
                             $.each(data, function (index, item) {
-                                console.log(item);
                                 dataHtml +=
-                                    '<div class="col-md-5 mb-3"><a href="http://127.0.0.1:8000/detail/' +
+                                    '<div class="col-md-5 mb-3" ><a href="http://127.0.0.1:8000/detail/' +
                                     item.id +
                                     '"><img src="http://127.0.0.1:8000/storage/' +
                                     item.gambar +
-                                    '" class="foto-rincian-lomba img-thumbnail" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +
+                                    '" class="foto-rincian-lomba img-thumbnail" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" height="400" alt=""></a></div><div class="col-md-7 content isi-rincian-lomba"  data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"><a class="txt-dark-blue" href="http://127.0.0.1:8000/detail/' +
                                     item.id + '"><h3>' + item.name +
                                     '</h3></a><p class="text-uppercase txt-grey">' +
                                     item.kategori.name + '(' + item
