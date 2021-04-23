@@ -125,14 +125,14 @@
 
                 }
 
-                // if (sub_name === result.data[0].kategori.subkategori.name) {
-                //     $("#" + sub_name).removeClass('btn-active-blue');
-                //     $("#" + sub_name).addClass('btn-active-white');
-                //     console.log(result.data[0].kategori.subkategori.name);
-                // }else{
-                //     $("#" + sub_name).removeClass('btn-active-white');
-                //     $("#" + sub_name).addClass('btn-active-blue');
-                // }
+                    // if (sub_name === result.data[0].kategori.subkategori.name) {
+                    //     $("#" + sub_name).removeClass('btn-active-blue');
+                    //     $("#" + sub_name).addClass('btn-active-white');
+                    //     console.log(result.data[0].kategori.subkategori.name);
+                    // }else{
+                    //     $("#" + sub_name).removeClass('btn-active-white');
+                    //     $("#" + sub_name).addClass('btn-active-blue');
+                    // }
             }
         });
     }
