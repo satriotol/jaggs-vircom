@@ -30,10 +30,8 @@
                     </div>
                     <div class="detail content">
                         <div class="mt-3">
-                            <h3>Lomba Sepak Bola</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam iure, iste
-                                officiis dolorem voluptatibus voluptas commodi animi nesciunt quidem exercitationem
-                                ipsa, consequuntur repellat atque placeat, ab sit ut tempore alias!</p>
+                            <h3>Lomba {{$category->name}}</h3>
+                            <p>{{$category->description}}</p>
                         </div>
                     </div>
                 </div>
