@@ -111,7 +111,7 @@
                                     item.kategori.name + '(' + item
                                     .kategori.subkategori.name +
                                     ') | ' + item.jenjang[0] +
-                                    '</p><p>' + item.deskripsi +
+                                    '</p><p>' + des(item.deskripsi) +
                                     '</p></div>';
                             });
                             $("#data-container").html(dataHtml);
@@ -135,6 +135,15 @@
                     // }
             }
         });
+        function des(str){
+            var deskripsi = '';
+            if (str.length > 500){
+                deskripsi += str.substring(0,500) + '...'
+            }else{
+                deskripsi += str
+            }
+            return deskripsi;
+        }
     }
     $(document).ready(function () {
         $kategori = $(document.getElementById('kategori')).val();
@@ -171,7 +180,7 @@
                                     item.kategori.name + '(' + item
                                     .kategori.subkategori.name +
                                     ') | ' + item.jenjang[0] +
-                                    '</p><p>' + item.deskripsi +
+                                    '</p><p>' + des(item.deskripsi) +
                                     '</p></div>';
                             });
                             $("#data-container").html(dataHtml);
@@ -187,6 +196,15 @@
 
             }
         });
+        function des(str){
+            var deskripsi = '';
+            if (str.length > 500){
+                deskripsi += str.substring(0,500) + '...'
+            }else{
+                deskripsi += str
+            }
+            return deskripsi;
+        }
 
         // function tgl(end) {
         //     var startbaru = end.toString().replace(/-/g, '');

@@ -113,25 +113,33 @@
                             $.each(data, function (index, item) {
                                 link = '"http://127.0.0.1:8000/detail/' +item.id +'" ';
                                 gambar = '"http://127.0.0.1:8000/storage/' +item.gambar +'" ';
-                                deskripsi= item.deskripsi.replace('</p>','');
+                                deskripsi= item.deskripsi.replace('</p>','').replace('<p>','');
                                 dataHtml +=
                                     '<div class="row mb-3"> <div class="col-md-3"><a href='+link+'> <img src='+gambar+'alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href='+link+'> <h3 class="txt-dark-blue judul-lomba">' +
                                     item.name +
                                     '</h3></a><p class="text-uppercase">' +
                                     item.kategori.name + ' | ' + item
-                                    .jenjang[0] + '</p> <textarea class="txt-dark-blue " id="deskripsi" style="border: none; pointer-events: none; overflow:hidden;" name="w3review" rows="5" cols="100">' + deskripsi.replace('<p>','') +
-                            ' </textarea><div class="status">' + tgl(
+                                    .jenjang[0] + '</p> <p class="txt-dark-blue ">' +  des(deskripsi) +' </p><div class="status">' + tgl(
                                         item.end_date) +
                                     '</div></div></div>';
                                 console.log(item)
                             });
+
                             $("#data-container").html(dataHtml);
                         }
                     })
                 })
             }
         });
-
+        function des(str){
+            var deskripsi = '';
+            if (str.length > 500){
+                deskripsi += str.substring(0,500) + '...'
+            }else{
+                deskripsi += str
+            }
+            return deskripsi;
+        }
         function tgl(end) {
             var startbaru = end.toString().replace(/-/g, '');
             var Deadline = parseInt(startbaru)
@@ -189,13 +197,12 @@
                         console.log(result)
                         link = '"http://127.0.0.1:8000/detail/' +result.data[i].id +'" ';
                         gambar = '"http://127.0.0.1:8000/storage/' +result.data[i].gambar  +'" ';
-
-                        deskripsi= result.data[i].deskripsi.replace('</p>','');
+                        deskripsi= result.data[i].deskripsi.replace('</p>','').replace('<p>','');
                         text +=
                             '<div class="row mb-3"> <div class="col-md-3"><a href='+link+' > <img src='+gambar+'alt="" class="img-thumbnail img-lomba" /></a></div><div class="col md-9 txt-dark-blue"><a href='+link+'> <h3 class="txt-dark-blue judul-lomba">' + result.data[i].name + '</h3></a><p class="text-uppercase">' + result
                             .data[i].kategori.name + ' | ' + result.data[i].jenjang+
-                            '</p> <textarea class="txt-dark-blue " id="deskripsi" style="border: none; pointer-events: none; overflow:hidden;"  name="w3review" rows="5" cols="100">' +  deskripsi.replace('<p>','') +
-                            ' </textarea><div class="status">' + tgl(result.data[i].end_date) +
+                            '</p> <p class="txt-dark-blue " id="deskripsi" style="border: none; pointer-events: none; overflow:hidden;"  name="w3review" rows="5" cols="100">' +  des(deskripsi) +
+                            '</p><div class="status">' + tgl(result.data[i].end_date) +
                             '</div></div></div>'
                         console.log("tgl" + result.data[i].end_date)
                         console.log(tgl(result.data[i].end_date))
@@ -213,6 +220,15 @@
                 }
             }
         });
+        function des(str){
+            var deskripsi = '';
+            if (str.length > 500){
+                deskripsi += str.substring(0,500) + '...'
+            }else{
+                deskripsi += str
+            }
+            return deskripsi;
+        }
         function tgl(end) {
             var startbaru = end.toString().replace(/-/g, '');
             var Deadline = parseInt(startbaru)
