@@ -43,7 +43,7 @@
                                     <tr>
 
                                         <td>{{$faq->pertanyaan}}</td>
-                                        <td>{{$faq->jawaban}}</td>
+                                        <td>{{Str::limit($faq->jawaban,'20')}}</td>
                                         <td>
                                             <a href="{{route('faq.edit',$faq->id)}}"
                                                 class="btn btn-warning btn-sm">Edit</a>
