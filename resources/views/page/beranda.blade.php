@@ -4,7 +4,7 @@
     <div class="container mt-4 ">
         <div class="row welcome">
             <div class="col-md-6">
-                <img src="./asset/home.png " data-aos="fade-right" data-aos-once="true" data-aos-duration="1000"
+                <img src="{{asset('asset/home.png')}} " data-aos="fade-right" data-aos-once="true" data-aos-duration="1000"
                     class="img-fluid img-welcome" alt="Responsive image">
             </div>
             <div class="col-md-5 offset-md-1">
@@ -49,7 +49,7 @@
         </div>
         <div class="row ">
             <div class="col-md-6">
-                <img src="./asset/tatacara.png" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"
+                <img src="{{asset('asset/tatacara.png')}}" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"
                     class="img-fluid img-welcome mb-5" alt="Responsive image">
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">

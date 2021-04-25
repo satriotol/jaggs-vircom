@@ -24,13 +24,13 @@ h2 {
 }
 
 .bg-utama {
-    background-image: url(../asset/bg-html.png);
+    background-image: url("/asset/bg-html.png");
     background-size: 50%;
 
 }
 
 .bg-dua {
-    background-image: url(../asset/bg-video.png);
+    background-image: url("/asset/bg-video.png");
     background-size: 50%
 }
 
