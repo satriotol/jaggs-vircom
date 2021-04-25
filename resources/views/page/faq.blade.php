@@ -28,12 +28,12 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12 my-5">
-                <h1 class="txt-dark-blue " data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+                <h1 class="txt-dark-blue " data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
                     Frequently Asked Question</h1>
                 @foreach ($faqs as $index => $faq)
                 <div class="row txt-dark-blue deskripsi mt-4">
                     <div class="col-sm-1 text-center">
-                        <h1 class="position-relative">
+                        <h1 class="position-relative" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                             {{$index +1}}
                         </h1>
                     </div>

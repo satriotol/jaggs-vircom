@@ -20,9 +20,7 @@
     <div class="container-fluid text-center bg-dua">
         <div class="row">
             <div class="col-md-12 mt-5 mb-5 ">
-                <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="txt-dark-blue judul">VIDEO PROFIL <span
-                        class="border-blue">YOUNG STAR CHAMPIONSHIP</span></h1>
-
+                <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="txt-dark-blue judul">Video Profil Young Star Championship</h1>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
                     class="mt-5 embed-responsive embed-responsive-16by9 mx-auto">
                     <iframe class="embed-responsive-item" src="{{$company->video_profile}}"
@@ -34,9 +32,8 @@
     <div class="container text-center mt-5 ">
         <div class="row">
             <div class="col-md-12 ">
-                <h1 class="txt-dark-blue judul" data-aos="fade-down" data-aos-once="true" data-aos-duration="1000">APA ITU <span
-                        class="border-blue">YOUNG STAR CHAMPIONSHIP</span> </h1>
-                <h4 class="txt-grey " data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat Vircom</h4>
+                <h1 class="txt-dark-blue judul text-capitalize" data-aos="fade-down" data-aos-once="true" data-aos-duration="1000">Apa Itu Young Star Championship?</h1>
+                <h4 class="txt-grey subjudul" data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat</h4>
                 <div class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000"><p class="text-center"> {!!$company->description_beranda!!}</p>
                 </div>
 
@@ -47,8 +44,8 @@
     </div>
     <div class="container mt-5">
         <div class="text-center" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
-            <h1 class="txt-dark-blue judul"><span class="border-blue">CARA MENGIKUTI LOMBA</span> </h1>
-            <h4 class="txt-grey ">Ikuti Tata Cara Berikut</h4>
+            <h1 class="txt-dark-blue judul text-capitalize">Cara Mengikuti Lomba</h1>
+            <h4 class="txt-grey subjudul">Ikuti Tata Cara Berikut</h4>
         </div>
         <div class="row ">
             <div class="col-md-6">

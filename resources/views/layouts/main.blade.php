@@ -52,7 +52,7 @@
                 </ul>
             </div>
         </div>
-        <a href="https://api.whatsapp.com/send?phone=089644028279" target="_blank"><button class="cp" id="pc">Contact
+        <a href="https://api.whatsapp.com/send?phone={{$company->phone_number}}" target="_blank"><button class="cp" id="pc">Contact
                 Person</button></a>
         <a href="#" class="back-top" id="back-top"><i class="fas fa-arrow-up"></i></a>
     </nav>
@@ -63,7 +63,7 @@
                 <div class="col-md-4">
                     <h3 class="txt-dark-blue">Location</h3>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9432501923735!2d110.414591729178!3d-7.035944399682366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDInMDkuNCJTIDExMMKwMjQnNTQuNSJF!5e0!3m2!1sid!2sid!4v1615911880372!5m2!1sid!2sid"
+                        src="https://maps.google.com/maps?q=graha%20mulia%20sejahtera&t=&z=13&ie=UTF8&iwloc=&output=embed"
                         width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <div class="col-md-4 offset-md-4 txt-dark-blue">

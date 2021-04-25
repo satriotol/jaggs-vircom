@@ -48,7 +48,7 @@
     <div class="container">
         <section class="kategori pb-5">
             <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
-                <span class="border-blue">Kategori</span> Lomba
+            Kategori Lomba
             </h1>
             <div class="row" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                 @foreach ($categories as $category)
@@ -74,7 +74,7 @@
         <section id="lomba" class="lomba pb-5">
             <div id="data">
                 <h1 class="mb-4 txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
-                    <span class="border-blue">Lomba</span>
+                    Lomba
                 </h1>
                 <div id="data-container" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
 

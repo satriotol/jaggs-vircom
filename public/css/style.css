@@ -295,7 +295,12 @@ a.txt-dark-blue:hover {
 .bubble p {
     margin: 10px;
 }
-
+.judul {
+    font-size: 1.8rem;
+}
+.subjudul {
+    font-size: 1.4rem;
+}
 
 /* responsive beranda */
 @media (max-width: 768px) {
@@ -311,7 +316,10 @@ a.txt-dark-blue:hover {
 
     .judul {
         line-height: 1.5;
-        font-size: 29px;
+        font-size: 1.4rem;
+    }
+    .subjudul {
+        font-size: 1.2rem;
     }
 
     .welcome {
@@ -454,6 +462,9 @@ a.txt-dark-blue:hover {
     background: white;
     transition: 1s;
     cursor: pointer;
+}
+.judul-related{
+    font-size: 1.6rem;
 }
 
 /* end of card kategori */
@@ -667,7 +678,7 @@ a.txt-dark-blue:hover {
     padding-right: 100px;
     padding-left: 1rem;
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #c3f5ff
 }
 

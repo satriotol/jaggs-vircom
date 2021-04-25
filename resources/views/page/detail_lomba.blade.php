@@ -9,7 +9,7 @@
                         <div class="menu-empty p-3"></div>
                         @foreach ($categories as $category)
                         <button class="btn dropdown-custom menu-title p-3 mt-2 text-left " id="{{$category->id}}" onclick="Dropdown(this.id)">
-                            <h3 class="txt-dark-blue font-weight-bold">{{$category->name}}</h3>
+                            <h4 class="txt-dark-blue font-weight-bold">{{$category->name}}</h3>
                         </button>
                         <ul class="list-group dropdown-custom-menu " id="menu-{{$category->id}}">
                             @foreach ($category->children as $cc)
@@ -24,7 +24,7 @@
                     </div>
                     <div class="related-lomba mt-2" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                         <div class="related-lomba-title txt-dark-blue">
-                            <h2><span class="border-blue">LOMBA LAINNYA</span></h2>
+                            <h3 class="font-weight-bold">LOMBA LAINNYA</h3>
                         </div>
                         @foreach ($lombaOthers as $l)
                         <div class="related-lomba-content mt-4">
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                             <div class="mt-2 related-lomba-image-title">
-                                <a href="" class="txt-dark-blue"><h2>{{$l->name}}</h2></a>
+                                <a href="" class="txt-dark-blue"><h2 class="judul-related">{{$l->name}}</h2></a>
                             </div>
                         </div>
                         @endforeach
