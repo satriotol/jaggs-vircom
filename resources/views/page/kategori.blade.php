@@ -30,7 +30,7 @@
                     </div>
                     <div class="detail content">
                         <div class="mt-3">
-                            <h3>Lomba {{$category->name}}</h3>
+                            {{-- <h3>Lomba {{$category->name}}</h3> --}}
                             <p>{{$category->description}}</p>
                         </div>
                     </div>
