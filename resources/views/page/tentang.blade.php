@@ -1,5 +1,16 @@
 @extends('layouts.main')
 @section('content')
+<style>
+    .deskripsi.visi {
+        font-size: 25px;
+    }
+
+    @media (max-width: 767.98px) {
+        .deskripsi.visi {
+            font-size: 20px;
+        }
+    }
+</style>
 <section class="bg-utama margin-nav overflow-hidden">
     <div class="container text-center">
         <div class="row">
@@ -13,19 +24,19 @@
                     data-aos-once="true"> {!!$company->description!!}
                 </div>
                 <h1 class="txt-dark-blue mt-4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">Untuk
-                    Siapa ?</h1>
-                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000"
+                    Siapa?</h1>
+                <div class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000"
                     data-aos-once="true">
                     {{$company->apa_kata_mereka}}
-                </P>
+                </div>
                 <h1 class="txt-dark-blue" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">Visi & Misi
                 </h1>
                 <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000"
                     data-aos-once="true">Visi</h1>
-                <P class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000"
+                <div class="deskripsi txt-dark-blue mt-4 visi" data-aos="fade-right" data-aos-duration="1000"
                     data-aos-once="true">
                     {!!$company->vision!!}
-                </P>
+                </div>
                 <h1 class="txt-dark-blue deskripsi mt-4" data-aos="fade-left" data-aos-duration="1000"
                     data-aos-once="true">Misi</h1>
                 <div class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000"
