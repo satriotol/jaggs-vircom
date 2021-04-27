@@ -18,9 +18,7 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12 mt-5 mb-5 ">
-                <a  class="example-image-link" href="{{asset('asset/logo.png')}}">
                     <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid img-tentang"  width="50%" height="auto">
-                </a>
                 <h1 class="txt-dark-blue mt-5" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">APA ITU YOUNG STAR
                     CHAMPIONSHIP</h1>
                 <div class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000"
