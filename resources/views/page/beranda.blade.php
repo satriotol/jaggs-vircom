@@ -12,7 +12,7 @@
                     <h1 class="diplay-1">Young <span>Star</span></h1>
                     <h1 class="diplay-3">Championship</h1>
                     <a href="{{route('infolomba')}}"><button class="btn-master mt-2 mb-2">Info Lomba</button></a>
-                    <button class="btn-master">Registrasi</button>
+                    <a href="https://linktr.ee/youngstarchampionship"><button class="btn-master">Registrasi</button></a>
                 </div>
             </div>
         </div>
