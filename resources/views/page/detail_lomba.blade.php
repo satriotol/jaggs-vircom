@@ -44,7 +44,7 @@
                 <div class="col-lg-8 order-1 order-lg-2 mb-3">
                     <div class="detail-lomba p-3" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
                         <div class="detail-lomba-image text-center">
-                            <a onclick="lightbox()" href="{{asset('storage/'.$lomba->image)}}" data-lightbox="gallery1">
+                            <a href="{{asset('storage/'.$lomba->image)}}" data-lightbox="gallery1">
                                 <img src="{{asset('storage/'.$lomba->image)}}" class="img-thumbnail" alt="" /></a>
                         </div>
                         <div class="detail-lomba-isi mt-5">
