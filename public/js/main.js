@@ -10,13 +10,6 @@ window.addEventListener("scroll", function () {
 });
 
 // var scroll = new SmoothScroll('a[href*="#"]');
-//lightbox
-function lightbox() {
-    document.getElementsByTagName("body")[0].setAttribute("style", "overflow:hidden");
-}
 
-$(document).on('click', '.lightbox', function () {
-    document.getElementsByTagName("body")[0].setAttribute("style", "overflow:auto");
-});
 // AOS
 AOS.init();
