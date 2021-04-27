@@ -9,16 +9,19 @@
         .deskripsi.visi {
             font-size: 20px;
         }
+        .img-tentang{
+            width: 80%;
+        }
     }
 </style>
 <section class="bg-utama margin-nav overflow-hidden">
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12 mt-5 mb-5 ">
-                <a class="example-image-link" href="{{asset('asset/logo.png')}}">
-                    <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid " width="50%" height="auto">
+                <a onclick="lightbox()" class="example-image-link" href="{{asset('asset/logo.png')}}" data-lightbox="gallery1">
+                    <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid img-tentang"  width="50%" height="auto">
                 </a>
-                <h1 class="txt-dark-blue mt-5" data-aos="fade-left" data-aos-duration="1000">APA ITU YOUNG STAR
+                <h1 class="txt-dark-blue mt-5" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">APA ITU YOUNG STAR
                     CHAMPIONSHIP</h1>
                 <div class="deskripsi txt-dark-blue mt-4" data-aos="fade-right" data-aos-duration="1000"
                     data-aos-once="true"> {!!$company->description!!}
