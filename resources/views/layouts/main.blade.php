@@ -12,7 +12,7 @@
 
     {{-- font --}}
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
-
+    <link rel="icon" href="{{asset('asset/logo.png')}}" type="image" sizes="20x20">
     <!--load all styles -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -24,9 +24,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-0 pb-0">
         <div class="container">
-            <a class="navbar-brand" href="{{route('home')}}">{{$company->name}}</a>
+            <a class="navbar-brand " href="{{route('home')}}">
+                <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid"  width="60" height="auto"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
