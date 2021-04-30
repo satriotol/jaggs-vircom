@@ -56,7 +56,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Untuk Siapa <span style="color: red">*</span></label>
-                                    <textarea class="textarea" name="apa_kata_mereka" placeholder="Masukkan Untuk Siapa..."
+                                    <textarea class="textarea" name="apa_kata_mereka"
+                                        placeholder="Masukkan Untuk Siapa..."
                                         style="width: 100%;height:500px;">{{$company->apa_kata_mereka}}</textarea>
                                 </div>
                             </div>
@@ -80,6 +81,7 @@
             ['style', ['bold', 'italic', 'underline', 'clear']],
             ['font', ['strikethrough', 'superscript', 'subscript']],
             ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
         ],
         callbacks: {
             onPaste: function (e) {

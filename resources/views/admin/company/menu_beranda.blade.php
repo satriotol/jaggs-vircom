@@ -70,6 +70,7 @@
             ['style', ['bold', 'italic', 'underline', 'clear']],
             ['font', ['strikethrough', 'superscript', 'subscript']],
             ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
         ],
         callbacks: {
             onPaste: function (e) {
