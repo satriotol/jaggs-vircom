@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-0 pb-0">
         <div class="container">
             <a class="navbar-brand " href="{{route('home')}}">
-                <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid"  width="60" height="auto"></a>
+                <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid" width="60" height="auto"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,8 @@
                 </ul>
             </div>
         </div>
-        <a href="https://api.whatsapp.com/send?phone={{$company->phone_number}}" target="_blank"><button class="cp" id="pc">Contact
+        <a href="https://api.whatsapp.com/send?phone={{$company->phone_number}}" target="_blank"><button class="cp"
+                id="pc">Contact
                 Person</button></a>
         <a href="#" class="back-top" id="back-top"><i class="fas fa-arrow-up"></i></a>
     </nav>
@@ -64,40 +65,24 @@
                 <div class="col-md-4">
                     <h3 class="txt-dark-blue">Location</h3>
                     <iframe
-                        src="https://maps.google.com/maps?q=graha%20mulia%20sejahtera&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1400.359517853609!2d107.65739219885559!3d-6.9127289963717296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7f1c50869eb%3A0x6566db9d5143e7a0!2sJl.%20Terusan%20Jakarta%20No.175a%2C%20Antapani%20Kulon%2C%20Kec.%20Antapani%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040291!5e0!3m2!1sid!2sid!4v1619796460307!5m2!1sid!2sid"
                         width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <div class="col-md-4 offset-md-4 txt-dark-blue">
                     <h3>Find We At</h3>
-                    <a href="{{$company->youtube}}" target="_blank"> <img
-                            src="{{asset('asset/yt.png')}}" class="footer-yt" alt="Responsive image"></a>
-                    <a href="{{$company->instagram}} " target="_blank"><img
-                            src="{{asset('asset/ig.png')}}" class="footer-ig" alt="Responsive image"></a>
+                    <a href="{{$company->youtube}}" target="_blank"> <img src="{{asset('asset/yt.png')}}"
+                            class="footer-yt" alt="Responsive image"></a>
+                    <a href="{{$company->instagram}} " target="_blank"><img src="{{asset('asset/ig.png')}}"
+                            class="footer-ig" alt="Responsive image"></a>
                 </div>
             </div>
         </div>
     </div>
     <div id="footer-bot" class="container-fluid">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-sm-4">
-                    <div class="footer-center mb-2">
-                        <span> @ Copyright <strong>Jaggs</strong>. All Rights Reserved</span>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="footer-center mb-2">
-                        <a href="{{$company->youtube}}" target="_blank"> <img
-                                src="{{asset('asset/yt.png')}}" class="footer-yt" alt="Responsive image">
-                            <span class="footer-text">YOUNG STAR CHAMPIONSHIP</span></a>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="footer-center mb-2">
-                        <a href="{{$company->instagram}}" target="_blank"><img
-                                src="{{asset('asset/ig.png')}}" class="footer-ig" alt="Responsive image">
-                            <span class="footer-text">YOUNG STAR CHAMPIONSHIP</span></a>
-                    </div>
+            <div class="text-center">
+                <div class="footer-center mb-2">
+                    <span> @ Copyright <strong>Jaggs</strong>. All Rights Reserved</span>
                 </div>
             </div>
         </div>

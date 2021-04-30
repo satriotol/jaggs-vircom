@@ -296,10 +296,10 @@ a.txt-dark-blue:hover {
     margin: 10px;
 }
 .judul {
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 .subjudul {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 /* responsive beranda */
@@ -316,10 +316,10 @@ a.txt-dark-blue:hover {
 
     .judul {
         line-height: 1.5;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     .subjudul {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .welcome {
@@ -603,7 +603,7 @@ a.txt-dark-blue:hover {
 }
 
 .foto-rincian-lomba {
-    height: 100%
+    height: 400px
 }
 
 /* endkatogir */

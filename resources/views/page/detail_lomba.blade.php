@@ -8,12 +8,14 @@
                     <div class="menu mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                         <div class="menu-empty p-3"></div>
                         @foreach ($categories as $category)
-                        <button class="btn dropdown-custom menu-title p-3 mt-2 text-left " id="{{$category->id}}" onclick="Dropdown(this.id)">
+                        <button class="btn dropdown-custom menu-title p-3 mt-2 text-left " id="{{$category->id}}"
+                            onclick="Dropdown(this.id)">
                             <h4 class="txt-dark-blue font-weight-bold">{{$category->name}}</h3>
                         </button>
                         <ul class="list-group dropdown-custom-menu " id="menu-{{$category->id}}">
                             @foreach ($category->children as $cc)
-                            {{-- <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a> --}}
+                            {{-- <a class="dropdown-item dropdown-item-custom active txt-dark-blue" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a>
+                            --}}
                             <a class="text-uppercase dropdown-item dropdown-item-custom txt-dark-blue @if ($cc->id === $lomba->subkategori->id)
                                 active
                             @endif" href="{{route('kategori',$category->id)}}">{{$cc->name}}</a>
@@ -24,18 +26,21 @@
                     </div>
                     <div class="related-lomba mt-2" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                         <div class="related-lomba-title txt-dark-blue">
-                            <h3 class="font-weight-bold">LOMBA LAINNYA</h3>
+                            <h3 class="font-weight-bold judul">LOMBA LAINNYA</h3>
                         </div>
                         @foreach ($lombaOthers as $l)
                         <div class="related-lomba-content mt-4">
                             <div class="related-lomba-image">
-                                <a href="{{route('detail',$l->id)}}"><img class="img-thumbnail" src="{{asset('storage/'.$l->image)}}" alt=""></a>
+                                <a href="{{route('detail',$l->id)}}"><img class="img-thumbnail"
+                                        src="{{asset('storage/'.$l->image)}}" alt=""></a>
                                 <div class="related-lomba-image-kategori">
                                     <p>{{$l->kategori->name}}</p>
                                 </div>
                             </div>
                             <div class="mt-2 related-lomba-image-title">
-                                <a href="" class="txt-dark-blue"><h2 class="judul-related">{{$l->name}}</h2></a>
+                                <a href="" class="txt-dark-blue">
+                                    <h2 class="judul">{{$l->name}}</h2>
+                                </a>
                             </div>
                         </div>
                         @endforeach
@@ -82,8 +87,7 @@
     <div class="container-fluid bg-dua mb-5">
         <div class="text-center py-5">
             <div class="embed-responsive embed-responsive-16by9 mx-auto">
-                <iframe class="embed-responsive-item" src="{{$lomba->video}}"
-                    allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="{{$lomba->video}}" allowfullscreen></iframe>
             </div>
         </div>
     </div>
