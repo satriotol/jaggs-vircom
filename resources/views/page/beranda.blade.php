@@ -5,14 +5,14 @@
         <div class="container">
             <div class="row welcome">
                 <div class="col-md-5 offset-md-7">
-                    <div class="text-welcome" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000">
+                    <div class="text-welcome p-3" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000">
                         <h1 class="diplay-1 text-center">Young <span>Star</span></h1>
                         <h1 class="diplay-3 font-weight-bold text-center">Championship</h1>
-                        <div class="text-center">
-                            <a href="{{route('infolomba')}}"><button class="btn-master mt-2 mb-2">Info
+                        <div class="text-center mt-2">
+                            <a href="{{route('infolomba')}}"><button class="btn-master px-5 d-inline">Info
                                     Lomba</button></a>
                             <a href="https://linktr.ee/youngstarchampionship"><button
-                                    class="btn-master">Registrasi</button></a>
+                                    class="btn-submaster px-5 d-inline">Registrasi</button></a>
                         </div>
                     </div>
                 </div>
