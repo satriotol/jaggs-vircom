@@ -173,31 +173,32 @@ a.txt-dark-blue:hover {
 
 /* navbar */
 .navbar {
-    background-color: #C3F5FF;
+    background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .navbar .nav-item .nav-link {
-    color: white;
-    background-color: #6084B6;
+    color: #6084B6;
+    background-color: transparent;
     font-size: 14px;
     font-weight: bold;
     transition: all 0.3s ease 0s;
     border-radius: 50px;
     padding-top: 4px;
     padding-bottom: 4px;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 24px;
+    padding-left: 24px;
     opacity: 0.5;
 }
 
 .navbar .nav-item .nav-link:hover {
-    color: white;
+    color: #6084B6;
     opacity: 1;
 }
 
 .navbar-light .navbar-nav .active>.nav-link {
-    color: white;
+    color: #6084B6;
+    border: 1px #6084B6 solid;
     opacity: 1;
 }
 
