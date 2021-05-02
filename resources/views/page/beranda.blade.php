@@ -31,30 +31,34 @@
             </div>
         </div>
     </div>
-    <div class="container text-center mt-5 ">
+    <div class="container mt-5 ">
         <div class="row">
-            <div class="col-md-12 ">
+            <div class="col-md-6 order-2 order-lg-1 txt-apa-itu">
                 <h1 class="txt-dark-blue judul text-capitalize" data-aos="fade-down" data-aos-once="true"
                     data-aos-duration="1000">Apa Itu Young Star Championship?</h1>
                 <h4 class="txt-grey subjudul" data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat</h4>
                 <div class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000">
-                    <p class="text-center"> {!!$company->description_beranda!!}</p>
+                    <p> {!!$company->description_beranda!!}</p>
                 </div>
 
                 <a href="{{route('tentang')}}" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"><button
                         class="btn-master mt-2">Pelajari Lebih Lanjut</button></a>
             </div>
+            <div class="col-md-6 order-1 order-lg-2">
+                <img src="{{asset('asset/home.png')}}" data-aos="fade-right" data-aos-duration="1000"
+                    data-aos-once="true" class="img-fluid img-welcome" alt="Responsive image">
+            </div>
         </div>
     </div>
     <div class="container mt-5">
-        <div class="text-center" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
+        <div data-aos="fade-down" class="text-center" data-aos-duration="1000" data-aos-once="true">
             <h1 class="txt-dark-blue judul text-capitalize">Cara Mengikuti Lomba</h1>
             <h4 class="txt-grey subjudul">Ikuti Tata Cara Berikut</h4>
         </div>
-        <div class="row ">
+        <div class="row mt-3">
             <div class="col-md-6">
                 <img src="{{asset('asset/tatacara.png')}}" data-aos="fade-right" data-aos-duration="1000"
-                    data-aos-once="true" class="img-fluid img-welcome mb-5" alt="Responsive image">
+                    data-aos-once="true" class="img-fluid img-welcome" alt="Responsive image">
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
                 @php
