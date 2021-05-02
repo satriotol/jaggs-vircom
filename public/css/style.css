@@ -3,11 +3,11 @@ html {
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 a:hover {
-    text-decoration: none
+    text-decoration: none;
 }
 
 h1,
@@ -26,20 +26,34 @@ h2 {
 .bg-utama {
     background-image: url("/asset/bg-html.png");
     background-size: 50%;
+}
 
+.bg-header {
+    background-image: url("/asset/bg-header.png");
+    background-repeat: no-repeat;
+    height: 821px;
+    /* height: 100vh; */
+    /* background-size: contain; */
+}
+@media (max-width: 767.98px) {
+    .bg-header {
+        height: 500px;
+        background-size: 190%;
+        /* background-size: contain; */
+    }
 }
 
 .bg-dua {
     background-image: url("/asset/bg-video.png");
-    background-size: 50%
+    background-size: 50%;
 }
 
 .br-10 {
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .border-blue {
-    border-bottom: 3px solid #6084b6
+    border-bottom: 3px solid #6084b6;
 }
 
 .btn-master {
@@ -47,22 +61,22 @@ h2 {
     font-weight: bold;
     padding: 10px 35px;
     color: white;
-    background-color: #6084B6;
+    background-color: #6084b6;
     transition: 0.4s;
     border-radius: 20px;
 }
 
 .btn-master:hover {
     background-color: #486b9c;
-    color: #fff
+    color: #fff;
 }
 
 .cp {
     border: 0;
     font-weight: bold;
     padding: 12px;
-    color: #C3F5FF;
-    background-color: #6084B6;
+    color: #c3f5ff;
+    background-color: #6084b6;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     position: fixed;
@@ -80,18 +94,17 @@ h2 {
     font-size: 20px;
     width: 44px;
     height: 44px;
-    background: #C3F5FF;
+    background: #c3f5ff;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #6084B6;
+    color: #6084b6;
     border-radius: 50px;
     position: fixed;
     right: 2%;
     bottom: 2%;
     z-index: 1030;
     visibility: hidden;
-
 }
 
 .show {
@@ -100,8 +113,8 @@ h2 {
 }
 
 .back-top:hover {
-    color: #C3F5FF;
-    background: #6084B6;
+    color: #c3f5ff;
+    background: #6084b6;
 }
 
 .margin-nav {
@@ -113,35 +126,32 @@ h2 {
     visibility: hidden;
 }
 
-.paginationjs .paginationjs-pages li>a {
+.paginationjs .paginationjs-pages li > a {
     font-size: 20px !important;
     float: left;
     width: 44px;
     height: 44px !important;
-    background: #6084B6 !important;
+    background: #6084b6 !important;
     display: flex !important;
     justify-content: center;
     align-items: center;
     margin-left: 10px;
     border-radius: 50px !important;
-    color: #C3F5FF !important;
-
+    color: #c3f5ff !important;
 }
-.paginationjs .paginationjs-pages li>a:hover {
-    background: #C3F5FF  !important;
-    color:  #6084B6 !important;
-
+.paginationjs .paginationjs-pages li > a:hover {
+    background: #c3f5ff !important;
+    color: #6084b6 !important;
 }
 .paginationjs .paginationjs-pages {
-    float: none!important;
+    float: none !important;
 }
 
 .paginationjs li {
     display: inline;
     list-style-type: none;
-
 }
-.kategori .disabled{
+.kategori .disabled {
     pointer-events: none;
     opacity: 0.3;
 }
@@ -155,7 +165,7 @@ h2 {
 /* color */
 .txt-dark-blue {
     transition: 1s;
-    color: #6084b6
+    color: #6084b6;
 }
 
 a.txt-dark-blue:hover {
@@ -164,11 +174,11 @@ a.txt-dark-blue:hover {
 }
 
 .txt-grey {
-    color: #A7A7A7;
+    color: #a7a7a7;
 }
 
 .txt-red {
-    color: red
+    color: red;
 }
 
 /* navbar */
@@ -178,7 +188,7 @@ a.txt-dark-blue:hover {
 }
 
 .navbar .nav-item .nav-link {
-    color: #6084B6;
+    color: #6084b6;
     background-color: transparent;
     font-size: 14px;
     font-weight: bold;
@@ -192,18 +202,18 @@ a.txt-dark-blue:hover {
 }
 
 .navbar .nav-item .nav-link:hover {
-    color: #6084B6;
+    color: #6084b6;
     opacity: 1;
 }
 
-.navbar-light .navbar-nav .active>.nav-link {
-    color: #6084B6;
-    border: 1px #6084B6 solid;
+.navbar-light .navbar-nav .active > .nav-link {
+    color: #6084b6;
+    border: 1px #6084b6 solid;
     opacity: 1;
 }
 
 .navbar ul li {
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 .navbar .navbar-brand {
@@ -211,7 +221,7 @@ a.txt-dark-blue:hover {
     line-height: 0;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #6084B6;
+    color: #6084b6;
     text-transform: uppercase;
 }
 
@@ -220,8 +230,8 @@ a.txt-dark-blue:hover {
 /* footer */
 #footer-bot {
     padding: 10px;
-    background-color: #6084B6;
-    color: #C3F5FF;
+    background-color: #6084b6;
+    color: #c3f5ff;
 }
 
 .footer-ig {
@@ -240,19 +250,19 @@ a.txt-dark-blue:hover {
 }
 
 .footer-text {
-    color: #C3F5FF !important;
+    color: #c3f5ff !important;
 }
 
 /* endfooter */
 
 /* beranda */
 .welcome {
-    height: 100vh;
+    height: 1000px;
 }
 
 .text-welcome {
     position: relative;
-    top: 37%;
+    top: 15%;
 }
 
 .img-welcome {
@@ -262,7 +272,7 @@ a.txt-dark-blue:hover {
 
 .diplay-1 {
     font-weight: bold;
-    color: #6084B6;
+    color: #6084b6;
     font-size: 5rem;
     line-height: 1;
 }
@@ -270,20 +280,19 @@ a.txt-dark-blue:hover {
 .diplay-1 span {
     color: white;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #6084B6;
-
+    -webkit-text-stroke-color: #6084b6;
 }
 
 .diplay-3 {
-    color: #6084B6;
+    color: #6084b6;
     font-size: 1.8rem;
     font-weight: lighter;
 }
 
 .bubble {
-    background-color: #C3F5FF;
+    background-color: #c3f5ff;
     border-radius: 20px;
-    color: #6084B6;
+    color: #6084b6;
 }
 
 .bubble h1 {
@@ -309,7 +318,6 @@ a.txt-dark-blue:hover {
         top: 15%;
         text-align: center;
     }
-
 
     iframe {
         width: 100%;
@@ -338,8 +346,8 @@ a.txt-dark-blue:hover {
 }
 
 .center-img .icon:hover {
-    background-color: #C3F5FF;
-    color: #6084B6;
+    background-color: #c3f5ff;
+    color: #6084b6;
 }
 
 .foto-anggota {
@@ -354,16 +362,16 @@ a.txt-dark-blue:hover {
 /* kontak */
 .kontak {
     border-radius: 14px;
-    border-color: #6084B6;
-    color: #6084B6;
+    border-color: #6084b6;
+    color: #6084b6;
 }
 
 .kontak::placeholder {
-    color: #6084B6;
+    color: #6084b6;
 }
 
 .kontak:focus {
-    color: #6084B6;
+    color: #6084b6;
 }
 
 .icon {
@@ -371,7 +379,7 @@ a.txt-dark-blue:hover {
     float: left;
     width: 44px;
     height: 44px;
-    background: #6084B6;
+    background: #6084b6;
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -387,35 +395,35 @@ a.txt-dark-blue:hover {
 .jumbotron-lomba {
     height: 100vh;
     width: 100%;
-    background-position: center
+    background-position: center;
 }
 
 .title-jumbotron .display-4 {
     color: #6084b6;
     font-size: 5rem;
-    line-height: 1
+    line-height: 1;
 }
 
 .subtitle-jumbotron {
     color: #fff;
-    text-shadow: -1px -1px 0 #6084b6, 1px -1px 0 #6084b6, -1px 1px 0 #c2cbd8, 1px 1px 0 #6084b6
+    text-shadow: -1px -1px 0 #6084b6, 1px -1px 0 #6084b6, -1px 1px 0 #c2cbd8,
+        1px 1px 0 #6084b6;
 }
-
 
 .title-jumbotron .lead {
     color: #6084b6;
-    font-size: 2rem
+    font-size: 2rem;
 }
 
 /* form-cari */
 .form-cari .form-control {
     color: #6084b6;
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
 .form-cari .form-control::placeholder {
     color: #6084b6;
-    opacity: 1
+    opacity: 1;
 }
 
 /* end of form-cari */
@@ -433,21 +441,21 @@ a.txt-dark-blue:hover {
 
 .card-kategori:hover {
     height: 420px;
-    transition: 1s
+    transition: 1s;
 }
 
 .card-kategori-text .text {
     position: absolute;
     bottom: 60px;
     color: #fff;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 }
 
 .card-footer.text-right {
     text-decoration: none;
     background-color: #c3f5ff;
     color: #6084b6;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .pagination-arrow .fas {
@@ -464,7 +472,7 @@ a.txt-dark-blue:hover {
     transition: 1s;
     cursor: pointer;
 }
-.judul-related{
+.judul-related {
     font-size: 1.6rem;
 }
 
@@ -479,26 +487,26 @@ a.txt-dark-blue:hover {
     width: 100%;
     object-fit: cover;
     height: 200px;
-    object-position: center
+    object-position: center;
 }
 
 .status .btn-open {
     color: #fff;
     background-color: #6084b6;
-    border-radius: 1rem
+    border-radius: 1rem;
 }
 
 .status .btn-close {
     color: #6084b6;
     background-color: #fff;
     border-color: #6084b6;
-    border-radius: 1rem
+    border-radius: 1rem;
 }
 
 /* end of lomba */
 /* responsive halaman lomba */
-@media (max-width:767.98px) {
-    .navbar-light .navbar-nav .active>.nav-link {
+@media (max-width: 767.98px) {
+    .navbar-light .navbar-nav .active > .nav-link {
         color: #6084b6;
         opacity: 1;
     }
@@ -507,23 +515,23 @@ a.txt-dark-blue:hover {
     }
 
     .title-jumbotron .display-4 {
-        font-size: 3rem
+        font-size: 3rem;
     }
 
     .title-jumbotron .lead {
-        font-size: 1rem
+        font-size: 1rem;
     }
 
     .form-cari .form-control {
-        font-size: 1rem
+        font-size: 1rem;
     }
 
     .img-lomba {
-        height: 500px
+        height: 500px;
     }
 
     .lomba .status {
-        text-align: center !important
+        text-align: center !important;
     }
 
     section {
@@ -538,73 +546,77 @@ a.txt-dark-blue:hover {
 .btn-active-white {
     color: #6084b6;
     background-color: #fff;
-    border-color: #6084b6
+    border-color: #6084b6;
 }
 
 .btn-active-white:hover {
     color: #fff;
     background-color: #6084b6;
-    border-color: #fff
+    border-color: #fff;
 }
 
 .btn-active-blue {
     color: #fff;
-    background-color: #6084b6
+    background-color: #6084b6;
 }
 
 .btn-active-blue:hover {
     background-color: #486b9c;
-    color: #fff
+    color: #fff;
 }
 
 .bg-custom {
-    background-color: #c3f5ff
+    background-color: #c3f5ff;
 }
 
 .jumbotron.jumbotron-fluid {
-    background-image: linear-gradient(0deg, rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url(https://asset.kompas.com/crops/_T3Ph-M5oemu-kGTlDDxMtMNa7o=/0x0:936x624/750x500/data/photo/2018/10/05/2024120859.jpg);
+    background-image: linear-gradient(
+            0deg,
+            rgba(96, 132, 179, 1) 20%,
+            rgba(96, 132, 179, 0.5) 100%
+        ),
+        url(https://asset.kompas.com/crops/_T3Ph-M5oemu-kGTlDDxMtMNa7o=/0x0:936x624/750x500/data/photo/2018/10/05/2024120859.jpg);
     background-position: center;
     background-size: cover;
-    height: 361px
+    height: 361px;
 }
 
 .title-jumbotron {
-    color: #6084b6
+    color: #6084b6;
 }
-
 
 .card-footer.text-right {
     text-decoration: none;
     background-color: #c3f5ff;
     color: #6084b3;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .content {
-    color: #6084b6
+    color: #6084b6;
 }
 
 .text {
     position: absolute;
     bottom: 60px;
-    color: #fff
+    color: #fff;
 }
 
 .img-thumbnail {
     width: 100%;
     object-fit: cover;
     height: 200px;
-    object-position: center
+    object-position: center;
 }
 
-@media (max-width:767.98px) {
+@media (max-width: 767.98px) {
     .img-thumbnail {
-        height: 500px
+        height: 500px;
     }
 }
 
 .foto-rincian-lomba {
-    height: 400px
+    height: 400px;
 }
 
 /* endkatogir */
@@ -614,11 +626,11 @@ a.txt-dark-blue:hover {
 .menu {
     color: #6084b3;
     border-radius: 20px;
-    background-color: #c3f5ff
+    background-color: #c3f5ff;
 }
 
 .menu-title {
-    background-color: #e6fafe
+    background-color: #e6fafe;
 }
 
 .menu-title h2 {
@@ -637,42 +649,36 @@ a.txt-dark-blue:hover {
     width: 100%;
 }
 
-
-
 .dropdown-custom-menu {
     display: none;
 }
 
 .dropdown-item-custom:hover {
-    background-color: #6084B6;
+    background-color: #6084b6;
     color: #c3f5ff;
 }
 
 .dropdown-custom .dropdown-item.active,
 .dropdown-item.active {
-    background-color: #6084B6;
+    background-color: #6084b6;
     color: #c3f5ff;
 }
 
-
-
-
-
 .related-lomba-image {
-    position: relative
+    position: relative;
 }
 
 .related-lomba-image img {
     width: 100%;
     object-fit: cover;
     object-position: center;
-    height: 300px
+    height: 300px;
 }
 
 .related-lomba-image-kategori {
     position: absolute;
     bottom: 0;
-    background: rgba(96, 131, 184, .7)
+    background: rgba(96, 131, 184, 0.7);
 }
 
 .related-lomba-image-kategori p {
@@ -680,37 +686,37 @@ a.txt-dark-blue:hover {
     padding-left: 1rem;
     margin-top: 1rem;
     font-size: 1.3rem;
-    color: #c3f5ff
+    color: #c3f5ff;
 }
 
 .detail-lomba {
     background-color: #c3f5ff;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .detail-lomba-image img {
     width: 50%;
     height: auto;
     object-fit: cover;
-    object-position: center
+    object-position: center;
 }
 
 .detail-lomba-daftar .btn-active-blue {
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 .embed-responsive {
-    width: 500px
+    width: 500px;
 }
 
-@media (max-width:767.98px) {
+@media (max-width: 767.98px) {
     .detail-lomba-image img {
         width: 75%;
-        height: auto
+        height: auto;
     }
 
     .embed-responsive {
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -718,13 +724,13 @@ a.txt-dark-blue:hover {
 
 /* end of color */
 
-@media (max-width:767.98px) {
+@media (max-width: 767.98px) {
     .bg-utama {
-        background-size: 100%
+        background-size: 100%;
     }
 
     .bg-dua {
-        background-size: 100%
+        background-size: 100%;
     }
 
     .margin-nav {
@@ -739,18 +745,17 @@ a.txt-dark-blue:hover {
     /* navbar */
     .navbar .nav-item .nav-link {
         /* background-color: #C3F5FF; */
-        text-align: center!important;
+        text-align: center !important;
         padding-left: 0px;
-        color: #6084B6;
-
+        color: #6084b6;
     }
-    .navbar .nav-item .nav-link:hover{
-        color: #6084B6;
+    .navbar .nav-item .nav-link:hover {
+        color: #6084b6;
     }
 }
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-   .welcome{
-    height: 100%;
-       margin-bottom: 10vw;
-   }
-  }
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .welcome {
+        height: 100%;
+        margin-bottom: 10vw;
+    }
+}
