@@ -738,7 +738,8 @@ a.txt-dark-blue:hover {
 
     /* navbar */
     .navbar .nav-item .nav-link {
-        background-color: #C3F5FF;
+        /* background-color: #C3F5FF; */
+        text-align: center!important;
         padding-left: 0px;
         color: #6084B6;
 
