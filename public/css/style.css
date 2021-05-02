@@ -296,9 +296,6 @@ a.txt-dark-blue:hover {
     top: 15%;
 }
 
-.img-welcome {
-}
-
 .diplay-1 {
     font-weight: bold;
     color: #6084b6;
@@ -531,6 +528,18 @@ a.txt-dark-blue:hover {
     object-fit: cover;
     height: 200px;
     object-position: center;
+}
+.img-video {
+    right: 0;
+    bottom: 0;
+    margin-bottom: -3rem;
+    transform: scaleX(-1);
+    height: 200px;
+}
+@media (max-width: 767.98px) {
+    .img-video {
+        display: none;
+    }
 }
 
 .status .btn-open {
