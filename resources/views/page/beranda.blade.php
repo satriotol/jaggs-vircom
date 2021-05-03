@@ -24,7 +24,7 @@
             <div class="col-md-12 my-5">
                 <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="txt-dark-blue judul">
                     Video Profil Young Star Championship</h1>
-                    <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
                     class="mt-3 embed-responsive embed-responsive-16by9 mx-auto">
                     <iframe class="embed-responsive-item" src="{{$company->video_profile}}" allowfullscreen></iframe>
                 </div>
@@ -70,7 +70,7 @@
                 @foreach ($tatacaras as $tatacara)
                 <div class="row bubble mt-2 mr-2 ml-2 mt-2">
                     <div class="col-sm-2">
-                        <h1 class="text-center">{{$i++}}</h1>
+                        <h1 class="text-center" style="color: #FFA500">{{$i++}}</h1>
                     </div>
                     <div class="col-sm-10">
                         <p class="txt-dark-blue deskripsi">{{$tatacara->description}}</p>
@@ -81,4 +81,19 @@
         </div>
     </div>
 </section>
+@endsection
+@section('js')
+<script>
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll > 100) {
+            $("#navbar").addClass("shadow");
+            $("#navbar").removeClass("navbar-transparent");
+        } else {
+            $("#navbar").removeClass("shadow");
+            $("#navbar").addClass("navbar-transparent");
+        }
+    });
+
+</script>
 @endsection

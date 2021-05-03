@@ -212,7 +212,17 @@ a.txt-dark-blue:hover {
 /* navbar */
 .navbar {
     background-color: white;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+.navbar-transparent{
+    background-color: transparent;
+    transition: 0.4s;
+}
+.shadow{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.4s;
+    /* transition: 0.4s; Adds a transition effect when the padding is decreased */
+
 }
 
 .navbar .nav-item .nav-link {

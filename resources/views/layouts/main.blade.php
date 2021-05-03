@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-0 pb-0">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-0 pb-0" id="navbar">
         <div class="container">
             <a class="navbar-brand " href="{{route('home')}}">
                 <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid" width="60" height="auto"></a>
