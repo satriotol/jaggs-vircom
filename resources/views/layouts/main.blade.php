@@ -102,6 +102,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
     @yield('js')
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll > 100) {
+                $("#navbar").addClass("shadow");
+                $("#navbar").removeClass("navbar-transparent");
+            } else {
+                $("#navbar").removeClass("shadow");
+                $("#navbar").addClass("navbar-transparent");
+            }
+        });
+
+    </script>
 </body>
 
 </html>

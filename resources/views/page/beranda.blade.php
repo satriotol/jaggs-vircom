@@ -86,17 +86,5 @@
 </section>
 @endsection
 @section('js')
-<script>
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        if (scroll > 100) {
-            $("#navbar").addClass("shadow");
-            $("#navbar").removeClass("navbar-transparent");
-        } else {
-            $("#navbar").removeClass("shadow");
-            $("#navbar").addClass("navbar-transparent");
-        }
-    });
 
-</script>
 @endsection
