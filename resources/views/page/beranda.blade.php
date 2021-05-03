@@ -22,11 +22,15 @@
     <div class="container-fluid text-center bg-dua">
         <div class="row">
             <div class="col-md-12 my-5">
+
                 <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="txt-dark-blue judul">
                     Video Profil Young Star Championship</h1>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
                     class="mt-3 embed-responsive embed-responsive-16by9 mx-auto">
                     <iframe class="embed-responsive-item" src="{{$company->video_profile}}" allowfullscreen></iframe>
+                </div>
+                <div class="position-relative">
+                    <img class="img-dots position-absolute" src="{{asset('asset/dots.png')}}" alt="">
                 </div>
                 <div class="position-relative">
                     <img src="{{asset('asset/video.png')}}" class="img-video position-absolute" alt="">

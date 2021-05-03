@@ -546,6 +546,9 @@ a.txt-dark-blue:hover {
     transform: scaleX(-1);
     height: 200px;
 }
+.img-dots{
+    left: 0;
+}
 @media (max-width: 767.98px) {
     .img-video {
         display: none;
