@@ -60,7 +60,7 @@
     </nav>
     @yield('content')
     <div id="footer-top" class="bg-dua">
-        <div class="container mt-4">
+        <div class="container">
             <div class="row pt-4 pb-4">
                 <div class="col-md-4">
                     <h3 class="txt-dark-blue">Location</h3>

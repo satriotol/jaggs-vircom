@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<section class="bg-utama margin-nav overflow-hidden">
+<section class="bg-utama margin-nav overflow-hidden pb-3">
     <div class="mt-4 bg-header">
         <div class="container">
             <div class="row welcome">
@@ -22,7 +22,6 @@
     <div class="container-fluid text-center bg-dua">
         <div class="row">
             <div class="col-md-12 my-5">
-
                 <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="txt-dark-blue judul">
                     Video Profil Young Star Championship</h1>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"

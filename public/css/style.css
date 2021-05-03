@@ -214,15 +214,20 @@ a.txt-dark-blue:hover {
     background-color: white;
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
-.navbar-transparent{
+.navbar-transparent {
     background-color: transparent;
     transition: 0.4s;
 }
-.shadow{
+.shadow {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: 0.4s;
     /* transition: 0.4s; Adds a transition effect when the padding is decreased */
-
+}
+@media (max-width: 767.98px) {
+    .navbar-transparent {
+        background-color: white;
+        /* transition: 0.4s; */
+    }
 }
 
 .navbar .nav-item .nav-link {
@@ -546,10 +551,11 @@ a.txt-dark-blue:hover {
     transform: scaleX(-1);
     height: 200px;
 }
-.img-dots{
+.img-dots {
     left: 0;
 }
 @media (max-width: 767.98px) {
+    .img-dots,
     .img-video {
         display: none;
     }
