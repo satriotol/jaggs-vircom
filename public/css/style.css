@@ -305,9 +305,9 @@ a.txt-dark-blue:hover {
 
 .text-welcome {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.75);
+    /* background-color: rgba(255, 255, 255, 0.75);
     border-radius: 77px;
-    fill-opacity: 50%;
+    fill-opacity: 50%; */
     top: 15%;
 }
 
