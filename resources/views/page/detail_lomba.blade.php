@@ -24,12 +24,13 @@
                         @endforeach
                         <div class="menu-empty p-3 mt-2 mt-2"></div>
                     </div>
+                    @if (count($lombaOthers)> 0)
                     <div class="related-lomba mt-2" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                         <div class="related-lomba-title txt-dark-blue">
                             <h3 class="font-weight-bold judul">LOMBA LAINNYA</h3>
                         </div>
                         @foreach ($lombaOthers as $l)
-                        <div class="related-lomba-content mt-4">
+                        <div class="related-lomba-content">
                             <div class="related-lomba-image">
                                 <a href="{{route('detail',$l->id)}}"><img class="img-thumbnail"
                                         src="{{asset('storage/'.$l->image)}}" alt=""></a>
@@ -39,12 +40,13 @@
                             </div>
                             <div class="mt-2 related-lomba-image-title">
                                 <a href="" class="txt-dark-blue">
-                                    <h2 class="judul">{{$l->name}}</h2>
+                                    <h2 class="subjudul">{{$l->name}}</h2>
                                 </a>
                             </div>
                         </div>
                         @endforeach
                     </div>
+                    @endif
                 </div>
                 <div class="col-lg-8 order-1 order-lg-2 mb-3">
                     <div class="detail-lomba p-3" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">

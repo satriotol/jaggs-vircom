@@ -167,6 +167,7 @@
 </div>
 @endsection
 @section('script')
+<script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <script src="{{asset('/plugins/select2/js/select2.full.min.js')}}"></script>
 <script>
     $(function () {
@@ -174,6 +175,12 @@
             theme: 'bootstrap4'
         });
     })
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bsCustomFileInput.init();
+    });
 
 </script>
 <script type="text/javascript">

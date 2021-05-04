@@ -33,9 +33,9 @@ h2 {
     background-repeat: no-repeat;
     height: 821px;
     /* height: 100vh; */
-    /* background-size: contain; */
+    background-size: 100% 100%;
 }
-.bg-header-img{
+.bg-header-img {
     height: 1065px;
 }
 @media (max-width: 767.98px) {
@@ -207,6 +207,9 @@ a.txt-dark-blue:hover {
 .txt-grey {
     color: #a7a7a7;
 }
+.txt-gold {
+    color: #ffa500;
+}
 
 .txt-red {
     color: red;
@@ -261,6 +264,11 @@ a.txt-dark-blue:hover {
 .navbar ul li {
     margin-right: 20px;
 }
+@media (max-width: 767.98px) {
+    .navbar ul li {
+        margin-right: 0;
+    }
+}
 
 .navbar .navbar-brand {
     font-size: 28px;
@@ -311,13 +319,16 @@ a.txt-dark-blue:hover {
     /* background-color: rgba(255, 255, 255, 0.75);
     border-radius: 77px;
     fill-opacity: 50%; */
-    top: 15%;
+    /* top: 5%; */
+    border: 2px #6084b6 solid;
+    border-radius: 50px;
+    background-color: white;
 }
 
 .diplay-1 {
     font-weight: bold;
     color: #6084b6;
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1;
 }
 
@@ -329,7 +340,7 @@ a.txt-dark-blue:hover {
 
 .diplay-3 {
     color: #6084b6;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: lighter;
 }
 @media (max-width: 767.98px) {
@@ -372,9 +383,12 @@ a.txt-dark-blue:hover {
 /* responsive beranda */
 @media (max-width: 768px) {
     .text-welcome {
+        top: 15%;
         text-align: center;
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
+        border: 0;
+        background: rgba(255, 255, 255, 0.75);
     }
 
     iframe {
@@ -821,7 +835,7 @@ a.txt-dark-blue:hover {
     .navbar .nav-item .nav-link {
         /* background-color: #C3F5FF; */
         text-align: center !important;
-        padding-left: 0px;
+        /* padding-left: 0px; */
         color: #6084b6;
     }
     .navbar .nav-item .nav-link:hover {

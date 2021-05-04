@@ -31,12 +31,12 @@ class HomeController extends Controller
     {
         $lombas = Lomba::latest()->get();
         $jenjangs = Jenjang::all();
-        $categories = Kategori::whereNull('parent_id')->get();
+        $categories = Kategori::whereNull('parent_id')->whereHas('children')->whereHas('lomba')->get();
         return view('page.infolomba')->with('categories', $categories)->with('jenjangs', $jenjangs)->with('lombas', $lombas);
     }
     public function kategori(Kategori $category)
     {
-        $categories = Kategori::whereNull('parent_id')->get();
+        $categories = Kategori::whereNull('parent_id')->whereHas('children')->whereHas('lomba')->get();
         $subcategories = Kategori::where('parent_id', $category->id)->get();
         $lombas = Lomba::where('kategori_id', $category->id)->get();
         return view('page.kategori')->with('category', $category)->with('categories', $categories)
@@ -44,7 +44,7 @@ class HomeController extends Controller
     }
     public function detail(Lomba $lomba)
     {
-        $categories = Kategori::whereNull('parent_id')->whereHas('children')->get();
+        $categories = Kategori::whereNull('parent_id')->whereHas('children')->whereHas('lomba')->get();
         $lombaOthers = Lomba::where('kategori_id', $lomba->kategori_id)
             ->where('start_date', '<=', Carbon::now())
             ->where('end_date', '>=', Carbon::now())

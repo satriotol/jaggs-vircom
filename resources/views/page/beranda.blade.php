@@ -5,13 +5,13 @@
         <div class="container">
             <div class="row welcome">
                 <div class="col-md-5 offset-md-7">
-                    <div class="text-welcome p-3" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000">
+                    <div class="text-welcome px-3 py-5" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000">
                         <h1 class="diplay-1 text-center">Young <span>Star</span></h1>
                         <h1 class="diplay-3 font-weight-bold text-center">Championship</h1>
                         <div class="text-center mt-2">
                             <a href="{{route('infolomba')}}"><button class="btn-master px-5 d-inline">Info
                                     Lomba</button></a>
-                            <a href="https://linktr.ee/youngstarchampionship"><button
+                            <a target="_blank" href="https://linktr.ee/youngstarchampionship"><button
                                     class="btn-submaster px-5 d-inline">Registrasi</button></a>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
             <div class="col-md-6 order-2 order-lg-1 txt-apa-itu">
                 <h1 class="txt-dark-blue judul text-capitalize" data-aos="fade-down" data-aos-once="true"
                     data-aos-duration="1000">Apa Itu Young Star Championship?</h1>
-                <h4 class="txt-grey subjudul" data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat</h4>
+                <h4 class="txt-gold subjudul" data-aos="fade-down" data-aos-duration="1000">Penjelasan Singkat</h4>
                 <div class="mt-4 deskripsi txt-dark-blue" data-aos="fade-up" data-aos-duration="1000">
                     <p> {!!$company->description_beranda!!}</p>
                 </div>
@@ -59,7 +59,7 @@
     <div class="container mt-5">
         <div data-aos="fade-down" class="text-center" data-aos-duration="1000" data-aos-once="true">
             <h1 class="txt-dark-blue judul text-capitalize">Cara Mengikuti Lomba</h1>
-            <h4 class="txt-grey subjudul">Ikuti Tata Cara Berikut</h4>
+            <h4 class="txt-gold subjudul">Ikuti Tata Cara Berikut</h4>
         </div>
         <div class="row mt-3">
             <div class="col-md-6">
