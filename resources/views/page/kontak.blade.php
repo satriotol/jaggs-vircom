@@ -7,10 +7,10 @@
                 <div class="info">
                     <div class="address">
                         <div class="row">
-                            <div class="col-sm-2">
+                            <div class="col-2">
                                 <i class="fas fa-map-marker-alt icon"></i>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-10">
                                 <h4 class="txt-dark-blue">Alamat :</h4>
                                 <p class="txt-grey">{{$company->address}}</p>
                             </div>
@@ -18,10 +18,10 @@
                     </div>
                     <div class="email">
                         <div class="row">
-                            <div class="col-sm-2">
+                            <div class="col-2">
                                 <i class="fas fa-envelope icon"></i>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-10">
                                 <h4 class="txt-dark-blue">E-mail:</h4>
                                 <p class="txt-grey">{{$company->email}}</p>
                             </div>
@@ -29,10 +29,10 @@
                     </div>
                     <div class="phone">
                         <div class="row">
-                            <div class="col-sm-2">
+                            <div class="col-2">
                                 <i class="fas fa-phone-alt icon"></i>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-10">
                                 <h4 class="txt-dark-blue">Telepon:</h4>
                                 <p class="txt-grey">{{$company->phone_number}}</p>
                             </div>
