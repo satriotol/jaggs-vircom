@@ -41,6 +41,7 @@ class KategoriController extends Controller
         Kategori::create([
             'name' => $request->name,
             'description' => $request->description,
+            'image' =>$request->image->store('image')
         ]);
         session()->flash('success','Category Create Successfully');
         return redirect(route('kategori.index'));
