@@ -99,6 +99,10 @@ class KategoriController extends Controller
             session()->flash('error','Kategori cannot be deleted because it has some lomba.');
             return redirect()->back();
         }
+        if ($kategori->children->count() >0) {
+            session()->flash('error','Kategori cannot be deleted because it has some Subkategori.');
+            return redirect()->back();
+        }
         $kategori->delete();
         session()->flash('success','Kategori Deleted Successfully');
         return redirect(route('kategori.index'));
