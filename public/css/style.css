@@ -229,12 +229,12 @@ a.txt-dark-blue:hover {
     transition: 0.4s;
     /* transition: 0.4s; Adds a transition effect when the padding is decreased */
 }
-/* @media (max-width: 767.98px) {
+@media (max-width: 767.98px) {
     .navbar-transparent {
         background-color: white;
         transition: 0.4s;
     }
-} */
+}
 
 .navbar .nav-item .nav-link {
     color: #6084b6;
