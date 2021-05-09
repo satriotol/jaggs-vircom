@@ -107,10 +107,10 @@
             var scroll = $(window).scrollTop();
             if (scroll > 100) {
                 $("#navbar").addClass("shadow");
-                // $("#navbar").removeClass("navbar-transparent");
+                $("#navbar").removeClass("navbar-transparent");
             } else {
                 $("#navbar").removeClass("shadow");
-                // $("#navbar").addClass("navbar-transparent");
+                $("#navbar").addClass("navbar-transparent");
             }
         });
 

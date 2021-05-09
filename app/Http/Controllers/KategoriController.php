@@ -41,6 +41,7 @@ class KategoriController extends Controller
         Kategori::create([
             'name' => $request->name,
             'description' => $request->description,
+            'image' =>$request->image->store('image')
         ]);
         session()->flash('success','Category Create Successfully');
         return redirect(route('kategori.index'));
@@ -97,6 +98,10 @@ class KategoriController extends Controller
     {
         if ($kategori->lomba->count() >0) {
             session()->flash('error','Kategori cannot be deleted because it has some lomba.');
+            return redirect()->back();
+        }
+        if ($kategori->children->count() >0) {
+            session()->flash('error','Kategori cannot be deleted because it has some Subkategori.');
             return redirect()->back();
         }
         $kategori->delete();

@@ -46,7 +46,7 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>{{$jenjangs}}</h3>
-                            <p>Jenjang</p>
+                            <p>Tingkat</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>

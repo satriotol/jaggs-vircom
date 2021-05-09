@@ -108,7 +108,7 @@
                                     '</h3></a><p class="text-uppercase txt-grey">' +
                                     item.kategori.name + '(' + item
                                     .kategori.subkategori.name +
-                                    ') | ' + item.jenjang[0] +
+                                    ') | ' + item.jenjang +
                                     '</p><p>' + des(item.deskripsi) +
                                     '</p></div>';
                             });
@@ -177,7 +177,7 @@
                                     '</h3></a><p class="text-uppercase txt-grey">' +
                                     item.kategori.name + '(' + item
                                     .kategori.subkategori.name +
-                                    ') | ' + item.jenjang[0] +
+                                    ') | ' + item.jenjang +
                                     '</p><p>' + des(item.deskripsi) +
                                     '</p></div>';
                             });

@@ -1,24 +1,42 @@
 @extends('layouts.main')
 @section('content')
 <section id="contact overflow-hidden" class="contact mt-5 mb-5">
-    <div class="container" data-aos="fade-up" data-aos-duration="1000"  data-aos-once="true">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
         <div class="row ">
             <div class="col-md-4 mt-5">
                 <div class="info">
-                    <div class="address ">
-                        <i class="fas fa-map-marker-alt icon"></i>
-                        <h4 class="txt-dark-blue">Alamat :</h4>
-                        <p class="txt-grey jarak">{{$company->address}}</p>
+                    <div class="address">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-map-marker-alt icon"></i>
+                            </div>
+                            <div class="col-10">
+                                <h4 class="txt-dark-blue">Alamat :</h4>
+                                <p class="txt-grey">{{$company->address}}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="email mt-5">
-                        <i class="fas fa-envelope icon"></i>
-                        <h4 class="txt-dark-blue">E-mail:</h4>
-                        <p class="txt-grey jarak">{{$company->email}}</p>
+                    <div class="email">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-envelope icon"></i>
+                            </div>
+                            <div class="col-10">
+                                <h4 class="txt-dark-blue">E-mail:</h4>
+                                <p class="txt-grey">{{$company->email}}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="phone mt-5">
-                        <i class="fas fa-phone-alt icon"></i>
-                        <h4 class="txt-dark-blue">Telepon:</h4>
-                        <span class="txt-grey jarak">{{$company->phone_number}}</p>
+                    <div class="phone">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-phone-alt icon"></i>
+                            </div>
+                            <div class="col-10">
+                                <h4 class="txt-dark-blue">Telepon:</h4>
+                                <p class="txt-grey">{{$company->phone_number}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

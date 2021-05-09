@@ -35,7 +35,8 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Kategori</th>
-                                        <th>Jenjang</th>
+                                        <th>Subkategori</th>
+                                        <th>Tingkat</th>
                                         <th>Foto</th>
                                         <th>Action</th>
                                     </tr>
@@ -46,6 +47,7 @@
 
                                         <td>{{$lomba->name}}</td>
                                         <td><a href="{{route('kategori.show',$lomba->kategori->id)}}">{{$lomba->kategori->name}}</a></td>
+                                        <td>{{$lomba->subkategori->name}}</td>
                                         <td>
                                             @foreach ($lomba->jenjang as $j)
                                             {{$j->name}},

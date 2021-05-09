@@ -53,7 +53,7 @@
                                     <label for="customFile">Image <span style="color: red">*</span></label>
                                     <div class="custom-file">
                                         <input name="image" type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">{{isset($kategori) ? $kategori->image : ''}}</label>
+                                        <label class="custom-file-label" for="customFile">{{isset($kategori) ? $kategori->image : 'Choose Image'}}</label>
                                     </div>
                                 </div>
                             </div>
