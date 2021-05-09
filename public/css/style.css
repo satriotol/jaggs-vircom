@@ -31,7 +31,7 @@ h2 {
 .bg-header {
     background-image: url("/asset/bg-header.png");
     background-repeat: no-repeat;
-    height: 821px;
+    height: 500px;
     /* height: 100vh; */
     background-size: 100% 100%;
 }
@@ -41,7 +41,7 @@ h2 {
 @media (max-width: 767.98px) {
     .bg-header {
         height: 450px;
-        background-size: 190%;
+        background-size: 340%;
         /* background-size: contain; */
     }
 }
