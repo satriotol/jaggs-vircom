@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Jenjang Form</h1>
+                    <h1>Tingkat Form</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Jenjang Form</li>
+                        <li class="breadcrumb-item active">Tingkat Form</li>
                     </ol>
                 </div>
             </div>
@@ -36,9 +36,9 @@
                             @endif
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="Jenjang">Nama Jenjang</label>
+                                    <label for="Jenjang">Nama Tingkat</label>
                                     <input type="text" name="name" class="form-control" id="Jenjang"
-                                        placeholder="Masukkan Jenjang..." value="{{isset($jenjang) ? $jenjang->name : ''}}">
+                                        placeholder="Masukkan Tingkat..." value="{{isset($jenjang) ? $jenjang->name : ''}}">
                                 </div>
                             </div>
                             <div class="card-footer">

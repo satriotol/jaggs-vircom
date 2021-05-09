@@ -157,7 +157,7 @@
                                 class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit','jenjang.index') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
-                                    Jenjang
+                                    Tingkat
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -166,14 +166,14 @@
                                     <a href="{{route('jenjang.index')}}"
                                         class="nav-link {{Request::routeIs('jenjang.index') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>List Jenjang</p>
+                                        <p>List Tingkat</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('jenjang.create')}}"
                                         class="nav-link {{Request::routeIs('jenjang.create','jenjang.edit') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tambah Jenjang</p>
+                                        <p>Tambah Tingkat</p>
                                     </a>
                                 </li>
                             </ul>
