@@ -119,7 +119,7 @@
                                     item.name +
                                     '</h3></a><p class="text-uppercase">' +
                                     item.kategori.name + ' | ' + item
-                                    .jenjang[0] + '</p> <p class="txt-dark-blue ">' +  des(deskripsi) +' </p><div class="status">' + tgl(
+                                    .jenjang + '</p> <p class="txt-dark-blue ">' +  des(deskripsi) +' </p><div class="status">' + tgl(
                                         item.end_date) +
                                     '</div></div></div>';
                                 console.log(item)
