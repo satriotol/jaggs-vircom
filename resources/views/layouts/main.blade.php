@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-0 pb-0" id="navbar">
+    <nav class="navbar n-transparent navbar-expand-lg navbar-light fixed-top pt-0 pb-0" id="navbar">
         <div class="container">
             <a class="navbar-brand " href="{{route('home')}}">
                 <img src="{{asset('asset/logo.png')}}" alt="" class="img-fluid" width="60" height="auto"></a>
@@ -107,10 +107,13 @@
             var scroll = $(window).scrollTop();
             if (scroll > 100) {
                 $("#navbar").addClass("shadow");
-                $("#navbar").removeClass("navbar-transparent");
+                $("#navbar").addClass("n-white");
+                $("#navbar").removeClass("n-transparent");
+
             } else {
                 $("#navbar").removeClass("shadow");
-                $("#navbar").addClass("navbar-transparent");
+                $("#navbar").removeClass("n-white");
+                $("#navbar").addClass("n-transparent");
             }
         });
 
