@@ -1,11 +1,12 @@
 @extends('layouts.main')
 @section('content')
-<section class="bg-utama margin-nav overflow-hidden pb-3">
-    <div class="mt-4 bg-header">
+<section class="bg-utama overflow-hidden pb-5">
+    <div class="bg-header">
         <div class="container">
             <div class="row welcome">
                 <div class="col-md-5 offset-md-7">
-                    <div class="text-welcome px-3 py-5" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000">
+                    <div class="text-welcome px-3 py-5" data-aos="fade-left" data-aos-once="true"
+                        data-aos-duration="1000">
                         <h1 class="diplay-1 text-center">Young <span>Star</span></h1>
                         <h1 class="diplay-3 font-weight-bold text-center">Championship</h1>
                         <div class="text-center mt-2">

@@ -31,18 +31,21 @@ h2 {
 .bg-header {
     background-image: url("/asset/bg-header.png");
     background-repeat: no-repeat;
-    height: 500px;
-    /* height: 100vh; */
-    background-size: 100% 100%;
+    /* height: 500px; */
+    height: 100vh;
+    /* background-size: 100% 100%; */
+    background-size: cover;
 }
-.bg-header-img {
+/* .bg-header-img {
     height: 1065px;
-}
+} */
 @media (max-width: 767.98px) {
     .bg-header {
-        height: 450px;
-        background-size: 340%;
-        /* background-size: contain; */
+        /* height: 450px; */
+        height: 100vh;
+        /* background-size: 340%; */
+        background-size: cover;
+        background-position: 20%;
     }
 }
 
@@ -220,6 +223,7 @@ a.txt-dark-blue:hover {
     background-color: white;
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
+
 .n-transparent {
     background-color: transparent;
     transition: 0.4s;
@@ -230,7 +234,7 @@ a.txt-dark-blue:hover {
     /* transition: 0.4s; Adds a transition effect when the padding is decreased */
 }
 @media (max-width: 767.98px) {
-    .navbar-transparent {
+    .n-transparent {
         background-color: white;
         transition: 0.4s;
     }
@@ -319,7 +323,7 @@ a.txt-dark-blue:hover {
     /* background-color: rgba(255, 255, 255, 0.75);
     border-radius: 77px;
     fill-opacity: 50%; */
-    /* top: 5%; */
+    top: 15%;
     border: 2px #6084b6 solid;
     border-radius: 50px;
     background-color: white;
@@ -383,7 +387,7 @@ a.txt-dark-blue:hover {
 /* responsive beranda */
 @media (max-width: 768px) {
     .text-welcome {
-        top: 15%;
+        top: 30%;
         text-align: center;
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;

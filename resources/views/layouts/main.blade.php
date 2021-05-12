@@ -20,7 +20,7 @@
     <link href="{{asset('asset/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
     {{-- css --}}
     @yield('css')
-    <title>{{$company->name}}</title>
+    <title>Young Star Championship</title>
 </head>
 
 <body>
