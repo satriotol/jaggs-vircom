@@ -3,7 +3,7 @@
 <section class="banner">
     <div class="jumbotron jumbotron-fluid" style="background-image: linear-gradient(
         0deg
-        , rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{$category->image}});">
+        , rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{asset('storage/'.$category->image)}});">
     </div>
 </section>
 <section class="bg-utama overflow-hidden">
@@ -54,7 +54,7 @@
                 @foreach ($categories as $category)
                 <div class="col-md-3">
                     <div class="card card-kategori mb-3"
-                        style="background: linear-gradient(0deg, rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{$category->image}});">
+                        style="background: linear-gradient(0deg, rgba(96, 132, 179, 1) 20%, rgba(96, 132, 179, .5) 100%), url({{asset('storage/'.$category->image)}});">
                         <div class="card-body card-kategori-text">
                             <div class="text mb-3">
                                 <h3 class="card-title">{{$category->name}}</h3>
