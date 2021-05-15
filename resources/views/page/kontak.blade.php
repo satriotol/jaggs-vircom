@@ -42,18 +42,19 @@
             </div>
 
             <div class="col-md-8 mt-5">
-                <form>
+                <form action="{{route('sendemail')}}" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group ">
                                 <input type="text" class="form-control kontak" id="exampleFormControlInput1"
-                                    placeholder="Nama" required>
+                                    placeholder="Nama" required name="name">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group ">
                                 <input type="email" class="form-control kontak" id="exampleFormControlInput1"
-                                    placeholder="E-mail" required>
+                                    placeholder="E-mail" required name="email">
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
                         <div class="col-md-12">
                             <div class="form-group ">
                                 <input type="text" class="form-control kontak" id="exampleFormControlInput1"
-                                    placeholder="Subjek" required>
+                                    placeholder="Subjek" required name="subject">
                             </div>
                         </div>
                     </div>
@@ -69,7 +70,7 @@
                         <div class="col-md-12">
                             <div class="form-group ">
                                 <textarea class="form-control kontak" id="exampleFormControlTextarea1"
-                                    placeholder="Pesan" rows="3" required></textarea>
+                                    placeholder="Pesan" rows="3" required name="pesan"></textarea>
                             </div>
                         </div>
                     </div>

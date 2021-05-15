@@ -8,6 +8,7 @@ use App\Http\Requests\SendEmailRequest;
 use App\Jenjang;
 use App\Kategori;
 use App\Lomba;
+use App\Mail\ContactMail;
 use App\tata_cara;
 use App\Teams;
 use Carbon\Carbon;
@@ -67,22 +68,22 @@ class HomeController extends Controller
         $faqs = Faq::all();
         return view('page.faq')->with('faqs', $faqs);
     }
-    public function sendemail(SendEmailRequest $request)
+    public function sendemail()
     {
-        Mail::send(
-            'email',
-            [
-                'name' => $request->name,
-                'email' => $request->email,
-                'subject' => $request->subject,
-                'pesan' => $request->pesan
-            ],
-            function ($kirim) use ($request) {
-                $kirim->from($request->email);
-                $kirim->to('satriotol69@gmail.com');
-                $kirim->subject($request->subject);
-            }
-        );
-        return back()->with('success', 'Thanks for contacting me, I will get back to you soon!');
+        Mail::to('satriotol69@gmail.com')->send(new ContactMail);
+        // Mail::send(
+        //     'email',
+        //     [
+        //         'name' => $request->name,
+        //         'email' => $request->email,
+        //         'subject' => $request->subject,
+        //         'pesan' => $request->pesan
+        //     ],
+        //     function ($kirim) use ($request) {
+        //         $kirim->from($request->email);
+        //         $kirim->to('satriotol69@gmail.com', 'Satrio')->subject($request->subject);
+        //     }
+        // );
+        return redirect()->back()->withStatus('Comment was created!');
     }
 }

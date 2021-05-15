@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 // Route::get('/','')
 
-Auth::routes(['register'=>false]);
+Auth::routes(['register' => false]);
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/infolomba', 'HomeController@infolomba')->name('infolomba');
 Route::get('/kategori/{category}', 'HomeController@kategori')->name('kategori');
@@ -31,11 +31,11 @@ Route::get('/kontak', 'HomeController@kontak')->name('kontak');
 Route::post('/kontak', 'HomeController@sendemail')->name('sendemail');
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['role:admin']], function () {
-        Route::get('/admin','AdminController@index')->name('admin.index');
+        Route::get('/admin', 'AdminController@index')->name('admin.index');
         Route::resource('/admin/kategori', 'KategoriController');
         Route::resource('/admin/subkategori', 'SubKategoriController');
         Route::resource('/admin/jenjang', 'JenjangController');
-        Route::resource('/admin/lomba','LombaController');
+        Route::resource('/admin/lomba', 'LombaController');
         Route::resource('/admin/team', 'TeamController');
         Route::resource('/admin/faq', 'FaqController');
         Route::resource('/admin/tatacara', 'TataCaraController');
