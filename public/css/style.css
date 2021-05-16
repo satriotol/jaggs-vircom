@@ -34,7 +34,8 @@ h2 {
     /* height: 500px; */
     height: 100vh;
     /* background-size: 100% 100%; */
-    background-size: cover;
+    /* background-size: cover; */
+    background-position: bottom;
 }
 /* .bg-header-img {
     height: 1065px;

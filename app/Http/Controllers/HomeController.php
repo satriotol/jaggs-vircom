@@ -72,9 +72,11 @@ class HomeController extends Controller
     {
         $this->validate($request, [
             'name'     =>  'required',
+            'subject'     =>  'required',
         ]);
         $data = array(
-            'name' => $request->name
+            'name' => $request->name,
+            'subject' => $request->subject
         );
         Mail::to('satriotol69@gmail.com')->send(new ContactMail($data));
         // Mail::send(

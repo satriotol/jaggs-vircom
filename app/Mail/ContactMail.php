@@ -30,7 +30,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        $subject = "TEST WAS POSTED";
+        $subject = $this->data['subject'];
         return $this->subject($subject)
             ->view('emails.contact.mailcontact')->with('data', $this->data);
     }
