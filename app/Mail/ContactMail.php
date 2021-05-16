@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -11,16 +12,15 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $contact;
-
+    public $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        // $this->contact = $contact;
+        $this->data = $data;
     }
 
     /**
@@ -32,6 +32,6 @@ class ContactMail extends Mailable
     {
         $subject = "TEST WAS POSTED";
         return $this->subject($subject)
-            ->view('emails.contact.mailcontact');
+            ->view('emails.contact.mailcontact')->with('data', $this->data);
     }
 }

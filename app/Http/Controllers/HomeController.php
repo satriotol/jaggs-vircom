@@ -68,9 +68,15 @@ class HomeController extends Controller
         $faqs = Faq::all();
         return view('page.faq')->with('faqs', $faqs);
     }
-    public function sendemail()
+    public function sendemail(Request $request)
     {
-        Mail::to('satriotol69@gmail.com')->send(new ContactMail);
+        $this->validate($request, [
+            'name'     =>  'required',
+        ]);
+        $data = array(
+            'name' => $request->name
+        );
+        Mail::to('satriotol69@gmail.com')->send(new ContactMail($data));
         // Mail::send(
         //     'email',
         //     [

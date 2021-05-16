@@ -4,4 +4,4 @@
     }
 </style>
 
-<p>Ini Pesan</p>
+<p>Ini Pesan {{$data['name']}}</p>
