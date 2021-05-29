@@ -45,8 +45,9 @@ h2 {
         /* height: 450px; */
         height: 100vh;
         /* background-size: 340%; */
-        background-size: cover;
-        background-position: 20%;
+        /* background-size: cover; */
+        /* background-position: 20%; */
+        background-image: url("/asset/piala-mobile.png");
     }
 }
 
