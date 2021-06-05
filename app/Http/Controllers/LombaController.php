@@ -19,8 +19,8 @@ class LombaController extends Controller
      */
     public function index()
     {
-        $lombas=Lomba::latest()->get();
-        return view('admin.lomba.index')->with('lombas',$lombas);
+        $lombas = Lomba::latest()->get();
+        return view('admin.lomba.index')->with('lombas', $lombas);
     }
 
     /**
@@ -33,7 +33,7 @@ class LombaController extends Controller
         $kategoris = Kategori::whereNull('parent_id')->has('children')->get();
         $subkategoris = Kategori::whereNotNull('parent_id')->get();
         $jenjangs = Jenjang::all();
-        return view('admin.lomba.create')->with('jenjangs',$jenjangs)->with('kategoris',$kategoris)->with('subkategoris',$subkategoris);
+        return view('admin.lomba.create')->with('jenjangs', $jenjangs)->with('kategoris', $kategoris)->with('subkategoris', $subkategoris);
     }
 
     /**
@@ -44,16 +44,16 @@ class LombaController extends Controller
      */
     public function store(CreateLombaRequest $request)
     {
-        if($request->image){
+        if ($request->image) {
             $image = $request->image->store('image');
-        }else{
-            $image =null;
+        } else {
+            $image = null;
         }
         $lomba = Lomba::create([
             'name' => $request->name,
             'description' => $request->description,
-            'kategori_id'=> $request->kategori_id,
-            'image'=> $image,
+            'kategori_id' => $request->kategori_id,
+            'image' => $image,
             'hadiah' => $request->hadiah,
             'ketentuan' => $request->ketentuan,
             'video' => $request->video,
@@ -65,9 +65,10 @@ class LombaController extends Controller
         if ($request->id_jenjang) {
             $lomba->jenjang()->attach($request->id_jenjang);
         }
-        session()->flash('success','Lomba Create Successfully');
+        session()->flash('success', 'Lomba Create Successfully');
         return redirect(route('lomba.index'));
     }
+
 
     /**
      * Display the specified resource.
@@ -78,7 +79,7 @@ class LombaController extends Controller
     public function show(Lomba $lomba)
     {
         $jenjangs = Jenjang::all();
-        return view('admin.lomba.show')->with('lomba',$lomba)->with('jenjangs', $jenjangs);
+        return view('admin.lomba.show')->with('lomba', $lomba)->with('jenjangs', $jenjangs);
     }
 
     /**
@@ -92,7 +93,7 @@ class LombaController extends Controller
         $kategoris = Kategori::whereNull('parent_id')->has('children')->get();
         $subkategoris = Kategori::whereNotNull('parent_id')->get();
         $jenjangs = Jenjang::all();
-        return view('admin.lomba.create')->with('lomba',$lomba)->with('jenjangs',$jenjangs)->with('kategoris',$kategoris)->with('subkategoris',$subkategoris);
+        return view('admin.lomba.create')->with('lomba', $lomba)->with('jenjangs', $jenjangs)->with('kategoris', $kategoris)->with('subkategoris', $subkategoris);
     }
 
     /**
@@ -104,18 +105,18 @@ class LombaController extends Controller
      */
     public function update(UpdateLombaRequest $request, Lomba $lomba)
     {
-        $data =$request->only(['name','kategori_id','subkategori_id','video','description','link','start_date','end_date','hadiah','ketentuan']);
-        if($request->hasFile('image')){
+        $data = $request->only(['name', 'kategori_id', 'subkategori_id', 'video', 'description', 'link', 'start_date', 'end_date', 'hadiah', 'ketentuan']);
+        if ($request->hasFile('image')) {
             // $image = Storage::disk('public')->put('image',$request->image);
             $image = $request->image->store('image');
             $lomba->deleteImage();
             $data['image'] = $image;
         }
-        if($request->id_jenjang){
+        if ($request->id_jenjang) {
             $lomba->jenjang()->sync($request->id_jenjang);
         }
         $lomba->update($data);
-        session()->flash('success','Lomba Updated Successfully');
+        session()->flash('success', 'Lomba Updated Successfully');
         return redirect(route('lomba.index'));
     }
 
@@ -127,9 +128,9 @@ class LombaController extends Controller
      */
     public function destroy(Lomba $lomba)
     {
-        Storage::delete($lomba->image,$lomba->video);
+        Storage::delete($lomba->image, $lomba->video);
         $lomba->delete();
-        session()->flash('success','Lomba Deleted Successfully');
+        session()->flash('success', 'Lomba Deleted Successfully');
         return redirect(route('lomba.index'));
     }
 }
