@@ -237,7 +237,7 @@ a.txt-dark-blue:hover {
 }
 @media (max-width: 767.98px) {
     .n-transparent {
-        background-color: white;
+        background-color: transparent;
         transition: 0.4s;
     }
 }
