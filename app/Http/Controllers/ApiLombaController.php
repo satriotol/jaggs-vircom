@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\Lomba\LombaCollection;
+use App\Http\Resources\Lomba\LombaResource;
 use App\Lomba;
 use Illuminate\Http\Request;
 
@@ -28,9 +29,9 @@ class ApiLombaController extends Controller
             if ($kategori) {
                 return $query->where('name', '=', $kategori);
             }
-        })->whereHas('subkategori', function($query) use ($subkategori) {
+        })->whereHas('subkategori', function ($query) use ($subkategori) {
             if ($subkategori) {
-                return $query->where('name','=',$subkategori);
+                return $query->where('name', '=', $subkategori);
             }
         })->where('name', 'like', '%' . $name . '%')
             ->latest()->get();
@@ -54,7 +55,6 @@ class ApiLombaController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -63,8 +63,14 @@ class ApiLombaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Lomba $lomba)
     {
+        if (is_null($lomba)) {
+            return response()->json([
+                'message' => 'Data Tidak Ditemukan'
+            ], 404);
+        }
+        return new LombaResource($lomba);
     }
 
     /**
