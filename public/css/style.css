@@ -577,6 +577,9 @@ a.txt-dark-blue:hover {
 .img-dots {
     left: 0;
     opacity: 50%;
+    right: 0;
+    bottom: 0;
+    margin-bottom: -5rem;
 }
 @media (max-width: 767.98px) {
     .img-dots,
